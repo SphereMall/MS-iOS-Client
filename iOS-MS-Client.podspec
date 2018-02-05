@@ -8,11 +8,12 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.source = {
     :git => 'https://github.com/SphereMall/iOS-MS-Client.git',
-    :tag => '1.0.2'
+    :tag => '1.0.3'
   }
   s.author       = { "Nazar Gorobets" => "n.gorobets@spheremall.com" }
   s.platform     = :ios, "10.0"
-  s.source_files = "iOS-MS-Client/iOS-MS-Cient/", "iOS-MS-Client/iOS-MS-Cient//**/*.{swift}"
+  s.source_files = "iOS-MS-Client/iOS-MS-Cient/*.{swift}"
+  s.xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4'}
   s.dependency "SwiftyJSON" , "~> 3.1.4"
   s.dependency "Alamofire", "~> 4.6.0"
