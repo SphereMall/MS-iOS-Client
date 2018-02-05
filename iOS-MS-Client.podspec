@@ -7,11 +7,11 @@ Pod::Spec.new do |s|
   s.homepage     = "https://spheremall.atlassian.net/wiki/spaces/MIC/pages"
   s.license      = "MIT"
   s.source = {
-    :git => 'https://github.com/SphereMall/iOS-MS-Client.git',
-    :tag => '1.0.0'
+    :git => 'https://github.com/SphereMall/iOS-MS-Client/tree/1.0.1/iOS-MS-Cient',
+    :tag => '1.0.1'
   }
   s.author       = { "Nazar Gorobets" => "n.gorobets@spheremall.com" }
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "10.0"
   s.source_files = "iOS-MS-Client", "iOS-MS-Client/**/*.{h,m,swift}"
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4'}
   s.dependency "SwiftyJSON" , "~> 3.1.4"
