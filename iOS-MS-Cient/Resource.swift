@@ -164,7 +164,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     }
     
     // MARK: CRUD
-    func get(id: String, closure: @escaping SMResponse<T>) {
+    public func get(id: String, closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/by"
         let parameters = self.getQueryParams()
@@ -174,7 +174,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func all(closure: @escaping SMResponse<T>) {
+    public func all(closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/by"
         let parameters = self.getQueryParams()
@@ -184,7 +184,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func first(closure: @escaping SMResponse<T>) {
+    public func first(closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/by"
         var parameters: [String : String] = self.getQueryParams()
@@ -195,7 +195,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func count(closure: @escaping SMResponseCount) {
+    public func count(closure: @escaping SMResponseCount) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI())
         self.heandler.request(url: url, method: .get, parameters: nil) { (object: CounterSM?, error: NSError?) in
@@ -203,7 +203,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func create(data: [String: String], closure: @escaping SMResponse<T>) {
+    public func create(data: [String: String], closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI())
         
@@ -212,7 +212,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func update(id: String, data: [String: String], closure: @escaping SMResponse<T>) {
+    public func update(id: String, data: [String: String], closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/" + id
         
@@ -221,7 +221,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         }
     }
     
-    open func delete(id: String, closure: @escaping SMResponseDelete) {
+    public func delete(id: String, closure: @escaping SMResponseDelete) {
 
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/" + id
         self.heandler.request(url: url, method: .delete, parameters: nil) { (item: SMDeletedObject?, error: NSError?) in
