@@ -8,23 +8,22 @@
 
 import UIKit
 
-class CurrencyRateSM: Entity, Decodable {
+public class CurrencyRateSM: Entity, Decodable {
     var data : [CurrencyRateData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct CurrencyRateData: Decodable {
-        var attributes : CurrencyRateAttribute?
-        var id : String?
-        var type : String?
-    }
-    
-    struct CurrencyRateAttribute: Decodable {
-        var fromId : String?
-        var id : String?
-        var lastUpdate : String?
-        var rate : String?
-        var toId : String?
-    }
-    
+public struct CurrencyRateData: Decodable {
+    var attributes : CurrencyRateAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct CurrencyRateAttribute: Decodable {
+    var fromId : String?
+    var id : String?
+    var lastUpdate : String?
+    var rate : String?
+    var toId : String?
 }

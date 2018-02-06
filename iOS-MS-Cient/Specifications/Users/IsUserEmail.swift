@@ -8,11 +8,11 @@
 
 import UIKit
 
-class IsUserEmail: NSObject, FilterSpecification {
+public class IsUserEmail: NSObject, FilterSpecification {
 
     private var email: String!
     
-    init(email: String) {
+    public init(email: String) {
         self.email = email
     }
     

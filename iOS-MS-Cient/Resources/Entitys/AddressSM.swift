@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddressSM: Entity, Decodable {
+public class AddressSM: Entity, Decodable {
     var data : [AddressAttributes]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class AddressSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct AddressAttributes: Decodable {
+public struct AddressAttributes: Decodable {
     var attributes : AddressModel?
     var type : String?
     var id: String?
 }
 
-struct AddressModel: Decodable  {
+public struct AddressModel: Decodable  {
     var id : String?
     var phoneNumber : String?
     var gender : String?

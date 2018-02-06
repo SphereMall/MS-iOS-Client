@@ -8,13 +8,13 @@
 
 import UIKit
 
-class GridResource<ProductsSM: Decodable> : Resource <ProductsSM> {
+public class GridResource<ProductsSM: Decodable> : Resource <ProductsSM> {
     
-    override func getURI() -> String {
+    override public func getURI() -> String {
         return "grid"
     }
     
-    internal override func getQueryParams() -> [String : String] {
+    public override func getQueryParams() -> [String : String] {
         
         var params = super.getQueryParams()
     
@@ -50,19 +50,19 @@ class GridResource<ProductsSM: Decodable> : Resource <ProductsSM> {
         }
     }
     
-    open override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {
+    public override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method get() can not be use with correlations")
     }
     
-    open override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
+    public override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method create() can not be use with correlations")
     }
     
-    open override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
+    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method update() can not be use with correlations")
     }
     
-    open override func delete(id: String, closure: @escaping SMResponseDelete) {
+    public override func delete(id: String, closure: @escaping SMResponseDelete) {
         fatalError("Method delete() can not be use with correlations")
     }
 }

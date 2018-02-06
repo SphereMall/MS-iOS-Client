@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DeliveryPaymentSM: Entity, Decodable {
+public class DeliveryPaymentSM: Entity, Decodable {
 
 }

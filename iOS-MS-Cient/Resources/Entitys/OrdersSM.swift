@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrdersSM: Entity, Decodable {
+public class OrdersSM: Entity, Decodable {
     var data: [OrdersData]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class OrdersSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct OrdersData: Decodable {
+public struct OrdersData: Decodable {
     var id : String?
     var attributes : OrdersAttributes?
     var type : String?
 }
 
-class OrdersAttributes: Decodable {
+public class OrdersAttributes: Decodable {
     var type : String?
     var attributes : String?
     var paymentStatusId : String?
@@ -57,7 +57,7 @@ class OrdersAttributes: Decodable {
     var paymentMethods : [PaymentMethod]?
 }
 
-struct OrderItem: Decodable {
+public struct OrderItem: Decodable {
     var id : String?
     var orderId : String?
     var productId : String?
@@ -79,7 +79,7 @@ struct OrderItem: Decodable {
     var images : [OrderImages]?
 }
 
-struct OrderImages: Decodable {
+public struct OrderImages: Decodable {
     var id : String?
     var objectId : String?
     var title : String?
@@ -90,7 +90,7 @@ struct OrderImages: Decodable {
     var visible : String?
 }
 
-struct PaymentMethod: Decodable {
+public struct PaymentMethod: Decodable {
     var id : String?
     var websiteId : String?
     var providerId : String?

@@ -8,20 +8,21 @@
 
 import UIKit
 
-class AttributeGroupsEntitiesSM: Entity, Decodable {
-    var data : [AttributeGroupsData]?
+public class AttributeGroupsEntitiesSM: Entity, Decodable {
+    var data : [AttributeGroupsEntitiesData]?
     var error : Error?
     var meta: Meta?
-    struct AttributeGroupsData: Decodable  {
-        var attributes : Attribute?
-        var id : String?
-        var type : String?
-        
-        struct Attribute: Decodable  {
-            var attributeGroupsId : String?
-            var attributeId : String?
-            var entityId : String?
-            var id : String?
-        }
-    }
+}
+
+public struct AttributeGroupsEntitiesData: Decodable  {
+    var attributes : AttributeGroupsEntitiesDataAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct AttributeGroupsEntitiesDataAttribute: Decodable  {
+    var attributeGroupsId : String?
+    var attributeId : String?
+    var entityId : String?
+    var id : String?
 }

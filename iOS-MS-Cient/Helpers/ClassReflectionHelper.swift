@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ClassReflectionHelper: NSObject {
+public class ClassReflectionHelper: NSObject {
     private var className: String!
 
-    init(className: String) {
+    public init(className: String) {
         self.className = className
     }
     

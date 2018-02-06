@@ -8,38 +8,38 @@
 
 import UIKit
 
-class InPredicate: NSObject {
+public class InPredicate: NSObject {
     var field: String!
     var values: [String]!
     
-    init(field: String, values:[String]) {
+    public init(field: String, values:[String]) {
         self.field = field
         self.values = values
     }
     
     // MARK: LIKE {"author":["Jake","Billy"]}
     
-    func make() -> String {
+    public func make() -> String {
         return "{\"\(field!)\":[\"\(values.joined(separator: "\",\""))\"]}"
     }
 }
 
-class INOperator: NSObject {
+public class INOperator: NSObject {
     
-    lazy var predicates = [InPredicate] ()
+    public lazy var predicates = [InPredicate] ()
     
-    init(predicates: [InPredicate] = []) {
+    public init(predicates: [InPredicate] = []) {
         super.init()
         for predicate in predicates {
             addPredicate(predicate: predicate)
         }
     }
     
-    func addPredicate(predicate: InPredicate) {
+    public func addPredicate(predicate: InPredicate) {
         predicates.append(predicate)
     }
     
-    func asString() -> String {
+    public func asString() -> String {
         var str = ""
         for predicate in predicates {
             str = str + predicate.make() + ","

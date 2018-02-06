@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol InteractsWithProperties {
+public protocol InteractsWithProperties {
     var properties: [String]  { set get }
 }
 
-extension InteractsWithProperties {
+public extension InteractsWithProperties {
     
     public func getProperty(name: String) {
 //

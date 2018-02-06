@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CurrenciesRateResource<CurrencyRateSM: Decodable> : Resource <CurrencyRateSM> {
-
-    override func getURI() -> String {
+public class CurrenciesRateResource<CurrencyRateSM: Decodable> : Resource <CurrencyRateSM> {
+    override public func getURI() -> String {
         return "currenciesrate"
     }
 }

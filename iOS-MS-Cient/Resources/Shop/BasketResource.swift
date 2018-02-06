@@ -8,13 +8,12 @@
 
 import UIKit
 
-class BasketResource<T: Decodable> : Resource <BasketSM> {
-    
-    override func getURI() -> String {
+public class BasketResource <T: Decodable> : Resource <BasketSM> {
+    override public func getURI() -> String {
         return "basket"
     }
 
-    open override func get(id: String, closure: @escaping SMResponse<BasketSM>) {
+    public override func get(id: String, closure: @escaping SMResponse<BasketSM>) {
         
         var params: [String: String]? = nil
         

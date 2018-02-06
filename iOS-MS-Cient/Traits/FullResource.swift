@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol FullResource : ResourceInterface {
+public protocol FullResource : ResourceInterface {
     associatedtype T: Decodable
     func fullAll(closure: @escaping (T?, NSError?) -> Swift.Void)
     func fullBy(code: String, closure: @escaping (T?, NSError?) -> Swift.Void)
     func fullBy(id: Int, closure: @escaping (T?, NSError?) -> Swift.Void)
 }
 
-extension FullResource {
+public extension FullResource {
     
     public func fullAll(closure: @escaping (T?, NSError?) -> Swift.Void) {
         full { (item, error) in

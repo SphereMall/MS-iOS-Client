@@ -8,25 +8,24 @@
 
 import UIKit
 
-class DocumentsSM: Entity, Decodable {
-    
+public class DocumentsSM: Entity, Decodable {
     var data: [DocumentData]?
     var error: Error?
     var meta: Meta?
+}
 
-    struct DocumentData: Decodable {
-        var documentAttributes: DocumentModel?
-        var id: String?
-        var type: String?
-    }
-    
-    struct DocumentModel: Decodable  {
-        var createDate: String?
-        var functionalNameId: String?
-        var id: String?
-        var lastUpdate: String?
-        var title: String?
-        var urlCode: String?
-        var visible: String?
-    }
+public struct DocumentData: Decodable {
+    var documentAttributes: DocumentModel?
+    var id: String?
+    var type: String?
+}
+
+public struct DocumentModel: Decodable  {
+    var createDate: String?
+    var functionalNameId: String?
+    var id: String?
+    var lastUpdate: String?
+    var title: String?
+    var urlCode: String?
+    var visible: String?
 }

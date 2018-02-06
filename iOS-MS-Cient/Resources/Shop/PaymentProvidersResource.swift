@@ -8,9 +8,8 @@
 
 import UIKit
 
-class PaymentProvidersResource<PaymentProvidersSM: Decodable> : Resource <PaymentProvidersSM> {
-
-    override func getURI() -> String {
+public class PaymentProvidersResource<PaymentProvidersSM: Decodable> : Resource <PaymentProvidersSM> {
+    override public func getURI() -> String {
         return "paymentproviders"
     }
 }

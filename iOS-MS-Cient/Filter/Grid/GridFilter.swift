@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridFilter: Filter {
+public class GridFilter: Filter {
     internal var level: Int! = 0
     internal var elements: [GridFilterElement] = []
     

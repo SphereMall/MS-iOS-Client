@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrdersHistorySM: Entity, Decodable {
+public class OrdersHistorySM: Entity, Decodable {
     var data: [OrdersAttributes]?
     var error : Error?
     var success : Bool?

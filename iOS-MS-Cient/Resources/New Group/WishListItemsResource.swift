@@ -8,8 +8,8 @@
 
 import UIKit
 
-class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
-    override func getURI() -> String {
+public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
+    override public func getURI() -> String {
         return "wishlistitems"
     }
 }

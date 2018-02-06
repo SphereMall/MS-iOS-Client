@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EntityFilter: GridFilterElement {
-    override init(values: [String]) {
+public class EntityFilter: GridFilterElement {
+    override public init(values: [String]) {
         super.init(values: values)
         self.name = "entity"
     }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MediaResource<ProductsSM: Decodable> : Resource <ProductsSM> {
-    override func getURI() -> String {
+public class MediaResource<ProductsSM: Decodable> : Resource <ProductsSM> {
+    override public func getURI() -> String {
         return "images"
     }
 }

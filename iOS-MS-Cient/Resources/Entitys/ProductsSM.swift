@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductsSM: Entity, Decodable {    
+public class ProductsSM: Entity, Decodable {
     var data: [ProductsData]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class ProductsSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct ProductsData: Decodable {
+public struct ProductsData: Decodable {
     var id : String?
     var attributes : ProductsAttributes?
     var type : String?
 }
 
-struct ProductsAttributes: Decodable  {
+public struct ProductsAttributes: Decodable  {
     var articleNumber : String?
     var authorizationGroupId : String?
     var brandId : String?
@@ -53,13 +53,13 @@ struct ProductsAttributes: Decodable  {
     var visible: String?
     var websiteId: String?
     var images: [ProductImages]?
-        
-    struct ProductImages: Decodable {
-        var id : String?
-        var imageName : String?
-        var path : String?
-        var title : String?
-        var visible : String?
-        var objectId : String?
-    }
+}
+
+public struct ProductImages: Decodable {
+    var id : String?
+    var imageName : String?
+    var path : String?
+    var title : String?
+    var visible : String?
+    var objectId : String?
 }

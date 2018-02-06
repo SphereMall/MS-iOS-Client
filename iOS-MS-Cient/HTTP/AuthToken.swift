@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthToken: NSObject {
+public class AuthToken: NSObject {
     
     let keychain = KeychainSwift()
     
@@ -21,11 +21,11 @@ class AuthToken: NSObject {
         return keychain.get(client.getClientId())
     }
     
-    @discardableResult func save(token: String) -> Bool {
+    @discardableResult public func save(token: String) -> Bool {
         return keychain.set(token, forKey: client.getClientId())
     }
     
-    @discardableResult func delete(token: String) -> Bool {
+    @discardableResult public func delete(token: String) -> Bool {
         return keychain.delete(client.getClientId())
     }
 }

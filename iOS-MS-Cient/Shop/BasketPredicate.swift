@@ -8,31 +8,31 @@
 
 import UIKit
 
-class BasketPredicate: NSObject {
+public class BasketPredicate: NSObject {
     
     public final var id: String!
     public final var amount: Int!
     public final var compound: String?
     
-    init(id: String) {
+    public init(id: String) {
         self.id = id
         self.amount = 0
         self.compound = nil
     }
     
-    init(id: String, amount: Int) {
+    public init(id: String, amount: Int) {
         self.id = id
         self.amount = amount
         self.compound = nil
     }
     
-    init(id: String, amount: Int, compound: String) {
+    public init(id: String, amount: Int, compound: String) {
         self.id = id
         self.amount = amount
         self.compound = compound
     }
     
-    init(id: String, compound: String) {
+    public init(id: String, compound: String) {
         self.id = id
         self.amount = 0
         self.compound = compound

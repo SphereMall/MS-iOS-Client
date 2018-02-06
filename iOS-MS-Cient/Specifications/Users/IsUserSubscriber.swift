@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IsUserSubscriber: NSObject, FilterSpecification, UserSpecification {
+public class IsUserSubscriber: NSObject, FilterSpecification, UserSpecification {
     
     public func asFilter() -> Predicate {
         return Predicate(field: "isSubscriber", op: .equal, value: "1")

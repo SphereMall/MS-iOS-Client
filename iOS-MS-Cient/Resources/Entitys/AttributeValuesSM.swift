@@ -8,27 +8,26 @@
 
 import UIKit
 
-class AttributeValuesSM: Entity, Decodable {
-    
+public class AttributeValuesSM: Entity, Decodable {
     var data : [AttributeValuesData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct AttributeValuesData: Decodable {
-        var attributes : AttributeValues?
-        var id : String?
-        var type : String?
-    }
-    
-    struct AttributeValues: Decodable {
-        var attributeId : String?
-        var cssClass : String?
-        var hash : String?
-        var id : String?
-        var image : String?
-        var lastUpdate : String?
-        var orderNumber : String?
-        var title : String?
-        var value : String?
-    }
+public struct AttributeValuesData: Decodable {
+    var attributes : AttributeValues?
+    var id : String?
+    var type : String?
+}
+
+public struct AttributeValues: Decodable {
+    var attributeId : String?
+    var cssClass : String?
+    var hash : String?
+    var id : String?
+    var image : String?
+    var lastUpdate : String?
+    var orderNumber : String?
+    var title : String?
+    var value : String?
 }

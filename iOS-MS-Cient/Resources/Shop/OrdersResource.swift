@@ -9,9 +9,9 @@
 import UIKit
 import Alamofire
 
-class OrdersResource<T: Decodable>: Resource <OrdersSM> {
+public class OrdersResource<T: Decodable>: Resource <OrdersSM> {
     
-    override func getURI() -> String {
+    override public func getURI() -> String {
         return "orders"
     }
     

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AddressResource<T: Decodable>: Resource<AddressSM>  {
-    override func getURI() -> String {
+public class AddressResource<T: Decodable>: Resource<AddressSM>  {
+    override public func getURI() -> String {
         return "addresses"
     }
 }

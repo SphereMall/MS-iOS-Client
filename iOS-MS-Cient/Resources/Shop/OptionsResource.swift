@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OptionsResource<OptionsResourceSM: Decodable> : Resource <OptionsResourceSM> {
-    override func getURI() -> String {
+public class OptionsResource<OptionsResourceSM: Decodable> : Resource <OptionsResourceSM> {
+    override public func getURI() -> String {
         return "options"
     }
 }

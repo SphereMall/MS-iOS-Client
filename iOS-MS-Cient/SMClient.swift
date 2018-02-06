@@ -9,7 +9,7 @@
 import Alamofire
 import SwiftyJSON
 
-enum NetworkErrorType : Int {
+public enum NetworkErrorType : Int {
     case noInternet = 1
     case invalidToken = 2
     case accessTokenNotSet = 3
@@ -25,7 +25,7 @@ enum NetworkErrorType : Int {
 
 let SMNetworkDomain = "NetworkErrorDomain"
 
-class SMClient: ServiceInjector {
+public class SMClient: ServiceInjector {
     
     fileprivate var gatewayUrl: URL!
     fileprivate var clientId: String!
@@ -34,7 +34,7 @@ class SMClient: ServiceInjector {
     
     public let userAgent = "SM_SDK_iOS_CLIENT"
     
-    init(gatewayUrl: String, clientId: String, secretKey: String) {
+    public init(gatewayUrl: String, clientId: String, secretKey: String) {
         super.init()
         self.gatewayUrl = URL(string:gatewayUrl)
         self.clientId = clientId

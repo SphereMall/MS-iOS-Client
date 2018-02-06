@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol EntitySpecification {
+public protocol EntitySpecification {
     func isSatisfiedBy(entity: Entity)
 }

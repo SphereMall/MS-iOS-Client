@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WishlistSM: Entity, Decodable {
+public class WishlistSM: Entity, Decodable {
     var data: [WishlistAttributes]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class WishlistSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct WishlistAttributes: Decodable {
+public struct WishlistAttributes: Decodable {
     var id: String?
     var attributes: WishListItemSM?
     var type: String?
 }
 
-class WishListItemSM: Decodable {
+public class WishListItemSM: Decodable {
     var id: String?
     var userId: String?
     var createDate: String?

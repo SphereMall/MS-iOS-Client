@@ -8,9 +8,8 @@
 
 import UIKit
 
-class InvoicesResource<InvoiceSM: Decodable> : Resource <InvoiceSM> {
-
-    override func getURI() -> String {
+public class InvoicesResource<InvoiceSM: Decodable> : Resource <InvoiceSM> {
+    override public func getURI() -> String {
         return "invoices"
     }
 }

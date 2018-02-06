@@ -8,9 +8,8 @@
 
 import UIKit
 
-class UsersResource<T: Decodable>: Resource<UserSM> {
-    
-    override func getURI() -> String {
+public class UsersResource<T: Decodable>: Resource<UserSM> {
+    public override func getURI() -> String {
         return "users"
     }
     

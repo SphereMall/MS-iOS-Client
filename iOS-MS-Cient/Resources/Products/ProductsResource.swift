@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ProductsResource<ProductsSM: Decodable> : Resource <ProductsSM>, FullResource {
+public class ProductsResource<ProductsSM: Decodable> : Resource <ProductsSM>, FullResource {
     
-    typealias T = ProductsSM
-    
-    override func getURI() -> String {
+    public typealias T = ProductsSM
+
+    override public func getURI() -> String {
         return "products"
     }
     
@@ -34,7 +34,7 @@ class ProductsResource<ProductsSM: Decodable> : Resource <ProductsSM>, FullResou
 //    }
 }
 
-extension String {
+public extension String {
     var isInt: Bool {
         return Int(self) != nil
     }

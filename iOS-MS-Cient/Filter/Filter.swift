@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Filter: NSObject {
+public class Filter: NSObject {
     
     private var availableFilters : [FilterOperators] = [
         .like,
@@ -23,9 +23,9 @@ class Filter: NSObject {
         .is_null,
     ] 
     
-    internal var filters: [Predicate] = []
+    public var filters: [Predicate] = []
     
-    init(filters: [Predicate] = []) {
+    public init(filters: [Predicate] = []) {
         
         super.init()
         
@@ -34,7 +34,7 @@ class Filter: NSObject {
         }
     }
     
-    init(specification: FilterSpecification) {
+    public init(specification: FilterSpecification) {
         filters.append(specification.asFilter())
     }
     

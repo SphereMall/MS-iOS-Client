@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol UserSpecification {
+public protocol UserSpecification {
     func isSatisfiedBy(user: UserModel) -> Bool
 }

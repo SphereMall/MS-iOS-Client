@@ -8,26 +8,26 @@
 
 import UIKit
 
-class PaymentMethodsSM: Entity, Decodable {
+public class PaymentMethodsSM: Entity, Decodable {
     var data : [PaymentData]?
     var error : Error?
     var meta : Meta?
+}
 
-    struct PaymentData: Decodable {
-        var attributes : PaymentAttributes?
-        var id : String?
-        var type : String?
+public struct PaymentAttributes: Decodable  {
+    var active : String?
+    var code : String?
+    var icon : String?
+    var id : String?
+    var orderNumber : String?
+    var providerId : String?
+    var shortDescription : String?
+    var title : String?
+    var websiteId : String?
+}
 
-        struct PaymentAttributes: Decodable  {
-            var active : String?
-            var code : String?
-            var icon : String?
-            var id : String?
-            var orderNumber : String?
-            var providerId : String?
-            var shortDescription : String?
-            var title : String?
-            var websiteId : String?
-        }
-    }
+public struct PaymentData: Decodable {
+    var attributes : PaymentAttributes?
+    var id : String?
+    var type : String?
 }

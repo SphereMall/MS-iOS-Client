@@ -8,15 +8,15 @@
 
 import UIKit
 
-class Entity {    
+public class Entity {
     struct Error: Decodable {
         
     }
-    
-    struct Meta: Decodable {
-        var count: Int?
-        var limit: Int?
-        var offset: Int?
-    }
+}
+
+public struct Meta: Decodable {
+    var count: Int?
+    var limit: Int?
+    var offset: Int?
 }
 

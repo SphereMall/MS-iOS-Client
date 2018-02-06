@@ -8,14 +8,14 @@
 
 import UIKit
 
-class OrderFinalized: NSObject {
+public class OrderFinalized: NSObject {
     
     public var items: [OrderItem]?
-    public var subTotalVatPrice: Int?
-    public var totalVatPrice: Int?
-    public var subTotalPrice: Int?
-    public var totalPrice: Int?
-    public var totalPriceWithoutDelivery: Int?
+    public var subTotalVatPrice: String?
+    public var totalVatPrice: String?
+    public var subTotalPrice: String?
+    public var totalPrice: String?
+    public var totalPriceWithoutDelivery: String?
     
     internal let default_order_id = "-1"
     internal var id: String?
@@ -30,7 +30,7 @@ class OrderFinalized: NSObject {
     
     internal var client: SMClient!
     
-    init(client: SMClient) {
+    public init(client: SMClient) {
         id = default_order_id
         self.client = client
     }
@@ -44,7 +44,7 @@ class OrderFinalized: NSObject {
         self.setProperties(order: order)
     }
     
-    internal func setProperties(order: OrdersAttributes) {
+    public func setProperties(order: OrdersAttributes) {
         
         self.orderId = order.orderId
         self.statusId = order.statusId
@@ -52,11 +52,11 @@ class OrderFinalized: NSObject {
         
         self.items = order.items
         
-        self.subTotalVatPrice = Int(order.subTotalVatPrice ?? "0")
-        self.totalVatPrice = Int(order.totalVatPrice ?? "0")
-        self.subTotalPrice = Int(order.subTotalPrice ?? "0")
-        self.totalPrice = Int(order.totalPrice ?? "0")
-        self.totalPriceWithoutDelivery = Int(order.totalPrice ?? "0")
+        self.subTotalVatPrice = order.subTotalVatPrice
+        self.totalVatPrice = order.totalVatPrice
+        self.subTotalPrice = order.subTotalPrice
+        self.totalPrice = order.totalPrice
+        self.totalPriceWithoutDelivery = order.totalPrice
         
         self.paymentMethod = order.paymentMethodId
         
@@ -64,7 +64,7 @@ class OrderFinalized: NSObject {
         //        self.setAsyncProperties(order)
     }
     
-    internal func setProperties(order: BasketAttributes) {
+    public func setProperties(order: BasketAttributes) {
         
         self.orderId = order.orderId
         self.statusId = order.statusId

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class Basket: OrderFinalized {
+public class Basket: OrderFinalized {
     
     private var updateParams : [String: String] = [:]
     
-    init(client: SMClient, userId: String? = nil) {
+    public init(client: SMClient, userId: String? = nil) {
         super.init(client: client)
         if userId != nil {
             self.id = userId
@@ -24,7 +24,7 @@ class Basket: OrderFinalized {
         }
     }
     
-    internal func get(id: String, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func get(id: String, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
         client.basket.get(id: id) { (order, error) in
             if order != nil {
                 self.setProperties(order: order!.data!.first!.attributes!)
@@ -121,7 +121,7 @@ class Basket: OrderFinalized {
         return self
     }
     
-    internal func setAddress(address: inout AddressModel, addressKey: String) {
+    public func setAddress(address: inout AddressModel, addressKey: String) {
         var address = address
         if address.id != nil {
             client.address.create(data: ["":""], closure: { (addressItem, error) in
@@ -142,13 +142,13 @@ class Basket: OrderFinalized {
         return self
     }
     
-    internal func createBasket(closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func createBasket(closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
         client.basket.new(data: nil) { (basket, error) in
             self.id = basket?.data?.first?.id
         }
     }
     
-    private func queryParams(predicates: [BasketPredicate]) -> [String: String] {
+    public func queryParams(predicates: [BasketPredicate]) -> [String: String] {
         var params: [String: String] = [:]
         params["userId"] = getId()
         

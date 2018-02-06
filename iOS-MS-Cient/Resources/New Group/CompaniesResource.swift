@@ -8,8 +8,8 @@
 
 import UIKit
 
-class CompaniesResource<T: Decodable>: Resource<CompaniesSM>  {
-    override func getURI() -> String {
+public class CompaniesResource<T: Decodable>: Resource<CompaniesSM>  {
+    override public func getURI() -> String {
         return "companies"
     }
 }

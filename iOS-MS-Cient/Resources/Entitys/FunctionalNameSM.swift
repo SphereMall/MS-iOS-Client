@@ -8,20 +8,20 @@
 
 import UIKit
 
-class FunctionalNameSM: Entity, Decodable {
+public class FunctionalNameSM: Entity, Decodable {
     var data : [FunctionalNameData]?
     var error : Error?
     var meta: Meta?
-    
-    struct FunctionalNameData: Decodable {
-        var attributes : FunctionalNameAttribute?
-        var id : String?
-        var type : String?
-    }
-    
-    struct FunctionalNameAttribute: Decodable {
-        var code : String?
-        var id : String?
-        var title : String?
-    }
+}
+
+public struct FunctionalNameData: Decodable {
+    var attributes : FunctionalNameAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct FunctionalNameAttribute: Decodable {
+    var code : String?
+    var id : String?
+    var title : String?
 }

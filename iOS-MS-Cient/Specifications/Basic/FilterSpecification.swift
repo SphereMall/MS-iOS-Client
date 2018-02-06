@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol FilterSpecification {
+public protocol FilterSpecification {
     func asFilter() -> Predicate
 }

@@ -8,6 +8,6 @@
 
 import UIKit
 
-class SMDeletedObject: Entity, Decodable {
+public class SMDeletedObject: Entity, Decodable {
     var data : [Bool]?
 }

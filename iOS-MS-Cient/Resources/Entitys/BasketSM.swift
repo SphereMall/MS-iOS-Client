@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasketSM: Entity, Decodable {
+public class BasketSM: Entity, Decodable {
     var data: [BasketData]?
     var error : Error?
     var success : Bool?
@@ -16,28 +16,28 @@ class BasketSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct BasketData: Decodable {
+public struct BasketData: Decodable {
     var id : String?
     var attributes : BasketAttributes?
     var type : String?
 }
 
-class BasketAttributes: Decodable {
+public class BasketAttributes: Decodable {
     var id: String?
     var orderId: String?
     var userId: String?
     var statusId: String?
     var paymentStatusId: String?
     var paymentId: String?
-    var itemsAmount: Int?
+    var itemsAmount: String?
     var deliveryProviderId: String?
-    var deliveryCost: Int?
-    var subTotalVatPrice: Int?
-    var totalVatPrice: Int?
-    var discountPrice: Int?
-    var totalDiscountPrice: Int?
-    var subTotalPrice: Int?
-    var totalPrice: Int?
+    var deliveryCost: String?
+    var subTotalVatPrice: String?
+    var totalVatPrice: String?
+    var discountPrice: String?
+    var totalDiscountPrice: String?
+    var subTotalPrice: String?
+    var totalPrice: String?
     var paymentMethodId: String?
     var createDate: String?
     var updateDate: String?
@@ -51,6 +51,6 @@ class BasketAttributes: Decodable {
     var additionalInfo: String?
     var orderComment: String?
     var coupon: String?
-    var totalPriceWithoutDelivery: Int?
+    var totalPriceWithoutDelivery: String?
     var items: [OrderItem]?
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CounterSM: Entity, Decodable {
+public class CounterSM: Entity, Decodable {
     var meta: Meta?
 }
 
-class SMCountMaker: NSObject {
+public class SMCountMaker: NSObject {
     
     static func count(object: CounterSM?) -> Int {
         

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PriceRangeFilter: GridFilterElement {
-    override init(values: [String]) {
+public class PriceRangeFilter: GridFilterElement {
+    override public init(values: [String]) {
         super.init(values: values)
         self.name = "priceRange"
     }

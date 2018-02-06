@@ -6,7 +6,7 @@
 //  Copyright © 2017 SphereMall. All rights reserved.
 //
 
-enum FilterOperators: String {
+public enum FilterOperators: String {
     case like = "l"
     case like_left = "ll"
     case like_right = "lr"

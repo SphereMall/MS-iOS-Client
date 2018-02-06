@@ -8,23 +8,23 @@
 
 import UIKit
 
-class AttributeTypesSM: Entity, Decodable {
+public class AttributeTypesSM: Entity, Decodable {
     var data : [AttributeTypesData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct AttributeTypesData: Decodable {
-        var attributes : AttributeTypes?
-        var id : String?
-        var type : String?
-    }
-    
-    struct AttributeTypes: Decodable {
-        var code : String?
-        var fieldTypeId : String?
-        var id : String?
-        var lastUpdate : String?
-        var visible : String?
-    }
+public struct AttributeTypesData: Decodable {
+    var attributes : AttributeTypes?
+    var id : String?
+    var type : String?
+}
+
+public struct AttributeTypes: Decodable {
+    var code : String?
+    var fieldTypeId : String?
+    var id : String?
+    var lastUpdate : String?
+    var visible : String?
 }
 

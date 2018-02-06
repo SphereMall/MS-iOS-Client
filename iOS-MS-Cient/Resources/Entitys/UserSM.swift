@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AdminSM: Entity, Decodable {
+public class AdminSM: Entity, Decodable {
     var data : [UserData]?
     var error : Error?
     var success : Bool?
@@ -16,7 +16,7 @@ class AdminSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct UserData: Decodable {
+public struct UserData: Decodable {
     var expiries : Int?
     var isGuest : Bool?
     var model : UserModel?
@@ -24,7 +24,7 @@ struct UserData: Decodable {
     var type : String?
 }
 
-class UserSM: Entity, Decodable {
+public class UserSM: Entity, Decodable {
     var data : [UserAttributes]?
     var error : Error?
     var success : Bool?
@@ -38,7 +38,7 @@ class UserSM: Entity, Decodable {
     }
 }
 
-struct UserAttributes: Decodable {
+public struct UserAttributes: Decodable {
     var attributes : UserModel?
     var type : String?
     var id: String?
@@ -50,7 +50,7 @@ struct UserAttributes: Decodable {
     }
 }
 
-struct UserModel: Decodable  {
+public struct UserModel: Decodable  {
     var avatar : String?
     var email : String?
     var isSubscriber : String?

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class VatsResource<VatsSM: Decodable> : Resource <VatsSM> {
-    override func getURI() -> String {
+public class VatsResource<VatsSM: Decodable> : Resource <VatsSM> {
+    override public func getURI() -> String {
         return "vat"
     }
 }

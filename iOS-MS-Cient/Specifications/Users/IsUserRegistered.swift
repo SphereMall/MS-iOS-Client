@@ -8,12 +8,12 @@
 
 import UIKit
 
-class IsUserRegistered: NSObject, FilterSpecification {
+public class IsUserRegistered: NSObject, FilterSpecification {
     
     private var email: String?
     private var password: String?
     
-    init(email: String!, password: String!) {
+    public init(email: String!, password: String!) {
         self.email = email
         self.password = password
     }

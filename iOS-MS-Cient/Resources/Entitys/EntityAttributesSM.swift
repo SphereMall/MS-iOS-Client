@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntityAttributesSM: Entity, Decodable{
+public class EntityAttributesSM: Entity, Decodable{
     var entityId : Int?
     var objectId : Int?
     var attributeId : Int?

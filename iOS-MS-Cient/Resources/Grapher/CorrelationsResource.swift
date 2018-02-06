@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM> {
-    
-    override func getURI() -> String {
+public class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM> {
+    override public func getURI() -> String {
         return "correlations"
     }
     
@@ -26,19 +25,19 @@ class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM> {
         }
     }
     
-    open override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {
+    public override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method get() can not be use with correlations")
     }
     
-    open override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
+    public override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method create() can not be use with correlations")
     }
     
-    open override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
+    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
         fatalError("Method update() can not be use with correlations")
     }
     
-    open override func delete(id: String, closure: @escaping SMResponseDelete) {
+    public override func delete(id: String, closure: @escaping SMResponseDelete) {
         fatalError("Method delete() can not be use with correlations")
     }
 }

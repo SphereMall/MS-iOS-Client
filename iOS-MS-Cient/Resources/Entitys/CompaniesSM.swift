@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompaniesSM: Entity, Decodable {
+public class CompaniesSM: Entity, Decodable {
     var data : [CompaniesAttributes]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class CompaniesSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct CompaniesAttributes: Decodable {
+public struct CompaniesAttributes: Decodable {
     var attributes : CompaniesModel?
     var type : String?
     var id: String?
 }
 
-struct CompaniesModel: Decodable  {
+public struct CompaniesModel: Decodable  {
     var city : String?
     var companyName : String?
     var country : String?

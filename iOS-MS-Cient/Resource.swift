@@ -10,20 +10,20 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-protocol ResourceInterface {
+public protocol ResourceInterface {
     func getURI() -> String
     func getQueryParams() -> [String : String]
     var heandler: SMRequest! { get }
     var client: SMClient? { get }
 }
 
-typealias SMResponse<T> = (T?, NSError?) -> Swift.Void
-typealias SMResponseCount = (Int?, NSError?) -> Swift.Void
-typealias SMResponseDelete = (Bool?, NSError?) -> Swift.Void
+public typealias SMResponse<T> = (T?, NSError?) -> Swift.Void
+public typealias SMResponseCount = (Int?, NSError?) -> Swift.Void
+public typealias SMResponseDelete = (Bool?, NSError?) -> Swift.Void
 
-class Resource<T: Decodable> : NSObject, ResourceInterface {
+public class Resource<T: Decodable> : NSObject, ResourceInterface {
     
-    var client: SMClient?
+    public var client: SMClient?
     private var version = ""
     private var limit = 10
     private var offset = 0
@@ -33,9 +33,9 @@ class Resource<T: Decodable> : NSObject, ResourceInterface {
     lazy var fields: [String] = []
     private lazy var `in` = INOperator()
     private lazy var filter = Filter()
-    var heandler: SMRequest!
+    public var heandler: SMRequest!
     
-    init(client: SMClient, version: String = "v1") {
+    public init(client: SMClient, version: String = "v1") {
         self.client = client
         self.version = version
         self.heandler = SMRequest(client: client)
@@ -129,11 +129,11 @@ class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self.version
     }
     
-    func getURI() -> String {
+    public func getURI() -> String {
         return String()
     }
     
-    func getQueryParams() -> [String : String] {
+    public func getQueryParams() -> [String : String] {
         
         var params : [String : String] = [
             "offset" : String(self.offset),

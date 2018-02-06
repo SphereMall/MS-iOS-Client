@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessagesSM: Entity, Decodable {
+public class MessagesSM: Entity, Decodable {
     var data : [MessagesAttributes]?
     var error : Error?
     var success : Bool?
@@ -16,13 +16,13 @@ class MessagesSM: Entity, Decodable {
     var meta: Meta?
 }
 
-struct MessagesAttributes: Decodable {
+public struct MessagesAttributes: Decodable {
     var attributes : MessagesModel?
     var type : String?
     var id: String?
 }
 
-struct MessagesModel: Decodable  {
+public struct MessagesModel: Decodable  {
     var accepted : String?
     var acceptedDate : String?
     var address : String?

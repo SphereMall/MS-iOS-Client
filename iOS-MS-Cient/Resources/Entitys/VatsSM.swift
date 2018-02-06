@@ -8,21 +8,20 @@
 
 import UIKit
 
-class VatsSM: Entity, Decodable {
-    
+public class VatsSM: Entity, Decodable {
     var data : [VatsData]?
     var error : Error?
     var meta : Meta?
+}
 
-    struct VatsData: Decodable {
-        var attributes : VatsAttribute?
-        var id : String?
-        var type : String?
-    }
-    
-    struct VatsAttribute: Decodable {
-        var exclude : String?
-        var id : String?
-        var percent : String?
-    }
+public struct VatsData: Decodable {
+    var attributes : VatsAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct VatsAttribute: Decodable {
+    var exclude : String?
+    var id : String?
+    var percent : String?
 }

@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
-class SMRequest: RequestAdapter, RequestRetrier {
+public class SMRequest: RequestAdapter, RequestRetrier {
     
     private let lock = NSLock()
     private let clientID : String!
@@ -30,7 +30,7 @@ class SMRequest: RequestAdapter, RequestRetrier {
         return Alamofire.SessionManager(configuration: configuration)
     } ()
     
-    init(client: SMClient) {
+    public init(client: SMClient) {
         self.client = client
         self.tokenSevice = AuthToken(client: client)
         self.clientID = client.getClientId()
@@ -39,7 +39,7 @@ class SMRequest: RequestAdapter, RequestRetrier {
         manager.adapter = self
     }
     
-    func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, NSError?) -> Swift.Void) {
+    public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, NSError?) -> Swift.Void) {
         
         var modifiedheader = headers ?? [String : String] ()
         modifiedheader = ["User-Agent" : UIDevice.current.identifierForVendor!.uuidString]
@@ -112,7 +112,7 @@ class SMRequest: RequestAdapter, RequestRetrier {
     
     // MARK: - RequestAdapter
     
-    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+    public func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(client.getGatewayUrl()) {
             var urlRequest = urlRequest
             urlRequest.setValue("Bearer " + (accessToken ?? "token"), forHTTPHeaderField: "Authorization")

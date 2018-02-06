@@ -8,19 +8,19 @@
 
 import UIKit
 
-class AttributesSM: Entity, Decodable {
+public class AttributesSM: Entity, Decodable {
     var data : [AttributesResourceData]?
     var error : Error?
     var meta: Meta?
 }
 
-struct AttributesResourceData: Decodable {
+public struct AttributesResourceData: Decodable {
     var attributes : AttributeResourceSM?
     var id : String?
     var type : String?
 }
 
-struct AttributeResourceSM: Decodable {
+public struct AttributeResourceSM: Decodable {
     var aceCode : String?
     var attributeGroupId : String?
     var attributeTypeId : String?

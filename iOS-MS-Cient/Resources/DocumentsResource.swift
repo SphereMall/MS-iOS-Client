@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DocumentsResource<DocumentsSM: Decodable>: Resource<DocumentsSM> {
-    override func getURI() -> String {
+public class DocumentsResource<DocumentsSM: Decodable>: Resource<DocumentsSM> {
+    override public func getURI() -> String {
         return "documents"
     }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FunctionalNameFilter: GridFilterElement {
-    override init(values: [String]) {
+public class FunctionalNameFilter: GridFilterElement {
+    override public init(values: [String]) {
         super.init(values: values)
         self.name = "functionalNames"
     }

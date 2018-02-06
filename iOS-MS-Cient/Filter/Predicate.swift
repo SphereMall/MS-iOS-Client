@@ -8,13 +8,13 @@
 
 import UIKit
 
-class Predicate: NSObject {
+public class Predicate: NSObject {
     
     var field: String?
     var value: String?
     var op: FilterOperators!
     
-    init(field: String?, op: FilterOperators, value: String) {
+    public init(field: String?, op: FilterOperators, value: String) {
         self.field = field
         self.op = op
         self.value = value

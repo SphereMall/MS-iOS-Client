@@ -8,8 +8,8 @@
 
 import UIKit
 
-class MessagesResource<T: Decodable>: Resource<MessagesSM>  {
-    override func getURI() -> String {
+public class MessagesResource<T: Decodable>: Resource<MessagesSM>  {
+    override public func getURI() -> String {
         return "messages"
     }
 }

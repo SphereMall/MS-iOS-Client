@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AttributeValuesResource<ProductsSM: Decodable> : Resource <ProductsSM> {
-    override func getURI() -> String {
+public class AttributeValuesResource<ProductsSM: Decodable> : Resource <ProductsSM> {
+    override public func getURI() -> String {
         return "attributevalues"
     }
 }

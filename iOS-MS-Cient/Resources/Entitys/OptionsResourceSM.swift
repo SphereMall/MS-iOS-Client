@@ -8,23 +8,23 @@
 
 import UIKit
 
-class OptionsResourceSM: Entity, Decodable {
+public class OptionsResourceSM: Entity, Decodable {
     var data : [OptionsResourceData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct OptionsResourceData: Decodable {
-        var attributes : OptionsResourceAttribute?
-        var id : String?
-        var type : String?
-    }
-    
-    struct OptionsResourceAttribute: Decodable {
-        var deprecatedCode : String?
-        var descriptionField : String?
-        var id : String?
-        var orderNumber : String?
-        var title : String?
-        var visible : String?
-    }
+public struct OptionsResourceData: Decodable {
+    var attributes : OptionsResourceAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct OptionsResourceAttribute: Decodable {
+    var deprecatedCode : String?
+    var descriptionField : String?
+    var id : String?
+    var orderNumber : String?
+    var title : String?
+    var visible : String?
 }

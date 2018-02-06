@@ -8,24 +8,23 @@
 
 import UIKit
 
-class BrandsSM: Entity, Decodable {
-
+public class BrandsSM: Entity, Decodable {
     var data : [BrandsData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct BrandsData: Decodable {
-        var attributes : AttributeBrand?
-        var id : String?
-        var type : String?
-    }
-    
-    struct AttributeBrand: Decodable {
-        var id : String?
-        var image : String?
-        var logo : String?
-        var title : String?
-        var urlCode : String?
-        var visible : String?
-    }
+public struct BrandsData: Decodable {
+    var attributes : AttributeBrand?
+    var id : String?
+    var type : String?
+}
+
+public struct AttributeBrand: Decodable {
+    var id : String?
+    var image : String?
+    var logo : String?
+    var title : String?
+    var urlCode : String?
+    var visible : String?
 }

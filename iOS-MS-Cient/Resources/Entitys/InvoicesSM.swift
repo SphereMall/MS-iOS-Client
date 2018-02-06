@@ -8,22 +8,22 @@
 
 import UIKit
 
-class InvoiceSM: Entity, Decodable {
+public class InvoiceSM: Entity, Decodable {
     var data : [InvoiceData]?
     var error : Error?
     var meta: Meta?
+}
 
-    struct InvoiceData: Decodable {
-        var attributes : InvoiceAttribute?
-        var id : String?
-        var type : String?
-    }
-    
-    struct InvoiceAttribute: Decodable {
-        var createDate : String?
-        var id : String?
-        var invoiceHash : String?
-        var orderId : String?
-        var path : String?
-    }
+public struct InvoiceData: Decodable {
+    var attributes : InvoiceAttribute?
+    var id : String?
+    var type : String?
+}
+
+public struct InvoiceAttribute: Decodable {
+    var createDate : String?
+    var id : String?
+    var invoiceHash : String?
+    var orderId : String?
+    var path : String?
 }

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class GridFilterElement: NSObject {
+public class GridFilterElement: NSObject {
     
     internal var name: String?
     internal var values: [String] = []
    
-    init(values: [String]) {
+    public init(values: [String]) {
         self.values = values
     }
     
