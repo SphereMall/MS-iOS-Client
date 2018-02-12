@@ -9,9 +9,9 @@
 import UIKit
 
 public class EntityAttributesSM: Entity, Decodable{
-    var entityId : Int?
-    var objectId : Int?
-    var attributeId : Int?
-    var attributeValueId : Int?
-    var lastUpdate : String?
+    public var entityId : Int?
+    public var objectId : Int?
+    public var attributeId : Int?
+    public var attributeValueId : Int?
+    public var lastUpdate : String?
 }

@@ -9,19 +9,20 @@
 import UIKit
 
 public class VatsSM: Entity, Decodable {
-    var data : [VatsData]?
-    var error : Error?
-    var meta : Meta?
+    public var data : [VatsData]?
+    public var error : Error?
+    public var meta : Meta?
+    public var success : Bool?
 }
 
 public struct VatsData: Decodable {
-    var attributes : VatsAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : VatsAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct VatsAttribute: Decodable {
-    var exclude : String?
-    var id : String?
-    var percent : String?
+    public var exclude : String?
+    public var id : String?
+    public var percent : String?
 }

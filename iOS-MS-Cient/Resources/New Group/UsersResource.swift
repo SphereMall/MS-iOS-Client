@@ -62,7 +62,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func getWishList(userId: String, closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
+    public func getWishList(userId: String, closure: @escaping (ProductsSM?, NSError?) -> Swift.Void) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
         let parameters = self.getQueryParams()
@@ -72,32 +72,51 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func addToWishList(userId: String, entityId: String, closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
+    public func addToWishList(userId: String, objectId: String, entity: String = "products", closure: @escaping (ProductsSM?, NSError?) -> Swift.Void) {
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        formatter.string(from: Date())
+        let data : [String: String] = ["objectId": objectId, "entity" : entity]
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
         
-        let data : [String: String] = ["userId" : userId, "productId": entityId, "createDate" : formatter.string(from: Date())]
-
-        self.client!.wishListItems.create(data: data) { (item, error) in
+        self.heandler.request(url: url, method: .post, parameters: data) { (item, error) in
             closure(item, error)
         }
     }
     
-    public func removeFromWishList(userId: String, entityId: String, closure: @escaping (Bool?, NSError?) -> Swift.Void) {
-        let predicateUser = Predicate(field: "userId", op: .equal, value: userId)
-        let predicateProduct = Predicate(field: "productId", op: .equal, value: entityId)
-        client!.wishListItems
-            .filters(predicates: [predicateUser, predicateProduct])
-            .first { (item, error) in
-                if item != nil {
-                    self.client!.wishListItems.delete(id: item!.data!.first?.id ?? "", closure: { (isSuccesed, error) in
-                        closure(isSuccesed, error)
-                    })
-                } else {
-                    closure(false, error)
+    public func removeFromWishList(userId: String, objectId: String, entity: String = "products", closure: @escaping (Bool?, NSError?) -> Swift.Void) {
+        
+        let data : [String: String] = ["objectId": objectId, "entity" : entity]
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
+        
+        self.heandler.request(url: url, method: .delete, parameters: data) { (item: EmptySM?, error: NSError?) in
+            closure(item?.success, error)
+        }
+    }
+    
+    public func setAddress(addressId: String = "0", userId: String, params: [String: String], closure: @escaping (AddressSM?, NSError?) -> Swift.Void) {
+        
+        var parameters: [String : String] = params
+        
+        if addressId == "0" {
+            _ = parameters.updateValue(userId.description, forKey: "userId")
+            client!.address.create(data: params, closure: { (address, error) in
+                guard let id = address?.data?.first?.id else {
+                    closure(address, error)
+                    return
                 }
+                
+                let userParams: [String : String] = ["defaultAddressId": id]
+                self.client!.user.update(id: userId.description, data: userParams, closure: { (user, error) in
+                    if user != nil {
+                        closure(address, error)
+                    } else {
+                        closure(nil, error)
+                    }
+                })
+            })
+        } else {
+            self.client!.address.update(id: addressId.description, data: params, closure: { (address, error) in
+                closure(address, error)
+            })
         }
     }
 }

@@ -9,26 +9,26 @@
 import UIKit
 
 public class CompaniesSM: Entity, Decodable {
-    var data : [CompaniesAttributes]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data : [CompaniesAttributes]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
 }
 
 public struct CompaniesAttributes: Decodable {
-    var attributes : CompaniesModel?
-    var type : String?
-    var id: String?
+    public var attributes : CompaniesModel?
+    public var type : String?
+    public var id: String?
 }
 
 public struct CompaniesModel: Decodable  {
-    var city : String?
-    var companyName : String?
-    var country : String?
-    var houseNumber : String?
-    var id : String?
-    var kvkNumber : String?
-    var street : String?
-    var zipCode : String?
+    public var city : String?
+    public var companyName : String?
+    public var country : String?
+    public var houseNumber : String?
+    public var id : String?
+    public var kvkNumber : String?
+    public var street : String?
+    public var zipCode : String?
 }

@@ -9,38 +9,38 @@
 import UIKit
 
 public class MessagesSM: Entity, Decodable {
-    var data : [MessagesAttributes]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data : [MessagesAttributes]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
 }
 
 public struct MessagesAttributes: Decodable {
-    var attributes : MessagesModel?
-    var type : String?
-    var id: String?
+    public var attributes : MessagesModel?
+    public var type : String?
+    public var id: String?
 }
 
 public struct MessagesModel: Decodable  {
-    var accepted : String?
-    var acceptedDate : String?
-    var address : String?
-    var date : String?
-    var email : String?
-    var id : String?
-    var message : String?
-    var name : String?
-    var number1 : String?
-    var postcode : String?
-    var recipientId : String?
-    var senderId : String?
-    var subject : String?
-    var surname : String?
-    var telephone : String?
-    var text1 : String?
-    var text2 : String?
-    var text3 : String?
-    var viewId : String?
+    public var accepted : String?
+    public var acceptedDate : String?
+    public var address : String?
+    public var date : String?
+    public var email : String?
+    public var id : String?
+    public var message : String?
+    public var name : String?
+    public var number1 : String?
+    public var postcode : String?
+    public var recipientId : String?
+    public var senderId : String?
+    public var subject : String?
+    public var surname : String?
+    public var telephone : String?
+    public var text1 : String?
+    public var text2 : String?
+    public var text3 : String?
+    public var viewId : String?
 }
 

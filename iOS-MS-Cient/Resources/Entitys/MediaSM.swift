@@ -9,23 +9,24 @@
 import UIKit
 
 public class MediaSM: Entity, Decodable {
-    var data : [MediaData]?
-    var error : Error?
-    var meta: Meta?
+    public var data : [MediaData]?
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct MediaData: Decodable {
-    var attributes  : MediaAttributes?
-    var id : String?
-    var type : String?
+    public var attributes  : MediaAttributes?
+    public var id : String?
+    public var type : String?
 }
 
 public struct MediaAttributes: Decodable  {
-    var objectId : String?
-    var title : String?
-    var imageName : String?
-    var orderNumber : String?
-    var imageTypeId : String?
-    var visible : String?
-    var path : String?
+    public var objectId : String?
+    public var title : String?
+    public var imageName : String?
+    public var orderNumber : String?
+    public var imageTypeId : String?
+    public var visible : String?
+    public var path : String?
 }

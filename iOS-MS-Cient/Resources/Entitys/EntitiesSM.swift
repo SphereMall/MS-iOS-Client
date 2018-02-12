@@ -9,24 +9,25 @@
 import UIKit
 
 public class EntitiesSM: Entity, Decodable {
-    var data : [EntitiesData]?
-    var error : Error?
-    var meta: Meta?
+    public var data : [EntitiesData]?
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct EntitiesData: Decodable {
-    var attributes : EntitiesAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : EntitiesAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct EntitiesAttribute: Decodable  {
-    var code : String?
-    var displayField : String?
-    var id : String?
-    var inRelationWithFactor : String?
-    var table : String?
-    var title : String?
-    var visible : String?
-    var `where` : String?
+    public var code : String?
+    public var displayField : String?
+    public var id : String?
+    public var inRelationWithFactor : String?
+    public var table : String?
+    public var title : String?
+    public var visible : String?
+    public var `where` : String?
 }

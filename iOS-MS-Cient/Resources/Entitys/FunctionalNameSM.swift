@@ -9,19 +9,20 @@
 import UIKit
 
 public class FunctionalNameSM: Entity, Decodable {
-    var data : [FunctionalNameData]?
-    var error : Error?
-    var meta: Meta?
+    public var data : [FunctionalNameData]?
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct FunctionalNameData: Decodable {
-    var attributes : FunctionalNameAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : FunctionalNameAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct FunctionalNameAttribute: Decodable {
-    var code : String?
-    var id : String?
-    var title : String?
+    public var code : String?
+    public var id : String?
+    public var title : String?
 }

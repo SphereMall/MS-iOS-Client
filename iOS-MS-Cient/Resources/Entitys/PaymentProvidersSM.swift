@@ -9,33 +9,34 @@
 import UIKit
 
 public class PaymentProvidersSM: Entity, Decodable {
-    var data : [PaymentProvidersData]?
-    var error : Error?
-    var meta : Meta?
+    public var data : [PaymentProvidersData]?
+    public var error : Error?
+    public var meta : Meta?
+    public var success : Bool?
 }
 
 public struct PaymentProvidersData: Decodable {
-    var attributes : PaymentProvidersAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : PaymentProvidersAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct PaymentProvidersAttribute: Decodable  {
-    var apiKey : String?
-    var autoReturnUrl : AutoReturnUrl?
-    var className : String?
-    var id : String?
-    var keyVersion : String?
-    var merchantId : MerchantId?
-    var msUrl : AutoReturnUrl?
-    var order : String?
-    var postUrl : PostUrl?
-    var returnUrl : String?
-    var secretKey : SecretKey?
-    var shaIn : String?
-    var shaOut : String?
-    var title : String?
-    var websiteId : String?
+    public var apiKey : String?
+    public var autoReturnUrl : AutoReturnUrl?
+    public var className : String?
+    public var id : String?
+    public var keyVersion : String?
+    public var merchantId : MerchantId?
+    public var msUrl : AutoReturnUrl?
+    public var order : String?
+    public var postUrl : PostUrl?
+    public var returnUrl : String?
+    public var secretKey : SecretKey?
+    public var shaIn : String?
+    public var shaOut : String?
+    public var title : String?
+    public var websiteId : String?
 }
 
 public struct PostUrl: Decodable  {
@@ -51,11 +52,11 @@ public struct MerchantId: Decodable  {
 }
 
 public struct AutoReturnUrl: Decodable  {
-    var action : Action?
-    var url : String?
+    public var action : Action?
+    public var url : String?
 }
 
 public struct Action: Decodable  {
-    var objectId : String?
-    var type : String?
+    public var objectId : String?
+    public var type : String?
 }

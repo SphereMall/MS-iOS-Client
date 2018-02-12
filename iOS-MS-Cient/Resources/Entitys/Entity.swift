@@ -9,14 +9,14 @@
 import UIKit
 
 public class Entity {
-    struct Error: Decodable {
+    public struct Error: Decodable {
         
     }
 }
 
 public struct Meta: Decodable {
-    var count: Int?
-    var limit: Int?
-    var offset: Int?
+    public var count: Int?
+    public var limit: Int?
+    public var offset: Int?
 }
 

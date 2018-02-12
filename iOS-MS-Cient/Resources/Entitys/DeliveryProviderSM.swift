@@ -9,28 +9,29 @@
 import UIKit
 
 public class DeliveryProviderSM: Entity, Decodable  {
-    var data : [DeliveryProviderData]?
-    var error : Error?
-    var meta: Meta?
+    public var data : [DeliveryProviderData]?
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct DeliveryProviderData: Decodable {
-    var attributes : DeliveryProviderAttribute!
-    var id : String!
-    var type : String!
+    public var attributes : DeliveryProviderAttribute!
+    public var id : String!
+    public var type : String!
 }
 
 public struct DeliveryProviderAttribute: Decodable {
-    var `class` : String?
-    var cost : String?
-    var deliveryDestinationId : String?
-    var freeDeliveryPrice : String?
-    var id : String?
-    var isDefault : String?
-    var isWinningPrize : String?
-    var maxPrice : String?
-    var minPrice : String?
-    var msUrl : String?
-    var name : String?
-    var visible : String?
+    public var `class` : String?
+    public var cost : String?
+    public var deliveryDestinationId : String?
+    public var freeDeliveryPrice : String?
+    public var id : String?
+    public var isDefault : String?
+    public var isWinningPrize : String?
+    public var maxPrice : String?
+    public var minPrice : String?
+    public var msUrl : String?
+    public var name : String?
+    public var visible : String?
 }

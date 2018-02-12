@@ -9,23 +9,23 @@
 import UIKit
 
 public class WishlistSM: Entity, Decodable {
-    var data: [WishlistAttributes]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data: [WishlistAttributes]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
 }
 
 public struct WishlistAttributes: Decodable {
-    var id: String?
-    var attributes: WishListItemSM?
-    var type: String?
+    public var id: String?
+    public var attributes: WishListItemSM?
+    public var type: String?
 }
 
 public class WishListItemSM: Decodable {
-    var id: String?
-    var userId: String?
-    var createDate: String?
-    var updateDate: String?
-    var products: [ProductsAttributes]?
+    public var id: String?
+    public var userId: String?
+    public var createDate: String?
+    public var updateDate: String?
+    public var products: [ProductsAttributes]?
 }

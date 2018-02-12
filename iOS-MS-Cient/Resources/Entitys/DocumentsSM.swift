@@ -9,23 +9,24 @@
 import UIKit
 
 public class DocumentsSM: Entity, Decodable {
-    var data: [DocumentData]?
-    var error: Error?
-    var meta: Meta?
+    public var data: [DocumentData]?
+    public var error: Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct DocumentData: Decodable {
-    var documentAttributes: DocumentModel?
-    var id: String?
-    var type: String?
+    public var documentAttributes: DocumentModel?
+    public var id: String?
+    public var type: String?
 }
 
 public struct DocumentModel: Decodable  {
-    var createDate: String?
-    var functionalNameId: String?
-    var id: String?
-    var lastUpdate: String?
-    var title: String?
-    var urlCode: String?
-    var visible: String?
+    public var createDate: String?
+    public var functionalNameId: String?
+    public var id: String?
+    public var lastUpdate: String?
+    public var title: String?
+    public var urlCode: String?
+    public var visible: String?
 }

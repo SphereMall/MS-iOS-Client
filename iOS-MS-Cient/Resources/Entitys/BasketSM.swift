@@ -9,48 +9,48 @@
 import UIKit
 
 public class BasketSM: Entity, Decodable {
-    var data: [BasketData]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data: [BasketData]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
 }
 
 public struct BasketData: Decodable {
-    var id : String?
-    var attributes : BasketAttributes?
-    var type : String?
+    public var id : String?
+    public var attributes : BasketAttributes?
+    public var type : String?
 }
 
 public class BasketAttributes: Decodable {
-    var id: String?
-    var orderId: String?
-    var userId: String?
-    var statusId: String?
-    var paymentStatusId: String?
-    var paymentId: String?
-    var itemsAmount: String?
-    var deliveryProviderId: String?
-    var deliveryCost: String?
-    var subTotalVatPrice: String?
-    var totalVatPrice: String?
-    var discountPrice: String?
-    var totalDiscountPrice: String?
-    var subTotalPrice: String?
-    var totalPrice: String?
-    var paymentMethodId: String?
-    var createDate: String?
-    var updateDate: String?
-    var shippingAddressId: String?
-    var billingAddressId: String?
-    var deliveryTime: String?
-    var latitude: String?
-    var longitude: String?
-    var deliveryStatusId: String?
-    var currencyId: String?
-    var additionalInfo: String?
-    var orderComment: String?
-    var coupon: String?
-    var totalPriceWithoutDelivery: String?
-    var items: [OrderItem]?
+    public var id: String?
+    public var orderId: String?
+    public var userId: String?
+    public var statusId: String?
+    public var paymentStatusId: String?
+    public var paymentId: String?
+    public var itemsAmount: String?
+    public var deliveryProviderId: String?
+    public var deliveryCost: String?
+    public var subTotalVatPrice: String?
+    public var totalVatPrice: String?
+    public var discountPrice: String?
+    public var totalDiscountPrice: String?
+    public var subTotalPrice: String?
+    public var totalPrice: String?
+    public var paymentMethodId: String?
+    public var createDate: String?
+    public var updateDate: String?
+    public var shippingAddressId: String?
+    public var billingAddressId: String?
+    public var deliveryTime: String?
+    public var latitude: String?
+    public var longitude: String?
+    public var deliveryStatusId: String?
+    public var currencyId: String?
+    public var additionalInfo: String?
+    public var orderComment: String?
+    public var coupon: String?
+    public var totalPriceWithoutDelivery: String?
+    public var items: [OrderItem]?
 }

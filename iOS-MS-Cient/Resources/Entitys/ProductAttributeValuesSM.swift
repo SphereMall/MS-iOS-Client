@@ -9,23 +9,24 @@
 import UIKit
 
 public class ProductAttributeValuesSM: Entity, Decodable {
-    var data : [ProductAttributeValuesData]?
-    var error : Error?
-    var meta : Meta?
+    public var data : [ProductAttributeValuesData]?
+    public var error : Error?
+    public var meta : Meta?
+    public var success : Bool?
 }
 
 public struct ProductAttributeValuesData: Decodable {
-    var attributes : ProductAttributeValuesAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : ProductAttributeValuesAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct ProductAttributeValuesAttribute: Decodable {
-    var attributeId : String?
-    var attributeValueId : String?
-    var id : String?
-    var lastUpdate : String?
-    var orderNumber : String?
-    var productId : String?
-    var value : String?
+    public var attributeId : String?
+    public var attributeValueId : String?
+    public var id : String?
+    public var lastUpdate : String?
+    public var orderNumber : String?
+    public var productId : String?
+    public var value : String?
 }

@@ -9,25 +9,26 @@
 import UIKit
 
 public class PaymentMethodsSM: Entity, Decodable {
-    var data : [PaymentData]?
-    var error : Error?
-    var meta : Meta?
+    public var data : [PaymentData]?
+    public var error : Error?
+    public var meta : Meta?
+    public var success : Bool?
 }
 
 public struct PaymentAttributes: Decodable  {
-    var active : String?
-    var code : String?
-    var icon : String?
-    var id : String?
-    var orderNumber : String?
-    var providerId : String?
-    var shortDescription : String?
-    var title : String?
-    var websiteId : String?
+    public var active : String?
+    public var code : String?
+    public var icon : String?
+    public var id : String?
+    public var orderNumber : String?
+    public var providerId : String?
+    public var shortDescription : String?
+    public var title : String?
+    public var websiteId : String?
 }
 
 public struct PaymentData: Decodable {
-    var attributes : PaymentAttributes?
-    var id : String?
-    var type : String?
+    public var attributes : PaymentAttributes?
+    public var id : String?
+    public var type : String?
 }

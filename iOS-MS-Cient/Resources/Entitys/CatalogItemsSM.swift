@@ -9,34 +9,35 @@
 import UIKit
 
 public class CatalogItemsSM: Entity, Decodable {
-    var data : [CatalogItemsData]!
-    var error : Error?
-    var meta: Meta?
+    public var data : [CatalogItemsData]!
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct CatalogItemsData: Decodable {
-    var attributes : CatalogItemsAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : CatalogItemsAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct CatalogItemsAttribute: Decodable {
-    var clickable : String?
-    var filterSettings : String?
-    var hideItemSettings : String?
-    var id : String?
-    var langId : String?
-    var lastUpdate : String?
-    var moduleId : String?
-    var noindex : String?
-    var openLinkInNewWindow : String?
-    var orderNumber : String?
-    var parentId : String?
-    var seoDescription : String?
-    var seoKeywords : String?
-    var seoTitle : String?
-    var treeItemName : String?
-    var urlCode : String?
-    var visible : String?
-    var websiteId : String?
+    public var clickable : String?
+    public var filterSettings : String?
+    public var hideItemSettings : String?
+    public var id : String?
+    public var langId : String?
+    public var lastUpdate : String?
+    public var moduleId : String?
+    public var noindex : String?
+    public var openLinkInNewWindow : String?
+    public var orderNumber : String?
+    public var parentId : String?
+    public var seoDescription : String?
+    public var seoKeywords : String?
+    public var seoTitle : String?
+    public var treeItemName : String?
+    public var urlCode : String?
+    public var visible : String?
+    public var websiteId : String?
 }

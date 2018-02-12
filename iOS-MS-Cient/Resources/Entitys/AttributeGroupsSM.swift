@@ -9,21 +9,22 @@
 import UIKit
 
 public class AttributeGroupsSM: Entity, Decodable {
-    var data : [AttributeGroupsData]!
-    var error : Error?
-    var meta: Meta?
+    public var data : [AttributeGroupsData]!
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct AttributeGroupsData: Decodable {
-    var attributes : AttributeSM?
-    var id : String?
-    var type : String?
+    public var attributes : AttributeSM?
+    public var id : String?
+    public var type : String?
 }
 
 public struct AttributeSM: Decodable {
-    var id : String?
-    var lastUpdate : String?
-    var orderNumber : String?
-    var title : String?
-    var visible : String?
+    public var id : String?
+    public var lastUpdate : String?
+    public var orderNumber : String?
+    public var title : String?
+    public var visible : String?
 }

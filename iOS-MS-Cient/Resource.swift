@@ -41,18 +41,18 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         self.heandler = SMRequest(client: client)
     }
     
-    @discardableResult public func limit(limit: Int = 10, offset: Int = 0) -> Resource {
+    @discardableResult public func limit(limit: Int = 10, offset: Int = 0) -> Self {
         self.limit = limit
         self.offset = offset
         return self
     }
     
-    @discardableResult public func limit(limit: Int = 10) -> Resource {
+    @discardableResult public func limit(limit: Int = 10) -> Self {
         self.limit = limit
         return self
     }
     
-    @discardableResult public func offset(offset: Int = 0) -> Resource {
+    @discardableResult public func offset(offset: Int = 0) -> Self {
         self.offset = offset
         return self
     }
@@ -65,7 +65,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self.offset
     }
     
-    @discardableResult public func ids(ids: [String]) -> Resource {
+    @discardableResult public func ids(ids: [String]) -> Self {
         self.ids = ids
         return self
     }
@@ -74,12 +74,12 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self.ids
     }
     
-    @discardableResult public func filter(predicate:Predicate) -> Resource {
+    @discardableResult public func filter(predicate:Predicate) -> Self {
         self.filter.setFilters(filters: [predicate])
         return self
     }
     
-    @discardableResult public func filters(predicates:[Predicate]) -> Resource {
+    @discardableResult public func filters(predicates:[Predicate]) -> Self {
         for predicate in predicates {
             self.filter.setFilters(filters: [predicate])
         }
@@ -87,19 +87,19 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self
     }
     
-    @discardableResult public func `in`(predicate: InPredicate) -> Resource {
+    @discardableResult public func `in`(predicate: InPredicate) -> Self {
         self.in.addPredicate(predicate: predicate)
         return self
     }
     
-    @discardableResult public func ins(predicates: [InPredicate]) -> Resource {
+    @discardableResult public func ins(predicates: [InPredicate]) -> Self {
         for predicate in predicates {
             self.in.addPredicate(predicate: predicate)
         }
         return self
     }
     
-    @discardableResult public func sort(field: String) -> Resource {
+    @discardableResult public func sort(field: String) -> Self {
         self.sort.append(field)
         return self
     }
@@ -108,12 +108,12 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self.sort
     }
     
-    @discardableResult public func withMeta() -> Resource {
+    @discardableResult public func withMeta() -> Self {
         self.meta = true
         return self
     }
     
-    @discardableResult public func fields(fields: [String]) -> Resource  {
+    @discardableResult public func fields(fields: [String]) -> Self  {
         for field in fields {
             self.fields.append(field)
         }

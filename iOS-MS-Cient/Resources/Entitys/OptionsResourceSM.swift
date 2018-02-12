@@ -9,22 +9,23 @@
 import UIKit
 
 public class OptionsResourceSM: Entity, Decodable {
-    var data : [OptionsResourceData]?
-    var error : Error?
-    var meta: Meta?
+    public var data : [OptionsResourceData]?
+    public var error : Error?
+    public var meta: Meta?
+    public var success : Bool?
 }
 
 public struct OptionsResourceData: Decodable {
-    var attributes : OptionsResourceAttribute?
-    var id : String?
-    var type : String?
+    public var attributes : OptionsResourceAttribute?
+    public var id : String?
+    public var type : String?
 }
 
 public struct OptionsResourceAttribute: Decodable {
-    var deprecatedCode : String?
-    var descriptionField : String?
-    var id : String?
-    var orderNumber : String?
-    var title : String?
-    var visible : String?
+    public var deprecatedCode : String?
+    public var descriptionField : String?
+    public var id : String?
+    public var orderNumber : String?
+    public var title : String?
+    public var visible : String?
 }

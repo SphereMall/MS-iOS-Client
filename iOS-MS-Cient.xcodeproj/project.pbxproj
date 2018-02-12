@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34A8A9917122DFE735AAA1F0 /* Pods_iOS_MS_CientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7FB6D50B3A46E57EF180AB /* Pods_iOS_MS_CientTests.framework */; };
 		A3257A966DB25B85EA5EEB5D /* Pods_iOS_MS_Cient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5740B0FFF2FE275E2AFC71 /* Pods_iOS_MS_Cient.framework */; };
+		E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9118DCB2031948C00A7344D /* EmptySM.swift */; };
+		E9118DCD2031948C00A7344D /* EmptySM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9118DCB2031948C00A7344D /* EmptySM.swift */; };
 		E9619DCE20284B3D00825F99 /* iOS_MS_Cient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9619DC420284B3C00825F99 /* iOS_MS_Cient.framework */; };
 		E9619DD520284B3D00825F99 /* iOS_MS_Cient.h in Headers */ = {isa = PBXBuildFile; fileRef = E9619DC720284B3C00825F99 /* iOS_MS_Cient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9619DE320284C2400825F99 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DDE20284C2300825F99 /* Resource.swift */; };
@@ -270,6 +272,7 @@
 		B2B684C264426684E2BCC33A /* Pods-iOS-MS-CientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-MS-CientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB5740B0FFF2FE275E2AFC71 /* Pods_iOS_MS_Cient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MS_Cient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7FB6D50B3A46E57EF180AB /* Pods_iOS_MS_CientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MS_CientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9118DCB2031948C00A7344D /* EmptySM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySM.swift; sourceTree = "<group>"; };
 		E9619DC420284B3C00825F99 /* iOS_MS_Cient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_MS_Cient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9619DC720284B3C00825F99 /* iOS_MS_Cient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_MS_Cient.h; sourceTree = "<group>"; };
 		E9619DC820284B3C00825F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -723,6 +726,7 @@
 				E9619E9E20284D9B00825F99 /* OrdersSM.swift */,
 				E9619E8F20284D9900825F99 /* OrdersHistorySM.swift */,
 				E9619E9F20284D9B00825F99 /* BasketSM.swift */,
+				E9118DCB2031948C00A7344D /* EmptySM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1048,6 +1052,7 @@
 				E9619ED620284D9B00825F99 /* AddressSM.swift in Sources */,
 				E9619EA620284D9B00825F99 /* MediaSM.swift in Sources */,
 				E9619DF420284C6A00825F99 /* Keychain.swift in Sources */,
+				E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */,
 				E9619EBE20284D9B00825F99 /* CompaniesSM.swift in Sources */,
 				E9619DFB20284C8000825F99 /* BasketPredicate.swift in Sources */,
 				E9619F0120284DD400825F99 /* FunctionalNameFilter.swift in Sources */,
@@ -1207,6 +1212,7 @@
 				E9619EC720284D9B00825F99 /* UserSM.swift in Sources */,
 				E9619EE120284D9B00825F99 /* OrdersSM.swift in Sources */,
 				E9619E2820284D2B00825F99 /* FunctionalNamesResource.swift in Sources */,
+				E9118DCD2031948C00A7344D /* EmptySM.swift in Sources */,
 				E9619F5720284F6A00825F99 /* SMCountMaker.swift in Sources */,
 				E9619F5420284F6300825F99 /* Resource.swift in Sources */,
 			);

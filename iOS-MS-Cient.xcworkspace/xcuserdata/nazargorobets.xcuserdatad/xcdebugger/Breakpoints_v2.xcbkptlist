@@ -9,198 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS-MS-CientTests/OrdersResourceTests.swift"
-            timestampString = "539531562.857304"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "testByOrderId()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testByOrderId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.084972"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "200">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testByOrderId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.087695"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS-MS-CientTests/OrdersResourceTests.swift"
-            timestampString = "539531562.85763"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "testByOrderId()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iOS_MS_CientTests.OrdersResourceTests.testByOrderId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.090783"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "159">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testByOrderId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.0929869"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "23">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS-MS-CientTests/OrdersResourceTests.swift"
-            timestampString = "539531562.8577"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "testGetby()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testGetby() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.0962141"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "200">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testGetby() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.09929"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iOS-MS-CientTests/OrdersResourceTests.swift"
-            timestampString = "539531562.857761"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "testOrdersAll()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testOrdersAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.1024899"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.OrdersSM&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in iOS_MS_CientTests.OrdersResourceTests.testOrdersAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/OrdersResourceTests.swift"
-                  timestampString = "539605257.1050431"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "iOS-MS-Cient/Shop/Basket.swift"
             timestampString = "539613046.761017"
             startingColumnNumber = "9223372036854775807"
@@ -218,12 +26,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Shop/Basket.swift"
-                  timestampString = "539605257.109584"
+                  timestampString = "540122936.174365"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "159">
+                  offsetFromSymbolStart = "196">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -233,12 +41,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Shop/Basket.swift"
-                  timestampString = "539605257.126431"
+                  timestampString = "540122936.189895"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "159">
+                  offsetFromSymbolStart = "196">
                </Location>
             </Locations>
          </BreakpointContent>

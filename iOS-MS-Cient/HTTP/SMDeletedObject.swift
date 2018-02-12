@@ -9,5 +9,5 @@
 import UIKit
 
 public class SMDeletedObject: Entity, Decodable {
-    var data : [Bool]?
+    public var data : [Bool]?
 }

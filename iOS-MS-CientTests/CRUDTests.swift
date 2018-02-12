@@ -55,6 +55,15 @@ class CRUDTests: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    func testFullAll() {
+        let exp = self.expectation(description: "testFullAll")
+        client.products.limit(limit: 10, offset: 10).fullAll { (items, error) in
+            print(items ?? error ?? "wtf")
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 10)
+    }
+    
     func testCount() {
         let exp = self.expectation(description: "testCount")
         client.products.count { (count, error) in

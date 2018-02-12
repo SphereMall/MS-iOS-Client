@@ -9,27 +9,27 @@
 import UIKit
 
 public class AdminSM: Entity, Decodable {
-    var data : [UserData]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data : [UserData]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
 }
 
 public struct UserData: Decodable {
-    var expiries : Int?
-    var isGuest : Bool?
-    var model : UserModel?
-    var token : String?
-    var type : String?
+    public var expiries : Int?
+    public var isGuest : Bool?
+    public var model : UserModel?
+    public var token : String?
+    public var type : String?
 }
 
 public class UserSM: Entity, Decodable {
-    var data : [UserAttributes]?
-    var error : Error?
-    var success : Bool?
-    var ver : Int?
-    var meta: Meta?
+    public var data : [UserAttributes]?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
     
     init(attributes: [UserAttributes]?, error: Error?, meta: Meta?) {
         self.data = attributes
@@ -39,9 +39,9 @@ public class UserSM: Entity, Decodable {
 }
 
 public struct UserAttributes: Decodable {
-    var attributes : UserModel?
-    var type : String?
-    var id: String?
+    public var attributes : UserModel?
+    public var type : String?
+    public var id: String?
     
     init(attributes: UserModel?, type: String?, id: String?) {
         self.attributes = attributes
@@ -51,46 +51,46 @@ public struct UserAttributes: Decodable {
 }
 
 public struct UserModel: Decodable  {
-    var avatar : String?
-    var email : String?
-    var isSubscriber : String?
-    var endTime : String?
-    var guid : String?
-    var id : String?
-    var isAccess : String?
-    var lastLogin : String?
-    var lifetime : String?
-    var name : String?
-    var password : String?
-    var registerDate : String?
-    var rights : String?
-    var token : String?
-    var username : String?
-    var active: String?
-    var basketId: String?
-    var birthDate: String?
-    var defaultAddressId: String?
-    var gender: String?
-    var initials: String?
-    var ip: String?
-    var isInvited: String?
-    var langId: String?
-    var lastUpdate: String?
-    var lastVisitDate: String?
-    var loginName: String?
-    var number1: String?
-    var number2: String?
-    var number3: String?
-    var patronymic: String?
-    var phoneNumber: String?
+    public var avatar : String?
+    public var email : String?
+    public var isSubscriber : String?
+    public var endTime : String?
+    public var guid : String?
+    public var id : String?
+    public var isAccess : String?
+    public var lastLogin : String?
+    public var lifetime : String?
+    public var name : String?
+    public var password : String?
+    public var registerDate : String?
+    public var rights : String?
+    public var token : String?
+    public var username : String?
+    public var active: String?
+    public var basketId: String?
+    public var birthDate: String?
+    public var defaultAddressId: String?
+    public var gender: String?
+    public var initials: String?
+    public var ip: String?
+    public var isInvited: String?
+    public var langId: String?
+    public var lastUpdate: String?
+    public var lastVisitDate: String?
+    public var loginName: String?
+    public var number1: String?
+    public var number2: String?
+    public var number3: String?
+    public var patronymic: String?
+    public var phoneNumber: String?
 //    var registrationDate: String?
-    var subscribeDate: String?
-    var surname: String?
-    var text1: String?
-    var text2: String?
-    var text3: String?
-    var text4: String?
-    var text5: String?
-    var userType: String?
+    public var subscribeDate: String?
+    public var surname: String?
+    public var text1: String?
+    public var text2: String?
+    public var text3: String?
+    public var text4: String?
+    public var text5: String?
+    public var userType: String?
 }
 
