@@ -54,4 +54,14 @@ class UserResourceTests: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
+    
+    func testAddAddress() {
+        let exp = self.expectation(description: "testUnSubscribe")
+        let params = ["countryName" : "Kyiv"]
+        client.user.setAddress(addressId: "31", userId: "5", params: params) { (address, error) in
+           exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
 }

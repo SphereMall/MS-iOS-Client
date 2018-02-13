@@ -25,19 +25,15 @@ public class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM>
         }
     }
     
-    public override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {
-        fatalError("Method get() can not be use with correlations")
-    }
+    @available(*, unavailable, message: "Method get() can not be use with correlations")
+    public override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {}
     
-    public override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
-        fatalError("Method create() can not be use with correlations")
-    }
+    @available(*, unavailable, message: "Method create() can not be use with correlations")
+    public override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {}
     
-    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {
-        fatalError("Method update() can not be use with correlations")
-    }
+    @available(*, unavailable, message: "Method update() can not be use with correlations")
+    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {}
     
-    public override func delete(id: String, closure: @escaping SMResponseDelete) {
-        fatalError("Method delete() can not be use with correlations")
-    }
+    @available(*, unavailable, message: "Method delete() can not be use with correlations")
+    public override func delete(id: String, closure: @escaping SMResponseDelete) {}
 }

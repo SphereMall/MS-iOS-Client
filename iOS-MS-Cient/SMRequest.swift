@@ -129,7 +129,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 200 && accessToken == nil {
 
             let url = request.request!.url!.absoluteString
-            if url.hasPrefix(client.getGatewayUrl() + "admin/token") {
+            if url.hasPrefix(client.getGatewayUrl() + "oauth/token") {
                 completion(false, 0.0)
                 return
             }

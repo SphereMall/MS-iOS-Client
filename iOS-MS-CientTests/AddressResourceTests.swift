@@ -36,5 +36,15 @@ class AddressResourceTests: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
-
+    
+    func testAddressByPredicate() {
+        
+        let exp = self.expectation(description: "testAddressAll")
+        let predicate = Predicate(field: "userId", op: .equal, value: "5")
+        client.address.filter(predicate: predicate).first { (address, error) in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
 }

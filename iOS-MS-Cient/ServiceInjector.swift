@@ -153,4 +153,16 @@ public class ServiceInjector: NSObject {
         return CurrenciesResource<CurrenciSM>(client: client!)
     } ()
     
+    public lazy var correlations: CorrelationsResource! = {
+        return CorrelationsResource<ProductsSM>(client: client!)
+    } ()
+    
+    public lazy var grid: GridResource! = {
+        return GridResource<ProductsSM>(client: client!)
+    } ()
+    
+    public lazy var auth: AuthResource! = {
+        return AuthResource<UserSM>(client: client!)
+    } ()
+
 }

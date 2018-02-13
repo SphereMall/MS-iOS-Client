@@ -97,7 +97,6 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         var parameters: [String : String] = params
         
         if addressId == "0" {
-            _ = parameters.updateValue(userId.description, forKey: "userId")
             client!.address.create(data: params, closure: { (address, error) in
                 guard let id = address?.data?.first?.id else {
                     closure(address, error)
@@ -114,7 +113,8 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
                 })
             })
         } else {
-            self.client!.address.update(id: addressId.description, data: params, closure: { (address, error) in
+            _ = parameters.updateValue(userId.description, forKey: "userId")
+            self.client!.address.update(id: addressId.description, data: parameters, closure: { (address, error) in
                 closure(address, error)
             })
         }
