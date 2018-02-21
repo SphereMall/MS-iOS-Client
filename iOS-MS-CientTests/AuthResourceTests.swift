@@ -31,10 +31,7 @@ class AuthResourceTests: XCTestCase {
             XCTAssertNil(error)
             XCTAssertNotNil(item)
             XCTAssertNotNil(item?.data?.first?.model?.id)
-            self.client.address.get(id: (item?.data?.first?.model?.defaultAddressId!)!, closure: { (address, error) in
-                 exp.fulfill()
-            })
-           
+            exp.fulfill()
         }
         
         wait(for: [exp], timeout: 10)

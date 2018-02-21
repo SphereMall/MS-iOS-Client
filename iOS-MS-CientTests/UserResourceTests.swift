@@ -55,6 +55,17 @@ class UserResourceTests: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    func testAddPushesToken() {
+        let exp = self.expectation(description: "testUnSubscribe")
+        client.user.uploadPushesToken(token: "faskjfhuewqibcryweuitvbrycoiuygcbs", userId: "2") { (successed, error) in
+            XCTAssertNotNil(successed)
+            XCTAssertTrue(successed ?? false)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
     func testAddAddress() {
         let exp = self.expectation(description: "testUnSubscribe")
         let params = ["countryName" : "Kyiv"]

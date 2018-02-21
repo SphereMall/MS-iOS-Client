@@ -92,6 +92,16 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
+    public func uploadPushesToken(token: String, userId: String, closure: @escaping (Bool?, NSError?) -> Swift.Void ) {
+        
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/devices/\(userId)"
+        let data = ["userToken" : token]
+        
+        self.heandler.request(url: url, method: .put, parameters: data) { (item: EmptySM?, error: NSError?) in
+            closure(item?.success, error)
+        }
+    }
+    
     public func setAddress(addressId: String = "0", userId: String, params: [String: String], closure: @escaping (AddressSM?, NSError?) -> Swift.Void) {
         
         var parameters: [String : String] = params
