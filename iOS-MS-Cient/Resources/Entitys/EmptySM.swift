@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmptySM: Entity, Decodable {
+public class EmptySM: Entity, Decodable {
     public var error : Error?
     public var meta: Meta?
     public var success : Bool?

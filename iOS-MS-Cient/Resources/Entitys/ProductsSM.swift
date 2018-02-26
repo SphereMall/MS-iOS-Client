@@ -9,6 +9,7 @@
 import UIKit
 
 public class ProductsSM: Entity, Decodable {
+    
     public var data: [ProductsData]?
     public var error : Error?
     public var ver : Int?

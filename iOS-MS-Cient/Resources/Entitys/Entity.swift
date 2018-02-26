@@ -19,4 +19,3 @@ public struct Meta: Decodable {
     public var limit: Int?
     public var offset: Int?
 }
-
