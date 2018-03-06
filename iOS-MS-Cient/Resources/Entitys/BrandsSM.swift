@@ -21,7 +21,7 @@ public struct BrandsData: Decodable {
     public var type : String?
 }
 
-public struct AttributeBrand: Decodable {
+public struct AttributeBrand: Decodable, Gridable {
     public var id : String?
     public var image : String?
     public var logo : String?

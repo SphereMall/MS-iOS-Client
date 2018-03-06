@@ -22,6 +22,12 @@ class GridResourceTests: XCTestCase {
     func testAll() {
         let exp = self.expectation(description: "testAll")
         client.grid.all { (items, error) in
+            
+            guard let document = items?.data?.first as? DocumentModel else {
+                 exp.fulfill()
+                return
+            }
+            
             exp.fulfill()
         }
         

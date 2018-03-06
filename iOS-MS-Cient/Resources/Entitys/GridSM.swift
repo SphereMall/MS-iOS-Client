@@ -8,15 +8,15 @@
 
 import UIKit
 
-public enum GridDataAttribute {
-    case product(ProductsAttributes?, type: String)
-    case document(DocumentModel?)
-    case brand(AttributeBrand?)
-    case notRecognized
+public protocol Gridable {
+    
 }
 
-extension GridDataAttribute: Decodable {
+public class GridItem: Decodable {
     
+    var type: String!
+    var item: Gridable?
+
     public enum CodingKeys: String, CodingKey {
         case notRecognized, document, product, brand
     }
@@ -26,34 +26,36 @@ extension GridDataAttribute: Decodable {
         case type
     }
     
-    public init(from decoder: Decoder) throws {
-        
+    public convenience required init(from decoder: Decoder) throws {
+        self.init()
         let container = try decoder.container(keyedBy: CodingKeyAttribute.self)
         
         let containerType = try container.decodeIfPresent(String.self, forKey: .type)
         guard let type = containerType else {
-            self = .notRecognized
+            self.type = "notRecognized"
             return
         }
+        
+        self.type = type
         
         switch type {
         case "documents":
             let doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes)
-            self = .document(doc)
+            self.item = doc
         case "products":
             let prod = try container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes)
-            self = .product(prod, type: type)
+            self.item = prod
         case "brands":
             let brand = try container.decodeIfPresent(AttributeBrand.self, forKey: .attributes)
-            self = .brand(brand)
+            self.item = brand
         default:
-            self = .notRecognized
+            self.type = "notRecognized"
         }
     }
 }
 
 public class GridSM: Entity, Decodable {
-    public var data : [GridDataAttribute]?
+    public var data : [GridItem]?
     public var error : Error?
     public var meta: Meta?
     public var success : Bool?

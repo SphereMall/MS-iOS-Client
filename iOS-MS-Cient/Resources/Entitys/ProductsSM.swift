@@ -23,7 +23,7 @@ public struct ProductsData: Decodable {
     public var type : String?
 }
 
-public struct ProductsAttributes: Decodable  {
+public struct ProductsAttributes: Decodable, Gridable {
     public var articleNumber : String?
     public var authorizationGroupId : String?
     public var brandId : String?
@@ -56,7 +56,7 @@ public struct ProductsAttributes: Decodable  {
     public var images: [ProductImages]?
 }
 
-public struct ProductImages: Decodable {
+public struct ProductImages: Decodable, Gridable {
     public var id : String?
     public var imageName : String?
     public var path : String?

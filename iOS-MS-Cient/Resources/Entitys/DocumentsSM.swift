@@ -21,7 +21,7 @@ public struct DocumentData: Decodable {
     public var type: String?
 }
 
-public struct DocumentModel: Decodable  {
+public struct DocumentModel: Decodable, Gridable {
     public var createDate: String?
     public var functionalNameId: String?
     public var id: String?
