@@ -80,25 +80,25 @@ public struct OrderItem: Decodable {
 }
 
 public struct OrderImages: Decodable {
-    var id : String?
-    var objectId : String?
-    var title : String?
-    var imageName : String?
-    var path : String?
-    var orderNumber : String?
-    var imageTypeId : String?
-    var visible : String?
+    public var id : String?
+    public var objectId : String?
+    public var title : String?
+    public var imageName : String?
+    public var path : String?
+    public var orderNumber : String?
+    public var imageTypeId : String?
+    public var visible : String?
 }
 
 public struct PaymentMethod: Decodable {
-    var id : String?
-    var websiteId : String?
-    var providerId : String?
-    var title : String?
-    var code : String?
-    var shortDescription : String?
-    var icon : String?
-    var orderNumber : String?
-    var active : String?
+    public var id : String?
+    public var websiteId : String?
+    public var providerId : String?
+    public var title : String?
+    public var code : String?
+    public var shortDescription : String?
+    public var icon : String?
+    public var orderNumber : String?
+    public var active : String?
 }
 

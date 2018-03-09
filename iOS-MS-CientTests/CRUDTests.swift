@@ -95,14 +95,20 @@ class CRUDTests: XCTestCase {
             print(product?.data ?? error ?? "wtf")
             XCTAssertNil(error)
             XCTAssertNotNil(product)
-            XCTAssertNotNil(product!.data)
-            XCTAssertNotNil(product!.data!.first!.id)
-            XCTAssertNotNil(product!.data!.first!.attributes)
-            XCTAssertEqual("BMW e46 M3", product!.data!.first!.attributes!.seoTitle)
-            XCTAssertEqual("60000", product!.data!.first!.attributes!.price)
-            XCTAssertEqual("full Description of car", product!.data!.first!.attributes!.fullDescription)
+            XCTAssertNotNil(product?.data)
+            XCTAssertNotNil(product?.data?.first?.id)
+            XCTAssertNotNil(product?.data?.first?.attributes)
+            XCTAssertEqual("BMW e46 M3", product?.data?.first?.attributes?.seoTitle)
+            XCTAssertEqual("60000", product?.data?.first?.attributes?.price)
+            XCTAssertEqual("full Description of car", product?.data?.first?.attributes?.fullDescription)
             
-            self.client.products.delete(id: product!.data!.first!.id!) { (isSuccess, error) in
+            guard let id = product?.data?.first?.id else {
+                XCTFail()
+                exp.fulfill()
+                return
+            }
+            
+            self.client.products.delete(id: id) { (isSuccess, error) in
                 XCTAssertNotNil(isSuccess)
                 XCTAssertNil(error)
                 XCTAssertTrue(isSuccess!)

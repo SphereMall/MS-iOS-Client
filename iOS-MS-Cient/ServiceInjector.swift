@@ -49,7 +49,7 @@ public class ServiceInjector: NSObject {
         return BasketResource<BasketSM>(client: client!)
     } ()
     
-    public lazy var wishListItems: WishListItemsResource! = {
+    public lazy var wishlist: WishListItemsResource! = {
         return WishListItemsResource<WishlistSM>(client: client!)
     } ()
     

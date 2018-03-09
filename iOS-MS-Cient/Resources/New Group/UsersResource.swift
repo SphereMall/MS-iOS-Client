@@ -62,36 +62,6 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func getWishList(userId: String, closure: @escaping (ProductsSM?, NSError?) -> Swift.Void) {
-        
-        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
-        let parameters = self.getQueryParams()
-        
-        self.heandler.request(url: url, method: .get, parameters: parameters) { (items, error) in
-            closure(items, error)
-        }
-    }
-    
-    public func addToWishList(userId: String, objectId: String, entity: String = "products", closure: @escaping (ProductsSM?, NSError?) -> Swift.Void) {
-        
-        let data : [String: String] = ["objectId": objectId, "entity" : entity]
-        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
-        
-        self.heandler.request(url: url, method: .post, parameters: data) { (item, error) in
-            closure(item, error)
-        }
-    }
-    
-    public func removeFromWishList(userId: String, objectId: String, entity: String = "products", closure: @escaping (Bool?, NSError?) -> Swift.Void) {
-        
-        let data : [String: String] = ["objectId": objectId, "entity" : entity]
-        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/wishlist/\(userId)"
-        
-        self.heandler.request(url: url, method: .delete, parameters: data) { (item: EmptySM?, error: NSError?) in
-            closure(item?.success, error)
-        }
-    }
-    
     public func uploadPushesToken(token: String, userId: String, closure: @escaping (Bool?, NSError?) -> Swift.Void ) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/devices/\(userId)"

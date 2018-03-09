@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectiveC
 
 public protocol Gridable {
     
@@ -15,8 +16,13 @@ public protocol Gridable {
 public class GridItem: Decodable {
     
     var type: String!
-    var item: Gridable?
+    var item: AnyObject?
+//    var AssociatedObjectHandle: AnyObject?
 
+    public class Item<T> {
+        var object : T?
+    }
+    
     public enum CodingKeys: String, CodingKey {
         case notRecognized, document, product, brand
     }
@@ -40,14 +46,14 @@ public class GridItem: Decodable {
         
         switch type {
         case "documents":
-            let doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes)
-            self.item = doc
+            var doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes)
+            self.item = doc as AnyObject
         case "products":
             let prod = try container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes)
-            self.item = prod
+            self.item = prod as AnyObject
         case "brands":
             let brand = try container.decodeIfPresent(AttributeBrand.self, forKey: .attributes)
-            self.item = brand
+            self.item = brand as AnyObject
         default:
             self.type = "notRecognized"
         }

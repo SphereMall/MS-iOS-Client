@@ -46,6 +46,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         
         manager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default , headers: modifiedheader)
             .validate(contentType: ["application/json"])
+            .validate()
             .responseJSON { response in
                 
                 switch response.result {
@@ -55,8 +56,10 @@ public class SMRequest: RequestAdapter, RequestRetrier {
                         let jsonObject = json["error"]
                         
                         if !jsonObject.isEmpty {
+                            
                             let message = json["error"]["message"].string ?? ""
                             var code = response.response!.statusCode
+
                             if code == 200 {
                                 code = json["error"]["debug"]["code"].int ?? response.response!.statusCode
                             }
@@ -73,7 +76,10 @@ public class SMRequest: RequestAdapter, RequestRetrier {
                         completionHandler(items, nil)
                     }
                 case .failure(let error):
-                    completionHandler(nil, error as NSError?)
+                    let afError = error as! AFError
+                    completionHandler(nil, NSError(domain: afError.errorDescription ?? "",
+                                                   code: afError.responseCode ?? 0,
+                                                   userInfo: nil))
                 }
         }
     }
@@ -126,7 +132,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
 
         lock.lock() ; defer { lock.unlock() }
 
-        if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 200 && accessToken == nil {
+        if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 403 && accessToken == nil {
 
             let url = request.request!.url!.absoluteString
             if url.hasPrefix(client.getGatewayUrl() + "oauth/token") {
