@@ -25,7 +25,7 @@ class BasketTests: XCTestCase {
     func testAddToBasket() {
         
         let exp = self.expectation(description: "testAddToBasket")
-        let predicate = BasketPredicate(id: "6329", amount: 10)
+        let predicate = BasketPredicate(id: "6351", amount: 10)
 
         basket.add(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)

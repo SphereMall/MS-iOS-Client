@@ -46,7 +46,7 @@ public class GridItem: Decodable {
         
         switch type {
         case "documents":
-            var doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes)
+            let doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes)
             self.item = doc as AnyObject
         case "products":
             let prod = try container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes)
