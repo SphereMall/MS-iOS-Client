@@ -71,7 +71,11 @@ public class SMRequest: RequestAdapter, RequestRetrier {
                         
                         let data = try! json.rawData()
                         let decoder = JSONDecoder()
-                        let items = try! decoder.decode(T.self , from: data)
+                        
+                        guard let items = try? decoder.decode(T.self , from: data) else {
+                            completionHandler(nil, NSError(domain: "Can't parse data for entity \(T.self)", code: 0, userInfo: nil))
+                            return
+                        }
                         
                         completionHandler(items, nil)
                     }

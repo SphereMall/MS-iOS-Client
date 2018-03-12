@@ -46,7 +46,7 @@ public class ServiceInjector: NSObject {
     } ()
     
     public lazy var basket: BasketResource! = {
-        return BasketResource<BasketSM>(client: client!)
+        return BasketResource<BasketSM>(client: client!, version: "v2")
     } ()
     
     public lazy var wishlist: WishListItemsResource! = {

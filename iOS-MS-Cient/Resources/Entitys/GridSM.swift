@@ -17,7 +17,6 @@ public class GridItem: Decodable {
     
     var type: String!
     var item: AnyObject?
-//    var AssociatedObjectHandle: AnyObject?
 
     public class Item<T> {
         var object : T?

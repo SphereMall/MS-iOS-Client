@@ -72,6 +72,7 @@ public class Basket: OrderFinalized {
             if order != nil {
                 self.setProperties(order: order!.data!.first!.attributes!)
             }
+            
             closure(order, error)
         }
     }

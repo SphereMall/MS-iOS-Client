@@ -38,7 +38,7 @@ class BasketTests: XCTestCase {
     
     func testBasketGet() {
         let exp = self.expectation(description: "testBasketGet")
-        basket.get(id: "568") { (basket, error) in
+        basket.get(id: "157") { (basket, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(basket?.data?.first?.attributes?.id)
             exp.fulfill()
