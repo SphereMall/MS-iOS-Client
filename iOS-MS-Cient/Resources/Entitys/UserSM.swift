@@ -24,6 +24,25 @@ public struct UserData: Decodable {
     public var type : String?
 }
 
+public class SlimUserSM: Entity, Decodable {
+    public var data : SlimUserAttributes?
+    public var error : Error?
+    public var success : Bool?
+    public var ver : Int?
+    public var meta: Meta?
+    
+    init(attributes: SlimUserAttributes?, error: Error?, meta: Meta?) {
+        self.data = attributes
+        self.error = error
+        self.meta = meta
+    }
+}
+
+public class SlimUserAttributes: Decodable {
+    public var type : String?
+    public var userId: String?
+}
+
 public class UserSM: Entity, Decodable {
     public var data : [UserAttributes]?
     public var error : Error?
@@ -93,4 +112,13 @@ public struct UserModel: Decodable  {
     public var text5: String?
     public var userType: String?
 }
+
+/*
+ 
+ data =     {
+ type = users;
+ userId = 1204;
+ };
+ 
+ */
 

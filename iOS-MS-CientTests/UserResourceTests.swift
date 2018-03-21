@@ -66,6 +66,16 @@ class UserResourceTests: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    func testGetByDeviceId() {
+        let exp = self.expectation(description: "testGetByDeviceId")
+        client.user.get(deviceId: UIDevice.current.identifierForVendor!.uuidString) { (user, error) in
+            XCTAssertNotNil(user)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
     func testAddAddress() {
         let exp = self.expectation(description: "testUnSubscribe")
         let params = ["countryName" : "Kyiv"]

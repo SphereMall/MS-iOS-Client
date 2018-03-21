@@ -21,9 +21,9 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
     }
     
     public func get(userId: String, limit: Int, offset: Int, closure: @escaping ([WishListObjectSM]?, NSError?) -> Swift.Void) {
-
+        
         let predicate = Predicate(field: "userId", op: .equal, value: userId)
-
+        
         self.filter(predicate: predicate).limit(limit: limit, offset: offset).all { (items: WishlistSM?, error: NSError?) in
             guard let wishlistData = items?.data else {
                 closure(nil, error)
@@ -37,7 +37,7 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
                 }
             }
             
-            self.client!.products.ids(ids: ids).limit(limit: limit, offset: offset).all(closure: { (products: ProductsSM?, error) in
+            self.client!.products.ids(ids: ids).limit(limit: limit, offset: offset).fullAll(closure: { (products: ProductsSM?, error) in
                 var items : [WishListObjectSM] = []
                 
                 guard let data = products?.data else {
@@ -62,7 +62,8 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
     public func add(userId: String, objectId: String, entity: String = "products", closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
         
         let predicate = Predicate(field: "code", op: .equal, value: entity)
-        client!.etities.filter(predicate: predicate).get(id: entity) { (entity, error) in
+        
+        client!.etities.filter(predicate: predicate).first { (entity, error) in
             
             if entity != nil {
                 guard let id = entity?.data?.first?.id else { return}

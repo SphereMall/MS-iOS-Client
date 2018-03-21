@@ -15,6 +15,7 @@ class BasketTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
         client = SMClient(gatewayUrl: BASKET_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
@@ -30,6 +31,7 @@ class BasketTests: XCTestCase {
         basket.add(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(basket?.data?.first?.attributes?.id)
+            
             exp.fulfill()
         }
 

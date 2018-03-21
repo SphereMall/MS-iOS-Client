@@ -14,7 +14,7 @@ class WishlistTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: "http://gateway-kaas.alpha.spheremall.net:8090/v1/",
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -51,14 +51,14 @@ class WishlistTests: XCTestCase {
         
         let exp = self.expectation(description: "testAddToWishList")
         
-        let predicate = Predicate(field: "id", op: .equal, value: "6457")
+        let predicate = Predicate(field: "id", op: .equal, value: "2")
         self.client.products.filter(predicate: predicate).first { (product, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(product?.data?.first?.id)
             guard let id = product?.data?.first?.id else { return }
-            self.client.wishlist.add(userId: "5", objectId: id, entity: "products") { (item, error) in
+            self.client.wishlist.add(userId: "1204", objectId: id, entity: "products") { (item, error) in
                 XCTAssertNil(error)
-                self.client.wishlist.remove(userId: "5", objectId: "6457", entity: "products") { (isSuccess, error) in
+                self.client.wishlist.remove(userId: "1204", objectId: "2", entity: "products") { (isSuccess, error) in
                     XCTAssertNil(error)
                     XCTAssertNotNil(isSuccess)
                     XCTAssertTrue(isSuccess ?? false)

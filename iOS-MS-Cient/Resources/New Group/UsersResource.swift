@@ -99,5 +99,30 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
             })
         }
     }
+    
+    public func get(deviceId: String ,closure: @escaping (UserSM?, NSError?) -> Void) {
+
+        let headers = ["User-Agent" : deviceId]
+        
+        let url = self.client!.getGatewayUrl() + getURI() + "/devices/\(deviceId)"
+        
+        let parameters = ["client_secret" : client!.getSecretKey(),
+                          "client_id" : client!.getClientId()]
+        
+        heandler.request(url: url, method: .get, parameters: parameters, headers: headers) { (item: SlimUserSM?, error: NSError?) in
+            if error != nil {
+                closure(nil, error)
+            } else {
+                guard let id = item?.data?.userId else {
+                    closure(nil, NSError(domain: "userId not found", code: 404, userInfo: nil))
+                    return
+                }
+                
+                self.get(id: id, closure: { (user: UserSM?, error: NSError?) in
+                    closure(user, error)
+                })
+            }
+        }
+    }
 }
 

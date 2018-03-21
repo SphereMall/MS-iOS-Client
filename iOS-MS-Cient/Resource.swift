@@ -166,7 +166,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     // MARK: CRUD
     public func get(id: String, closure: @escaping SMResponse<T>) {
         
-        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/by"
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/\(id)"
         let parameters = self.getQueryParams()
         
         self.heandler.request(url: url, method: .get, parameters: parameters) { (item, error) in
