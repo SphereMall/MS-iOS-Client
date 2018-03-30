@@ -18,15 +18,15 @@ public class OrderFinalized: NSObject {
     public var totalPriceWithoutDelivery: String?
     
     internal let default_order_id = "-1"
-    internal var id: String?
-    internal var orderId: String?
-    internal var delivery: String?
-    internal var shippingAddress: String?
-    internal var billingAddress: String?
-    internal var paymentMethod: String?
-    internal var user: UserModel?
-    internal var statusId: String?
-    internal var paymentStatusId: String?
+    public var id: String?
+    public var orderId: String?
+    public var delivery: String?
+    public var shippingAddress: String?
+    public var billingAddress: String?
+    public var paymentMethod: String?
+    public var user: UserModel?
+    public var statusId: String?
+    public var paymentStatusId: String?
     
     internal var client: SMClient!
     
@@ -70,7 +70,7 @@ public class OrderFinalized: NSObject {
         self.statusId = order.statusId
         self.paymentStatusId = order.paymentStatusId
         
-        //self.items = order.items
+        self.items = order.items
         
         self.subTotalVatPrice = order.subTotalVatPrice
         self.totalVatPrice = order.totalVatPrice

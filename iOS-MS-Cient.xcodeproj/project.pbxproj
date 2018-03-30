@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34A8A9917122DFE735AAA1F0 /* Pods_iOS_MS_CientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7FB6D50B3A46E57EF180AB /* Pods_iOS_MS_CientTests.framework */; };
 		A3257A966DB25B85EA5EEB5D /* Pods_iOS_MS_Cient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5740B0FFF2FE275E2AFC71 /* Pods_iOS_MS_Cient.framework */; };
+		E90C7AE5206B784F00EFA879 /* GrapherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C7AE4206B784F00EFA879 /* GrapherResource.swift */; };
 		E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9118DCB2031948C00A7344D /* EmptySM.swift */; };
 		E9118DCD2031948C00A7344D /* EmptySM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9118DCB2031948C00A7344D /* EmptySM.swift */; };
 		E9118DD22032D1A600A7344D /* CorrelationsResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9118DD12032D1A600A7344D /* CorrelationsResourceTests.swift */; };
@@ -258,6 +259,10 @@
 		E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0C20284CDB00825F99 /* DocumentsResource.swift */; };
 		E9619F6620284FBD00825F99 /* FullResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0E20284CE600825F99 /* FullResource.swift */; };
 		E9619F68202897F100825F99 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619F67202897F100825F99 /* BaseUrl.swift */; };
+		E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
+		E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
+		E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
+		E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9E0BE612043F385003B03EF /* GridResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE602043F385003B03EF /* GridResourceTests.swift */; };
@@ -281,6 +286,7 @@
 		B2B684C264426684E2BCC33A /* Pods-iOS-MS-CientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-MS-CientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB5740B0FFF2FE275E2AFC71 /* Pods_iOS_MS_Cient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MS_Cient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7FB6D50B3A46E57EF180AB /* Pods_iOS_MS_CientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MS_CientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90C7AE4206B784F00EFA879 /* GrapherResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrapherResource.swift; sourceTree = "<group>"; };
 		E9118DCB2031948C00A7344D /* EmptySM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySM.swift; sourceTree = "<group>"; };
 		E9118DD12032D1A600A7344D /* CorrelationsResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrelationsResourceTests.swift; sourceTree = "<group>"; };
 		E91727172032DE350075995D /* AuthResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResource.swift; sourceTree = "<group>"; };
@@ -429,6 +435,8 @@
 		E9619F2E20284E2500825F99 /* CurrenciesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F2F20284E2500825F99 /* AttributeTypesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTypesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F67202897F100825F99 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
+		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
 		E9E0BE622043FE0F003B03EF /* GridSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSM.swift; sourceTree = "<group>"; };
@@ -649,6 +657,8 @@
 			children = (
 				E9619E1120284D0900825F99 /* CorrelationsResource.swift */,
 				E9619E1220284D0900825F99 /* GridResource.swift */,
+				E90C7AE4206B784F00EFA879 /* GrapherResource.swift */,
+				E982CCBC206B8E8E0046244B /* FacetMaker.swift */,
 			);
 			path = Grapher;
 			sourceTree = "<group>";
@@ -748,6 +758,7 @@
 				E9619E9F20284D9B00825F99 /* BasketSM.swift */,
 				E9118DCB2031948C00A7344D /* EmptySM.swift */,
 				E9E0BE622043FE0F003B03EF /* GridSM.swift */,
+				E982CCB9206B842C0046244B /* FacetsSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -997,6 +1008,7 @@
 				E9619E1520284D0900825F99 /* GridResource.swift in Sources */,
 				E9619E3F20284D2B00825F99 /* AttributesResource.swift in Sources */,
 				E9619E5320284D4600825F99 /* VatsResource.swift in Sources */,
+				E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */,
 				E9619EBA20284D9B00825F99 /* CurrenciSM.swift in Sources */,
 				E9619DED20284C5500825F99 /* ClassReflectionHelper.swift in Sources */,
 				E9619E0920284CBD00825F99 /* UserSpecification.swift in Sources */,
@@ -1007,6 +1019,7 @@
 				E9619E3920284D2B00825F99 /* CatalogItemsResource.swift in Sources */,
 				E9619E3320284D2B00825F99 /* ProductAttributeValuesResource.swift in Sources */,
 				E9619E5920284D4600825F99 /* PaymentMethodsResource.swift in Sources */,
+				E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E9619EAE20284D9B00825F99 /* EntitiesSM.swift in Sources */,
 				E9619E3B20284D2B00825F99 /* EntitiesResource.swift in Sources */,
 				E9619EFD20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
@@ -1015,6 +1028,7 @@
 				E9619E6920284D4600825F99 /* OrderStatusesResource.swift in Sources */,
 				E9619DE520284C2400825F99 /* SMRequest.swift in Sources */,
 				E9619EB420284D9B00825F99 /* AttributeValuesSM.swift in Sources */,
+				E90C7AE5206B784F00EFA879 /* GrapherResource.swift in Sources */,
 				E9619EA820284D9B00825F99 /* VatsSM.swift in Sources */,
 				E9619E3D20284D2B00825F99 /* EntityAttributesResource.swift in Sources */,
 				E9619E0220284CB400825F99 /* FilterSpecification.swift in Sources */,
@@ -1129,6 +1143,7 @@
 				E9619F4420284E2600825F99 /* AddressResourceTests.swift in Sources */,
 				E9619F4A20284E2600825F99 /* AttributeGroupsEntitiesResourceTest.swift in Sources */,
 				E9619E7620284D6600825F99 /* MessagesResource.swift in Sources */,
+				E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */,
 				E9619EB320284D9B00825F99 /* MediaTypesSM.swift in Sources */,
 				E9619E5C20284D4600825F99 /* PaymentProvidersResource.swift in Sources */,
 				E9619F5220284E2600825F99 /* AttributeTypesResourceTest.swift in Sources */,
@@ -1188,6 +1203,7 @@
 				E9619F5520284F6500825F99 /* ServiceInjector.swift in Sources */,
 				E9619F0820284DD400825F99 /* GridFilterElement.swift in Sources */,
 				E9619F5920284F7100825F99 /* Keychain.swift in Sources */,
+				E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E9619F4620284E2600825F99 /* OrdersResourceTests.swift in Sources */,
 				E9619EC920284D9B00825F99 /* Entity.swift in Sources */,
 				E9619EA920284D9B00825F99 /* VatsSM.swift in Sources */,

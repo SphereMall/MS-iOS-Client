@@ -158,7 +158,7 @@ public class ServiceInjector: NSObject {
     } ()
     
     public lazy var grid: GridResource! = {
-        return GridResource<ProductsSM>(client: client!)
+        return GridResource<GridSM>(client: client!)
     } ()
     
     public lazy var auth: AuthResource! = {

@@ -32,7 +32,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     private lazy var sort: [String] = []
     lazy var fields: [String] = []
     private lazy var `in` = INOperator()
-    private lazy var filter = Filter()
+    public lazy var filter = Filter()
     public var heandler: SMRequest!
     
     public init(client: SMClient, version: String = "v1") {

@@ -21,7 +21,18 @@ class GridResourceTests: XCTestCase {
     
     func testAll() {
         let exp = self.expectation(description: "testAll")
-        client.grid.all { (items, error) in
+        let predicate = Predicate(field: "id", op: .equal, value: "627")
+        let predicatew = Predicate(field: "id", op: .equal, value: "627")
+        client.grid.filters(predicates: [predicate, predicatew]).all { (grid, error) in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func testFacets() {
+        let exp = self.expectation(description: "testFacets")
+        client.grid.facets { (items, error) in
             exp.fulfill()
         }
         

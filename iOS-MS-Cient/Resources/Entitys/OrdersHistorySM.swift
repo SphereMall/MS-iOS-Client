@@ -15,3 +15,4 @@ public class OrdersHistorySM: Entity, Decodable {
     public var ver : Int?
     public var meta: Meta?
 }
+

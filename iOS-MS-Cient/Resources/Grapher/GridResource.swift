@@ -8,37 +8,7 @@
 
 import UIKit
 
-struct StringCodableMap<Decoded : LosslessStringConvertible> : Codable {
-    
-    var decoded: Decoded
-    
-    init(_ decoded: Decoded) {
-        self.decoded = decoded
-    }
-    
-    init(from decoder: Decoder) throws {
-        
-        let container = try decoder.singleValueContainer()
-        let decodedString = try container.decode(String.self)
-        
-        guard let decoded = Decoded(decodedString) else {
-            throw DecodingError.dataCorruptedError(
-                in: container, debugDescription: """
-                The string \(decodedString) is not representable as a \(Decoded.self)
-                """
-            )
-        }
-        
-        self.decoded = decoded
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encode(decoded.description)
-    }
-}
-
-public class GridResource<ProductsSM: Decodable> : Resource <GridSM> {
+public class GridResource<T: Decodable> : Resource <GridSM> {
     
     override public func getURI() -> String {
         return "grid"
@@ -47,26 +17,45 @@ public class GridResource<ProductsSM: Decodable> : Resource <GridSM> {
     public override func getQueryParams() -> [String : String] {
         
         var params = super.getQueryParams()
-    
-        if params["where"] == nil {
+        
+        if params["where"] == nil || params["where"] == "" {
             return params
         }
-    
-//        foreach (explode('&', $params['where']) as $where) {
-//            list($key, $value) = explode('=', $where);
-//            $params[$key] = $value;
-//        }
+        
+//        let whereCondition = params["where"]
+//        params.removeValue(forKey: "where")
 //
-//        unset($params['where']);
+//        let whereArray: [String] = whereCondition!.components(separatedBy: "&")
+//
+//        for item in whereArray {
+//            let keyValue = item.components(separatedBy: "=")
+//            params[keyValue[0]] = keyValue[1]
+//        }
+        
         return params
     }
     
-    public func facets() {
+    public func filters(filter: FilterSpecification) -> GridResource {
+        let gridFilter = GridFilter()
+
+        self.filter = gridFilter.setFilters(filters: [filter.asFilter()])
         
-//        let params = self.getQueryParams()
+        return self
+    }
     
-//        $response = $this->handler->handle('GET', false, 'filter', $params);
-//        return $this->make($response, false, new FacetsMaker());
+    public func facets(closure: @escaping ([Facet]?, NSError?) -> Swift.Void) {
+        
+        let params = getQueryParams()
+        
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/filter"
+        
+        heandler.request(url: url, method: .get, parameters: params) { (facets: FacetsSM?, error: NSError?) in
+            guard let unwrapperdFacets = facets else {
+                closure(nil, error)
+                return
+            }
+            closure(FacetMaker.do(unwrapperdFacets), error)
+        }
     }
 
     
