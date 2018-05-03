@@ -10,9 +10,9 @@ import UIKit
 
 public class AttributesSM: Entity, Decodable {
     public var data : [AttributesResourceData]?
-    public var error : Error?
     public var meta: Meta?
-    public var success : Bool?
+    public var status : String?
+    public var ver : String?
 }
 
 public struct AttributesResourceData: Decodable {

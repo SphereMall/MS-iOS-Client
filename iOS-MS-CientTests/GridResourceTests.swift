@@ -19,11 +19,21 @@ class GridResourceTests: XCTestCase {
                           secretKey: "demo_pass")
     }
     
-    func testAll() {
-        let exp = self.expectation(description: "testAll")
+    func testAllWithPredicate() {
+        let exp = self.expectation(description: "testAllWithPredicate")
         let predicate = Predicate(field: "id", op: .equal, value: "627")
         let predicatew = Predicate(field: "id", op: .equal, value: "627")
         client.grid.filters(predicates: [predicate, predicatew]).all { (grid, error) in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func testAll() {
+        
+        let exp = self.expectation(description: "testAll")
+        client.grid.all { (grid, error) in
             exp.fulfill()
         }
         

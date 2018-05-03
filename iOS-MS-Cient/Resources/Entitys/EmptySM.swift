@@ -9,7 +9,7 @@
 import UIKit
 
 public class EmptySM: Entity, Decodable {
-    public var error : Error?
-    public var meta: Meta?
-    public var success : Bool?
+    public var meta : Meta?
+    public var status : String?
+    public var ver : String?
 }

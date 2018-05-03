@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ProductsResource<ProductsSM: Decodable> : Resource <ProductsSM>, FullResource {
+public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResource {
     
     public typealias T = ProductsSM
 
@@ -16,26 +16,39 @@ public class ProductsResource<ProductsSM: Decodable> : Resource <ProductsSM>, Fu
         return "products"
     }
     
-//    public func full(param: String?, closure: @escaping (ProductsSM?, NSError?) -> Swift.Void ) {
-//        var uriAppend = "full"
-//        let params = self.getQueryParams()
-//        
-//        if param != nil {
-//            if param!.isInt {
-//                uriAppend = uriAppend + "/\(param!)"
-//            } else {
-//                uriAppend = "url/\(param!)"
-//            }
-//        }
-//        
-//        self.heandler.request(url: uriAppend, method: .get, parameters: params) { (items, error) in
-//            closure(items, error)
-//        }
-//    }
+    public override func get(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
+        super.get(id: id) { (product, error) in
+            closure(product?.rebuild(), error)
+        }
+    }
+    
+    public override func all(closure: @escaping SMResponse<T>) {
+        super.all { (items, error) in
+            closure(items?.rebuild(), error)
+        }
+    }
+    
+    public override func first(closure: @escaping SMResponse<T>) {
+        super.first { (item, error) in
+            closure(item?.rebuild(), error)
+        }
+    }
+    
+    public override func create(data: [String: String], closure: @escaping SMResponse<T>) {
+        super.create(data: data) { (item, error) in
+            closure(item?.rebuild(), error)
+        }
+    }
+    
+    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<T>) {
+        super.update(id: id, data: data) { (items, error) in
+            closure(items?.rebuild(), error)
+        }
+    }
 }
 
 public extension String {
-    var isInt: Bool {
+    public var isInt: Bool {
         return Int(self) != nil
     }
 }

@@ -15,24 +15,24 @@ public class OrdersResource<T: Decodable>: Resource <OrdersSM> {
         return "orders"
     }
     
-    public func byOrderId(orderId: String, closure: @escaping (OrdersSM?, NSError?) -> Swift.Void) {
+    public func byOrderId(orderId: String, closure: @escaping (OrdersSM?, ErrorSM?) -> Swift.Void) {
         getOrderByParam(uriAppend: client!.getGatewayUrl() + getURI() + "/byorderid/\(orderId)") { (order, error) in
             closure(order, error)
         }
     }
     
-    public func by(id: String, closure: @escaping (OrdersSM?, NSError?) -> Swift.Void) {
+    public func by(id: String, closure: @escaping (OrdersSM?, ErrorSM?) -> Swift.Void) {
         getOrderByParam(uriAppend: client!.getGatewayUrl() + getURI() + "/byid/\(id)") { (order, error) in
             closure(order, error)
         }
     }
 
     
-    private func getOrderByParam(uriAppend: String, closure: @escaping (OrdersSM?, NSError?) -> Swift.Void) {
+    private func getOrderByParam(uriAppend: String, closure: @escaping (OrdersSM?, ErrorSM?) -> Swift.Void) {
         
         let params = getQueryParams()
         
-        self.heandler.request(url: uriAppend, method: .get, parameters: params) { (item: OrdersSM?, error: NSError?) in
+        self.heandler.request(url: uriAppend, method: .get, parameters: params) { (item: OrdersSM?, error: ErrorSM?) in
             closure(item, error)
         }
 //
@@ -48,7 +48,7 @@ public class OrdersResource<T: Decodable>: Resource <OrdersSM> {
 //        return null;
     }
     
-    public func getHistory(userId: Int, orderId : Int? = nil, closure: @escaping (OrdersHistorySM?, NSError?) -> Swift.Void) {
+    public func getHistory(userId: Int, orderId : Int? = nil, closure: @escaping (OrdersHistorySM?, ErrorSM?) -> Swift.Void) {
         
         let params = getQueryParams()
         var uriAppend = client!.getGatewayUrl() + getURI() + "/history/\(userId)"
@@ -57,7 +57,7 @@ public class OrdersResource<T: Decodable>: Resource <OrdersSM> {
             uriAppend = uriAppend + "/\(orderId!)"
         }
     
-        heandler.request(url: uriAppend, method: .get, parameters: params) { (item: OrdersHistorySM?, error: NSError?) in
+        heandler.request(url: uriAppend, method: .get, parameters: params) { (item: OrdersHistorySM?, error: ErrorSM?) in
             closure(item, error)
         }
     }

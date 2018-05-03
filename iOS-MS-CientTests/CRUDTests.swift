@@ -57,7 +57,7 @@ class CRUDTests: XCTestCase {
     
     func testFullAll() {
         let exp = self.expectation(description: "testFullAll")
-        client.products.limit(limit: 10, offset: 10).fullAll { (items, error) in
+        client.products.limit(limit: 10, offset: 1000).fullAll { (items, error) in
             print(items ?? error ?? "wtf")
             exp.fulfill()
         }
@@ -146,7 +146,7 @@ class CRUDTests: XCTestCase {
         
         client.products.filter(predicate:predicate).all { (products, error) in
             XCTAssertNotNil(products)
-            XCTAssertNil(error?.domain)
+            XCTAssertNil(error?.status)
             print(products ?? error ?? "wtf")
             exp.fulfill()
         }
@@ -163,7 +163,7 @@ class CRUDTests: XCTestCase {
         
         client.products.filters(predicates: [predicate, predicateSecond]).all { (products, error) in
             XCTAssertNotNil(products)
-            XCTAssertNil(error?.domain)
+            XCTAssertNil(error?.status)
             print(products ?? error ?? "wtf")
             exp.fulfill()
         }
@@ -177,7 +177,7 @@ class CRUDTests: XCTestCase {
         
         client.products.sort(field: "-id").all { (products, error) in
             XCTAssertNotNil(products)
-            XCTAssertNil(error?.domain)
+            XCTAssertNil(error?.status)
             print(products ?? error ?? "wtf")
             exp.fulfill()
         }
@@ -193,7 +193,7 @@ class CRUDTests: XCTestCase {
             .limit(limit: 10)
             .all { (products, error) in
                 XCTAssertNotNil(products)
-                XCTAssertNil(error?.domain)
+                XCTAssertNil(error?.status)
                 print(products ?? error ?? "wtf")
                 exp.fulfill()
         }
@@ -207,7 +207,7 @@ class CRUDTests: XCTestCase {
         let predicate = InPredicate(field: "title", values: ["Test product","test"])
         client.products.in(predicate: predicate).all { (products, error) in
             XCTAssertNotNil(products)
-            XCTAssertNil(error?.domain)
+            XCTAssertNil(error?.status)
             print(products ?? error ?? "wtf")
             exp.fulfill()
         }

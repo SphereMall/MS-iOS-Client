@@ -14,7 +14,7 @@ public class AuthResource<T: Decodable> : Resource <DocumentsSM> {
         return "oauth/token"
     }
     
-    public func login(email: String, password: String, closure: @escaping (AdminSM?, NSError? ) -> Swift.Void) {
+    public func login(email: String, password: String, closure: @escaping (AdminSM?, ErrorSM? ) -> Swift.Void) {
         
         let deviceID = UIDevice.current.identifierForVendor!.uuidString
         let headers = ["User-Agent" : deviceID]
@@ -26,7 +26,7 @@ public class AuthResource<T: Decodable> : Resource <DocumentsSM> {
                           "login_pass": password,
                           "login_email": email]
         
-        heandler.request(url: url, method: .post, parameters: parameters, headers: headers) { (item: AdminSM?, error: NSError?) in
+        heandler.request(url: url, method: .post, parameters: parameters, headers: headers) { (item: AdminSM?, error: ErrorSM?) in
             closure(item, error)
         }
     }

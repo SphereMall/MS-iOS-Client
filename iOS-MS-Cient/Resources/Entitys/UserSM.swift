@@ -12,7 +12,7 @@ public class AdminSM: Entity, Decodable {
     public var data : [UserData]?
     public var error : Error?
     public var success : Bool?
-    public var ver : Int?
+    public var ver : String?
     public var meta: Meta?
 }
 
@@ -28,7 +28,7 @@ public class SlimUserSM: Entity, Decodable {
     public var data : SlimUserAttributes?
     public var error : Error?
     public var success : Bool?
-    public var ver : Int?
+    public var ver : String?
     public var meta: Meta?
     
     init(attributes: SlimUserAttributes?, error: Error?, meta: Meta?) {
@@ -45,15 +45,15 @@ public class SlimUserAttributes: Decodable {
 
 public class UserSM: Entity, Decodable {
     public var data : [UserAttributes]?
-    public var error : Error?
-    public var success : Bool?
-    public var ver : Int?
-    public var meta: Meta?
+    public var meta : Meta?
+    public var status : String?
+    public var ver : String?
     
-    init(attributes: [UserAttributes]?, error: Error?, meta: Meta?) {
+    init(attributes: [UserAttributes]?, status: String?, meta: Meta?, ver: String?) {
         self.data = attributes
-        self.error = error
         self.meta = meta
+        self.status = status
+        self.ver = ver
     }
 }
 
@@ -102,7 +102,6 @@ public struct UserModel: Decodable  {
     public var number3: String?
     public var patronymic: String?
     public var phoneNumber: String?
-//    var registrationDate: String?
     public var subscribeDate: String?
     public var surname: String?
     public var text1: String?
@@ -112,13 +111,3 @@ public struct UserModel: Decodable  {
     public var text5: String?
     public var userType: String?
 }
-
-/*
- 
- data =     {
- type = users;
- userId = 1204;
- };
- 
- */
-

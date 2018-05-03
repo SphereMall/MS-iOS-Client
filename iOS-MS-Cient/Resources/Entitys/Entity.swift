@@ -8,9 +8,18 @@
 
 import UIKit
 
-public class Entity {
+public protocol EntityRebuilder {
+    func rebuild() -> Self
+}
+
+public class Entity: EntityRebuilder {
     public struct Error: Decodable {
-        
+        public var message: String?
+        public var error_code: String?
+    }
+    
+    public func rebuild() -> Self {
+        return self
     }
 }
 

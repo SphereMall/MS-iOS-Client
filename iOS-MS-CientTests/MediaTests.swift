@@ -42,7 +42,7 @@ class MediaTests: XCTestCase {
         client.media.limit(limit: 10).all { (items, error) in
             XCTAssertNotNil(items)
             XCTAssertNil(error)
-            XCTAssertNotNil(items?.data?.first?.attributes?.title)
+            XCTAssertNotNil(items?.data?.first?.attributes)
             XCTAssertNotNil(items?.data?.first?.id)
             exp.fulfill()
         }

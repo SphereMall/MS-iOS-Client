@@ -10,9 +10,9 @@ import UIKit
 
 public class MediaSM: Entity, Decodable {
     public var data : [MediaData]?
-    public var error : Error?
     public var meta: Meta?
-    public var success : Bool?
+    public var status : String?
+    public var ver : String?
 }
 
 public struct MediaData: Decodable {
@@ -22,8 +22,6 @@ public struct MediaData: Decodable {
 }
 
 public struct MediaAttributes: Decodable  {
-    public var objectId : String?
-    public var title : String?
     public var imageName : String?
     public var orderNumber : String?
     public var imageTypeId : String?

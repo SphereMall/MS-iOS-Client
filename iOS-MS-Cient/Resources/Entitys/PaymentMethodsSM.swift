@@ -10,9 +10,9 @@ import UIKit
 
 public class PaymentMethodsSM: Entity, Decodable {
     public var data : [PaymentData]?
-    public var error : Error?
-    public var meta : Meta?
-    public var success : Bool?
+    public var meta: Meta?
+    public var status : String?
+    public var ver : String?
 }
 
 public struct PaymentAttributes: Decodable  {

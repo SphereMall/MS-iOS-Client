@@ -10,9 +10,8 @@ import UIKit
 
 public class OrdersHistorySM: Entity, Decodable {
     public var data: [OrdersAttributes]?
-    public var error : Error?
-    public var success : Bool?
-    public var ver : Int?
-    public var meta: Meta?
+    public var meta : Meta?
+    public var status : String?
+    public var ver : String?
 }
 

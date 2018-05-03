@@ -9,21 +9,21 @@
 import UIKit
 
 public protocol FullResource : ResourceInterface {
-    associatedtype T: Decodable
-    func fullAll(closure: @escaping (T?, NSError?) -> Swift.Void)
-    func fullBy(code: String, closure: @escaping (T?, NSError?) -> Swift.Void)
-    func fullBy(id: Int, closure: @escaping (T?, NSError?) -> Swift.Void)
+    associatedtype T: Decodable, EntityRebuilder
+    func fullAll(closure: @escaping (T?, ErrorSM?) -> Swift.Void)
+    func fullBy(code: String, closure: @escaping (T?, ErrorSM?) -> Swift.Void)
+    func fullBy(id: Int, closure: @escaping (T?, ErrorSM?) -> Swift.Void)
 }
 
 public extension FullResource {
     
-    public func fullAll(closure: @escaping (T?, NSError?) -> Swift.Void) {
+    public func fullAll(closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         full { (item, error) in
-            closure(item, error)
+            closure(item?.rebuild(), error)
         }
     }
     
-    private func full(id: Int? = nil, closure: @escaping (T?, NSError?) -> Swift.Void) {
+    private func full(id: Int? = nil, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
         var uriAppend = client!.getGatewayUrl() + getURI() + "/full"
         let params = self.getQueryParams()
@@ -37,7 +37,7 @@ public extension FullResource {
         }
     }
     
-    private func full(url: String, closure: @escaping (T?, NSError?) -> Swift.Void) {
+    private func full(url: String, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
         let url = client!.getGatewayUrl() + getURI() + "/url/\(url)"
         let params = self.getQueryParams()
@@ -47,15 +47,15 @@ public extension FullResource {
         }
     }
     
-    public func fullBy(id: Int, closure: @escaping (T?, NSError?) -> Swift.Void) {
+    public func fullBy(id: Int, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         self.full(id: id) { (items, error) in
-            closure(items, error)
+            closure(items?.rebuild(), error)
         }
     }
     
-    public func fullBy(code: String, closure: @escaping (T?, NSError?) -> Swift.Void) {
+    public func fullBy(code: String, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         self.full(url: code) { (item, error) in
-            closure(item, error)
+            closure(item?.rebuild(), error)
         }
     }
 }

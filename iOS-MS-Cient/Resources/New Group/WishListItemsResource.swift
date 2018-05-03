@@ -14,17 +14,17 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
         return "wishlistitems"
     }
     
-    public func add(userId: String, objectId: String, entity: EntityType, closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
+    public func add(userId: String, objectId: String, entity: EntityType, closure: @escaping (WishlistSM?, ErrorSM?) -> Swift.Void) {
         add(userId: userId, objectId: objectId, entity: Int(entity.rawValue)!) { (item, error) in
             closure(item, error)
         }
     }
     
-    public func get(userId: String, limit: Int, offset: Int, closure: @escaping ([WishListObjectSM]?, NSError?) -> Swift.Void) {
+    public func get(userId: String, limit: Int, offset: Int, closure: @escaping ([WishListObjectSM]?, ErrorSM?) -> Swift.Void) {
         
         let predicate = Predicate(field: "userId", op: .equal, value: userId)
         
-        self.filter(predicate: predicate).limit(limit: limit, offset: offset).all { (items: WishlistSM?, error: NSError?) in
+        self.filter(predicate: predicate).limit(limit: limit, offset: offset).all { (items: WishlistSM?, error: ErrorSM?) in
             guard let wishlistData = items?.data else {
                 closure(nil, error)
                 return
@@ -41,7 +41,7 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
                 var items : [WishListObjectSM] = []
                 
                 guard let data = products?.data else {
-                    closure(nil, NSError(domain: "data not found", code: 404, userInfo: nil))
+                    closure(nil, ErrorSM(code: 404, status: "data not found"))
                     return
                 }
                 
@@ -59,7 +59,7 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
         }
     }
     
-    public func add(userId: String, objectId: String, entity: String = "products", closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
+    public func add(userId: String, objectId: String, entity: String = "products", closure: @escaping (WishlistSM?, ErrorSM?) -> Swift.Void) {
         
         let predicate = Predicate(field: "code", op: .equal, value: entity)
         
@@ -77,7 +77,7 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
         }
     }
     
-    public func add(userId: String, objectId: String, entity: Int, closure: @escaping (WishlistSM?, NSError?) -> Swift.Void) {
+    public func add(userId: String, objectId: String, entity: Int, closure: @escaping (WishlistSM?, ErrorSM?) -> Swift.Void) {
         
         let data : [String: String] = ["userId": userId, "objectId": objectId, "entityId" : entity.description]
         let url = String(self.client!.getGatewayUrl() + self.getURI())
@@ -87,20 +87,20 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
         }
     }
     
-    public func remove(wishlistId: String, closure: @escaping (Bool?, NSError?) -> Swift.Void) {
+    public func remove(wishlistId: String, closure: @escaping (Bool?, ErrorSM?) -> Swift.Void) {
         self.delete(id: wishlistId) { (issuccess, error) in
             closure(issuccess, error)
         }
     }
     
-    public func remove(userId: String, objectId: String, entity: String = "products", closure: @escaping (Bool?, NSError?) -> Swift.Void) {
+    public func remove(userId: String, objectId: String, entity: String = "products", closure: @escaping (Bool?, ErrorSM?) -> Swift.Void) {
         
         let codePredicate = Predicate(field: "code", op: .equal, value: entity)
         let objectIdPredicate = Predicate(field: "objectId", op: .equal, value: objectId)
         
         client!.etities.filters(predicates: [codePredicate]).first { (entity, error) in
             guard let entityId = entity?.data?.first?.id else {
-                closure(nil, NSError(domain: "entityId not found", code: 404, userInfo: nil))
+                closure(nil, ErrorSM(code: 404, status: "entityId not found"))
                 return
             }
             
@@ -108,19 +108,23 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
             let userIdrPedicate = Predicate(field: "userId", op: .equal, value: userId)
             self.filters(predicates: [objectIdPredicate, entityIdPredicate, userIdrPedicate]).first(closure: { (wishlist, error) in
                 guard let wishlistId = wishlist?.data?.first?.id else {
-                    closure(nil, NSError(domain: "wishlistId not found", code: 404, userInfo: nil))
+                    closure(nil, ErrorSM(code: 404, status: "wishlistId not found"))
                     return
                 }
                 
                 let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/\(wishlistId.description)"
-                self.heandler.request(url: url, method: .delete, parameters: nil) { (item: EmptySM?, error: NSError?) in
-                    closure(item?.success, error)
+                self.heandler.request(url: url, method: .delete, parameters: nil) { (item: EmptySM?, error: ErrorSM?) in
+                    if item?.status == "OK" {
+                        closure(true, error)
+                    } else {
+                        closure(false, error)
+                    }
                 }
             })
         }
     }
     
-    public func remove(userId: String, objectId: String, entity: EntityType, closure: @escaping (Bool?, NSError?) -> Swift.Void) {
+    public func remove(userId: String, objectId: String, entity: EntityType, closure: @escaping (Bool?, ErrorSM?) -> Swift.Void) {
         
         let objectIdPredicate = Predicate(field: "objectId", op: .equal, value: objectId)        
         let entityIdPredicate = Predicate(field: "entityId", op: .equal, value: entity.rawValue)
@@ -128,13 +132,17 @@ public class WishListItemsResource<T: Decodable>: Resource<WishlistSM>  {
         
         self.filters(predicates: [objectIdPredicate, entityIdPredicate, userIdrPedicate]).first(closure: { (wishlist, error) in
             guard let wishlistId = wishlist?.data?.first?.id else {
-                closure(nil, NSError(domain: "wishlistId not found", code: 404, userInfo: nil))
+                closure(nil, ErrorSM(code: 404, status: "wishlistId not found"))
                 return
             }
             
             let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/\(wishlistId.description)"
-            self.heandler.request(url: url, method: .delete, parameters: nil) { (item: EmptySM?, error: NSError?) in
-                closure(item?.success, error)
+            self.heandler.request(url: url, method: .delete, parameters: nil) { (item: EmptySM?, error: ErrorSM?) in
+                if item?.status == "OK" {
+                    closure(true, error)
+                } else {
+                    closure(false, error)
+                }
             }
         })
     }

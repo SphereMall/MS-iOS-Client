@@ -25,7 +25,7 @@ public class BasketResource <T: Decodable> : Resource <BasketSM> {
     
         let uriAppend = client!.getGatewayUrl() + getURI() + "/\(id)"
         
-        heandler.request(url: uriAppend, method: .get, parameters: params, headers: nil) { (item: BasketSM?, error: NSError?) in
+        heandler.request(url: uriAppend, method: .get, parameters: params, headers: nil) { (item: BasketSM?, error: ErrorSM?) in
             closure(item, error)
         }
     }
@@ -41,7 +41,7 @@ public class BasketResource <T: Decodable> : Resource <BasketSM> {
         
         let uriAppend = client!.getGatewayUrl() + getURI() + "/new"
         
-        heandler.request(url: uriAppend, method: .post, parameters: data, headers: nil) { (item: BasketSM?, error: NSError?) in
+        heandler.request(url: uriAppend, method: .post, parameters: data, headers: nil) { (item: BasketSM?, error: ErrorSM?) in
             closure(item, error)
         }
     }

@@ -10,10 +10,9 @@ import UIKit
 
 public class WishlistSM: Entity, Decodable {
     public var data: [WishlistAttributes]?
-    public var error : Error?
-    public var success : Bool?
-    public var ver : Int?
-    public var meta: Meta?
+    public var meta : Meta?
+    public var status : String?
+    public var ver : String?
 }
 
 public struct WishlistAttributes: Decodable {

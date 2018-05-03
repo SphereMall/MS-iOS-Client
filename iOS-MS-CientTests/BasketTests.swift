@@ -31,7 +31,6 @@ class BasketTests: XCTestCase {
         basket.add(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(basket?.data?.first?.attributes?.id)
-            
             exp.fulfill()
         }
 

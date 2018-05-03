@@ -22,10 +22,10 @@ class MediaResourceTest: XCTestCase {
     
     func testResourceMedia() {
         let exp = self.expectation(description: "testGet")
-        client.media.all{ (items, error) in
+        client.media.all { (items, error) in
             XCTAssertNotNil(items)
             XCTAssertNil(error)
-            XCTAssertNotNil(items?.data?.first?.attributes?.objectId)
+            XCTAssertNotNil(items?.data?.first?.attributes)
             exp.fulfill()
         }
         
@@ -34,7 +34,7 @@ class MediaResourceTest: XCTestCase {
     
     func testResourceMediaTypes() {
         let exp = self.expectation(description: "testGet")
-        client.mediaTypes.all{ (items, error) in
+        client.mediaTypes.all { (items, error) in
             XCTAssertNotNil(items)
             XCTAssertNil(error)
             XCTAssertNotNil(items?.data?.first?.attributes?.id)

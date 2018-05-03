@@ -14,7 +14,7 @@ class FullResourceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: GRID_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -25,10 +25,11 @@ class FullResourceTests: XCTestCase {
     
     func testFullByAll() {
         let exp = self.expectation(description: "testGet")
-        client.products.fullBy(id: 6329) { (products, error) in
+        
+        client.products.fullBy(id: 433) { (products, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(products?.data?.first?.attributes?.id)
-            XCTAssertEqual(Int(products!.data!.first!.attributes!.id!), 6329)
+            XCTAssertEqual(Int(products!.data!.first!.attributes!.id!), 433)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 10)
@@ -36,10 +37,10 @@ class FullResourceTests: XCTestCase {
     
     func testFullByUrlAll() {
         let exp = self.expectation(description: "testGet")
-        client.products.fullBy(code: "limoen-komkommer-fruitwater") { (products, error) in
+        client.products.fullBy(code: "store-plisse-tamisant-blanc-neige") { (products, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(products?.data?.first?.attributes?.urlCode)
-            XCTAssertEqual(products!.data!.first!.attributes!.urlCode!, "limoen-komkommer-fruitwater")
+            XCTAssertEqual(products!.data!.first!.attributes!.urlCode!, "store-plisse-tamisant-blanc-neige")
             exp.fulfill()
         }
         wait(for: [exp], timeout: 10)
@@ -47,11 +48,12 @@ class FullResourceTests: XCTestCase {
     
     func testFullAlll() {
         let exp = self.expectation(description: "testFullAlll")
-        client.products.fullAll { (products, error) in
+        client.products.limit(limit: 4, offset: 10).fullAll { (items, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(products?.data?.first?.attributes?.urlCode)
+            XCTAssertNotNil(items?.data?.first?.attributes?.urlCode)
             exp.fulfill()
         }
+
         wait(for: [exp], timeout: 10)
     }
 }

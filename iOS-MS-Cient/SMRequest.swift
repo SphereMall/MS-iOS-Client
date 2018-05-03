@@ -39,7 +39,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         manager.adapter = self
     }
     
-    public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, NSError?) -> Swift.Void) {
+    public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
         var modifiedheader = headers ?? [String : String] ()
         modifiedheader = ["User-Agent" : UIDevice.current.identifierForVendor!.uuidString]
@@ -48,42 +48,35 @@ public class SMRequest: RequestAdapter, RequestRetrier {
             .validate(contentType: ["application/json"])
             .validate()
             .responseJSON { response in
-                
+
                 switch response.result {
                 case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
-                        let jsonObject = json["error"]
-                        
-                        if !jsonObject.isEmpty {
-                            
-                            let message = json["error"]["message"].string ?? ""
-                            var code = response.response!.statusCode
-
-                            if code == 200 {
-                                code = json["error"]["debug"]["code"].int ?? response.response!.statusCode
-                            }
-                            
-                            let error = NSError(domain: message, code: code, userInfo: nil)
-                            completionHandler(nil, error as NSError?)
-                            return
-                        }
-                        
                         let data = try! json.rawData()
                         let decoder = JSONDecoder()
-                        
+
                         guard let items = try? decoder.decode(T.self , from: data) else {
-                            completionHandler(nil, NSError(domain: "Can't parse data for entity \(T.self)", code: 0, userInfo: nil))
+                            completionHandler(nil, ErrorSM(code: 0, status: "Can't parse data for entity \(T.self)"))
                             return
                         }
-                        
+
                         completionHandler(items, nil)
                     }
                 case .failure(let error):
-                    let afError = error as! AFError
-                    completionHandler(nil, NSError(domain: afError.errorDescription ?? "",
-                                                   code: afError.responseCode ?? 0,
-                                                   userInfo: nil))
+                    let afError = error as? AFError
+                    if let data = response.data {
+                        let decoder = JSONDecoder()
+                        guard let internalerror = try? decoder.decode(InternalErrorSM.self , from: data) else {
+                            completionHandler(nil, ErrorSM(code: 0, status: "Can't parse data from responce"))
+                            return
+                        }
+                        completionHandler(nil, ErrorSM(internalError: internalerror, code: afError?.responseCode ?? 0))
+                        return
+                    }
+                    
+                    completionHandler(nil, ErrorSM(code: afError?.responseCode,
+                                                   status: afError?.errorDescription))
                 }
         }
     }

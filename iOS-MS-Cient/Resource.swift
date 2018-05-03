@@ -17,9 +17,9 @@ public protocol ResourceInterface {
     var client: SMClient? { get }
 }
 
-public typealias SMResponse<T> = (T?, NSError?) -> Swift.Void
-public typealias SMResponseCount = (Int?, NSError?) -> Swift.Void
-public typealias SMResponseDelete = (Bool?, NSError?) -> Swift.Void
+public typealias SMResponse<T> = (T?, ErrorSM?) -> Swift.Void
+public typealias SMResponseCount = (Int?, ErrorSM?) -> Swift.Void
+public typealias SMResponseDelete = (Bool?, ErrorSM?) -> Swift.Void
 
 public class Resource<T: Decodable> : NSObject, ResourceInterface {
     
@@ -60,7 +60,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     public func getLimit() -> Int {
         return self.limit
     }
-
+    
     public func getOffset() -> Int {
         return self.offset
     }
@@ -83,7 +83,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         for predicate in predicates {
             self.filter.setFilters(filters: [predicate])
         }
-
+        
         return self
     }
     
@@ -117,10 +117,10 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         for field in fields {
             self.fields.append(field)
         }
-    
+        
         return self
     }
-
+    
     public func getFields() -> [String] {
         return self.fields
     }
@@ -138,7 +138,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         var params : [String : String] = [
             "offset" : String(self.offset),
             "limit"  : String(self.limit),
-        ]
+            ]
         
         if self.ids.count > 0 {
             params["ids"] = self.ids.joined(separator: ",")
@@ -151,11 +151,11 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         if self.filter.getFilters().count > 0 {
             params["where"] = self.filter.asString()
         }
-
+        
         if self.in.predicates.count > 0 {
             params["in"] = self.in.asString()
         }
-
+        
         if self.sort.count > 0 {
             params["sort"] = self.sort.joined(separator: ",")
         }
@@ -189,7 +189,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/by"
         var parameters: [String : String] = self.getQueryParams()
         _ = parameters.updateValue("1", forKey: "limit")
-
+        
         self.heandler.request(url: url, method: .get, parameters: parameters) { (item, error) in
             closure(item, error)
         }
@@ -198,7 +198,7 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     public func count(closure: @escaping SMResponseCount) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI())
-        self.heandler.request(url: url, method: .get, parameters: nil) { (object: CounterSM?, error: NSError?) in
+        self.heandler.request(url: url, method: .get, parameters: nil) { (object: CounterSM?, error: ErrorSM?) in
             closure(SMCountMaker.count(object: object), error)
         }
     }
@@ -222,9 +222,9 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
     }
     
     public func delete(id: String, closure: @escaping SMResponseDelete) {
-
+        
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/" + id
-        self.heandler.request(url: url, method: .delete, parameters: nil) { (item: SMDeletedObject?, error: NSError?) in
+        self.heandler.request(url: url, method: .delete, parameters: nil) { (item: SMDeletedObject?, error: ErrorSM?) in
             closure(item?.data?.first, error)
         }
     }

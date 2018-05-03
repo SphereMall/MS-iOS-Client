@@ -18,22 +18,26 @@ public class Basket: OrderFinalized {
             self.id = userId
             self.get(id: userId!, closure: { (basket, error) in
                 if basket != nil {
-                    self.setProperties(order: basket!.data!.first!.attributes!)
+                    if let attributes = basket?.data?.first?.attributes {
+                        self.setProperties(order: attributes)
+                    }
                 }
             })
         }
     }
     
-    public func get(id: String, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func get(id: String, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         client.basket.get(id: id) { (order, error) in
             if order != nil {
-                self.setProperties(order: order!.data!.first!.attributes!)
+                if let attributes = order?.data?.first?.attributes {
+                    self.setProperties(order: attributes)
+                }
             }
             closure(order, error)
         }
     }
     
-    public func add(predicate: BasketPredicate, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func add(predicate: BasketPredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         
         let params = queryParams(predicates: [predicate])
         
@@ -42,7 +46,9 @@ public class Basket: OrderFinalized {
                 if basket != nil {
                     self.client.basket.create(data: params) { (order, error) in
                         if order != nil {
-                            self.setProperties(order: order!.data!.first!.attributes!)
+                            if let attributes = order?.data?.first?.attributes {
+                                self.setProperties(order: attributes)
+                            }
                         }
                         closure(order, error)
                     }
@@ -53,31 +59,35 @@ public class Basket: OrderFinalized {
         } else {
             client.basket.create(data: params) { (order, error) in
                 if order != nil {
-                    self.setProperties(order: order!.data!.first!.attributes!)
+                    if let attributes = order?.data?.first?.attributes {
+                        self.setProperties(order: attributes)
+                    }
                 }
                 closure(order, error)
             }
         }
     }
     
-    public func remove(predicate: BasketPredicate, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func remove(predicate: BasketPredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         
         if id == default_order_id {
-            closure(nil, NSError(domain: "Can not delete items. Shop is not created.", code: 404, userInfo: nil))
+            closure(nil, ErrorSM(code: 404, status: "Can not delete items. Shop is not created."))
             return
         }
         
         let params = queryParams(predicates: [predicate])
         client.basket.removeAllItems(params: params) { (order, error) in
             if order != nil {
-                self.setProperties(order: order!.data!.first!.attributes!)
+                if let attributes = order?.data?.first?.attributes {
+                    self.setProperties(order: attributes)
+                }
             }
             
             closure(order, error)
         }
     }
     
-    public func update(predicate: BasketPredicate, closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func update(predicate: BasketPredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         
         let params = queryParams(predicates: [predicate])
         let margedParams = updateParams.merging(params) { (_, new) in new }
@@ -86,7 +96,9 @@ public class Basket: OrderFinalized {
             self.createBasket(closure: { (basket, error) in
                 self.client.basket.update(id: self.getId(), data: margedParams) { (order, error) in
                     if order != nil {
-                        self.setProperties(order: order!.data!.first!.attributes!)
+                        if let attributes = order?.data?.first?.attributes {
+                            self.setProperties(order: attributes)
+                        }
                         self.updateParams.removeAll()
                         closure(order, error)
                     } else {
@@ -97,7 +109,9 @@ public class Basket: OrderFinalized {
         } else {
             client.basket.update(id: getId(), data: margedParams) { (order, error) in
                 if order != nil {
-                    self.setProperties(order: order!.data!.first!.attributes!)
+                    if let attributes = order?.data?.first?.attributes {
+                        self.setProperties(order: attributes)
+                    }
                     self.updateParams.removeAll()
                     closure(order, error)
                 }
@@ -143,7 +157,7 @@ public class Basket: OrderFinalized {
         return self
     }
     
-    public func createBasket(closure: @escaping (BasketSM?, NSError?) -> Swift.Void) {
+    public func createBasket(closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         client.basket.new(data: nil) { (basket, error) in
             self.id = basket?.data?.first?.id
         }

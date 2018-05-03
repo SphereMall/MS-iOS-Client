@@ -13,7 +13,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         return "users"
     }
     
-    public func subscribe(email: String, name: String = "", closure: @escaping (UserSM?, NSError?) -> Swift.Void) {
+    public func subscribe(email: String, name: String = "", closure: @escaping (UserSM?, ErrorSM?) -> Swift.Void) {
     
         self.filter(predicate: IsUserEmail(email: email).asFilter())
             .limit(limit: 1)
@@ -42,7 +42,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func unsubscribe(guid: String, closure: @escaping (UserSM?, NSError?) -> Swift.Void) {
+    public func unsubscribe(guid: String, closure: @escaping (UserSM?, ErrorSM?) -> Swift.Void) {
         fields(fields: ["isSubscriber"])
             .filter(predicate: Predicate(field: "guid", op: .equal, value: guid))
             .limit(limit: 1)
@@ -62,17 +62,21 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func uploadPushesToken(token: String, userId: String, closure: @escaping (Bool?, NSError?) -> Swift.Void ) {
+    public func uploadPushesToken(token: String, userId: String, closure: @escaping (Bool?, ErrorSM?) -> Swift.Void ) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/devices/\(userId)"
         let data = ["userToken" : token]
         
-        self.heandler.request(url: url, method: .put, parameters: data) { (item: EmptySM?, error: NSError?) in
-            closure(item?.success, error)
+        self.heandler.request(url: url, method: .put, parameters: data) { (item: EmptySM?, error: ErrorSM?) in
+            if item?.status == "OK" {
+                closure(true, error)
+            } else {
+                closure(false, error)
+            }
         }
     }
     
-    public func setAddress(addressId: String = "0", userId: String, params: [String: String], closure: @escaping (AddressSM?, NSError?) -> Swift.Void) {
+    public func setAddress(addressId: String = "0", userId: String, params: [String: String], closure: @escaping (AddressSM?, ErrorSM?) -> Swift.Void) {
         
         var parameters: [String : String] = params
         
@@ -100,7 +104,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func get(deviceId: String ,closure: @escaping (UserSM?, NSError?) -> Void) {
+    public func get(deviceId: String ,closure: @escaping (UserSM?, ErrorSM?) -> Void) {
 
         let headers = ["User-Agent" : deviceId]
         
@@ -109,16 +113,16 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         let parameters = ["client_secret" : client!.getSecretKey(),
                           "client_id" : client!.getClientId()]
         
-        heandler.request(url: url, method: .get, parameters: parameters, headers: headers) { (item: SlimUserSM?, error: NSError?) in
+        heandler.request(url: url, method: .get, parameters: parameters, headers: headers) { (item: SlimUserSM?, error: ErrorSM?) in
             if error != nil {
                 closure(nil, error)
             } else {
                 guard let id = item?.data?.userId else {
-                    closure(nil, NSError(domain: "userId not found", code: 404, userInfo: nil))
+                    closure(nil, ErrorSM(code: 404, status: "userId not found"))
                     return
                 }
                 
-                self.get(id: id, closure: { (user: UserSM?, error: NSError?) in
+                self.get(id: id, closure: { (user: UserSM?, error: ErrorSM?) in
                     closure(user, error)
                 })
             }

@@ -43,13 +43,13 @@ public class GridResource<T: Decodable> : Resource <GridSM> {
         return self
     }
     
-    public func facets(closure: @escaping ([Facet]?, NSError?) -> Swift.Void) {
+    public func facets(closure: @escaping ([Facet]?, ErrorSM?) -> Swift.Void) {
         
         let params = getQueryParams()
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/filter"
         
-        heandler.request(url: url, method: .get, parameters: params) { (facets: FacetsSM?, error: NSError?) in
+        heandler.request(url: url, method: .get, parameters: params) { (facets: FacetsSM?, error: ErrorSM?) in
             guard let unwrapperdFacets = facets else {
                 closure(nil, error)
                 return
@@ -64,12 +64,12 @@ public class GridResource<T: Decodable> : Resource <GridSM> {
         let params = self.getQueryParams()
         
         let url = String(self.client!.getGatewayUrl() + self.getURI())
-        self.heandler.request(url: url, method: .get, parameters: params) { (object: CounterSM?, error: NSError?) in
+        self.heandler.request(url: url, method: .get, parameters: params) { (object: CounterSM?, error: ErrorSM?) in
             closure(SMCountMaker.count(object: object), error)
         }
     }
     
-    public override func all(closure: @escaping (GridSM?, NSError?) -> Void) {
+    public override func all(closure: @escaping (GridSM?, ErrorSM?) -> Void) {
         let url = String(self.client!.getGatewayUrl() + self.getURI())
         let parameters = self.getQueryParams()
         

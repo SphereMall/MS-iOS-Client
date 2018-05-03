@@ -10,10 +10,9 @@ import UIKit
 
 public class OrdersSM: Entity, Decodable {
     public var data: [OrdersData]?
-    public var error : Error?
-    public var success : Bool?
-    public var ver : Int?
-    public var meta: Meta?
+    public var meta : Meta?
+    public var status : String?
+    public var ver : String?
 }
 
 public struct OrdersData: Decodable {

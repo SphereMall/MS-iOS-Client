@@ -10,6 +10,6 @@ import UIKit
 
 public class MediaResource<ProductsSM: Decodable> : Resource <ProductsSM> {
     override public func getURI() -> String {
-        return "images"
+        return "media"
     }
 }
