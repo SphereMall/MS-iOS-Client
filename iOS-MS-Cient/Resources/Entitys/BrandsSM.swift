@@ -17,6 +17,7 @@ public class BrandsSM: Entity, Decodable {
 
 public struct BrandsData: Decodable {
     public var attributes : AttributeBrand?
+    public var relationships: ObjectRelationships?
     public var id : String?
     public var type : String?
 }

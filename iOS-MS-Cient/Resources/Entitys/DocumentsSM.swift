@@ -17,6 +17,7 @@ public class DocumentsSM: Entity, Decodable {
 
 public struct DocumentData: Decodable {
     public var documentAttributes: DocumentModel?
+    public var relationships: ObjectRelationships?
     public var id: String?
     public var type: String?
 }

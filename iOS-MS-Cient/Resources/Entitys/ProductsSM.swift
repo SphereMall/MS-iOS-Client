@@ -18,25 +18,33 @@ public class ProductsSM: Entity, Decodable {
     
     override public func rebuild() -> Self {
         guard let data = self.data else { return self }
+        guard let included = self.included else { return self }
         var products : [ProductsData] = []
         for var product in data {
-            product = attributeValues(product: &product)
-            product = brands(product: &product)
-            product = functionalNames(product: &product)
-            product = promotions(product: &product)
+            product = product.promotions(included: included)
+            product = product.brands(included: included)
+            product = product.functionalNames(included: included)
+            product = product.attributeValues(included: included)
             products.append(product)
         }
         
         self.data = products
         return self
     }
+}
+
+public struct ProductsData: Decodable {
+    public var id : String?
+    public var attributes : ProductsAttributes?
+    public var relationships: ObjectRelationships?
+    public var type : String?
     
-    private func attributeValues(product: inout ProductsData) -> ProductsData {
+    public mutating func attributeValues(included: [IncludItem]) -> ProductsData {
         
-        if let data = product.relationships?.productAttributeValues?.data {
-            product.attributes?.attributeValues = []
+        if let data = self.relationships?.productAttributeValues?.data {
+            self.attributes?.attributeValues = []
             for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
+                let include = included.first(where: { (includeItem) -> Bool in
                     if includeItem.type == "productAttributeValues" && (includeItem.item as? ProductAttributeValuesAttribute)?.id == item.id {
                         return true
                     }
@@ -44,20 +52,20 @@ public class ProductsSM: Entity, Decodable {
                 })
                 
                 if include != nil {
-                    product.attributes?.attributeValues?.append(include?.item as! ProductAttributeValuesAttribute)
+                    self.attributes?.attributeValues?.append(include?.item as! ProductAttributeValuesAttribute)
                 }
             }
         }
         
-        return product
+        return self
     }
     
-    private func brands(product: inout ProductsData) -> ProductsData {
+    public mutating func brands(included: [IncludItem]) -> ProductsData {
         
-        if let data = product.relationships?.brands?.data {
-            product.attributes?.brands = []
+        if let data = self.relationships?.brands?.data {
+            self.attributes?.brands = []
             for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
+                let include = included.first(where: { (includeItem) -> Bool in
                     if includeItem.type == "brands" && (includeItem.item as? AttributeBrand)?.id == item.id {
                         return true
                     }
@@ -65,20 +73,20 @@ public class ProductsSM: Entity, Decodable {
                 })
                 
                 if include != nil {
-                    product.attributes?.brands?.append(include?.item as! AttributeBrand)
+                    self.attributes?.brands?.append(include?.item as! AttributeBrand)
                 }
             }
         }
         
-        return product
+        return self
     }
     
-    private func functionalNames(product: inout ProductsData) -> ProductsData {
+    public mutating func functionalNames(included: [IncludItem]) -> ProductsData {
         
-        if let data = product.relationships?.functionalNames?.data {
-            product.attributes?.functionalNames = []
+        if let data = self.relationships?.functionalNames?.data {
+            self.attributes?.functionalNames = []
             for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
+                let include = included.first(where: { (includeItem) -> Bool in
                     if includeItem.type == "functionalNames" && (includeItem.item as? FunctionalNameAttribute)?.id == item.id {
                         return true
                     }
@@ -86,20 +94,20 @@ public class ProductsSM: Entity, Decodable {
                 })
                 
                 if include != nil {
-                    product.attributes?.functionalNames?.append(include?.item as! FunctionalNameAttribute)
+                    self.attributes?.functionalNames?.append(include?.item as! FunctionalNameAttribute)
                 }
             }
         }
         
-        return product
+        return self
     }
     
-    private func promotions(product: inout ProductsData) -> ProductsData {
+    public mutating func promotions(included: [IncludItem]) -> ProductsData {
         
-        if let data = product.relationships?.promotions?.data {
-            product.attributes?.promotions = []
+        if let data = self.relationships?.promotions?.data {
+            self.attributes?.promotions = []
             for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
+                let include = included.first(where: { (includeItem) -> Bool in
                     if includeItem.type == "promotions" && (includeItem.item as? PromotionsAttributes)?.id == item.id {
                         return true
                     }
@@ -107,23 +115,16 @@ public class ProductsSM: Entity, Decodable {
                 })
                 
                 if include != nil {
-                    product.attributes?.promotions?.append(include?.item as! PromotionsAttributes)
+                    self.attributes?.promotions?.append(include?.item as! PromotionsAttributes)
                 }
             }
         }
         
-        return product
+        return self
     }
 }
 
-public struct ProductsData: Decodable {
-    public var id : String?
-    public var attributes : ProductsAttributes?
-    public var relationships: ProductRelationships?
-    public var type : String?
-}
-
-public struct ProductRelationships: Decodable, Gridable {
+public struct ObjectRelationships: Decodable, Gridable {
     public var productAttributeValues: ProductRelationshipsValues?
     public var brands: ProductRelationshipsValues?
     public var functionalNames: ProductRelationshipsValues?

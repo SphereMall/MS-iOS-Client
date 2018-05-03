@@ -16,7 +16,7 @@ public class GridItem: Decodable {
     
     var type: String!
     var item: AnyObject?
-
+    
     public enum CodingKeys: String, CodingKey {
         case notRecognized, document, product, brand
     }
@@ -24,10 +24,12 @@ public class GridItem: Decodable {
     public enum CodingKeyAttribute: String, CodingKey {
         case attributes
         case type
+        case relationships
     }
     
     public convenience required init(from decoder: Decoder) throws {
         self.init()
+        
         let container = try decoder.container(keyedBy: CodingKeyAttribute.self)
         
         let containerType = try container.decodeIfPresent(String.self, forKey: .type)
@@ -40,20 +42,39 @@ public class GridItem: Decodable {
         
         switch type {
         case "documents":
-            if let doc = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes) {
-                self.item = doc as AnyObject
+            if let attributes = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes) {
+                var document = DocumentData(documentAttributes: attributes, relationships: nil, id: attributes.id, type: type)
+                if let relationships = try container.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+                    document.relationships = relationships
+                }
+                
+                self.item = document as AnyObject
             }
         case "products":
-            if let prod = try container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes) {
-                self.item = prod as AnyObject
+            if let attributes = try container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes) {
+                var product = ProductsData(id: attributes.id, attributes: attributes, relationships: nil, type: type)
+                if let relationships = try container.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+                    product.relationships = relationships
+                }
+                self.item = product as AnyObject
             }
         case "brands":
-            if let brand = try container.decodeIfPresent(AttributeBrand.self, forKey: .attributes) {
+            if let attributes = try container.decodeIfPresent(AttributeBrand.self, forKey: .attributes) {
+                var brand = BrandsData(attributes: attributes, relationships: nil, id: attributes.id, type: type)
+                if let relationships = try container.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+                    brand.relationships = relationships
+                }
+                
                 self.item = brand as AnyObject
             }
         case "promotions":
-            if let brand = try? container.decodeIfPresent(PromotionsAttributes.self, forKey: .attributes) {
-                self.item = brand as AnyObject
+            if let attributes = try? container.decodeIfPresent(PromotionsAttributes.self, forKey: .attributes) {
+                var promotion = PromotionsData(attributes: attributes, relationships: nil, id: attributes?.id, type: type)
+                if let relationships = try container.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+                    promotion.relationships = relationships
+                }
+                
+                self.item = promotion as AnyObject
             }
         default:
             self.type = "notRecognized"
@@ -71,113 +92,37 @@ public class GridSM: Entity, Decodable {
     public override func rebuild() -> Self {
         
         guard let data = self.data else { return self }
+        guard let included = self.included else { return self }
         var items : [GridItem] = []
-        for var item in data {
+        for object in data {
             
-            switch item.type {
+            switch object.type {
             case "documents":
-                items.append(item)
+                items.append(object)
             case "products":
-//                item = item.attributeValues(product: &item.item)
-//                item = brands(product: &product)
-//                item = functionalNames(product: &product)
-//                item = promotions(product: &product)
-                items.append(item)
+                if var product = object.item as? ProductsData {
+                    product = product.promotions(included: included)
+                    product = product.brands(included: included)
+                    product = product.functionalNames(included: included)
+                    product = product.attributeValues(included: included)
+                    let item = GridItem()
+                    item.item = product as AnyObject
+                    item.type = object.type
+                    items.append(item)
+                } else {
+                    items.append(object)
+                }
             case "brands":
-                items.append(item)
+                items.append(object)
             case "promotions":
-                items.append(item)
+                items.append(object)
             default:
-                items.append(item)
+                items.append(object)
             }
         }
         
         self.data = items
         return self
-    }
-    
-    private func attributeValues(product: inout ProductsData) -> ProductsData {
-        
-        if let data = product.relationships?.productAttributeValues?.data {
-            product.attributes?.attributeValues = []
-            for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
-                    if includeItem.type == "productAttributeValues" && (includeItem.item as? ProductAttributeValuesAttribute)?.id == item.id {
-                        return true
-                    }
-                    return false
-                })
-                
-                if include != nil {
-                    product.attributes?.attributeValues?.append(include?.item as! ProductAttributeValuesAttribute)
-                }
-            }
-        }
-        
-        return product
-    }
-    
-    private func brands(product: inout ProductsData) -> ProductsData {
-        
-        if let data = product.relationships?.brands?.data {
-            product.attributes?.brands = []
-            for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
-                    if includeItem.type == "brands" && (includeItem.item as? AttributeBrand)?.id == item.id {
-                        return true
-                    }
-                    return false
-                })
-                
-                if include != nil {
-                    product.attributes?.brands?.append(include?.item as! AttributeBrand)
-                }
-            }
-        }
-        
-        return product
-    }
-    
-    private func functionalNames(product: inout ProductsData) -> ProductsData {
-        
-        if let data = product.relationships?.functionalNames?.data {
-            product.attributes?.functionalNames = []
-            for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
-                    if includeItem.type == "functionalNames" && (includeItem.item as? FunctionalNameAttribute)?.id == item.id {
-                        return true
-                    }
-                    return false
-                })
-                
-                if include != nil {
-                    product.attributes?.functionalNames?.append(include?.item as! FunctionalNameAttribute)
-                }
-            }
-        }
-        
-        return product
-    }
-    
-    private func promotions(product: inout ProductsData) -> ProductsData {
-        
-        if let data = product.relationships?.promotions?.data {
-            product.attributes?.promotions = []
-            for item in data {
-                let include = included?.first(where: { (includeItem) -> Bool in
-                    if includeItem.type == "promotions" && (includeItem.item as? PromotionsAttributes)?.id == item.id {
-                        return true
-                    }
-                    return false
-                })
-                
-                if include != nil {
-                    product.attributes?.promotions?.append(include?.item as! PromotionsAttributes)
-                }
-            }
-        }
-        
-        return product
     }
 }
 

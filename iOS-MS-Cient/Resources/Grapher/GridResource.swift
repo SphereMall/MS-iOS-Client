@@ -74,7 +74,7 @@ public class GridResource<T: Decodable> : Resource <GridSM> {
         let parameters = self.getQueryParams()
         
         self.heandler.request(url: url, method: .get, parameters: parameters) { (items: GridSM?, error) in
-            closure(items, error)
+            closure(items?.rebuild(), error)
         }
     }
     

@@ -15,9 +15,10 @@ public class PromotionsSM: Entity, Decodable  {
     public var ver : String?
 }
 
-public class PromotionsData: Decodable {
-    public var id : String?
+public struct PromotionsData: Decodable {
     public var attributes : PromotionsAttributes?
+    public var relationships: ObjectRelationships?
+    public var id : String?
     public var type : String?
 }
 
