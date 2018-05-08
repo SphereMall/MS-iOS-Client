@@ -274,6 +274,8 @@
 		E9E0BE612043F385003B03EF /* GridResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE602043F385003B03EF /* GridResourceTests.swift */; };
 		E9E0BE642043FECA003B03EF /* GridSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE622043FE0F003B03EF /* GridSM.swift */; };
 		E9E0BE652043FECB003B03EF /* GridSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE622043FE0F003B03EF /* GridSM.swift */; };
+		E9F3EB5C20A0964400260AFB /* GridFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */; };
+		E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C7AE4206B784F00EFA879 /* GrapherResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -449,6 +451,7 @@
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
 		E9E0BE622043FE0F003B03EF /* GridSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSM.swift; sourceTree = "<group>"; };
+		E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFilterTests.swift; sourceTree = "<group>"; };
 		F1E09B021AD2A02290B1A416 /* Pods-iOS-MS-Cient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-MS-Cient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-MS-Cient/Pods-iOS-MS-Cient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -578,6 +581,7 @@
 				E9118DD12032D1A600A7344D /* CorrelationsResourceTests.swift */,
 				E917271A2032E99D0075995D /* AuthResourceTests.swift */,
 				E9E0BE602043F385003B03EF /* GridResourceTests.swift */,
+				E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */,
 			);
 			path = "iOS-MS-CientTests";
 			sourceTree = "<group>";
@@ -1130,6 +1134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */,
+				E9F3EB5C20A0964400260AFB /* GridFilterTests.swift in Sources */,
 				E9619EAF20284D9B00825F99 /* EntitiesSM.swift in Sources */,
 				E9619F5D20284F7B00825F99 /* OrderFinalized.swift in Sources */,
 				E9118DD22032D1A600A7344D /* CorrelationsResourceTests.swift in Sources */,
@@ -1265,6 +1270,7 @@
 				E9619EBD20284D9B00825F99 /* AttributeTypesSM.swift in Sources */,
 				E9619F6420284F9300825F99 /* IsUserRegistered.swift in Sources */,
 				E9619F5620284F6800825F99 /* SMRequest.swift in Sources */,
+				E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */,
 				E9619F0220284DD400825F99 /* FunctionalNameFilter.swift in Sources */,
 				E9619F4020284E2600825F99 /* MediaResourceTest.swift in Sources */,
 				E9619F6320284F9000825F99 /* IsUserEmail.swift in Sources */,

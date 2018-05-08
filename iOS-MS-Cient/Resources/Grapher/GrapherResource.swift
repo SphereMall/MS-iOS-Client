@@ -8,26 +8,21 @@
 
 import UIKit
 
-public class GrapherResource<T: Decodable> : Resource <GridSM> {
+public class GrapherResource <T: Decodable> : Resource <GridSM> {
     
     public override func getQueryParams() -> [String : String] {
         
         var params = super.getQueryParams()
-        
-        if params["where"] == nil || params["where"] == "" {
-            return params
-        }
-        
-        let whereCondition = params["where"]
         params.removeValue(forKey: "where")
-        
-        let whereArray: [String] = whereCondition!.components(separatedBy: "&")
-        
-        for item in whereArray {
-            let keyValue = item.components(separatedBy: "=")
-            params[keyValue[0]] = keyValue[1]
+    
+        if let gridFilter = filter as? GridFilter {
+            var gridParams = gridFilter.toParams()
+            gridParams.merge(params, uniquingKeysWith: { (value, valueq) -> String in
+                return value
+            })
+            return gridParams
         }
-        
+
         return params
     }
 }

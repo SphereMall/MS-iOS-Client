@@ -10,8 +10,8 @@ import UIKit
 
 public class GridFilterElement: NSObject {
     
-    internal var name: String?
-    internal var values: [String] = []
+    public var name: String = ""
+    public var values: [String] = []
    
     public init(values: [String]) {
         self.values = values
@@ -21,7 +21,20 @@ public class GridFilterElement: NSObject {
         return self.values
     }
     
+    public func asString() -> String {
+        
+        var str = "["
+        for filter in values {
+            str += filter + ","
+        }
+        
+        str = str.dropLast().description
+        str = "\(str)]"
+        // \"attributes\":[1,2,3]
+        return "\"\(name)\":\(str)"
+    }
+    
     public func getName() -> String {
-        return self.name ?? ""
+        return self.name
     }
 }

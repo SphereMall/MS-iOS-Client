@@ -9,65 +9,72 @@
 import UIKit
 
 public class GridFilter: Filter {
-    internal var level: Int! = 0
-    internal var elements: [GridFilterElement] = []
     
-    public func elements(elements: [GridFilterElement]) -> GridFilter {
-//        for element in elements {
-//            self.elements![self.level][element.getName()] = element.getValues()
-//        }
-//
-        self.level = self.level + 1
+    public var elements: [[GridFilterElement]] = []
+    
+    @discardableResult public func elements(elements: [GridFilterElement]) -> GridFilter {
+        self.elements.append(elements)
         return self
     }
     
-    public func reset() -> GridFilter {
+    @discardableResult public override func instance() -> Filter {
+        return self
+    }
+    
+    @discardableResult public func reset() -> GridFilter {
         self.elements.removeAll()
-        self.level = 0
         return self
     }
     
-    public override func setFilters(filters: [Predicate]) -> GridFilter {
-//        foreach ($filters as $key => $value) {
-//            $this->addFilter($key, $value);
-//        }
+    @discardableResult public override func setFilters(filters: [Predicate]) -> GridFilter {
+        for filter in filters {
+            self.filters.append(Predicate(field: filter.field, op: filter.op, value: filter.value!))
+        }
         return self
     }
     
-    public func getElements() -> [GridFilterElement] {
+    public func getElements() -> [[GridFilterElement]] {
         return self.elements
     }
     
     public func toString() -> String {
-   
-//        var set = getStandardFilter()
-//
-//        if (!empty($this->elements)) {
-//            $set['params'] = json_encode($this->elements);
-//        }
-//
-        return ""
+        return mapParamsToString(toParams())
     }
     
-//    public func addFilter(field, value, op = nil) {
-//        self.filters[field] = value
-//        return self
-//    }
-    
-    private func getStandardFilter() -> [Predicate] {
-        let set: [Predicate] = []
-//        if filters.count > 0 {
-//            
-//            for filter in filters {
-//                
-//            }
+    @discardableResult public func addFilter(field: String, value: String) -> GridFilter {
+        self.filters.append(Predicate(field: field, op: .equal, value: value))
+        return self
+    }
+
+    public func toParams() -> [String : String] {
+        var set = getStandardFilter()
+        if elements.count > 0 {
+            var jsonParams = String()
+            for levelElements in self.elements {
+                var elements = "{"
+                for element in levelElements {
+                    elements.append(element.asString() + ",")
+                }
+                jsonParams.append(elements.dropLast() + "},")
+            }
             
-//            foreach (filters as $key => $value) {
-//                $set[$key] = is_array($value)
-//                    ? implode(',', $value)
-//                    : $value;
-//            }
-//        }
+            set["params"] = "[\(jsonParams.dropLast())]"
+        }
         return set
+    }
+    
+    private func getStandardFilter() -> [String: String] {
+        var set: [String: String] = [:]
+        for predicate in filters {
+            set[predicate.field!] = predicate.value
+        }
+        
+        return set
+    }
+    
+    private func mapParamsToString(_ params: [String: String]) -> String {
+        return params.compactMap({ (key, value) -> String in
+            return "\(key)=\(value)"
+        }).joined(separator: "&")
     }
 }

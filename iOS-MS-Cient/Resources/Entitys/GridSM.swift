@@ -14,8 +14,8 @@ public protocol Gridable {
 
 public class GridItem: Decodable {
     
-    var type: String!
-    var item: AnyObject?
+    public var type: String!
+    public var item: AnyObject?
     
     public enum CodingKeys: String, CodingKey {
         case notRecognized, document, product, brand

@@ -38,6 +38,14 @@ public class Filter: NSObject {
         filters.append(specification.asFilter())
     }
     
+    public func instance() -> Filter {
+        return self
+    }
+    
+    public func reset() {
+        self.filters.removeAll()
+    }
+    
     public func getFilters() -> [Predicate] {
         return self.filters
     }
