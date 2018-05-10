@@ -27,7 +27,8 @@ class CRUDTests: XCTestCase {
         
         let exp = self.expectation(description: "testGet")
         client.products.all { (products, error) in
-            print(products ?? error ?? "wtf")
+            XCTAssertNotNil(products)
+            XCTAssertNil(error)
             exp.fulfill()
         }
     
@@ -38,7 +39,8 @@ class CRUDTests: XCTestCase {
         
         let exp = self.expectation(description: "testGet")
         client.products.limit(limit: 2, offset: 2).all { (products, error) in
-            print(products ?? error ?? "wtf")
+            XCTAssertNotNil(products)
+            XCTAssertNil(error)
             exp.fulfill()
         }
         
@@ -48,7 +50,8 @@ class CRUDTests: XCTestCase {
     func testAll() {
         let exp = self.expectation(description: "testAll")
         client.products.all() { (products, error) in
-            print(products ?? error ?? "wtf")
+            XCTAssertNotNil(products)
+            XCTAssertNil(error)
             
             exp.fulfill()
         }
@@ -57,8 +60,9 @@ class CRUDTests: XCTestCase {
     
     func testFullAll() {
         let exp = self.expectation(description: "testFullAll")
-        client.products.limit(limit: 10, offset: 1000).fullAll { (items, error) in
-            print(items ?? error ?? "wtf")
+        client.products.limit(limit: 10, offset: 10).fullAll { (items, error) in
+            XCTAssertNotNil(items)
+            XCTAssertNil(error)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 10)
@@ -67,7 +71,8 @@ class CRUDTests: XCTestCase {
     func testCount() {
         let exp = self.expectation(description: "testCount")
         client.products.count { (count, error) in
-            print(count ?? error ?? "wtf")
+            XCTAssertNotNil(count)
+            XCTAssertNil(error)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 10)
@@ -77,6 +82,8 @@ class CRUDTests: XCTestCase {
         let exp = self.expectation(description: "testFirst")
         client.products.first { (product, error) in
             print(product ?? error ?? "wtf")
+            XCTAssertNotNil(product)
+            XCTAssertNil(error)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 10)

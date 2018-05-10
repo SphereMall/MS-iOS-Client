@@ -16,17 +16,17 @@ class BasketTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        client = SMClient(gatewayUrl: BASKET_URL,
+        client = SMClient(gatewayUrl: GRID_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
         
-        basket = Basket(client: client, userId: "568")
+        basket = Basket(client: client, userId: USER_ID.description)
     }
     
     func testAddToBasket() {
         
         let exp = self.expectation(description: "testAddToBasket")
-        let predicate = BasketPredicate(id: "6351", amount: 10)
+        let predicate = BasketPredicate(id: "405", amount: 10)
 
         basket.add(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
@@ -39,22 +39,7 @@ class BasketTests: XCTestCase {
     
     func testBasketGet() {
         let exp = self.expectation(description: "testBasketGet")
-        basket.get(id: "157") { (basket, error) in
-            XCTAssertNil(error)
-            XCTAssertNotNil(basket?.data?.first?.attributes?.id)
-            exp.fulfill()
-        }
-
-        wait(for: [exp], timeout: 10)
-    }
-    
-    func testRemoveAtBasket() {
-
-        let exp = self.expectation(description: "testRemoveAtBasket")
-
-        let predicate = BasketPredicate(id: "6329")
-
-        basket.remove(predicate: predicate) { (basket, error) in
+        basket.get(id: USER_ID.description) { (basket, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(basket?.data?.first?.attributes?.id)
             exp.fulfill()
@@ -67,7 +52,7 @@ class BasketTests: XCTestCase {
         
         let exp = self.expectation(description: "testUpdateAtBasket")
 
-        let predicate = BasketPredicate(id: "6329", amount: 6)
+        let predicate = BasketPredicate(id: "405", amount: 6)
 
         basket.update(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
@@ -75,6 +60,21 @@ class BasketTests: XCTestCase {
             exp.fulfill()
         }
 
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func testRemoveAtBasket() {
+        
+        let exp = self.expectation(description: "testRemoveAtBasket")
+        
+        let predicate = BasketPredicate(id: "405")
+        
+        basket.remove(predicate: predicate) { (basket, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(basket?.data?.first?.attributes?.id)
+            exp.fulfill()
+        }
+        
         wait(for: [exp], timeout: 10)
     }
 }

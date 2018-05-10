@@ -114,6 +114,8 @@ public class Basket: OrderFinalized {
                     }
                     self.updateParams.removeAll()
                     closure(order, error)
+                } else {
+                    closure(order, error)
                 }
             }
         }

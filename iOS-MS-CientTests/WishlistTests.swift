@@ -14,7 +14,7 @@ class WishlistTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: "http://gateway-kaas.alpha.spheremall.net:8090/v1/",
+        client = SMClient(gatewayUrl: GRID_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -51,14 +51,14 @@ class WishlistTests: XCTestCase {
         
         let exp = self.expectation(description: "testAddToWishList")
         
-        let predicate = Predicate(field: "id", op: .equal, value: "2")
+        let predicate = Predicate(field: "id", op: .equal, value: "405")
         self.client.products.filter(predicate: predicate).first { (product, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(product?.data?.first?.id)
             guard let id = product?.data?.first?.id else { return }
-            self.client.wishlist.add(userId: "1204", objectId: id, entity: "products") { (item, error) in
+            self.client.wishlist.add(userId: USER_ID.description, objectId: id, entity: "products") { (item, error) in
                 XCTAssertNil(error)
-                self.client.wishlist.remove(userId: "1204", objectId: "2", entity: "products") { (isSuccess, error) in
+                self.client.wishlist.remove(userId: USER_ID.description, objectId: "405", entity: "products") { (isSuccess, error) in
                     XCTAssertNil(error)
                     XCTAssertNotNil(isSuccess)
                     XCTAssertTrue(isSuccess ?? false)
@@ -72,7 +72,7 @@ class WishlistTests: XCTestCase {
     
     func testGetWishList() {
         let exp = self.expectation(description: "testGetWishList")
-        client.wishlist.get(userId: "228", limit: 100, offset: 0) { (items, error) in
+        client.wishlist.get(userId: USER_ID.description, limit: 100, offset: 0) { (items, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(items)
             exp.fulfill()

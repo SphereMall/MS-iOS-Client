@@ -34,10 +34,38 @@ public class ProductsSM: Entity, Decodable {
 }
 
 public struct ProductsData: Decodable {
+    
     public var id : String?
     public var attributes : ProductsAttributes?
     public var relationships: ObjectRelationships?
     public var type : String?
+    
+    public init(id : String?, attributes : ProductsAttributes?, relationships: ObjectRelationships?, type : String?) {
+        self.id = id
+        self.attributes = attributes
+        self.relationships = relationships
+        self.type = type
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case attributes = "attributes"
+        case relationships = "relationships"
+        case type = "type"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if let relationships = try? values.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+            self.relationships = relationships
+        }
+        
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        attributes = try values.decodeIfPresent(ProductsAttributes.self, forKey: .attributes)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+    }
     
     public mutating func attributeValues(included: [IncludItem]) -> ProductsData {
         

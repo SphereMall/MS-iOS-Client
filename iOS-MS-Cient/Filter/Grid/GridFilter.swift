@@ -73,7 +73,7 @@ public class GridFilter: Filter {
     }
     
     private func mapParamsToString(_ params: [String: String]) -> String {
-        return params.compactMap({ (key, value) -> String in
+        return params.map({ (key, value) -> String in
             return "\(key)=\(value)"
         }).joined(separator: "&")
     }

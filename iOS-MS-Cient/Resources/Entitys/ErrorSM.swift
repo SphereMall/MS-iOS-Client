@@ -22,7 +22,7 @@ public class ErrorSM: NSObject {
     public var status : String?
     public var ver : String?
     
-    init(internalError: InternalErrorSM?, code: Int?) {
+    public init(internalError: InternalErrorSM?, code: Int?) {
         self.code = code
         guard let errors = internalError?.errors else { return }
         for error in errors {
@@ -30,17 +30,17 @@ public class ErrorSM: NSObject {
         }
     }
     
-    init(code: Int?, status : String?) {
+    public init(code: Int?, status : String?) {
         self.code = code
         self.status = status
     }
     
-    init(code: Int?, items: [ErrorItem]) {
+    public init(code: Int?, items: [ErrorItem]) {
         self.code = code
         self.items = items
     }
     
-    init(code: Int?, items: [ErrorItem], meta: Meta?, status : String?, ver : String?) {
+    public init(code: Int?, items: [ErrorItem], meta: Meta?, status : String?, ver : String?) {
         self.code = code
         self.items = items
         self.meta = meta
@@ -54,7 +54,7 @@ public class ErrorItem: NSObject {
     public var message: String?
     public var error_code: String?
     
-    init(message: String?, error_code: String?) {
+    public init(message: String?, error_code: String?) {
         self.message = message
         self.error_code = error_code
     }

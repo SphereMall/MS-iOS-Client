@@ -23,12 +23,12 @@ public struct PaymentProvidersData: Decodable {
 
 public struct PaymentProvidersAttribute: Decodable  {
     public var apiKey : String?
-    public var autoReturnUrl : AutoReturnUrl?
+    public var autoReturnUrl : String?
     public var className : String?
     public var id : String?
     public var keyVersion : String?
     public var merchantId : MerchantId?
-    public var msUrl : AutoReturnUrl?
+    public var msUrl : String?
     public var order : String?
     public var postUrl : PostUrl?
     public var returnUrl : String?
@@ -49,11 +49,6 @@ public struct SecretKey: Decodable  {
 
 public struct MerchantId: Decodable  {
     
-}
-
-public struct AutoReturnUrl: Decodable  {
-    public var action : Action?
-    public var url : String?
 }
 
 public struct Action: Decodable  {

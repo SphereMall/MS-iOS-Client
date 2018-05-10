@@ -22,7 +22,7 @@ class DocumentsResourceTest: XCTestCase {
     
     func testResourceDocuments() {
         let exp = self.expectation(description: "testGet")
-        client.documents.all{ (items, error) in
+        client.documents.all { (items, error) in
             XCTAssertNotNil(items)
             XCTAssertNil(error)
             XCTAssertNotNil(items?.data?.first?.id)

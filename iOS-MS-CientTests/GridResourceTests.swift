@@ -23,6 +23,8 @@ class GridResourceTests: XCTestCase {
         let exp = self.expectation(description: "testAllWithPredicate")
         let predicate = Predicate(field: "id", op: .equal, value: "627")
         client.grid.filters(predicates: [predicate]).all { (grid, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(grid)
             exp.fulfill()
         }
         
@@ -33,6 +35,8 @@ class GridResourceTests: XCTestCase {
         
         let exp = self.expectation(description: "testAll")
         client.grid.all { (grid, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(grid)
             exp.fulfill()
         }
         
@@ -42,6 +46,8 @@ class GridResourceTests: XCTestCase {
     func testFacets() {
         let exp = self.expectation(description: "testFacets")
         client.grid.facets { (items, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(items)
             exp.fulfill()
         }
         

@@ -2,7 +2,7 @@
 Official iOS SDK for integrating with **SphereMall Product**.
 [Official documentation](https://spheremall.atlassian.net/wiki/spaces/MIC/pages)
 
-### Version 2.0.0
+### Version 2.0.1
 #### Supported microservices
 * Gateway 1.1.1
 * Products 1.1.0
@@ -21,9 +21,24 @@ pod 'iOS-MS-Client'
 Pass in the configuration to the client:
 
 ```swift
-    var client = SMClient(gatewayUrl: API_GATEWAY_URL,
+    var client = SMClient(gatewayUrl: "API_GATEWAY_URL",
                           clientId: "API_CLIENT_ID",
                           secretKey: "API_SECRET_KEY")
                           
+```
+
+```swift
+
+    // Get all entity items
+    client.products.all { (products, error) in
+        print(products)
+    }
+    
+    // Get entity items by predicate
+    let predicate = Predicate(field: "title", op: .equal, value: "Name of product")
+    client.products.filter(predicate:predicate).all { (products, error) in
+        print(products)
+    }
+
 ```
 

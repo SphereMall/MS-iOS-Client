@@ -14,7 +14,6 @@ public class GrapherResource <T: Decodable> : Resource <GridSM> {
         
         var params = super.getQueryParams()
         params.removeValue(forKey: "where")
-    
         if let gridFilter = filter as? GridFilter {
             var gridParams = gridFilter.toParams()
             gridParams.merge(params, uniquingKeysWith: { (value, valueq) -> String in

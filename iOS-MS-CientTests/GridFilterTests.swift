@@ -30,8 +30,6 @@ class GridFilterTests: XCTestCase {
         let gridFilter = GridFilter()
         gridFilter
             .elements(elements: [FunctionalNameFilter(values: ["2"])])
-            .addFilter(field: "title", op: .equal, value: "Store enrouleur screen 1% - noir")
-
         client.grid.limit(limit: 5).filters(filter: gridFilter).all { (grid, error) in
             XCTAssertNotNil(grid?.data?.first?.item)
             exp.fulfill()

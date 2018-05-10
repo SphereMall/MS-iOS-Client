@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-MS-Client"
-  s.version      = "2.0.0"
+  s.version      = "2.0.1"
   s.summary      = "Official iOS SDK for integrating with SphereMall Product."
   s.description  = "Supported microservices: Gateway 1.1.1, Products 1.1.0, Shop 1.0.1, Users 1.0.0, Grapher 1.0.0"
   s.requires_arc = true
@@ -13,5 +13,4 @@ Pod::Spec.new do |s|
   s.xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES'}
   s.dependency "SwiftyJSON" , "~> 3.1.4"
   s.dependency "Alamofire", "~> 4.6.0"
-  s.dependency "Reflection", "~> 0.15"
 end
