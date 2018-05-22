@@ -104,7 +104,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
         }
     }
     
-    public func get(deviceId: String ,closure: @escaping (UserSM?, ErrorSM?) -> Void) {
+    public func get(deviceId: String, closure: @escaping (UserSM?, ErrorSM?) -> Void) {
 
         let headers = ["User-Agent" : deviceId]
         

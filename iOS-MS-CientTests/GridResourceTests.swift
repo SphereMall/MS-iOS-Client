@@ -48,7 +48,12 @@ class GridResourceTests: XCTestCase {
         client.grid.facets { (items, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(items)
-            exp.fulfill()
+            let gridFilter = GridFilter()
+            gridFilter.elements(elements: [FunctionalNameFilter(values: ["2"])])
+            self.client.grid.limit(limit: 2).filters(filter: gridFilter).all { (grid, error) in
+                XCTAssertNotNil(grid?.data?.first?.item)
+                exp.fulfill()
+            }
         }
         
         wait(for: [exp], timeout: 10)

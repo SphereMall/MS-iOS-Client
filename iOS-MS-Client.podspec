@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "iOS-MS-Client"
-  s.version      = "2.0.1"
+  s.version      = "2.0.2"
   s.summary      = "Official iOS SDK for integrating with SphereMall Product."
   s.description  = "Supported microservices: Gateway 1.1.1, Products 1.1.0, Shop 1.0.1, Users 1.0.0, Grapher 1.0.0"
   s.requires_arc = true

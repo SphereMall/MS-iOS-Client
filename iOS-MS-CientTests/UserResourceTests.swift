@@ -14,13 +14,24 @@ class UserResourceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: GRID_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
     
     override func tearDown() {
         super.tearDown()
+    }
+    
+    func testGetId() {
+        let exp = self.expectation(description: "testSubscribe")
+        client.user.get(id: "153") { (user, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(user!.data!.first!.id)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
     }
     
     func testGet() {

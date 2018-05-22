@@ -22,7 +22,7 @@ class FunctionalNamesTest: XCTestCase {
     
     func testEntityAttributes() {
         let exp = self.expectation(description: "testGet")
-        client.functionalNames.all{ (items, error) in
+        client.functionalNames.all { (items, error) in
             XCTAssertNotNil(items)
             XCTAssertNil(error)
             XCTAssertNotNil(items?.data?.first?.attributes?.id)

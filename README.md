@@ -2,7 +2,7 @@
 Official iOS SDK for integrating with **SphereMall Product**.
 [Official documentation](https://spheremall.atlassian.net/wiki/spaces/MIC/pages)
 
-### Version 2.0.1
+### Version 2.0.2
 #### Supported microservices
 * Gateway 1.1.1
 * Products 1.1.0

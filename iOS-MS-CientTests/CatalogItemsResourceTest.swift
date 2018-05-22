@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftyJSON
 
 class CatalogItemsResourceTest: XCTestCase {
     
@@ -15,26 +16,25 @@ class CatalogItemsResourceTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: GRID_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
     
-    func testBrandsResourceTest() {
-        let exp = self.expectation(description: "testGet")
-        client.catalogItems.all{ (items, error) in
+    func testCatalogItemsResourceTest() {
+        let exp = self.expectation(description: "testBrandsResourceTest")
+        client.catalogItems.all { (items, error) in
             XCTAssertNotNil(items)
+            print(items?.data[1].attributes?.filterSettings ?? "")
             XCTAssertNil(error)
             XCTAssertNotNil(items?.data?.first?.id)
             XCTAssertNotNil(items?.data?.first?.attributes?.id)
             exp.fulfill()
         }
-        
         wait(for: [exp], timeout: 10)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     

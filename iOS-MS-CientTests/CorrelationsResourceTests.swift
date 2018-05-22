@@ -23,9 +23,20 @@ class CorrelationsResourceTests: XCTestCase {
     func testAttributeGroupsResource() {
         let exp = self.expectation(description: "testGet")
         client.correlations.getById(id: 5, forClassName: "products") { (items, error) in
+            XCTAssertNotNil(items)
             exp.fulfill()
         }
         
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func testGetFunctionalNames() {
+        let exp = self.expectation(description: "testGet")
+        client.functionalNames.all { (items, error) in
+            print(items)
+            XCTAssertNotNil(items)
+            exp.fulfill()
+        }
         wait(for: [exp], timeout: 10)
     }
     
