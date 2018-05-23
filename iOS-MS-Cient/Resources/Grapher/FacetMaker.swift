@@ -40,12 +40,22 @@ public class FacetMaker: NSObject {
     
     static private func makeFacetValueFrom(item: FacetsAttribute) -> FacetAttribute {
         var value = FacetAttribute()
-        value.title = item.title
-        value.value = item.value
-        value.orderNumber = item.orderNumber
-        value.image = item.image
         value.cssClass = item.cssClass
+        value.attributes = item.attributes
+        value.id = item.id
+        value.value = item.value
+        value.valueTitle = item.valueTitle
+        value.attributeId = item.attributeId
+        value.image = item.image
         value.code = item.code
+        value.displayType = item.displayType
+        value.title = item.title
+        value.orderNumber = item.orderNumber
+        value.description = item.description
+        value.showInSpecList = item.showInSpecList
+        value.useInFilter = item.useInFilter
+        value.attributeGroupId = item.attributeGroupId
+        value.attributesCssClass = item.attributesCssClass
         value.amount = item.amount
         return value
     }

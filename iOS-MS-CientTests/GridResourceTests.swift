@@ -34,7 +34,7 @@ class GridResourceTests: XCTestCase {
     func testAll() {
         
         let exp = self.expectation(description: "testAll")
-        client.grid.all { (grid, error) in
+        client.grid.limit(limit: 10, offset: 0).all { (grid, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(grid)
             exp.fulfill()

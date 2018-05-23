@@ -61,12 +61,22 @@ public struct Facet {
 }
 
 public struct FacetAttribute {
+    public var attributes : String?
+    public var id: Int?
     public var value: String?
-    public var code: String?
+    public var valueTitle: String?
     public var cssClass: String?
-    public var title: String?
+    public var attributeId: String?
     public var image: String?
+    public var code: String?
+    public var displayType: String?
+    public var title: String?
     public var orderNumber: String?
+    public var description: String?
+    public var showInSpecList: String?
+    public var useInFilter: String?
+    public var attributeGroupId: String?
+    public var attributesCssClass: String?
     public var amount: Int?
 }
 
