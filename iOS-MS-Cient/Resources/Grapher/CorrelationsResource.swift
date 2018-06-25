@@ -13,6 +13,18 @@ public class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM>
         return "correlations"
     }
     
+    public func getById(id: String, forClassName: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Swift.Void) {
+        
+        let params = getQueryParams()
+        
+        let type = ClassReflectionHelper(className: forClassName).getShortLowerCaseName()
+        let uriAppend = client!.getGatewayUrl() + getURI() + "/\(type)/\(id)"
+        
+        heandler.request(url: uriAppend, method: .get, parameters: params) { (items: ProductsSM?, error: ErrorSM?) in
+            closure(items, error)
+        }
+    }
+    
     public func getById(id: Int, forClassName: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Swift.Void) {
         
         let params = getQueryParams()

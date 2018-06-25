@@ -32,6 +32,18 @@ class DocumentsResourceTest: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    func testResourceDocumentsFull() {
+        let exp = self.expectation(description: "testGet")
+        client.documents.fullAll { (documents, error) in
+            XCTAssertNotNil(documents)
+            XCTAssertNil(error)
+            XCTAssertNotNil(documents?.data?.first?.id)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()

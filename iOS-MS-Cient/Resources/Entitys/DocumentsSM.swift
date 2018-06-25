@@ -55,6 +55,7 @@ public struct DocumentModel: Decodable, Gridable {
     public var functionalNameId: String?
     public var id: String?
     public var lastUpdate: String?
+    public var media: [ProductMedia]?
     public var title: String?
     public var urlCode: String?
     public var visible: String?

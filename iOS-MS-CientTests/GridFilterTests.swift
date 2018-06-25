@@ -38,4 +38,16 @@ class GridFilterTests: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    func testAll() {
+        
+        let exp = self.expectation(description: "testAllWithFilter")
+        
+        client.grid.limit(limit: 25).all { (grid, error) in
+            XCTAssertNotNil(grid?.data?.first?.item)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
 }

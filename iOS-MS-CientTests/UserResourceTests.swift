@@ -27,7 +27,7 @@ class UserResourceTests: XCTestCase {
         let exp = self.expectation(description: "testSubscribe")
         client.user.get(id: "153") { (user, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(user!.data!.first!.id)
+            XCTAssertNotNil(user?.data?.first?.id)
             exp.fulfill()
         }
         

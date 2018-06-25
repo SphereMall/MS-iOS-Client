@@ -8,7 +8,10 @@
 
 import UIKit
 
-public class DocumentsResource<DocumentsSM: Decodable>: Resource<DocumentsSM> {
+public class DocumentsResource<T: Decodable>: Resource<DocumentsSM>, FullResource {
+    
+    public typealias T = DocumentsSM
+    
     override public func getURI() -> String {
         return "documents"
     }

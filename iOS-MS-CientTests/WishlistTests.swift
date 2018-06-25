@@ -23,52 +23,46 @@ class WishlistTests: XCTestCase {
         super.tearDown()
     }
     
-//    func testAdd() {
-//        let exp = self.expectation(description: "testAddToWishList")
-//        self.client.wishlist.addToWishList(userId: "5", objectId: "6457", entity: "products") { (item, error) in
-//            XCTAssertNil(error)
-//            XCTAssertNotNil(item?.data?.first?.id)
-//            exp.fulfill()
-//        }
-//
-//        wait(for: [exp], timeout: 15)
-//    }
 //
     
-//    func testAdd() {
-//        let exp = self.expectation(description: "testAddToWishList")
-//        let id = "6457"
-//        self.client.wishlist.add(userId: "228", objectId: id, entity: .products) { (item, error) in
-//            XCTAssertNil(error)
-//            XCTAssertNotNil(item)
-//            exp.fulfill()
-//        }
-//
-//        wait(for: [exp], timeout: 15)
-//    }
-    
-    func testAddToWishList() {
-        
+    func testAdd() {
         let exp = self.expectation(description: "testAddToWishList")
-        
-        let predicate = Predicate(field: "id", op: .equal, value: "405")
-        self.client.products.filter(predicate: predicate).first { (product, error) in
+        let id = "624"
+        self.client.wishlist.add(userId: "153", objectId: id, entity: "products") { (item, error) in
             XCTAssertNil(error)
-            XCTAssertNotNil(product?.data?.first?.id)
-            guard let id = product?.data?.first?.id else { return }
-            self.client.wishlist.add(userId: USER_ID.description, objectId: id, entity: "products") { (item, error) in
-                XCTAssertNil(error)
-                self.client.wishlist.remove(userId: USER_ID.description, objectId: "405", entity: "products") { (isSuccess, error) in
-                    XCTAssertNil(error)
-                    XCTAssertNotNil(isSuccess)
-                    XCTAssertTrue(isSuccess ?? false)
-                    exp.fulfill()
-                }
-            }
+            XCTAssertNotNil(item)
+            exp.fulfill()
         }
-        
+
         wait(for: [exp], timeout: 15)
     }
+    
+    /*
+     
+     */
+    
+//    func testAddToWishList() {
+        
+//        let exp = self.expectation(description: "testAddToWishList")
+//
+//        let predicate = Predicate(field: "id", op: .equal, value: "405")
+//        self.client.products.filter(predicate: predicate).first { (product, error) in
+//            XCTAssertNil(error)
+//            XCTAssertNotNil(product?.data?.first?.id)
+//            guard let id = product?.data?.first?.id else { return }
+//            self.client.wishlist.add(userId: USER_ID.description, objectId: id, entity: "products") { (item, error) in
+//                XCTAssertNil(error)
+//                self.client.wishlist.remove(userId: USER_ID.description, objectId: "405", entity: "products") { (isSuccess, error) in
+//                    XCTAssertNil(error)
+//                    XCTAssertNotNil(isSuccess)
+//                    XCTAssertTrue(isSuccess ?? false)
+//                    exp.fulfill()
+//                }
+//            }
+//        }
+//
+//        wait(for: [exp], timeout: 15)
+//    }
     
     func testGetWishList() {
         let exp = self.expectation(description: "testGetWishList")
