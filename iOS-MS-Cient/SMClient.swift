@@ -9,22 +9,6 @@
 import Alamofire
 import SwiftyJSON
 
-public enum NetworkErrorType : Int {
-    case noInternet = 1
-    case invalidToken = 2
-    case accessTokenNotSet = 3
-    case invalidRefreshToken = 4
-    case incorrectCode = 5
-    case invalidNumberType = 6
-    case invalidNumber = 7
-    case unsupportedCountryCode = 8
-    case dataNotFoundCode = 9
-    case unknownNetworkError = 99
-    case IncorrectEmailOrPassword = 88
-}
-
-let SMNetworkDomain = "NetworkErrorDomain"
-
 public class SMClient: ServiceInjector {
     
     fileprivate var gatewayUrl: URL!

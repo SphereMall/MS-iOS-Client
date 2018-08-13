@@ -16,7 +16,18 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
         return "products"
     }
     
+    public func detail(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
+        
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/detail/\(id)"
+        let parameters = self.getQueryParams()
+        
+        self.heandler.request(url: url, method: .get, parameters: parameters) { (item: ProductsSM?, error) in
+            closure(item?.rebuild(), error)
+        }
+    }
+    
     public override func get(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
+        
         super.get(id: id) { (product, error) in
             closure(product?.rebuild(), error)
         }

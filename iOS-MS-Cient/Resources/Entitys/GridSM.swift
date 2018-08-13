@@ -104,7 +104,10 @@ public class GridSM: Entity, Decodable {
                     product = product.promotions(included: included)
                     product = product.brands(included: included)
                     product = product.functionalNames(included: included)
+                    product = product.productAttributeValues(included: included)
                     product = product.attributeValues(included: included)
+                    product = product.attributeTypes(included: included)
+                    product = product.attributes(included: included)
                     let item = GridItem()
                     item.item = product as AnyObject
                     item.type = object.type

@@ -19,6 +19,34 @@ public struct ProductAttributeValuesData: Decodable {
     public var attributes : ProductAttributeValuesAttribute?
     public var id : String?
     public var type : String?
+    public var relationships: ObjectRelationships?
+    
+    public init(attributes: ProductAttributeValuesAttribute?, relationships: ObjectRelationships?, id: String?, type: String?) {
+        self.attributes = attributes
+        self.relationships = relationships
+        self.id = id
+        self.type = type
+    }
+    
+    public enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case attributes = "attributes"
+        case relationships = "relationships"
+        case type = "type"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if let relationships = try? values.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+            self.relationships = relationships
+        }
+        
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        attributes = try values.decodeIfPresent(ProductAttributeValuesAttribute.self, forKey: .attributes)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+    }
 }
 
 public struct ProductAttributeValuesAttribute: Decodable {
