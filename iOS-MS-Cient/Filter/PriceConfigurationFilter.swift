@@ -49,7 +49,7 @@ public class PriceConfigurationFilter: NSObject {
         return string
     }
     
-    class PriceObject: Encodable {
+    public class PriceObject: Encodable {
         
         var productId: Int
         var priceTypeId: Int
@@ -62,7 +62,7 @@ public class PriceConfigurationFilter: NSObject {
         }
     }
     
-    class PriceAttributes: Encodable {
+    public class PriceAttributes: Encodable {
         
         var values: [[String]] = []
         var affectAttributes: [String] = []

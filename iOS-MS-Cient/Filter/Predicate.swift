@@ -10,9 +10,9 @@ import UIKit
 
 public class Predicate: NSObject {
     
-    var field: String?
-    var value: String?
-    var op: FilterOperators!
+    public var field: String?
+    public var value: String?
+    public var op: FilterOperators!
     
     public init(field: String?, op: FilterOperators, value: String) {
         self.field = field

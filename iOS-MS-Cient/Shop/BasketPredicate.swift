@@ -14,7 +14,7 @@ public class BasketPredicateAttribute: Encodable {
     public var attributeValueId: String!
     public var userValue: String?
     
-    init(attributeId: String, attributeValueId: String, userValue: String? = nil) {
+    public init(attributeId: String, attributeValueId: String, userValue: String? = nil) {
         self.attributeId = attributeId
         self.attributeValueId = attributeValueId
         self.userValue = userValue
@@ -33,7 +33,7 @@ public class BasketUpdatePredicate: BasketPredicate {
     
     public var itemId: String
 
-    init(itemId: String, id: String, amount: Int) {
+    public init(itemId: String, id: String, amount: Int) {
         self.itemId = itemId
         super.init(id: id, amount: amount)
     }
@@ -56,7 +56,7 @@ public class BaskeDeletePredicate: BasketPredicate {
     
     public var itemId: String
     
-    init(itemId: String, id: String) {
+    public init(itemId: String, id: String) {
         self.itemId = itemId
         super.init(id: id)
     }

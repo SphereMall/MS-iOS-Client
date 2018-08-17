@@ -30,7 +30,7 @@ public struct ItemsData: Decodable {
         self.rebuild()
     }
     
-    func rebuild() {
+    public func rebuild() {
         
     }
 }
