@@ -87,7 +87,7 @@ public class Basket: OrderFinalized {
         }
     }
     
-    public func update(predicate: BasketPredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
+    public func update(predicate: BasketUpdatePredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         
         let params = queryParams(predicates: [predicate])
         let margedParams = updateParams.merging(params) { (_, new) in new }

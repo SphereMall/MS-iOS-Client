@@ -9,7 +9,7 @@
 import UIKit
 
 public class ProductsSM: Entity, Decodable {
-
+    
     public var data: [ProductsData]? 
     public var included: [IncludItem]?
     public var meta : Meta?
@@ -19,7 +19,7 @@ public class ProductsSM: Entity, Decodable {
     override public func rebuild() -> Self {
         guard let data = self.data else { return self }
         guard let included = self.included else { return self }
-        var products : [ProductsData] = []
+        var products: [ProductsData] = []
         for var product in data {
             product = product.promotions(included: included)
             product = product.brands(included: included)
@@ -28,6 +28,10 @@ public class ProductsSM: Entity, Decodable {
             product = product.attributeValues(included: included)
             product = product.attributeTypes(included: included)
             product = product.attributes(included: included)
+            product = product.productPriceConfigurations(included: included)
+            product = product.priceConfigurations(included: included)
+            product = product.productOptionValues(included: included)
+            product = product.productOptions(included: included)
             products.append(product)
         }
         
@@ -42,6 +46,31 @@ public struct ProductsData: Decodable {
     public var attributes : ProductsAttributes?
     public var relationships: ObjectRelationships?
     public var type : String?
+    
+    public init(include: IncludItem) {
+        guard let object = include.item as? ProductsAttributes else { return }
+        self.attributes = object
+        self.type = include.type
+        self.id = include.id
+        self.relationships = include.relationships
+    }
+    
+    public mutating func rebuild(included: [IncludItem]) -> ProductsData {
+        
+        self = self.promotions(included: included)
+        self = self.brands(included: included)
+        self = self.functionalNames(included: included)
+        self = self.productAttributeValues(included: included)
+        self = self.attributeValues(included: included)
+        self = self.attributeTypes(included: included)
+        self = self.attributes(included: included)
+        self = self.productPriceConfigurations(included: included)
+        self = self.priceConfigurations(included: included)
+        self = self.productOptionValues(included: included)
+        self = self.productOptions(included: included)
+        
+        return self
+    }
     
     public init(id : String?, attributes : ProductsAttributes?, relationships: ObjectRelationships?, type : String?) {
         self.id = id
@@ -219,22 +248,149 @@ public struct ProductsData: Decodable {
     
     public mutating func productPriceConfigurations(included: [IncludItem]) -> ProductsData {
         
-        if let data = self.relationships?.attributes?.data {
-            self.attributes?.attributes = []
+        if let data = self.relationships?.productPriceConfigurations?.data {
+            self.attributes?.productPriceConfigurations = []
             for item in data {
+                
                 let include = included.first(where: { (includeItem) -> Bool in
-                    if includeItem.type == "attributes" && (includeItem.item as? AttributeResourceSM)?.id == item.id {
+                    if includeItem.type == "productPriceConfigurations" &&
+                        (includeItem.item as? ProductPriceConfigurationsAttributes)?.id == item.id {
                         return true
                     }
                     return false
                 })
                 
-                if include != nil {
-                    self.attributes?.attributes?.append(include?.item as! AttributeResourceSM)
+                if let inc = include {
+                    let object = ProductPriceConfigurations(include: inc)
+                    self.attributes?.productPriceConfigurations?.append(object)
                 }
             }
         }
         
+        return self
+    }
+    
+    public mutating func priceConfigurations(included: [IncludItem]) -> ProductsData {
+        
+        if let data = self.relationships?.priceConfigurations?.data {
+            
+            self.attributes?.priceConfigurations = []
+            
+            for item in data {
+                
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "priceConfigurations" &&
+                        (includeItem.item as? PriceConfigurationsAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if let inc = include {
+                    let object = PriceConfigurations(include: inc)
+                    self.attributes?.priceConfigurations?.append(object)
+                }
+            }
+            
+            prices(included: included)
+        }
+        
+        return self
+    }
+    
+    public mutating func prices(included: [IncludItem]) {
+        
+        if let attributes = self.attributes?.priceConfigurations {
+            
+            for item in attributes {
+                
+                if let attributes = item.attributes?.affectAttributes {
+                    self.attributes?.affectAttributes = []
+                    
+                    for affAttrb in attributes {
+                        let include = included.first(where: { (includeItem) -> Bool in
+                            if includeItem.type == "attributes" &&
+                                (includeItem.item as? AttributeResourceSM)?.id == affAttrb {
+                                return true
+                            }
+                            return false
+                        })
+                        
+                        if let inc = include {
+                            
+                            var object = AttributesResourceData(include: inc)
+                            object.attributes?.affectActtributes = []
+                            
+                            let includes = included.filter { (include) -> Bool in
+                                if include.type == "attributeValues" && (include.item as? AttributeValues)?.attributeId == object.id {
+                                    return true
+                                }
+                                return false
+                            }
+                            
+                            print(includes)
+                            
+                            for inc in includes {
+                                let ar = AttributeValuesData(include: inc)
+                                object.attributes?.affectActtributes!.append(ar)
+                            }
+                            
+                            self.attributes?.affectAttributes?.append(object)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    public mutating func productOptionValues(included: [IncludItem]) -> ProductsData {
+        
+        if let data = self.relationships?.productOptionValues?.data {
+            
+            self.attributes?.productOptionValues = []
+            
+            for item in data {
+                
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "productOptionValues" &&
+                        (includeItem.item as? ProductOptionValuesAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if let inc = include {
+                    let object = ProductOptionValues(include: inc)
+                    self.attributes?.productOptionValues?.append(object)
+                }
+            }
+        }
+        
+        return self
+    }
+    
+    public mutating func productOptions(included: [IncludItem]) -> ProductsData {
+        
+        if let data = self.relationships?.options?.data {
+            
+            self.attributes?.options = []
+            
+            for item in data {
+                
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "options" &&
+                        (includeItem.item as? ProductOptionsAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if let inc = include {
+                    let object = ProductOptions(include: inc)
+                    self.attributes?.options?.append(object)
+                }
+            }
+        }
         return self
     }
 }
@@ -247,11 +403,12 @@ public struct ObjectRelationships: Decodable, Gridable {
     public var attributeValues: ProductRelationshipsValues?
     public var attributeTypes: ProductRelationshipsValues?
     public var attributes: ProductRelationshipsValues?
-    
     public var productPriceConfigurations: ProductRelationshipsValues?
     public var priceConfigurations: ProductRelationshipsValues?
     public var productOptionValues: ProductRelationshipsValues?
     public var options: ProductRelationshipsValues?
+    public var items: ProductRelationshipsValues?
+    public var products: ProductRelationshipsValues?
 }
 
 public struct ProductRelationshipsValues: Decodable, Gridable {
@@ -294,6 +451,7 @@ public struct ProductsAttributes: Decodable, Gridable {
     public var visible: String?
     public var websiteId: String?
     public var media: [ProductMedia]?
+    
     public var productAttributeValues: [ProductAttributeValuesAttribute]?
     public var attributeValues: [AttributeValues]?
     public var attributeTypes: [AttributeTypes]?
@@ -301,11 +459,11 @@ public struct ProductsAttributes: Decodable, Gridable {
     public var functionalNames: [FunctionalNameAttribute]?
     public var brands: [AttributeBrand]?
     public var promotions: [PromotionsAttributes]?
-    
-    public var productPriceConfigurations: ProductRelationshipsValues?
-    public var priceConfigurations: ProductRelationshipsValues?
-    public var productOptionValues: ProductRelationshipsValues?
-    public var options: ProductRelationshipsValues?
+    public var productPriceConfigurations: [ProductPriceConfigurations]?
+    public var priceConfigurations: [PriceConfigurations]?
+    public var productOptionValues: [ProductOptionValues]?
+    public var options: [ProductOptions]?
+    public var affectAttributes: [AttributesResourceData]?
 }
 
 public struct ProductMedia: Decodable, Gridable {
@@ -320,8 +478,9 @@ public struct ProductMedia: Decodable, Gridable {
 public class IncludItem: Decodable {
     
     public var type: String!
+    public var id: String?
     public var item: AnyObject?
-    public var relationships : ObjectRelationships?
+    public var relationships: ObjectRelationships?
     
     public enum CodingKeys: String, CodingKey {
         case notRecognized, productAttributeValues, functionalNames, brands
@@ -330,6 +489,7 @@ public class IncludItem: Decodable {
     public enum CodingKeyAttribute: String, CodingKey {
         case attributes
         case relationships
+        case id
         case type
     }
     
@@ -339,6 +499,8 @@ public class IncludItem: Decodable {
         let container = try decoder.container(keyedBy: CodingKeyAttribute.self)
         
         let containerType = try container.decodeIfPresent(String.self, forKey: .type)
+        let id = try container.decodeIfPresent(String.self, forKey: .id)
+        
         guard let type = containerType else {
             self.type = "notRecognized"
             return
@@ -349,6 +511,7 @@ public class IncludItem: Decodable {
         }
         
         self.type = type
+        self.id = id
         
         switch type {
         case "productAttributeValues":
@@ -380,7 +543,27 @@ public class IncludItem: Decodable {
                 self.item = brand as AnyObject
             }
         case "productPriceConfigurations" :
-            if let brand = try? container.decodeIfPresent(AttributeResourceSM.self, forKey: .attributes) {
+            if let brand = try? container.decodeIfPresent(ProductPriceConfigurationsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "priceConfigurations" :
+            if let brand = try? container.decodeIfPresent(PriceConfigurationsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "productOptionValues" :
+            if let brand = try? container.decodeIfPresent(ProductOptionValuesAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "options" :
+            if let brand = try? container.decodeIfPresent(ProductOptionsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "products" :
+            if let brand = try? container.decodeIfPresent(ProductsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "items" :
+            if let brand = try? container.decodeIfPresent(ItemsAttributes.self, forKey: .attributes) {
                 self.item = brand as AnyObject
             }
         default:

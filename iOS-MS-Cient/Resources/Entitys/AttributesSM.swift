@@ -21,6 +21,15 @@ public struct AttributesResourceData: Decodable {
     public var type : String?
     public var relationships: ObjectRelationships?
     
+    public init(include: IncludItem) {
+        
+        guard let object = include.item as? AttributeResourceSM else { return }
+        self.attributes = object
+        self.relationships = include.relationships
+        self.id = include.id
+        self.type = include.type
+    }
+    
     public init(attributes: AttributeResourceSM?, relationships: ObjectRelationships?, id: String?, type: String?) {
         self.attributes = attributes
         self.relationships = relationships
@@ -70,6 +79,6 @@ public struct AttributeResourceSM: Decodable {
     public var unitOfMeasureId : String?
     public var useInFilter : String?
     public var visible : String?
-    
+    public var affectActtributes: [AttributeValuesData]?
 }
 

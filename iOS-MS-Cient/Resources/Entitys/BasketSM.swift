@@ -10,18 +10,81 @@ import UIKit
 
 public class BasketSM: Entity, Decodable  {
     public var data: [BasketData]?
-    public var meta : Meta?
-    public var status : String?
-    public var ver : String?
+    public var meta: Meta?
+    public var included: [IncludItem]?
+    public var status: String?
+    public var ver: String?
+    
+    public override func rebuild() -> Self {
+        
+        guard let data = self.data else { return self }
+        guard let included = self.included else { return self }
+        var items : [BasketData] = []
+        for var dataItem in data {
+            dataItem = dataItem.items(included: included)
+            dataItem = dataItem.products(included: included)
+            items.append(dataItem)
+        }
+        
+        self.data = items
+        return self
+    }
 }
 
 public struct BasketData: Decodable {
-    public var id : String?
-    public var attributes : BasketAttributes?
-    public var type : String?
+    
+    public var id: String?
+    public var type: String?
+    public var attributes: BasketAttributes?
+    public var relationships: ObjectRelationships?
+    
+    public mutating func items(included: [IncludItem]) -> BasketData {
+        
+        if let data = self.relationships?.items?.data {
+            self.attributes?.items = []
+            for item in data {
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "items" && (includeItem.item as? ItemsAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if include != nil {
+                    
+                    let object = ItemsData(include: include!)
+                    if let items = object.relationships?.products?.data {
+                        object.attributes?.products = []
+                        for item in items {
+                            
+                            let includeProduct = included.first(where: { (includeItem) -> Bool in
+                                if includeItem.type == "products" && (includeItem.item as? ProductsAttributes)?.id == item.id {
+                                    return true
+                                }
+                                return false
+                            })
+                            
+                            if includeProduct != nil {
+                                var product = ProductsData(include: includeProduct!)
+                                object.attributes?.products?.append(product.rebuild(included: included))
+                            }
+                        }
+                    }
+                    
+                    self.attributes?.items?.append(object)
+                }
+            }
+        }
+        
+        return self
+    }
+    
+    public mutating func products(included: [IncludItem]) -> BasketData {
+        return self
+    }
 }
 
-public struct BasketAttributes : Decodable {
+public struct BasketAttributes: Decodable {
     public let subTotalVatPrice : String?
     public let totalPrice : String?
     public let orderId : String?
@@ -54,9 +117,9 @@ public struct BasketAttributes : Decodable {
     public let orderComment : String?
     public let itemsAmount : String?
     public let shippingAddressId : String?
-    public let items : [OrderItem]?
     public let userId : String?
-    public let deliveryProviderId : String?
+    public let deliveryProviderId: String?
+    public var items : [ItemsData]?
     
     public enum CodingKeys: String, CodingKey {
         case subTotalVatPrice = "subTotalVatPrice"
@@ -223,7 +286,7 @@ public struct BasketAttributes : Decodable {
         deliveryTime = try values.decodeIfPresent(String.self, forKey: .deliveryTime)
         orderComment = try values.decodeIfPresent(String.self, forKey: .orderComment)
         shippingAddressId = try values.decodeIfPresent(String.self, forKey: .shippingAddressId)
-        items = try values.decodeIfPresent([OrderItem].self, forKey: .items)
+        items = nil
         deliveryProviderId = try values.decodeIfPresent(String.self, forKey: .deliveryProviderId)
     }
 }

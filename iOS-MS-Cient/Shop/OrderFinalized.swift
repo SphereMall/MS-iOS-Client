@@ -10,7 +10,7 @@ import UIKit
 
 public class OrderFinalized: NSObject {
     
-    public var items: [OrderItem]?
+    public var items: [OrdersItemData]?
     public var subTotalVatPrice: String?
     public var totalVatPrice: String?
     public var subTotalPrice: String?
@@ -70,7 +70,7 @@ public class OrderFinalized: NSObject {
         self.statusId = order.statusId
         self.paymentStatusId = order.paymentStatusId
         
-        self.items = order.items
+        //self.items = order.items
         
         self.subTotalVatPrice = order.subTotalVatPrice
         self.totalVatPrice = order.totalVatPrice

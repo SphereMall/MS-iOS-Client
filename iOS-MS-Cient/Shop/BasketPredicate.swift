@@ -7,12 +7,64 @@
 //
 
 import UIKit
+import SwiftyJSON
+
+public class BasketPredicateAttribute: Encodable {
+    public var attributeId: String!
+    public var attributeValueId: String!
+    public var userValue: String?
+    
+    init(attributeId: String, attributeValueId: String, userValue: String? = nil) {
+        self.attributeId = attributeId
+        self.attributeValueId = attributeValueId
+        self.userValue = userValue
+    }
+}
+
+public class BasketPredicateObject: Encodable {
+    public var id: String!
+    public var amount: Int!
+    public var compound: String?
+    public var itemId: String?
+    public var attributes: [BasketPredicateAttribute]?
+}
+
+public class BasketUpdatePredicate: BasketPredicate {
+    
+    public var itemId: String
+    
+    init(itemId: String, id: String, amount: Int, attributes: [BasketPredicateAttribute]) {
+        self.itemId = itemId
+        super.init(id: id, amount: amount, attributes: attributes)
+    }
+    
+    init(itemId: String, id: String, amount: Int) {
+        self.itemId = itemId
+        super.init(id: id, amount: amount)
+    }
+    
+    public override func make() -> String {
+        
+        let codableObject = BasketPredicateObject()
+        codableObject.amount = amount
+        codableObject.id = id
+        codableObject.itemId = itemId
+        codableObject.compound = compound
+        codableObject.attributes = attributes
+        
+        guard let data = try? JSONEncoder().encode(codableObject) else { return "" }
+        guard let string = JSON(data).rawString() else { return "" }
+        
+        return string
+    }
+}
 
 public class BasketPredicate: NSObject {
     
     public final var id: String!
     public final var amount: Int!
     public final var compound: String?
+    public final var attributes: [BasketPredicateAttribute]?
     
     public init(id: String) {
         self.id = id
@@ -23,6 +75,13 @@ public class BasketPredicate: NSObject {
     public init(id: String, amount: Int) {
         self.id = id
         self.amount = amount
+        self.compound = nil
+    }
+    
+    public init(id: String, amount: Int, attributes: [BasketPredicateAttribute]) {
+        self.id = id
+        self.amount = amount
+        self.attributes = attributes
         self.compound = nil
     }
     
@@ -40,14 +99,17 @@ public class BasketPredicate: NSObject {
     
     // MARK: LIKE [{"id":"1","amount":"1","compound":"promotion_hash"}]
     public func make() -> String {
-        var str = "{"
-        str += "\"id\":\"\(self.id.description)\",\"amount\":\"\(self.amount.description)\""
         
-        if self.compound != nil {
-            return str + ",\"compound\":\"\(self.compound!.description)\"}"
-        }
+        let codableObject = BasketPredicateObject()
+        codableObject.amount = amount
+        codableObject.id = id
+        codableObject.compound = compound
+        codableObject.attributes = attributes
         
-        return str + "}"
+        guard let data = try? JSONEncoder().encode(codableObject) else { return "" }
+        guard let string = JSON(data).rawString() else { return "" }
+        
+        return string
     }
 }
 

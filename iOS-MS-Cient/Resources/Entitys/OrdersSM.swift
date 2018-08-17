@@ -52,8 +52,15 @@ public class OrdersAttributes: Decodable {
     public var createDate : String?
     public var orderId : String?
     public var userId : String?
-    public var items: [OrderItem]?
+    public var items: [OrdersItemData]?
     public var paymentMethods : [PaymentMethod]?
+}
+
+public struct OrdersItemData: Decodable {
+    public var id: String?
+    public var type: String?
+    public var attributes: OrdersAttributes?
+    public var relationships: ObjectRelationships?
 }
 
 public struct OrderItem: Decodable {
@@ -74,8 +81,7 @@ public struct OrderItem: Decodable {
     public var attributesKey : String?
     public var attributesHash : String?
     public var priceTypeId : String?
-    public var products : [ProductsAttributes]?
-    public var images : [OrderImages]?
+    public var products: [ProductsData]?
 }
 
 public struct OrderImages: Decodable {

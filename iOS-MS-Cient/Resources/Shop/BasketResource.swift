@@ -26,14 +26,14 @@ public class BasketResource <T: Decodable> : Resource <BasketSM> {
         let uriAppend = client!.getGatewayUrl() + getURI() + "/\(id)"
         
         heandler.request(url: uriAppend, method: .get, parameters: params, headers: nil) { (item: BasketSM?, error: ErrorSM?) in
-            closure(item, error)
+            closure(item?.rebuild(), error)
         }
     }
     
     public override func update(id: String, data: [String: String], closure: @escaping SMResponse<BasketSM>) {
         let uriAppend = client!.getGatewayUrl() + getURI()
-        heandler.request(url: uriAppend, method: .put, parameters: data, headers: nil) { (item, error) in
-            closure(item, error)
+        heandler.request(url: uriAppend, method: .put, parameters: data, headers: nil) { (item: BasketSM?, error) in
+            closure(item?.rebuild(), error)
         }
     }
     
@@ -42,14 +42,14 @@ public class BasketResource <T: Decodable> : Resource <BasketSM> {
         let uriAppend = client!.getGatewayUrl() + getURI() + "/new"
         
         heandler.request(url: uriAppend, method: .post, parameters: data, headers: nil) { (item: BasketSM?, error: ErrorSM?) in
-            closure(item, error)
+            closure(item?.rebuild(), error)
         }
     }
     
     public func removeAllItems(params: [String: String], closure: @escaping SMResponse<BasketSM>) {
         let uriAppend = client!.getGatewayUrl() + getURI()
-        heandler.request(url: uriAppend, method: .delete, parameters: params, headers: nil) { (item, error) in
-            closure(item, error)
+        heandler.request(url: uriAppend, method: .delete, parameters: params, headers: nil) { (item: BasketSM?, error) in
+            closure(item?.rebuild(), error)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PromotionsRecource<T: Decodable> : Resource <ProductsSM>  {
+public class PromotionsRecource<T: Decodable> : Resource <ProductsSM> {
     override public func getURI() -> String {
         return "promotions"
     }

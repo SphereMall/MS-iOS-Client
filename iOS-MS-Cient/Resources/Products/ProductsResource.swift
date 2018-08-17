@@ -56,6 +56,16 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
             closure(items?.rebuild(), error)
         }
     }
+    
+    public func price(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
+        
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/detail/\(id)"
+        let parameters = self.getQueryParams()
+        
+        self.heandler.request(url: url, method: .get, parameters: parameters) { (item: ProductsSM?, error) in
+            closure(item?.rebuild(), error)
+        }
+    }
 }
 
 public extension String {

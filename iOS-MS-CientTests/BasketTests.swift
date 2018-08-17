@@ -16,17 +16,23 @@ class BasketTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        client = SMClient(gatewayUrl: GRID_URL,
+        client = SMClient(gatewayUrl: BASKET_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
         
+        client.setVersion(version: "v2")
         basket = Basket(client: client, userId: USER_ID.description)
     }
     
     func testAddToBasket() {
         
         let exp = self.expectation(description: "testAddToBasket")
-        let predicate = BasketPredicate(id: "405", amount: 10)
+        
+        let attr1 = BasketPredicateAttribute(attributeId: "226", attributeValueId: "3776", userValue: "73")
+        let attr2 = BasketPredicateAttribute(attributeId: "227", attributeValueId: "3749", userValue: "35")
+        let attr3 = BasketPredicateAttribute(attributeId: "222", attributeValueId: "4337")
+        
+        let predicate = BasketPredicate(id: "406", amount: 1, attributes: [attr1, attr2, attr3])
 
         basket.add(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
@@ -52,7 +58,11 @@ class BasketTests: XCTestCase {
         
         let exp = self.expectation(description: "testUpdateAtBasket")
 
-        let predicate = BasketPredicate(id: "405", amount: 6)
+        let attr1 = BasketPredicateAttribute(attributeId: "226", attributeValueId: "3776", userValue: "73")
+        let attr2 = BasketPredicateAttribute(attributeId: "227", attributeValueId: "3749", userValue: "35")
+        let attr3 = BasketPredicateAttribute(attributeId: "222", attributeValueId: "4337")
+        
+        let predicate = BasketUpdatePredicate(itemId: "1981", id: "405", amount: 19, attributes: [attr1, attr2, attr3])
 
         basket.update(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)

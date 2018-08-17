@@ -14,7 +14,7 @@ class CRUDTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: "http://gateway-bc.alpha.spheremall.net:8089/v1/",
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -226,7 +226,7 @@ class CRUDTests: XCTestCase {
         
         let exp = self.expectation(description: "testFilters")
         
-        client.products.detail(id: "6329") { (product, error) in
+        client.products.detail(id: "405") { (product, error) in
             XCTAssertNotNil(product)
             XCTAssertNil(error?.status)
             exp.fulfill()

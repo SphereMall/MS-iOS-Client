@@ -49,7 +49,7 @@ public class UserSM: Entity, Decodable {
     public var status : String?
     public var ver : String?
     
-    init(attributes: [UserAttributes]?, status: String?, meta: Meta?, ver: String?) {
+    public init(attributes: [UserAttributes]?, status: String?, meta: Meta?, ver: String?) {
         self.data = attributes
         self.meta = meta
         self.status = status
@@ -62,7 +62,7 @@ public struct UserAttributes: Decodable {
     public var type : String?
     public var id: String?
     
-    init(attributes: UserModel?, type: String?, id: String?) {
+    public init(attributes: UserModel?, type: String?, id: String?) {
         self.attributes = attributes
         self.type = type
         self.id = id

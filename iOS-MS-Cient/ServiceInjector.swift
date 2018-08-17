@@ -164,5 +164,9 @@ public class ServiceInjector: NSObject {
     public lazy var auth: AuthResource! = {
         return AuthResource<UserSM>(client: client!)
     } ()
+    
+    public lazy var priceConfigurator: ProductPriceConfigurationsResource! = {
+        return ProductPriceConfigurationsResource<PriceValueSM>(client: client!)
+    } ()
 
 }

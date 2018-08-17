@@ -16,10 +16,19 @@ public class AttributeValuesSM: Entity, Decodable {
 }
 
 public struct AttributeValuesData: Decodable, Gridable {
+    
     public var attributes : AttributeValues?
     public var id : String?
     public var type : String?
     public var relationships: ObjectRelationships?
+    
+    public init(include: IncludItem) {
+        guard let object = include.item as? AttributeValues else { return }
+        self.attributes = object
+        self.relationships = include.relationships
+        self.id = include.id
+        self.type = include.type
+    }
     
     public init(attributes: AttributeValues?, relationships: ObjectRelationships?, id: String?, type: String?) {
         self.attributes = attributes
