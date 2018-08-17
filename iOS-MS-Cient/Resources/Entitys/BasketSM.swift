@@ -38,6 +38,26 @@ public struct BasketData: Decodable {
     public var attributes: BasketAttributes?
     public var relationships: ObjectRelationships?
     
+    public enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case attributes = "attributes"
+        case relationships = "relationships"
+        case type = "type"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if let relationships = try? values.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
+            self.relationships = relationships
+        }
+        
+        id = try values.decodeIfPresent(String.self, forKey: .id)
+        attributes = try values.decodeIfPresent(BasketAttributes.self, forKey: .attributes)
+        type = try values.decodeIfPresent(String.self, forKey: .type)
+    }
+    
     public mutating func items(included: [IncludItem]) -> BasketData {
         
         if let data = self.relationships?.items?.data {

@@ -32,12 +32,7 @@ public class BasketPredicateObject: Encodable {
 public class BasketUpdatePredicate: BasketPredicate {
     
     public var itemId: String
-    
-    init(itemId: String, id: String, amount: Int, attributes: [BasketPredicateAttribute]) {
-        self.itemId = itemId
-        super.init(id: id, amount: amount, attributes: attributes)
-    }
-    
+
     init(itemId: String, id: String, amount: Int) {
         self.itemId = itemId
         super.init(id: id, amount: amount)
@@ -49,8 +44,28 @@ public class BasketUpdatePredicate: BasketPredicate {
         codableObject.amount = amount
         codableObject.id = id
         codableObject.itemId = itemId
-        codableObject.compound = compound
-        codableObject.attributes = attributes
+        
+        guard let data = try? JSONEncoder().encode(codableObject) else { return "" }
+        guard let string = JSON(data).rawString() else { return "" }
+        
+        return string
+    }
+}
+
+public class BaskeDeletePredicate: BasketPredicate {
+    
+    public var itemId: String
+    
+    init(itemId: String, id: String) {
+        self.itemId = itemId
+        super.init(id: id)
+    }
+    
+    public override func make() -> String {
+        
+        let codableObject = BasketPredicateObject()
+        codableObject.id = id
+        codableObject.itemId = itemId
         
         guard let data = try? JSONEncoder().encode(codableObject) else { return "" }
         guard let string = JSON(data).rawString() else { return "" }

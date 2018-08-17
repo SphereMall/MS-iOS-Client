@@ -20,7 +20,6 @@ class BasketTests: XCTestCase {
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
         
-        client.setVersion(version: "v2")
         basket = Basket(client: client, userId: USER_ID.description)
     }
     
@@ -57,12 +56,8 @@ class BasketTests: XCTestCase {
     func testUpdateAtBasket() {
         
         let exp = self.expectation(description: "testUpdateAtBasket")
-
-        let attr1 = BasketPredicateAttribute(attributeId: "226", attributeValueId: "3776", userValue: "73")
-        let attr2 = BasketPredicateAttribute(attributeId: "227", attributeValueId: "3749", userValue: "35")
-        let attr3 = BasketPredicateAttribute(attributeId: "222", attributeValueId: "4337")
         
-        let predicate = BasketUpdatePredicate(itemId: "1981", id: "405", amount: 19, attributes: [attr1, attr2, attr3])
+        let predicate = BasketUpdatePredicate(itemId: "1983", id: "406", amount: 5)
 
         basket.update(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)
@@ -77,7 +72,7 @@ class BasketTests: XCTestCase {
         
         let exp = self.expectation(description: "testRemoveAtBasket")
         
-        let predicate = BasketPredicate(id: "405")
+        let predicate = BaskeDeletePredicate(itemId: "1983", id: "406")
         
         basket.remove(predicate: predicate) { (basket, error) in
             XCTAssertNil(error)

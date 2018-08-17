@@ -68,7 +68,7 @@ public class Basket: OrderFinalized {
         }
     }
     
-    public func remove(predicate: BasketPredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
+    public func remove(predicate: BaskeDeletePredicate, closure: @escaping (BasketSM?, ErrorSM?) -> Swift.Void) {
         
         if id == default_order_id {
             closure(nil, ErrorSM(code: 404, status: "Can not delete items. Shop is not created."))
