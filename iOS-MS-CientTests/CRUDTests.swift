@@ -234,4 +234,18 @@ class CRUDTests: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
+    
+    func testGetAll() {
+        
+        let exp = self.expectation(description: "testFilters")
+        
+        client.products.fullAll { (products, error) in
+            XCTAssertNotNil(products)
+            XCTAssertNil(error?.status)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
 }

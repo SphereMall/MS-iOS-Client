@@ -32,6 +32,7 @@ public class ProductsSM: Entity, Decodable {
             product = product.priceConfigurations(included: included)
             product = product.productOptionValues(included: included)
             product = product.productOptions(included: included)
+            product = product.media(included: included)
             products.append(product)
         }
         
@@ -393,6 +394,30 @@ public struct ProductsData: Decodable {
         }
         return self
     }
+    
+    public mutating func media(included: [IncludItem]) -> ProductsData {
+        
+        if let data = self.relationships?.media?.data {
+            self.attributes?.media = []
+            for item in data {
+                
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "media" &&
+                        (includeItem.item as? MediaAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if let inc = include {
+                    let object = MediaData(include: inc)
+                    self.attributes?.media?.append(object)
+                }
+            }
+        }
+        
+        return self
+    }
 }
 
 public struct ObjectRelationships: Decodable, Gridable {
@@ -409,6 +434,7 @@ public struct ObjectRelationships: Decodable, Gridable {
     public var options: ProductRelationshipsValues?
     public var items: ProductRelationshipsValues?
     public var products: ProductRelationshipsValues?
+    public var media: ProductRelationshipsValues?
 }
 
 public struct ProductRelationshipsValues: Decodable, Gridable {
@@ -450,8 +476,7 @@ public struct ProductsAttributes: Decodable, Gridable {
     public var vatId: String?
     public var visible: String?
     public var websiteId: String?
-    public var media: [ProductMedia]?
-    
+    public var media: [MediaData]?
     public var productAttributeValues: [ProductAttributeValuesAttribute]?
     public var attributeValues: [AttributeValues]?
     public var attributeTypes: [AttributeTypes]?
@@ -564,6 +589,10 @@ public class IncludItem: Decodable {
             }
         case "items" :
             if let brand = try? container.decodeIfPresent(ItemsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "media" :
+            if let brand = try? container.decodeIfPresent(MediaAttributes.self, forKey: .attributes) {
                 self.item = brand as AnyObject
             }
         default:
