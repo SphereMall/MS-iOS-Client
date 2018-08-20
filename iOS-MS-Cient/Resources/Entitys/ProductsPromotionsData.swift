@@ -15,7 +15,7 @@ public struct ProductsPromotionsData: Decodable {
     public var id : String?
     public var type : String?
     
-    init(include: IncludItem) {
+    public init(include: IncludItem) {
         guard let object = include.item as? ProductsPromotionsAttributes else { return }
         self.attributes = object
         self.type = include.type
