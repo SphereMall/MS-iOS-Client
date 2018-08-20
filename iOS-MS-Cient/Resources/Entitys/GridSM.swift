@@ -39,7 +39,7 @@ public class GridItem: Decodable {
         }
         
         self.type = type
-        
+        print(type)
         switch type {
         case "documents":
             if let attributes = try container.decodeIfPresent(DocumentModel.self, forKey: .attributes) {
@@ -101,13 +101,7 @@ public class GridSM: Entity, Decodable {
                 items.append(object)
             case "products":
                 if var product = object.item as? ProductsData {
-                    product = product.promotions(included: included)
-                    product = product.brands(included: included)
-                    product = product.functionalNames(included: included)
-                    product = product.productAttributeValues(included: included)
-                    product = product.attributeValues(included: included)
-                    product = product.attributeTypes(included: included)
-                    product = product.attributes(included: included)
+                    product = product.rebuild(included: included)
                     let item = GridItem()
                     item.item = product as AnyObject
                     item.type = object.type

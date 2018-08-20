@@ -265,6 +265,8 @@
 		E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0C20284CDB00825F99 /* DocumentsResource.swift */; };
 		E9619F6620284FBD00825F99 /* FullResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0E20284CE600825F99 /* FullResource.swift */; };
 		E9619F68202897F100825F99 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619F67202897F100825F99 /* BaseUrl.swift */; };
+		E9743501212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
+		E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
@@ -465,6 +467,7 @@
 		E9619F2E20284E2500825F99 /* CurrenciesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F2F20284E2500825F99 /* AttributeTypesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTypesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F67202897F100825F99 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		E9743500212AB7470035E72F /* ProductsPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPromotionsData.swift; sourceTree = "<group>"; };
 		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
 		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
@@ -809,6 +812,7 @@
 				E982CCB9206B842C0046244B /* FacetsSM.swift */,
 				E94023692097143B008B7414 /* ErrorSM.swift */,
 				E940236F209994AA008B7414 /* PromotionsSM.swift */,
+				E9743500212AB7470035E72F /* ProductsPromotionsData.swift */,
 				E9E383082122C08900294F09 /* PriceProduct.swift */,
 				E9E3830A2124094500294F09 /* PriceValue.swift */,
 				E9E3830D212409AF00294F09 /* PriceConfiguration.swift */,
@@ -1168,6 +1172,7 @@
 				E9619E1320284D0900825F99 /* CorrelationsResource.swift in Sources */,
 				E9619E2920284D2B00825F99 /* AttributeValuesResource.swift in Sources */,
 				E9619EB220284D9B00825F99 /* MediaTypesSM.swift in Sources */,
+				E9743501212AB7470035E72F /* ProductsPromotionsData.swift in Sources */,
 				E9619EB820284D9B00825F99 /* FunctionalNameSM.swift in Sources */,
 				E9619EA220284D9B00825F99 /* PaymentMethodsSM.swift in Sources */,
 				E9619DF920284C8000825F99 /* OrderFinalized.swift in Sources */,
@@ -1333,6 +1338,7 @@
 				E9619E3620284D2B00825F99 /* ProductsResource.swift in Sources */,
 				E9619EAB20284D9B00825F99 /* AttributesSM.swift in Sources */,
 				E9619E6220284D4600825F99 /* OrdersResource.swift in Sources */,
+				E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */,
 				E9619ED120284D9B00825F99 /* ProductAttributeValuesSM.swift in Sources */,
 				E9619E7420284D6600825F99 /* AddressResource.swift in Sources */,
 				E9619EC720284D9B00825F99 /* UserSM.swift in Sources */,

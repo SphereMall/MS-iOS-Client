@@ -58,7 +58,8 @@ public class GridResource<T: Decodable> : GrapherResource<GridSM> {
     
     public override func all(closure: @escaping (GridSM?, ErrorSM?) -> Void) {
         let url = String(self.client!.getGatewayUrl() + self.getURI())
-        let parameters = self.getQueryParams()
+        var parameters = self.getQueryParams()
+        parameters["actions"] = "promotions"
         
         self.heandler.request(url: url, method: .get, parameters: parameters) { (items: GridSM?, error) in
             closure(items?.rebuild(), error)

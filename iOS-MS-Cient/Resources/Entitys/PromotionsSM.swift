@@ -16,6 +16,7 @@ public class PromotionsSM: Entity, Decodable  {
 }
 
 public struct PromotionsData: Decodable {
+    
     public var attributes : PromotionsAttributes?
     public var relationships: ObjectRelationships?
     public var id : String?

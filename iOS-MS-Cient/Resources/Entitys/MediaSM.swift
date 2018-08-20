@@ -29,6 +29,12 @@ public struct MediaData: Decodable {
         self.id = include.id
         self.relationships = include.relationships
     }
+    
+    init(attributes: MediaAttributes, id: String?, type: String?) {
+        self.attributes = attributes
+        self.id = id
+        self.type = type
+    }
 }
 
 public struct MediaAttributes: Decodable  {

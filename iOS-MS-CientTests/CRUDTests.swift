@@ -226,7 +226,7 @@ class CRUDTests: XCTestCase {
         
         let exp = self.expectation(description: "testFilters")
         
-        client.products.detail(id: "405") { (product, error) in
+        client.products.detail(id: "1816") { (product, error) in
             XCTAssertNotNil(product)
             XCTAssertNil(error?.status)
             exp.fulfill()
@@ -247,5 +247,4 @@ class CRUDTests: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
-    
 }

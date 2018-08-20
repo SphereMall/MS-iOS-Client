@@ -33,6 +33,7 @@ public class ProductsSM: Entity, Decodable {
             product = product.productOptionValues(included: included)
             product = product.productOptions(included: included)
             product = product.media(included: included)
+            product = product.productsToPromotions(included: included)
             products.append(product)
         }
         
@@ -69,6 +70,8 @@ public struct ProductsData: Decodable {
         self = self.priceConfigurations(included: included)
         self = self.productOptionValues(included: included)
         self = self.productOptions(included: included)
+        self = self.media(included: included)
+        self = self.productsToPromotions(included: included)
         
         return self
     }
@@ -418,6 +421,30 @@ public struct ProductsData: Decodable {
         
         return self
     }
+    
+    public mutating func productsToPromotions(included: [IncludItem]) -> ProductsData {
+        
+        if let data = self.relationships?.productsToPromotions?.data {
+            self.attributes?.productsToPromotions = []
+            for item in data {
+                
+                let include = included.first(where: { (includeItem) -> Bool in
+                    if includeItem.type == "productsToPromotions" &&
+                        (includeItem.item as? ProductsPromotionsAttributes)?.id == item.id {
+                        return true
+                    }
+                    return false
+                })
+                
+                if let inc = include {
+                    let object = ProductsPromotionsData(include: inc)
+                    self.attributes?.productsToPromotions?.append(object)
+                }
+            }
+        }
+        
+        return self
+    }
 }
 
 public struct ObjectRelationships: Decodable, Gridable {
@@ -434,6 +461,7 @@ public struct ObjectRelationships: Decodable, Gridable {
     public var options: ProductRelationshipsValues?
     public var items: ProductRelationshipsValues?
     public var products: ProductRelationshipsValues?
+    public var productsToPromotions: ProductRelationshipsValues?
     public var media: ProductRelationshipsValues?
 }
 
@@ -446,7 +474,8 @@ public struct ProductValueData: Decodable, Gridable {
     public var id: String?
 }
 
-public struct ProductsAttributes: Decodable, Gridable {
+public class ProductsAttributes: Decodable, Gridable {
+    
     public var articleNumber : String?
     public var authorizationGroupId : String?
     public var brandId : String?
@@ -476,6 +505,7 @@ public struct ProductsAttributes: Decodable, Gridable {
     public var vatId: String?
     public var visible: String?
     public var websiteId: String?
+    
     public var media: [MediaData]?
     public var productAttributeValues: [ProductAttributeValuesAttribute]?
     public var attributeValues: [AttributeValues]?
@@ -489,6 +519,89 @@ public struct ProductsAttributes: Decodable, Gridable {
     public var productOptionValues: [ProductOptionValues]?
     public var options: [ProductOptions]?
     public var affectAttributes: [AttributesResourceData]?
+    public var productsToPromotions: [ProductsPromotionsData]?
+    
+    public enum CodingKeys: String, CodingKey {
+        case articleNumber, authorizationGroupId, brandId, deliveryProviderId, disable, fullDescription,
+        functionalNameId, id, importedId, isMain, lastUpdate, oldPrice, price, priceExclVat, purchasePrice,
+        rating, reviewAmount, sellingLine, seoDescription, seoKeywords, seoTitle, shortDescription,
+        title, titleMask, urlCode, useTitleMask, vatId, visible, websiteId, media, productAttributeValues,
+        attributeValues, attributeTypes, attributes, functionalNames, brands, promotions, productPriceConfigurations,
+        priceConfigurations, productOptionValues, options, affectAttributes, productsToPromotions
+    }
+    
+    public convenience required init(from decoder: Decoder) throws {
+        
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        
+        self.articleNumber = try container.decodeIfPresent(String.self, forKey: .articleNumber)
+        self.authorizationGroupId = try container.decodeIfPresent(String.self, forKey: .authorizationGroupId)
+        self.brandId = try container.decodeIfPresent(String.self, forKey: .brandId)
+        self.deliveryProviderId = try container.decodeIfPresent(String.self, forKey: .deliveryProviderId)
+        self.disable = try container.decodeIfPresent(String.self, forKey: .disable)
+        self.fullDescription = try container.decodeIfPresent(String.self, forKey: .fullDescription)
+        self.functionalNameId = try container.decodeIfPresent(String.self, forKey: .functionalNameId)
+        self.id = try container.decodeIfPresent(String.self, forKey: .id)
+        self.importedId = try container.decodeIfPresent(String.self, forKey: .importedId)
+        self.isMain = try container.decodeIfPresent(String.self, forKey: .isMain)
+        self.lastUpdate = try container.decodeIfPresent(String.self, forKey: .lastUpdate)
+        self.oldPrice = try container.decodeIfPresent(String.self, forKey: .oldPrice)
+        self.price = try container.decodeIfPresent(String.self, forKey: .price)
+        self.priceExclVat = try container.decodeIfPresent(String.self, forKey: .priceExclVat)
+        self.purchasePrice = try container.decodeIfPresent(String.self, forKey: .purchasePrice)
+        self.rating = try container.decodeIfPresent(String.self, forKey: .rating)
+        self.reviewAmount = try container.decodeIfPresent(String.self, forKey: .reviewAmount)
+        self.sellingLine = try container.decodeIfPresent(String.self, forKey: .sellingLine)
+        self.seoDescription = try container.decodeIfPresent(String.self, forKey: .seoDescription)
+        self.seoKeywords = try container.decodeIfPresent(String.self, forKey: .seoKeywords)
+        self.seoTitle = try container.decodeIfPresent(String.self, forKey: .seoTitle)
+        self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title)
+        self.titleMask = try container.decodeIfPresent(String.self, forKey: .titleMask)
+        self.urlCode = try container.decodeIfPresent(String.self, forKey: .urlCode)
+        self.useTitleMask = try container.decodeIfPresent(String.self, forKey: .useTitleMask)
+        self.vatId = try container.decodeIfPresent(String.self, forKey: .vatId)
+        self.visible = try container.decodeIfPresent(String.self, forKey: .visible)
+        self.websiteId = try container.decodeIfPresent(String.self, forKey: .websiteId)
+        self.productAttributeValues = try container.decodeIfPresent([ProductAttributeValuesAttribute].self, forKey: .productAttributeValues)
+        self.attributeValues = try container.decodeIfPresent([AttributeValues].self, forKey: .attributeValues)
+        self.attributeTypes = try container.decodeIfPresent([AttributeTypes].self, forKey: .attributeTypes)
+        self.attributes = try container.decodeIfPresent([AttributeResourceSM].self, forKey: .attributes)
+        self.functionalNames = try container.decodeIfPresent([FunctionalNameAttribute].self, forKey: .functionalNames)
+        self.brands = try container.decodeIfPresent([AttributeBrand].self, forKey: .brands)
+        self.promotions = try container.decodeIfPresent([PromotionsAttributes].self, forKey: .promotions)
+        self.productPriceConfigurations  = try container.decodeIfPresent([ProductPriceConfigurations].self, forKey: .productPriceConfigurations)
+        self.priceConfigurations = try container.decodeIfPresent([PriceConfigurations].self, forKey: .priceConfigurations)
+        self.productOptionValues  = try container.decodeIfPresent([ProductOptionValues].self, forKey: .productOptionValues)
+        self.options = try container.decodeIfPresent([ProductOptions].self, forKey: .options)
+        self.affectAttributes  = try container.decodeIfPresent([AttributesResourceData].self, forKey: .affectAttributes)
+        
+        
+        
+        let mediaData = try container.decodeIfPresent([MediaData].self, forKey: .media)
+        let mediaAttributes = try container.decodeIfPresent([MediaAttributes].self, forKey: .media)
+        
+        if let promotions = try container.decodeIfPresent([ProductsPromotionsAttributes].self, forKey: .productsToPromotions) {
+            self.productsToPromotions = []
+            for prm in promotions {
+                self.productsToPromotions!.append(ProductsPromotionsData(attributes: prm,
+                                                                        relationships: nil,
+                                                                        id: prm.id, type: "productsToPromotions"))
+            }
+        }
+        
+        if mediaData?.first?.attributes == nil {
+            guard let mds = mediaAttributes else { return }
+            self.media = []
+            for attribute in mds {
+                self.media?.append(MediaData(attributes: attribute, id: attribute.id, type: "media"))
+            }
+        } else {
+            self.media = mediaData
+        }
+    }
 }
 
 public struct ProductMedia: Decodable, Gridable {
@@ -506,11 +619,7 @@ public class IncludItem: Decodable {
     public var id: String?
     public var item: AnyObject?
     public var relationships: ObjectRelationships?
-    
-    public enum CodingKeys: String, CodingKey {
-        case notRecognized, productAttributeValues, functionalNames, brands
-    }
-    
+
     public enum CodingKeyAttribute: String, CodingKey {
         case attributes
         case relationships
@@ -593,6 +702,10 @@ public class IncludItem: Decodable {
             }
         case "media" :
             if let brand = try? container.decodeIfPresent(MediaAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "productsToPromotions" :
+            if let brand = try? container.decodeIfPresent(ProductsPromotionsAttributes.self, forKey: .attributes) {
                 self.item = brand as AnyObject
             }
         default:

@@ -19,7 +19,7 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
     public func detail(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/detail/\(id)"
-        let parameters = self.getQueryParams()
+        var parameters = self.getQueryParams()
         
         self.heandler.request(url: url, method: .get, parameters: parameters) { (item: ProductsSM?, error) in
             closure(item?.rebuild(), error)
