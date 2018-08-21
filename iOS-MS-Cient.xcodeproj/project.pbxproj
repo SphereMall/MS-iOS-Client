@@ -267,6 +267,9 @@
 		E9619F68202897F100825F99 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619F67202897F100825F99 /* BaseUrl.swift */; };
 		E9743501212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
+		E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
+		E974351F212C01EE0035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
+		E9743521212C02360035E72F /* Promotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743520212C02360035E72F /* Promotions.swift */; };
 		E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
@@ -468,6 +471,8 @@
 		E9619F2F20284E2500825F99 /* AttributeTypesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTypesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F67202897F100825F99 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9743500212AB7470035E72F /* ProductsPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPromotionsData.swift; sourceTree = "<group>"; };
+		E974351D212BFC600035E72F /* PromotionsPriceSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsPriceSM.swift; sourceTree = "<group>"; };
+		E9743520212C02360035E72F /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
 		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
 		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
@@ -615,6 +620,7 @@
 				E9E0BE602043F385003B03EF /* GridResourceTests.swift */,
 				E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */,
 				E9E3831A2124305C00294F09 /* ProductPriceConfigurationsResourceTest.swift */,
+				E9743520212C02360035E72F /* Promotions.swift */,
 			);
 			path = "iOS-MS-CientTests";
 			sourceTree = "<group>";
@@ -817,6 +823,7 @@
 				E9E3830A2124094500294F09 /* PriceValue.swift */,
 				E9E3830D212409AF00294F09 /* PriceConfiguration.swift */,
 				E9E3831C2125A18E00294F09 /* ItemsSM.swift */,
+				E974351D212BFC600035E72F /* PromotionsPriceSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1121,6 +1128,7 @@
 				E9619E3520284D2B00825F99 /* ProductsResource.swift in Sources */,
 				E9619EB020284D9B00825F99 /* PaymentProvidersSM.swift in Sources */,
 				E9619EF020284DBE00825F99 /* Predicate.swift in Sources */,
+				E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */,
 				E9619F0320284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9619EC620284D9B00825F99 /* UserSM.swift in Sources */,
 				E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */,
@@ -1207,6 +1215,7 @@
 				E9619F4220284E2600825F99 /* DeliveryProvidersResourceTest.swift in Sources */,
 				E9619F0620284DD400825F99 /* GridFilter.swift in Sources */,
 				E9619ED320284D9B00825F99 /* WishlistObjectSM.swift in Sources */,
+				E974351F212C01EE0035E72F /* PromotionsPriceSM.swift in Sources */,
 				E9619E2E20284D2B00825F99 /* BrandsResource.swift in Sources */,
 				E9E0BE612043F385003B03EF /* GridResourceTests.swift in Sources */,
 				E9619F4E20284E2600825F99 /* InvoicesResourceTest.swift in Sources */,
@@ -1249,6 +1258,7 @@
 				E9619F5C20284F7800825F99 /* BasketPredicate.swift in Sources */,
 				E9619E6C20284D4600825F99 /* BasketResource.swift in Sources */,
 				E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */,
+				E9743521212C02360035E72F /* Promotions.swift in Sources */,
 				E9619EA120284D9B00825F99 /* CatalogItemsSM.swift in Sources */,
 				E9619E3C20284D2B00825F99 /* EntitiesResource.swift in Sources */,
 				E9619F3F20284E2600825F99 /* OrderStatusesResourceTests.swift in Sources */,

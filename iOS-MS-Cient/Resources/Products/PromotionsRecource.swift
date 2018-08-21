@@ -12,4 +12,21 @@ public class PromotionsRecource<T: Decodable> : Resource <ProductsSM> {
     override public func getURI() -> String {
         return "promotions"
     }
+    
+    public func price(priceProduct: PriceProduct, closure: @escaping (PromotionsPriceSM?, ErrorSM?) -> Swift.Void) {
+        
+        let filter = PriceConfigurationFilter()
+        filter.addProduct(priceProduct: priceProduct)
+        
+        let data = filter.getDataForPromotions()
+        var params: [String: String] = [:]
+        
+        params["products"] = data
+        
+        let url = client!.getGatewayUrl() + getURI() + "/products/byids"
+        
+        heandler.request(url: url, method: .post, parameters: params) { (items: PromotionsPriceSM?, error: ErrorSM?) in
+            closure(items, error)
+        }
+    }
 }

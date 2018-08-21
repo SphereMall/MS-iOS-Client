@@ -22,6 +22,8 @@ public struct AttributeValuesData: Decodable, Gridable {
     public var type : String?
     public var relationships: ObjectRelationships?
     
+    public init() {}
+    
     public init(include: IncludItem) {
         guard let object = include.item as? AttributeValues else { return }
         self.attributes = object
@@ -59,6 +61,9 @@ public struct AttributeValuesData: Decodable, Gridable {
 }
 
 public struct AttributeValues: Decodable, Gridable {
+    
+    public init() {}
+    
     public var attributeId : String?
     public var cssClass : String?
     public var hash : String?

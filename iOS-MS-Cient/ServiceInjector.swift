@@ -168,5 +168,9 @@ public class ServiceInjector: NSObject {
     public lazy var priceConfigurator: ProductPriceConfigurationsResource! = {
         return ProductPriceConfigurationsResource<PriceValueSM>(client: client!)
     } ()
+    
+    public lazy var promotions: PromotionsRecource! = {
+        return PromotionsRecource<PromotionsSM>(client: client!)
+    } ()
 
 }
