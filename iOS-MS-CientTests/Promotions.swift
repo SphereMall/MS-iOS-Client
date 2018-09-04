@@ -55,17 +55,16 @@ class Promotions: XCTestCase {
                 guard let price = data?.data?.first?.attributes else { return }
                 
                 if price.discountTypeId == "2" {
-                    let k = Double((Int(price.price!)! * (1 + (vat / 100))))
-                    result = (round(k) - Double(price.discountPrice!)!) / 100
+                    result = (round((Double(price.price!)! * Double((1 + (Double(vat) / 100.0))))) - Double(price.discountPrice!)!) / 100
                 } else {
-                    result = round(Double(price.itemPrice!)! * Double((1 + (vat / 100)))) / 100.0
+                    result = round(Double(price.itemPrice!)! * Double((1 + Double(Double(vat) / 100.0)))) / 100.0
                 }
                 
-                resultOld = round(Double(price.price!)! * Double((1 + (vat / 100)))) / 100.0
+                resultOld = round(Double(price.price!)! * Double((1 + (Double(vat) / 100.0)))) / 100.0
                 
                 print(result)
                 print(resultOld)
-                
+
                 exp.fulfill()
             }
         }

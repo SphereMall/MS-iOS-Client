@@ -45,8 +45,8 @@ class ProductPriceConfigurationsResourceTest: XCTestCase {
             
             let product = PriceProduct(productId: 405, priceTypeId: 1, attributes: affected, options: [])
             
-            self.client.priceConfigurator.findProductPrice(priceProduct: product) { (price, error) in
-                print(price)
+            self.client.priceConfigurator.findProductPrice(priceProduct: product) { (data, error) in
+                print(data)
                 exp.fulfill() 
             }
         }

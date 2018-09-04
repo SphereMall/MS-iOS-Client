@@ -611,6 +611,8 @@ public struct ProductMedia: Decodable, Gridable {
     public var title : String?
     public var visible : String?
     public var objectId : String?
+    public var mediaDisplayTypeId: String?
+    public var mediaTypeId: String?
 }
 
 public class IncludItem: Decodable {

@@ -72,4 +72,15 @@ public struct ProductAttributeValuesAttribute: Decodable {
     public var valueOrderNumber: String?
     public var unitOfMeasureId: String?
     public var displayType: String?
+    
+    public init(attribute: AttributeValues) {
+        self.attributeId = attribute.attributeId
+        self.cssClass = attribute.cssClass
+        self.id = attribute.id
+        self.image = attribute.image
+        self.lastUpdate = attribute.lastUpdate
+        self.orderNumber = attribute.orderNumber
+        self.title = attribute.title
+        self.value = attribute.value
+    }
 }

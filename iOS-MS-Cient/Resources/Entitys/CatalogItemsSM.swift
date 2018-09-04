@@ -41,6 +41,7 @@ public class CatalogItemsAttribute: Decodable {
     public var moduleId : String?
     public var noindex : String?
     public var openLinkInNewWindow : String?
+    public var image: String?
     public var orderNumber : String?
     public var parentId : String?
     public var seoDescription : String?

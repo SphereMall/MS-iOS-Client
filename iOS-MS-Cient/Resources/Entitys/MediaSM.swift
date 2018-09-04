@@ -44,4 +44,6 @@ public struct MediaAttributes: Decodable  {
     public var imageTypeId : String?
     public var visible : String?
     public var path : String?
+    public var mediaDisplayTypeId: String?
+    public var mediaTypeId: String?
 }
