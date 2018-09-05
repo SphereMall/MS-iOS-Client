@@ -52,7 +52,7 @@ public class OrdersAttributes: Decodable {
     public var createDate : String?
     public var orderId : String?
     public var userId : String?
-    public var items: [OrdersItemData]?
+    public var items: [ItemsData]?
     public var paymentMethods : [PaymentMethod]?
 }
 

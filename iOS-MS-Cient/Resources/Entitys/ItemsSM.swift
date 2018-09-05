@@ -15,7 +15,7 @@ public class ItemsSM: Entity, Decodable {
     public var ver : String?
 }
 
-public struct ItemsData: Decodable {
+public class ItemsData: Decodable {
     public var attributes : ItemsAttributes?
     public var type : String?
     public var id: String?

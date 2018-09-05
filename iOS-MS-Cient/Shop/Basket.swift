@@ -16,13 +16,7 @@ public class Basket: OrderFinalized {
         super.init(client: client)
         if userId != nil {
             self.id = userId
-            self.get(id: userId!, closure: { (basket, error) in
-                if basket != nil {
-                    if let attributes = basket?.data?.first?.attributes {
-                        self.setProperties(order: attributes)
-                    }
-                }
-            })
+            self.get(id: userId!, closure: { (basket, error) in})
         }
     }
     
