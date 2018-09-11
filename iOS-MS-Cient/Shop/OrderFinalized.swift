@@ -16,8 +16,8 @@ public class OrderFinalized: NSObject {
     public var subTotalPrice: String?
     public var totalPrice: String?
     public var totalPriceWithoutDelivery: String?
-    
-    internal let default_order_id = "-1"
+    public var itemsAmount: String = "0"
+    public let default_order_id = "-1"
     public var id: String?
     public var orderId: String?
     public var delivery: String?
@@ -36,10 +36,6 @@ public class OrderFinalized: NSObject {
     }
     
     public final func setOrderData(order: OrdersAttributes) {
-        //        if (get_called_class() != self::class) {
-        //            throw new \InvalidArgumentException("Method can be call only by OrderFinalized entity");
-        //        }
-        
         self.id = order.id
         self.setProperties(order: order)
     }
@@ -49,19 +45,14 @@ public class OrderFinalized: NSObject {
         self.orderId = order.orderId
         self.statusId = order.statusId
         self.paymentStatusId = order.paymentStatusId
-        
         self.items = order.items ?? []
-        
+        self.itemsAmount = order.itemsAmount ?? "0"
         self.subTotalVatPrice = order.subTotalVatPrice
         self.totalVatPrice = order.totalVatPrice
         self.subTotalPrice = order.subTotalPrice
         self.totalPrice = order.totalPrice
         self.totalPriceWithoutDelivery = order.totalPrice
-        
         self.paymentMethod = order.paymentMethodId
-        
-        //        self.setPropertiesField(order.getPropertiesField())
-        //        self.setAsyncProperties(order)
     }
     
     public func setProperties(order: BasketAttributes) {
@@ -69,19 +60,14 @@ public class OrderFinalized: NSObject {
         self.orderId = order.orderId
         self.statusId = order.statusId
         self.paymentStatusId = order.paymentStatusId
-        
         self.items = order.items ?? []
-        
+        self.itemsAmount = order.itemsAmount ?? "0"
         self.subTotalVatPrice = order.subTotalVatPrice
         self.totalVatPrice = order.totalVatPrice
         self.subTotalPrice = order.subTotalPrice
         self.totalPrice = order.totalPrice
         self.totalPriceWithoutDelivery = order.totalPrice
-        
         self.paymentMethod = order.paymentMethodId
-        
-        //        self.setPropertiesField(order.getPropertiesField())
-        //        self.setAsyncProperties(order)
     }
     
     public func update(params: [String: String]? = [:]) {

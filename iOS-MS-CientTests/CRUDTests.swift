@@ -14,9 +14,12 @@ class CRUDTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: "http://gateway-bc.alpha.spheremall.net:8089/v1/",
+        
+        client = SMClient(gatewayUrl: "http://gateway-store-direct.beta.spheremall.net/v1/",
                           clientId: "api_demo_user",
-                          secretKey: "demo_pass")
+                          secretKey: "demo_pass",
+                          username: "username",
+                          password: "q1w2e3")
     }
     
     override func tearDown() {
@@ -226,7 +229,7 @@ class CRUDTests: XCTestCase {
         
         let exp = self.expectation(description: "testFilters")
         
-        client.products.detail(id: "1816") { (product, error) in
+        client.products.detail(id: "630") { (product, error) in
             XCTAssertNotNil(product)
             XCTAssertNil(error?.status)
             exp.fulfill()

@@ -13,13 +13,14 @@ import Alamofire
 public class SMRequest: RequestAdapter, RequestRetrier {
     
     private let lock = NSLock()
-    private let clientID : String!
+    private let clientID: String!
     private var accessToken: String?
     private var secretKey: String!
     private var client: SMClient!
     private var tokenSevice: AuthToken!
     private var refreshToken: String!
     private var isRefreshing = false
+    private var header = [String : String] ()
     private lazy var requestsToRetry: [RequestRetryCompletion] = []
     private typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?) -> Void
     
@@ -35,32 +36,48 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         self.tokenSevice = AuthToken(client: client)
         self.clientID = client.getClientId()
         self.accessToken = self.tokenSevice.token()
-        manager.retrier = self
-        manager.adapter = self
+        self.manager.retrier = self
+        self.manager.adapter = self
+    }
+    
+    public func authorization() -> URLCredential {
+        if let userUnwrapped = client.getUser(), let passUnwrapped = client.getPassword() {
+            return URLCredential(user: userUnwrapped, password: passUnwrapped, persistence: URLCredential.Persistence.forSession)
+        } else {
+            return URLCredential()
+        }
     }
     
     public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
-        var modifiedheader = headers ?? [String : String] ()
-        modifiedheader = ["User-Agent" : UIDevice.current.identifierForVendor!.uuidString]
+        var modifiedheader = [String : String] ()
+        
+        if let headers = headers {
+            modifiedheader = header.merging(headers) { $1 }
+        }
+
+        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+            modifiedheader = ["User-Agent" : uuid]
+        }
         
         manager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default , headers: modifiedheader)
+            .authenticate(usingCredential: authorization())
             .validate(contentType: ["application/json"])
             .validate()
             .responseJSON { response in
-
+                
                 switch response.result {
                 case .success:
                     if let value = response.result.value {
                         let json = JSON(value)
                         let data = try! json.rawData()
                         let decoder = JSONDecoder()
-
+                        
                         guard let items = try? decoder.decode(T.self , from: data) else {
                             completionHandler(nil, ErrorSM(code: 0, status: "Can't parse data for entity \(T.self)"))
                             return
                         }
-
+                        
                         completionHandler(items, nil)
                     }
                 case .failure(let error):
@@ -118,7 +135,11 @@ public class SMRequest: RequestAdapter, RequestRetrier {
     public func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         if let urlString = urlRequest.url?.absoluteString, urlString.hasPrefix(client.getGatewayUrl()) {
             var urlRequest = urlRequest
-            urlRequest.setValue("Bearer " + (accessToken ?? "token"), forHTTPHeaderField: "Authorization")
+            
+            if let token = accessToken {
+                urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+            }
+            
             return urlRequest
         }
         
@@ -126,29 +147,30 @@ public class SMRequest: RequestAdapter, RequestRetrier {
     }
     
     public func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
-
+        
         lock.lock() ; defer { lock.unlock() }
-
+        
         if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 403 && accessToken == nil {
-
-            let url = request.request!.url!.absoluteString
-            if url.hasPrefix(client.getGatewayUrl() + "oauth/token") {
-                completion(false, 0.0)
-                return
+            
+            if let url = request.request?.url?.absoluteString {
+                if url.hasPrefix(client.getGatewayUrl() + "oauth/token") {
+                    completion(false, 0.0)
+                    return
+                }
             }
-
+            
             requestsToRetry.append(completion)
-
+            
             if !isRefreshing {
                 refreshTokens { [weak self] succeeded, accessToken in
                     guard let strongSelf = self else { return }
-
-                    strongSelf.lock.lock() ; defer { strongSelf.lock.unlock() }
-
+                    
+                    strongSelf.lock.lock(); defer { strongSelf.lock.unlock() }
+                    
                     if let accessToken = accessToken {
                         strongSelf.accessToken = accessToken
                     }
-
+                    
                     strongSelf.requestsToRetry.forEach { $0(succeeded, 0.0) }
                     strongSelf.requestsToRetry.removeAll()
                 }

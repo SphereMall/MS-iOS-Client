@@ -15,14 +15,27 @@ public class SMClient: ServiceInjector {
     fileprivate var clientId: String!
     fileprivate var secretKey: String!
     fileprivate var version = "v1"
+    fileprivate var header = [String : String] ()
+    fileprivate var username: String?
+    fileprivate var password: String?
     
     public let userAgent = "SM_SDK_iOS_CLIENT"
     
-    public init(gatewayUrl: String, clientId: String, secretKey: String) {
+    public init(gatewayUrl: String, clientId: String, secretKey: String, username: String? = nil, password: String? = nil) {
         super.init()
         self.gatewayUrl = URL(string:gatewayUrl)
         self.clientId = clientId
         self.secretKey = secretKey
+        self.username = username
+        self.password = password
+    }
+    
+    public func getUser() -> String? {
+        return self.username
+    }
+    
+    public func getPassword() -> String? {
+        return self.password
     }
     
     public func getGatewayUrl() -> String {

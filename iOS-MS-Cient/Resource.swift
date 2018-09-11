@@ -41,6 +41,10 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         self.heandler = SMRequest(client: client)
     }
     
+    public func authorization(username: String, password: String) {
+        
+    }
+    
     @discardableResult public func limit(limit: Int = 10, offset: Int = 0) -> Self {
         self.limit = limit
         self.offset = offset
