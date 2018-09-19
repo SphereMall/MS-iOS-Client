@@ -18,8 +18,8 @@ class CRUDTests: XCTestCase {
         client = SMClient(gatewayUrl: "http://gateway-store-direct.beta.spheremall.net/v1/",
                           clientId: "api_demo_user",
                           secretKey: "demo_pass",
-                          username: "username",
-                          password: "q1w2e3")
+                          username: "betastore",
+                          password: "JHh4$%5jhgf#")
     }
     
     override func tearDown() {

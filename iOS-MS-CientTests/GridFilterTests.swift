@@ -50,4 +50,19 @@ class GridFilterTests: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
+    
+    func test😆() {
+        
+        let exp = self.expectation(description: "testAllWithFilter")
+
+        let gridFilter = GridFilter()
+        gridFilter.elements(elements: [PriceRangeFilter(from: "10", to: "4145")])
+        
+        client.grid.filters(filter: gridFilter).all { (grid, error) in
+            XCTAssertNotNil(grid?.data?.first?.item)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
 }

@@ -49,38 +49,6 @@
             endingLineNumber = "27"
             landmarkName = "testCatalogItemsResourceTest()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.CatalogItemsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.CatalogItemsResourceTest.testCatalogItemsResourceTest() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/CatalogItemsResourceTest.swift"
-                  timestampString = "558345250.2609071"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "117">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.CatalogItemsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.CatalogItemsResourceTest.testCatalogItemsResourceTest() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/CatalogItemsResourceTest.swift"
-                  timestampString = "558345250.263185"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-MS-CientTests/CRUDTests.swift"
-            timestampString = "558345249.494447"
+            timestampString = "559047792.890808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -113,38 +81,6 @@
             endingLineNumber = "83"
             landmarkName = "testGetByDeviceId()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.UserSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.UserResourceTests.testGetByDeviceId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/UserResourceTests.swift"
-                  timestampString = "558345250.270853"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "90">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.UserSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.UserResourceTests.testGetByDeviceId() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/UserResourceTests.swift"
-                  timestampString = "558345250.2728111"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -161,38 +97,6 @@
             endingLineNumber = "26"
             landmarkName = "testBasketGetAll()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.BasketSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.BasketResourceTests.testBasketGetAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/BasketResourceTests.swift"
-                  timestampString = "558345250.275602"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "93">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.BasketSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.BasketResourceTests.testBasketGetAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/BasketResourceTests.swift"
-                  timestampString = "558345250.2788841"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -202,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-MS-CientTests/GridFilterTests.swift"
-            timestampString = "558345249.494614"
+            timestampString = "558875198.665729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -225,38 +129,6 @@
             endingLineNumber = "27"
             landmarkName = "testResourceDocuments()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.DocumentsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.DocumentsResourceTest.testResourceDocuments() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/DocumentsResourceTest.swift"
-                  timestampString = "558345250.286406"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "255">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.DocumentsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.DocumentsResourceTest.testResourceDocuments() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/DocumentsResourceTest.swift"
-                  timestampString = "558345250.288467"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,12 +154,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.291428"
+                  timestampString = "559047797.018471"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "2416">
+                  offsetFromSymbolStart = "692">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -297,12 +169,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.353597"
+                  timestampString = "559047797.384676"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
-                  offsetFromSymbolStart = "2416">
+                  offsetFromSymbolStart = "692">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -330,12 +202,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.294072"
+                  timestampString = "559047797.022859"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "4945">
+                  offsetFromSymbolStart = "3249">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -345,12 +217,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.3561749"
+                  timestampString = "559047797.418124"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
-                  offsetFromSymbolStart = "4945">
+                  offsetFromSymbolStart = "3249">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -378,12 +250,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.297073"
+                  timestampString = "559047797.034946"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "6406">
+                  offsetFromSymbolStart = "4653">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -393,12 +265,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.3587511"
+                  timestampString = "559047797.421244"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
                   endingLineNumber = "46"
-                  offsetFromSymbolStart = "6406">
+                  offsetFromSymbolStart = "4653">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -426,12 +298,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.300051"
+                  timestampString = "559047797.037912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "3421">
+                  offsetFromSymbolStart = "1944">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -441,12 +313,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/AttributeTypesSM.swift"
-                  timestampString = "558345250.361271"
+                  timestampString = "559047797.424719"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "3421">
+                  offsetFromSymbolStart = "1944">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -481,38 +353,6 @@
             endingLineNumber = "38"
             landmarkName = "testAll()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.GridSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.GridResourceTests.testAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/GridResourceTests.swift"
-                  timestampString = "558345250.3092459"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.GridSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.GridResourceTests.testAll() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/GridResourceTests.swift"
-                  timestampString = "558345250.312762"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -538,12 +378,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/GridSM.swift"
-                  timestampString = "558345250.318148"
+                  timestampString = "559047797.0475481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "31926">
+                  offsetFromSymbolStart = "20664">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -553,12 +393,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/GridSM.swift"
-                  timestampString = "558345250.363976"
+                  timestampString = "559047797.427912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "31926">
+                  offsetFromSymbolStart = "20664">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -570,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOS-MS-Cient/Resources/Entitys/ProductsSM.swift"
-            timestampString = "558273358.533506"
+            timestampString = "558875198.666411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -586,12 +426,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/ProductsSM.swift"
-                  timestampString = "558345250.328925"
+                  timestampString = "559047797.050289"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
                   endingLineNumber = "56"
-                  offsetFromSymbolStart = "1849">
+                  offsetFromSymbolStart = "761">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -601,12 +441,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Entitys/ProductsSM.swift"
-                  timestampString = "558345250.369011"
+                  timestampString = "559047797.431797"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "56"
                   endingLineNumber = "56"
-                  offsetFromSymbolStart = "1849">
+                  offsetFromSymbolStart = "761">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -634,12 +474,12 @@
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Shop/BasketResource.swift"
-                  timestampString = "558345250.3329"
+                  timestampString = "559047797.053247"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "42">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -649,12 +489,12 @@
                   moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Resources/Shop/BasketResource.swift"
-                  timestampString = "558345250.371576"
+                  timestampString = "559047797.434512"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "45"
                   endingLineNumber = "45"
-                  offsetFromSymbolStart = "26">
+                  offsetFromSymbolStart = "42">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -673,36 +513,68 @@
             endingLineNumber = "44"
             landmarkName = "testResourceMedia()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-MS-CientTests/CRUDTests.swift"
+            timestampString = "559047792.891597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "testDetail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+            timestampString = "558875198.666806"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "asString()"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.MediaSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.MediaTests.testResourceMedia() -&gt; ()"
+                  symbolName = "iOS_MS_CientTests.GridFilterElement.asString() -&gt; Swift.String"
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/MediaTests.swift"
-                  timestampString = "558345250.335541"
+                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+                  timestampString = "559047797.061942"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "255">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1178">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.MediaSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.MediaTests.testResourceMedia() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
+                  symbolName = "iOS_MS_Cient.GridFilterElement.asString() -&gt; Swift.String"
+                  moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/MediaTests.swift"
-                  timestampString = "558345250.3375289"
+                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+                  timestampString = "559047797.437268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "12">
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1178">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -713,44 +585,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iOS-MS-CientTests/CRUDTests.swift"
-            timestampString = "558345249.495388"
+            filePath = "iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+            timestampString = "558875198.667105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "testDetail()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "asString()"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;iOS_MS_CientTests.ProductsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.CRUDTests.testDetail() -&gt; ()"
+                  symbolName = "iOS_MS_CientTests.GridFilterElement.asString() -&gt; Swift.String"
                   moduleName = "iOS-MS-CientTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/CRUDTests.swift"
-                  timestampString = "558345250.340331"
+                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+                  timestampString = "559047797.065308"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "255">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 : @autoclosure () throws -&gt; Swift.Optional&lt;Any&gt; in closure #1 (Swift.Optional&lt;iOS_MS_CientTests.ProductsSM&gt;, Swift.Optional&lt;iOS_MS_CientTests.ErrorSM&gt;) -&gt; () in iOS_MS_CientTests.CRUDTests.testDetail() -&gt; ()"
-                  moduleName = "iOS-MS-CientTests"
+                  symbolName = "iOS_MS_Cient.GridFilterElement.asString() -&gt; Swift.String"
+                  moduleName = "iOS_MS_Cient"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-CientTests/CRUDTests.swift"
-                  timestampString = "558345250.342343"
+                  urlString = "file:///Users/nazargorobets/iOS-MS-Client/iOS-MS-Cient/Filter/Grid/GridFilterElement.swift"
+                  timestampString = "559047797.440003"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "234"
-                  endingLineNumber = "234"
-                  offsetFromSymbolStart = "21">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>

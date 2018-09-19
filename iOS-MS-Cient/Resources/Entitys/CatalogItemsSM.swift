@@ -16,10 +16,11 @@ public class CatalogItemsSM: Entity, Decodable {
     public var ver : String?
     
     public override func rebuild() -> Self {
-        _ = data.map { (item) -> Void in
+        _ = data.compactMap { (item) -> Void in
             let settings = item.attributes?.rebuidFilerSettings()
             item.attributes?.pFilterSettings = settings
         }
+
         return self
     }
 }

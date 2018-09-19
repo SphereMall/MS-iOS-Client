@@ -9,8 +9,8 @@
 import UIKit
 
 public class PriceRangeFilter: GridFilterElement {
-    override public init(values: [String]) {
-        super.init(values: values)
+    public init(from: String, to: String) {
+        super.init(values: ["[\(from),\(to)]"])
         self.name = "priceRange"
     }
 }

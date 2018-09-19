@@ -535,7 +535,6 @@ public class ProductsAttributes: Decodable, Gridable {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        
         self.articleNumber = try container.decodeIfPresent(String.self, forKey: .articleNumber)
         self.authorizationGroupId = try container.decodeIfPresent(String.self, forKey: .authorizationGroupId)
         self.brandId = try container.decodeIfPresent(String.self, forKey: .brandId)
@@ -578,8 +577,6 @@ public class ProductsAttributes: Decodable, Gridable {
         self.options = try container.decodeIfPresent([ProductOptions].self, forKey: .options)
         self.affectAttributes  = try container.decodeIfPresent([AttributesResourceData].self, forKey: .affectAttributes)
         
-        
-        
         let mediaData = try container.decodeIfPresent([MediaData].self, forKey: .media)
         let mediaAttributes = try container.decodeIfPresent([MediaAttributes].self, forKey: .media)
         
@@ -605,12 +602,12 @@ public class ProductsAttributes: Decodable, Gridable {
 }
 
 public struct ProductMedia: Decodable, Gridable {
-    public var id : String?
-    public var imageName : String?
-    public var path : String?
-    public var title : String?
-    public var visible : String?
-    public var objectId : String?
+    public var id: String?
+    public var imageName: String?
+    public var path: String?
+    public var title: String?
+    public var visible: String?
+    public var objectId: String?
     public var mediaDisplayTypeId: String?
     public var mediaTypeId: String?
 }

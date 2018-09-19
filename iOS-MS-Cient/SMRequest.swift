@@ -35,6 +35,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         self.client = client
         self.tokenSevice = AuthToken(client: client)
         self.clientID = client.getClientId()
+        self.secretKey = client.getSecretKey()
         self.accessToken = self.tokenSevice.token()
         self.manager.retrier = self
         self.manager.adapter = self
@@ -60,7 +61,12 @@ public class SMRequest: RequestAdapter, RequestRetrier {
             modifiedheader = ["User-Agent" : uuid]
         }
         
-        manager.request(url, method: method, parameters: parameters, encoding: URLEncoding.default , headers: modifiedheader)
+        var params = parameters ?? [:]
+        
+        params["client_secret"] = secretKey
+        params["client_id"] = clientID
+        
+        manager.request(url, method: method, parameters: params, encoding: URLEncoding.default , headers: modifiedheader)
             .authenticate(usingCredential: authorization())
             .validate(contentType: ["application/json"])
             .validate()
