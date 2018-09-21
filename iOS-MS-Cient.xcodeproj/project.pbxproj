@@ -264,7 +264,6 @@
 		E9619F6420284F9300825F99 /* IsUserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0320284CBC00825F99 /* IsUserRegistered.swift */; };
 		E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0C20284CDB00825F99 /* DocumentsResource.swift */; };
 		E9619F6620284FBD00825F99 /* FullResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0E20284CE600825F99 /* FullResource.swift */; };
-		E9619F68202897F100825F99 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619F67202897F100825F99 /* BaseUrl.swift */; };
 		E9743501212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
@@ -276,6 +275,7 @@
 		E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
+		E9DB27ED2155140A007EAC22 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DB27EC2155140A007EAC22 /* BaseUrl.swift */; };
 		E9E0BE612043F385003B03EF /* GridResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE602043F385003B03EF /* GridResourceTests.swift */; };
 		E9E0BE642043FECA003B03EF /* GridSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE622043FE0F003B03EF /* GridSM.swift */; };
 		E9E0BE652043FECB003B03EF /* GridSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0BE622043FE0F003B03EF /* GridSM.swift */; };
@@ -469,13 +469,13 @@
 		E9619F2D20284E2500825F99 /* iOS_MS_ClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS_MS_ClientTests.swift; sourceTree = "<group>"; };
 		E9619F2E20284E2500825F99 /* CurrenciesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F2F20284E2500825F99 /* AttributeTypesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTypesResourceTest.swift; sourceTree = "<group>"; };
-		E9619F67202897F100825F99 /* BaseUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9743500212AB7470035E72F /* ProductsPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPromotionsData.swift; sourceTree = "<group>"; };
 		E974351D212BFC600035E72F /* PromotionsPriceSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsPriceSM.swift; sourceTree = "<group>"; };
 		E9743520212C02360035E72F /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
 		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
 		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
+		E9DB27EC2155140A007EAC22 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
 		E9E0BE622043FE0F003B03EF /* GridSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSM.swift; sourceTree = "<group>"; };
 		E9E382FF2121746C00294F09 /* ProductPriceConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPriceConfigurations.swift; sourceTree = "<group>"; };
@@ -614,7 +614,7 @@
 				E9619F2720284E2500825F99 /* AttributeGroupsEntitiesResourceTest.swift */,
 				E9619F2220284E2400825F99 /* AttributeGroupsResourceTest.swift */,
 				E9619DD420284B3D00825F99 /* Info.plist */,
-				E9619F67202897F100825F99 /* BaseUrl.swift */,
+				E9DB27EC2155140A007EAC22 /* BaseUrl.swift */,
 				E9118DD12032D1A600A7344D /* CorrelationsResourceTests.swift */,
 				E917271A2032E99D0075995D /* AuthResourceTests.swift */,
 				E9E0BE602043F385003B03EF /* GridResourceTests.swift */,
@@ -880,7 +880,6 @@
 				E9619DC020284B3C00825F99 /* Frameworks */,
 				E9619DC120284B3C00825F99 /* Headers */,
 				E9619DC220284B3C00825F99 /* Resources */,
-				B0EFE5DA5F14B2D0EA9D0ADF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -899,8 +898,7 @@
 				E9619DC920284B3D00825F99 /* Sources */,
 				E9619DCA20284B3D00825F99 /* Frameworks */,
 				E9619DCB20284B3D00825F99 /* Resources */,
-				FC271672029B78147732E07F /* [CP] Embed Pods Frameworks */,
-				66A49166361219B426C0D5DC /* [CP] Copy Pods Resources */,
+				676FEBC06DAF590BFF8D58A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1006,54 +1004,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		66A49166361219B426C0D5DC /* [CP] Copy Pods Resources */ = {
+		676FEBC06DAF590BFF8D58A2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B0EFE5DA5F14B2D0EA9D0ADF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-MS-Cient/Pods-iOS-MS-Cient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FC271672029B78147732E07F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS-MS-CientTests/Pods-iOS-MS-CientTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1278,9 +1250,9 @@
 				E9619F4D20284E2600825F99 /* EntityAttributesTest.swift in Sources */,
 				E9619F3A20284E2600825F99 /* BrandsResourceTest.swift in Sources */,
 				E9619EFE20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
+				E9DB27ED2155140A007EAC22 /* BaseUrl.swift in Sources */,
 				E9619F4720284E2600825F99 /* DocumentsResourceTest.swift in Sources */,
 				E9E3831521240DC500294F09 /* PriceConfigurationFilter.swift in Sources */,
-				E9619F68202897F100825F99 /* BaseUrl.swift in Sources */,
 				E9619EB120284D9B00825F99 /* PaymentProvidersSM.swift in Sources */,
 				E9619F0A20284DD400825F99 /* FactorFilter.swift in Sources */,
 				E9619E2C20284D2B00825F99 /* AttributeDisplayTypesResource.swift in Sources */,
