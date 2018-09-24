@@ -21,8 +21,18 @@ end
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['CONFIGURATION_BUILD_DIR'] = '$PODS_CONFIGURATION_BUILD_DIR'
+        
+        # The following is needed to ensure the "archive" step works in XCode.
+        # It removes React & Yoga from the Pods project, as it is already included in the main project.
+        # Without this, you'd see errors when you archive like:
+        # "Multiple commands produce ... libReact.a"
+        # "Multiple commands produce ... libyoga.a"
+        
+        targets_to_ignore = %w(React yoga)
+        
+        if targets_to_ignore.include? target.name
+            target.remove_from_project
         end
+        
     end
 end

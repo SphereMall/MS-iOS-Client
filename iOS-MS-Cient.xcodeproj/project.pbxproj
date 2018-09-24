@@ -328,7 +328,7 @@
 		E940236F209994AA008B7414 /* PromotionsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsSM.swift; sourceTree = "<group>"; };
 		E9619DC420284B3C00825F99 /* iOS_MS_Cient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_MS_Cient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9619DC720284B3C00825F99 /* iOS_MS_Cient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_MS_Cient.h; sourceTree = "<group>"; };
-		E9619DC820284B3C00825F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9619DC820284B3C00825F99 /* SMInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SMInfo.plist; sourceTree = "<group>"; };
 		E9619DCD20284B3D00825F99 /* iOS-MS-CientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS-MS-CientTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9619DD420284B3D00825F99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9619DDE20284C2300825F99 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 				E9619DE020284C2400825F99 /* SMRequest.swift */,
 				E9D3B75C2052C2A000AE8426 /* EntityType.swift */,
 				E9619DE120284C2400825F99 /* SMCountMaker.swift */,
-				E9619DC820284B3C00825F99 /* Info.plist */,
+				E9619DC820284B3C00825F99 /* SMInfo.plist */,
 			);
 			path = "iOS-MS-Cient";
 			sourceTree = "<group>";
@@ -1473,7 +1473,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "iOS-MS-Cient/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-MS-Cient/SMInfo.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1496,7 +1496,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "iOS-MS-Cient/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-MS-Cient/SMInfo.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
