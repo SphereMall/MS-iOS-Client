@@ -8,13 +8,23 @@
 
 import UIKit
 
+public class FacetsDTO: NSObject {
+    public var facets: [Facet] = []
+    public var minPrice : Int?
+    public var maxPrice : Int?
+    public var amounts : Int?
+}
+
 public class FacetMaker: NSObject {
     
-    static public func `do`(_ facets : FacetsSM) -> [Facet] {
+    static public func `do`(_ facets : FacetsSM) -> FacetsDTO {
         
         var facetsPack: [Facet] = []
         
-        for item in facets.data!.attributes! {
+        guard let data = facets.data else { return FacetsDTO() }
+        guard let attributes = data.attributes else { return FacetsDTO() }
+        
+        for item in attributes {
             var index: Int?
             var liveItem = facetsPack.first(where: { (facet) -> Bool in
                 if facet.attributeId == item.attributeId {
@@ -35,7 +45,13 @@ public class FacetMaker: NSObject {
             }
         }
         
-        return facetsPack
+        let object = FacetsDTO()
+        object.facets = facetsPack
+        object.maxPrice = data.priceRange?.maxPrice
+        object.minPrice = data.priceRange?.minPrice
+        object.amounts = data.priceRange?.amounts
+        
+        return object
     }
     
     static private func makeFacetValueFrom(item: FacetsAttribute) -> FacetAttribute {

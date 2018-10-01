@@ -30,7 +30,7 @@ public class GridResource<T: Decodable> : GrapherResource<GridSM> {
         return self
     }
     
-    public func facets(closure: @escaping ([Facet]?, ErrorSM?) -> Swift.Void) {
+    public func facets(closure: @escaping (FacetsDTO?, ErrorSM?) -> Swift.Void) {
         
         let params = getQueryParams()
         

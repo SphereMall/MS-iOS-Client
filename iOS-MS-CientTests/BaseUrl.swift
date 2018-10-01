@@ -10,6 +10,6 @@ import Foundation
 
 let BASE_URL = "http://gateway-main.alpha.spheremall.net:8082/v1/"
 let BASKET_URL = "http://gateway-main.alpha.spheremall.net:8082/v2/"
-let GRID_URL = ""
-let USER_ID = ""
-let AUTH_URL = ""
+let GRID_URL = "http://gateway-store-direct.beta.spheremall.net/v1/"
+let USER_ID = "153"
+let AUTH_URL = "http://gateway-main.alpha.spheremall.net:8082/v1/"

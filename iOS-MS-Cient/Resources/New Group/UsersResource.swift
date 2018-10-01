@@ -117,7 +117,7 @@ public class UsersResource<T: Decodable>: Resource<UserSM> {
             if error != nil {
                 closure(nil, error)
             } else {
-                guard let id = item?.data?.userId else {
+                guard let id = item?.data?.first?.attributes?.userId else {
                     closure(nil, ErrorSM(code: 404, status: "userId not found"))
                     return
                 }

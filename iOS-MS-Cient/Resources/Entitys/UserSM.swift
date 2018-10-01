@@ -25,22 +25,30 @@ public struct UserData: Decodable {
 }
 
 public class SlimUserSM: Entity, Decodable {
-    public var data : SlimUserAttributes?
+    public var data : Array<SlimUserData>?
     public var error : Error?
     public var success : Bool?
     public var ver : String?
     public var meta: Meta?
     
-    init(attributes: SlimUserAttributes?, error: Error?, meta: Meta?) {
-        self.data = attributes
+    public init(data: [SlimUserData]?, error: Error?, meta: Meta?) {
+        self.data = data
         self.error = error
         self.meta = meta
     }
 }
 
+public class SlimUserData: Decodable {
+    public var attributes : SlimUserAttributes?
+    public var id: String?
+    public var type: String?
+}
+
 public class SlimUserAttributes: Decodable {
-    public var type : String?
+    public var deviceId : String?
+    public var id: String?
     public var userId: String?
+    public var userType: String?
 }
 
 public class UserSM: Entity, Decodable {

@@ -14,7 +14,7 @@ class GridFilterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: GRID_URL,
+        client = SMClient(gatewayUrl: "http://gateway-bc.alpha.spheremall.net:8089/v1/",
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -56,7 +56,24 @@ class GridFilterTests: XCTestCase {
         let exp = self.expectation(description: "testAllWithFilter")
 
         let gridFilter = GridFilter()
-        gridFilter.elements(elements: [PriceRangeFilter(from: "10", to: "4145")])
+        gridFilter.elements(elements: [PriceRangeFilter(from: "2000", to: "4145")])
+        
+        client.grid.filters(filter: gridFilter).all { (grid, error) in
+            XCTAssertNotNil(grid?.data?.first?.item)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+    }
+    
+    func test2😆() {
+        
+        let exp = self.expectation(description: "testAllWithFilter")
+        
+        let gridFilter = GridFilter()
+        let entity = EntityFilter(values: ["\"products\""])
+        
+        gridFilter.elements(elements: [entity])
         
         client.grid.filters(filter: gridFilter).all { (grid, error) in
             XCTAssertNotNil(grid?.data?.first?.item)
