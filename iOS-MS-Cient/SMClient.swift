@@ -53,6 +53,14 @@ public class SMClient: ServiceInjector {
     public func getVersion() -> String {
         return self.version
     }
+    
+    public func setHeaders(headers: [String : String]) {
+        self.header = headers
+    }
+    
+    public func getHeaders() -> [String : String] {
+        return self.header 
+    }
 
     public func setVersion(version: String) {
         self.version = version

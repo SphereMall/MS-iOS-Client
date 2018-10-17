@@ -300,6 +300,7 @@
 		E9E3831E2125A18E00294F09 /* ItemsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3831C2125A18E00294F09 /* ItemsSM.swift */; };
 		E9F3EB5C20A0964400260AFB /* GridFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */; };
 		E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C7AE4206B784F00EFA879 /* GrapherResource.swift */; };
+		E9F978D721635B2000F7C4FE /* ElasticSearchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,6 +490,7 @@
 		E9E3831A2124305C00294F09 /* ProductPriceConfigurationsResourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPriceConfigurationsResourceTest.swift; sourceTree = "<group>"; };
 		E9E3831C2125A18E00294F09 /* ItemsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsSM.swift; sourceTree = "<group>"; };
 		E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFilterTests.swift; sourceTree = "<group>"; };
+		E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticSearchResource.swift; sourceTree = "<group>"; };
 		F1E09B021AD2A02290B1A416 /* Pods-iOS-MS-Cient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-MS-Cient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-MS-Cient/Pods-iOS-MS-Cient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -694,6 +696,7 @@
 		E9619E0B20284CCB00825F99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9F978D521635AFE00F7C4FE /* ElasticSearch */,
 				E9619E7D20284D6E00825F99 /* Entitys */,
 				E9619E6D20284D5200825F99 /* User */,
 				E9619E4520284D3400825F99 /* Shop */,
@@ -855,6 +858,14 @@
 				E9619EF920284DD400825F99 /* GridFilter.swift */,
 			);
 			path = Grid;
+			sourceTree = "<group>";
+		};
+		E9F978D521635AFE00F7C4FE /* ElasticSearch */ = {
+			isa = PBXGroup;
+			children = (
+				E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */,
+			);
+			path = ElasticSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1050,6 +1061,7 @@
 				E9E3831D2125A18E00294F09 /* ItemsSM.swift in Sources */,
 				E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */,
 				E9619EBA20284D9B00825F99 /* CurrenciSM.swift in Sources */,
+				E9F978D721635B2000F7C4FE /* ElasticSearchResource.swift in Sources */,
 				E9619DED20284C5500825F99 /* ClassReflectionHelper.swift in Sources */,
 				E9619E0920284CBD00825F99 /* UserSpecification.swift in Sources */,
 				E9619E0A20284CBD00825F99 /* IsUserSubscriber.swift in Sources */,

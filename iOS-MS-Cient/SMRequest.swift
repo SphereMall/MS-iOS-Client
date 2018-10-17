@@ -36,6 +36,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         self.tokenSevice = AuthToken(client: client)
         self.clientID = client.getClientId()
         self.secretKey = client.getSecretKey()
+        self.header = client.getHeaders()
         self.accessToken = self.tokenSevice.token()
         self.manager.retrier = self
         self.manager.adapter = self
@@ -51,14 +52,14 @@ public class SMRequest: RequestAdapter, RequestRetrier {
     
     public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
-        var modifiedheader = [String : String] ()
+        var modifiedheader: [String : String] = header
         
         if let headers = headers {
-            modifiedheader = header.merging(headers) { $1 }
+            modifiedheader = modifiedheader.merging(headers) { $1 }
         }
-
+        
         if let uuid = UIDevice.current.identifierForVendor?.uuidString {
-            modifiedheader = ["User-Agent" : uuid]
+            modifiedheader["User-Agent"] = uuid
         }
         
         var params = parameters ?? [:]
