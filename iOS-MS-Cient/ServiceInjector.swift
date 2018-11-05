@@ -173,4 +173,7 @@ public class ServiceInjector: NSObject {
         return PromotionsRecource<PromotionsSM>(client: client!)
     } ()
 
+    public lazy var externalUser: ExternalUserRelationResource! = {
+        return ExternalUserRelationResource<ExternalUserSM>(client: client!)
+    } ()
 }

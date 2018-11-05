@@ -273,6 +273,17 @@
 		E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
 		E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
+		E988A263218DBF44000F1D36 /* IncludItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A262218DBF44000F1D36 /* IncludItem.swift */; };
+		E988A264218DC17B000F1D36 /* IncludItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A262218DBF44000F1D36 /* IncludItem.swift */; };
+		E988A266218DC3F8000F1D36 /* DependencysRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A265218DC3F8000F1D36 /* DependencysRebuilder.swift */; };
+		E988A267218DC6E8000F1D36 /* DependencysRebuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A265218DC3F8000F1D36 /* DependencysRebuilder.swift */; };
+		E988A269218DC791000F1D36 /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A268218DC791000F1D36 /* Relationships.swift */; };
+		E988A26A218DC794000F1D36 /* Relationships.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A268218DC791000F1D36 /* Relationships.swift */; };
+		E988A26C218DFAB5000F1D36 /* ExternalUserRelationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */; };
+		E988A26E218DFAEB000F1D36 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
+		E988A270218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */; };
+		E988A271218DFCCA000F1D36 /* ExternalUserRelationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */; };
+		E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9DB27ED2155140A007EAC22 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DB27EC2155140A007EAC22 /* BaseUrl.swift */; };
@@ -475,6 +486,12 @@
 		E9743520212C02360035E72F /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
 		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
 		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
+		E988A262218DBF44000F1D36 /* IncludItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludItem.swift; sourceTree = "<group>"; };
+		E988A265218DC3F8000F1D36 /* DependencysRebuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencysRebuilder.swift; sourceTree = "<group>"; };
+		E988A268218DC791000F1D36 /* Relationships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationships.swift; sourceTree = "<group>"; };
+		E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserRelationResource.swift; sourceTree = "<group>"; };
+		E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserSM.swift; sourceTree = "<group>"; };
+		E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserRelationResourceTests.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9DB27EC2155140A007EAC22 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
@@ -623,6 +640,7 @@
 				E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */,
 				E9E3831A2124305C00294F09 /* ProductPriceConfigurationsResourceTest.swift */,
 				E9743520212C02360035E72F /* Promotions.swift */,
+				E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */,
 			);
 			path = "iOS-MS-CientTests";
 			sourceTree = "<group>";
@@ -771,6 +789,7 @@
 				E9619E7220284D6500825F99 /* CompaniesResource.swift */,
 				E9619E6F20284D6500825F99 /* MessagesResource.swift */,
 				E9619E7020284D6500825F99 /* WishListItemsResource.swift */,
+				E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */,
 			);
 			name = User;
 			path = "New Group";
@@ -827,6 +846,10 @@
 				E9E3830D212409AF00294F09 /* PriceConfiguration.swift */,
 				E9E3831C2125A18E00294F09 /* ItemsSM.swift */,
 				E974351D212BFC600035E72F /* PromotionsPriceSM.swift */,
+				E988A262218DBF44000F1D36 /* IncludItem.swift */,
+				E988A265218DC3F8000F1D36 /* DependencysRebuilder.swift */,
+				E988A268218DC791000F1D36 /* Relationships.swift */,
+				E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1129,10 +1152,13 @@
 				E9619E5720284D4600825F99 /* CurrenciesResource.swift in Sources */,
 				E9619EBC20284D9B00825F99 /* AttributeTypesSM.swift in Sources */,
 				E9619E0820284CBD00825F99 /* IsUserEmail.swift in Sources */,
+				E988A269218DC791000F1D36 /* Relationships.swift in Sources */,
 				E9619EEE20284DBE00825F99 /* InPredicate.swift in Sources */,
 				E9619EC020284D9B00825F99 /* MessagesSM.swift in Sources */,
 				E9619E2720284D2B00825F99 /* FunctionalNamesResource.swift in Sources */,
+				E988A26E218DFAEB000F1D36 /* ExternalUserSM.swift in Sources */,
 				E9619E0720284CBD00825F99 /* IsUserRegistered.swift in Sources */,
+				E988A266218DC3F8000F1D36 /* DependencysRebuilder.swift in Sources */,
 				E9619EC820284D9B00825F99 /* Entity.swift in Sources */,
 				E9619E6320284D4600825F99 /* CurrenciesRateResource.swift in Sources */,
 				E9619E3720284D2B00825F99 /* AttributeGroupsResource.swift in Sources */,
@@ -1151,10 +1177,12 @@
 				E9619EA620284D9B00825F99 /* MediaSM.swift in Sources */,
 				E9619DF420284C6A00825F99 /* Keychain.swift in Sources */,
 				E9E3830E212409AF00294F09 /* PriceConfiguration.swift in Sources */,
+				E988A263218DBF44000F1D36 /* IncludItem.swift in Sources */,
 				E9E3830B2124094500294F09 /* PriceValue.swift in Sources */,
 				E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */,
 				E9619EBE20284D9B00825F99 /* CompaniesSM.swift in Sources */,
 				E9619DFB20284C8000825F99 /* BasketPredicate.swift in Sources */,
+				E988A26C218DFAB5000F1D36 /* ExternalUserRelationResource.swift in Sources */,
 				E9619F0120284DD400825F99 /* FunctionalNameFilter.swift in Sources */,
 				E9619E5520284D4600825F99 /* OrderItemsResource.swift in Sources */,
 				E9619EE220284D9B00825F99 /* BasketSM.swift in Sources */,
@@ -1237,11 +1265,13 @@
 				E9619F4520284E2600825F99 /* AttributeGroupsResourceTest.swift in Sources */,
 				E9619E3A20284D2B00825F99 /* CatalogItemsResource.swift in Sources */,
 				E9619EBB20284D9B00825F99 /* CurrenciSM.swift in Sources */,
+				E988A267218DC6E8000F1D36 /* DependencysRebuilder.swift in Sources */,
 				E9619F4920284E2600825F99 /* AttributeValuesResourceTest.swift in Sources */,
 				E9619ECD20284D9B00825F99 /* EntityAttributesSM.swift in Sources */,
 				E9619EA320284D9B00825F99 /* PaymentMethodsSM.swift in Sources */,
 				E9619E1620284D0900825F99 /* GridResource.swift in Sources */,
 				E9619F5C20284F7800825F99 /* BasketPredicate.swift in Sources */,
+				E988A271218DFCCA000F1D36 /* ExternalUserRelationResource.swift in Sources */,
 				E9619E6C20284D4600825F99 /* BasketResource.swift in Sources */,
 				E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */,
 				E9743521212C02360035E72F /* Promotions.swift in Sources */,
@@ -1260,6 +1290,7 @@
 				E9619E3220284D2B00825F99 /* AttributeGroupsEntitiesResource.swift in Sources */,
 				E9619F3420284E2600825F99 /* BasketTests.swift in Sources */,
 				E9619F4D20284E2600825F99 /* EntityAttributesTest.swift in Sources */,
+				E988A26A218DC794000F1D36 /* Relationships.swift in Sources */,
 				E9619F3A20284E2600825F99 /* BrandsResourceTest.swift in Sources */,
 				E9619EFE20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
 				E9DB27ED2155140A007EAC22 /* BaseUrl.swift in Sources */,
@@ -1295,12 +1326,14 @@
 				E9619F0420284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9E383012121774800294F09 /* ProductPriceConfigurations.swift in Sources */,
 				E9E3831221240B3200294F09 /* ProductPriceConfigurationsResource.swift in Sources */,
+				E988A264218DC17B000F1D36 /* IncludItem.swift in Sources */,
 				E9619F4120284E2600825F99 /* PaymentResourceTest.swift in Sources */,
 				E9619F5A20284F7300825F99 /* AuthToken.swift in Sources */,
 				E9619E7820284D6600825F99 /* WishListItemsResource.swift in Sources */,
 				E9619E3420284D2B00825F99 /* ProductAttributeValuesResource.swift in Sources */,
 				E9619EEB20284DBE00825F99 /* FilterConditions.swift in Sources */,
 				E9619F0C20284DD400825F99 /* EntityFilter.swift in Sources */,
+				E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */,
 				E9619F4320284E2600825F99 /* CurrenciesRateResourceTest.swift in Sources */,
 				E9619E6020284D4600825F99 /* DeliveryPaymentsResource.swift in Sources */,
 				E9619F5F20284F8300825F99 /* FilterSpecification.swift in Sources */,
@@ -1343,6 +1376,7 @@
 				E9118DCD2031948C00A7344D /* EmptySM.swift in Sources */,
 				E9619F5720284F6A00825F99 /* SMCountMaker.swift in Sources */,
 				E9619F5420284F6300825F99 /* Resource.swift in Sources */,
+				E988A270218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,9 +16,19 @@ public class MediaTypesSM: Entity, Decodable {
 }
 
 public struct MediaTypesData: Decodable {
+    
     public var attributes  : MediaTypesAttributes?
     public var id : String?
     public var type : String?
+    public var relationships: ObjectRelationships?
+    
+    public init(include: IncludItem) {
+        guard let object = include.item as? MediaTypesAttributes else { return }
+        self.attributes = object
+        self.type = include.type
+        self.id = include.id
+        self.relationships = include.relationships
+    }
 }
 
 public struct MediaTypesAttributes: Decodable  {

@@ -15,4 +15,14 @@ public class DocumentsResource<T: Decodable>: Resource<DocumentsSM>, FullResourc
     override public func getURI() -> String {
         return "documents"
     }
+    
+    public func detail(id: String, closure: @escaping (DocumentsSM?, ErrorSM?) -> Void) {
+        
+        let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/detail/\(id)"
+        let parameters = self.getQueryParams()
+        
+        self.heandler.request(url: url, method: .get, parameters: parameters) { (item: DocumentsSM?, error) in
+            closure(item?.rebuild(), error)
+        }
+    }
 }

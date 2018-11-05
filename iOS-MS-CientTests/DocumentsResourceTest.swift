@@ -15,7 +15,7 @@ class DocumentsResourceTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: DOCUMENTS_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -44,14 +44,19 @@ class DocumentsResourceTest: XCTestCase {
         wait(for: [exp], timeout: 10)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    func testDetail() {
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let exp = self.expectation(description: "testGet")
+
+        client.documents.detail(id: "98") { (documents, error) in
+            XCTAssertNotNil(documents)
+            XCTAssertNil(error)
+            XCTAssertNotNil(documents?.data?.first?.id)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+        
     }
     
     func testPerformanceExample() {

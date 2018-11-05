@@ -85,8 +85,30 @@ public struct BasketData: Decodable {
                             })
                             
                             if includeProduct != nil {
+                                
                                 var product = ProductsData(include: includeProduct!)
-                                object.attributes?.products?.append(product.rebuild(included: included))
+                                if var attributes = product.attributes {
+                                    product.rebuild(model: &attributes, included: included)
+                                    product.attributes?.affectAttributes = attributes.affectAttributes
+                                    product.attributes?.attributes = attributes.attributes
+                                    product.attributes?.attributeTypes = attributes.attributeTypes
+                                    product.attributes?.attributeValues = attributes.attributeValues
+                                    product.attributes?.brands = attributes.brands
+                                    product.attributes?.functionalNames = attributes.functionalNames
+                                    product.attributes?.media = attributes.media
+                                    product.attributes?.options = attributes.options
+                                    product.attributes?.priceConfigurations = attributes.priceConfigurations
+                                    product.attributes?.productAttributeValues = attributes.productAttributeValues
+                                    product.attributes?.productOptionValues =  attributes.productOptionValues
+                                    product.attributes?.productPriceConfigurations = attributes.productPriceConfigurations
+                                    product.attributes?.productsToPromotions = attributes.productsToPromotions
+                                    product.attributes?.promotions = attributes.promotions
+                                    product.attributes?.mediaEntities = attributes.mediaEntities
+                                    product.attributes?.entityAttributeValues = attributes.entityAttributeValues
+                                    product.attributes?.mediaDisplayTypes = attributes.mediaDisplayTypes
+                                }
+                                
+                                object.attributes?.products?.append(product)
                             }
                         }
                     }
@@ -104,7 +126,8 @@ public struct BasketData: Decodable {
     }
 }
 
-public struct BasketAttributes: Decodable {
+public class BasketAttributes: Decodable, Relationships {
+    
     public let subTotalVatPrice : String?
     public let totalPrice : String?
     public let orderId : String?
@@ -140,6 +163,24 @@ public struct BasketAttributes: Decodable {
     public let userId : String?
     public let deliveryProviderId: String?
     public var items : [ItemsData]?
+    
+    public var media: [MediaData]?
+    public var productAttributeValues: [ProductAttributeValuesAttribute]?
+    public var attributeValues: [AttributeValues]?
+    public var attributeTypes: [AttributeTypes]?
+    public var attributes: [AttributeResourceSM]?
+    public var functionalNames: [FunctionalNameAttribute]?
+    public var brands: [AttributeBrand]?
+    public var promotions: [PromotionsAttributes]?
+    public var productPriceConfigurations: [ProductPriceConfigurations]?
+    public var priceConfigurations: [PriceConfigurations]?
+    public var productOptionValues: [ProductOptionValues]?
+    public var options: [ProductOptions]?
+    public var affectAttributes: [AttributesResourceData]?
+    public var productsToPromotions: [ProductsPromotionsData]?
+    public var mediaEntities: [MediaData]?
+    public var entityAttributeValues: [EntityData]?
+    public var mediaDisplayTypes: [MediaTypesData]?
     
     public enum CodingKeys: String, CodingKey {
         case subTotalVatPrice = "subTotalVatPrice"
@@ -179,7 +220,7 @@ public struct BasketAttributes: Decodable {
         case deliveryProviderId = "deliveryProviderId"
     }
     
-    public init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
         

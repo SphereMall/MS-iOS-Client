@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import iOS_MS_Cient
 
 class CRUDTests: XCTestCase {
     
