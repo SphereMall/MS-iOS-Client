@@ -12,7 +12,7 @@ public class ProductsSM: Entity, Decodable {
     
     public var data: [ProductsData]? 
     public var included: [IncludItem]?
-    public var meta : Meta?
+//    public var meta : Meta?
     public var status : String?
     public var ver : String?
     

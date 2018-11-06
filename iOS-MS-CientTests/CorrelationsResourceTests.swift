@@ -15,15 +15,24 @@ class CorrelationsResourceTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        client = SMClient(gatewayUrl: BASE_URL,
+        client = SMClient(gatewayUrl: DOCUMENTS_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
     
     func testAttributeGroupsResource() {
+        
         let exp = self.expectation(description: "testGet")
-        client.correlations.getById(id: 5, forClassName: "products") { (items, error) in
-            XCTAssertNotNil(items)
+        
+        let gridFilter = GridFilter()
+        let entity = EntityFilter(values: ["\"documents\""])
+        gridFilter.elements(elements: [entity])
+        
+        client.correlations
+            .filters(filter: gridFilter)
+            .getById(id: 26, forClassName: "products") { (products, error) in
+                
+            XCTAssertNotNil(products)
             exp.fulfill()
         }
         

@@ -8,9 +8,26 @@
 
 import UIKit
 
-public class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM> {
+public class CorrelationsResource<ProductsSM: Decodable> : GrapherResource <ProductsSM> {
+    
     override public func getURI() -> String {
         return "correlations"
+    }
+    
+    public override func filter(predicate: Predicate) -> Self {
+        self.filter = Filter(filters: [predicate])
+        return self
+    }
+    
+    public func filters(filter: Filter) -> CorrelationsResource {
+        self.filter = filter
+        return self
+    }
+    
+    public func filters(filter: FilterSpecification) -> CorrelationsResource {
+        let gridFilter = GridFilter()
+        self.filter = gridFilter.setFilters(filters: [filter.asFilter()])
+        return self
     }
     
     public func getById(id: String, forClassName: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Swift.Void) {
@@ -38,13 +55,13 @@ public class CorrelationsResource<ProductsSM: Decodable> : Resource <ProductsSM>
     }
     
     @available(*, unavailable, message: "Method get() can not be use with correlations")
-    public override func get(id: String, closure: @escaping SMResponse<ProductsSM>) {}
+    public override func get(id: String, closure: @escaping SMResponse<GridSM>) {}
     
     @available(*, unavailable, message: "Method create() can not be use with correlations")
-    public override func create(data: [String: String], closure: @escaping SMResponse<ProductsSM>) {}
+    public override func create(data: [String: String], closure: @escaping SMResponse<GridSM>) {}
     
     @available(*, unavailable, message: "Method update() can not be use with correlations")
-    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<ProductsSM>) {}
+    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<GridSM>) {}
     
     @available(*, unavailable, message: "Method delete() can not be use with correlations")
     public override func delete(id: String, closure: @escaping SMResponseDelete) {}

@@ -26,6 +26,19 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
         }
     }
     
+    public func variants(ids: [String], closure: @escaping (ProductsSM?, ErrorSM?) -> Swift.Void) {
+        
+        var params: [String: String] = self.getQueryParams()
+        
+        params["ids"] = ids.joined(separator: ",")
+        
+        let url = client!.getGatewayUrl() + getURI() + "/detail/variants"
+        
+        heandler.request(url: url, method: .get, parameters: params) { (items: ProductsSM?, error: ErrorSM?) in
+            closure(items?.rebuild(), error)
+        }
+    }
+    
     public override func get(id: String, closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         
         super.get(id: id) { (product, error) in
