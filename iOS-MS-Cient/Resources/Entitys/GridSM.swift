@@ -104,24 +104,15 @@ public class GridSM: Entity, Decodable {
 
                     if var attributes = product.attributes {
                         product.rebuild(model: &attributes, included: included)
-                        product.attributes?.affectAttributes = attributes.affectAttributes
-                        product.attributes?.attributes = attributes.attributes
-                        product.attributes?.attributeTypes = attributes.attributeTypes
-                        product.attributes?.attributeValues = attributes.attributeValues
-                        product.attributes?.brands = attributes.brands
-                        product.attributes?.functionalNames = attributes.functionalNames
-                        product.attributes?.media = attributes.media
-                        product.attributes?.options = attributes.options
-                        product.attributes?.priceConfigurations = attributes.priceConfigurations
-                        product.attributes?.productAttributeValues = attributes.productAttributeValues
-                        product.attributes?.productOptionValues =  attributes.productOptionValues
-                        product.attributes?.productPriceConfigurations = attributes.productPriceConfigurations
-                        product.attributes?.productsToPromotions = attributes.productsToPromotions
-                        product.attributes?.promotions = attributes.promotions
                     }
                     
+                    let productData = ProductsData(id: product.id,
+                                                   attributes: product.attributes,
+                                                   relationships: product.relationships,
+                                                   type: product.type)
+                    
                     let item = GridItem()
-                    item.item = product as AnyObject
+                    item.item = productData as AnyObject
                     item.type = object.type
                     items.append(item)
                 } else {

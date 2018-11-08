@@ -32,7 +32,6 @@ public protocol Rebuilder: Datable {
 public extension Rebuilder {
     
     public mutating func rebuild<T: Relationships>(model: inout T, included: [IncludItem]) {
-        
         model.promotions = promotions(attributes: model, included: included)
         model.brands = brands(attributes: model, included: included)
         model.functionalNames = functionalNames(attributes: model, included: included)
@@ -344,7 +343,7 @@ public extension Rebuilder {
             return items
         }
         
-        return nil
+        return attributes?.productOptionValues
     }
     
     public mutating func productOptions(attributes: Relationships?, included: [IncludItem]) -> [ProductOptions]? {
@@ -372,7 +371,7 @@ public extension Rebuilder {
             return items
         }
         
-        return nil
+        return attributes?.options
     }
     
     public mutating func media(attributes: Relationships?, included: [IncludItem]) -> [MediaData]? {
@@ -398,7 +397,15 @@ public extension Rebuilder {
             return items
         }
         
-        return nil
+        guard let medias = attributes?.media else { return nil }
+        
+        var items: [MediaData] = []
+        
+        for item in medias {
+            items.append(item)
+        }
+        
+        return items
     }
     
     public mutating func productsToPromotions(attributes: Relationships?, included: [IncludItem]) -> [ProductsPromotionsData]? {

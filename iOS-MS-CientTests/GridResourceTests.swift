@@ -14,7 +14,7 @@ class GridResourceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: GRID_URL,
+        client = SMClient(gatewayUrl: DOCUMENTS_URL,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
     }
@@ -35,6 +35,7 @@ class GridResourceTests: XCTestCase {
         
         let exp = self.expectation(description: "testAll")
         client.grid.limit(limit: 10, offset: 0).all { (grid, error) in
+            let object = grid?.data?.first?.item as! ProductsData
             XCTAssertNil(error)
             XCTAssertNotNil(grid)
             exp.fulfill()

@@ -12,7 +12,7 @@ public class ProductsSM: Entity, Decodable {
     
     public var data: [ProductsData]? 
     public var included: [IncludItem]?
-//    public var meta : Meta?
+    public var meta : Meta?
     public var status : String?
     public var ver : String?
     
@@ -26,23 +26,6 @@ public class ProductsSM: Entity, Decodable {
         for var product in data {
             if var attributes = product.attributes {
                 product.rebuild(model: &attributes, included: included)
-                product.attributes?.affectAttributes = attributes.affectAttributes
-                product.attributes?.attributes = attributes.attributes
-                product.attributes?.attributeTypes = attributes.attributeTypes
-                product.attributes?.attributeValues = attributes.attributeValues
-                product.attributes?.brands = attributes.brands
-                product.attributes?.functionalNames = attributes.functionalNames
-                product.attributes?.media = attributes.media
-                product.attributes?.options = attributes.options
-                product.attributes?.priceConfigurations = attributes.priceConfigurations
-                product.attributes?.productAttributeValues = attributes.productAttributeValues
-                product.attributes?.productOptionValues =  attributes.productOptionValues
-                product.attributes?.productPriceConfigurations = attributes.productPriceConfigurations
-                product.attributes?.productsToPromotions = attributes.productsToPromotions
-                product.attributes?.promotions = attributes.promotions
-                product.attributes?.mediaEntities = attributes.mediaEntities
-                product.attributes?.entityAttributeValues = attributes.entityAttributeValues
-                product.attributes?.mediaDisplayTypes = attributes.mediaDisplayTypes
                 products.append(product)
             }
         }
