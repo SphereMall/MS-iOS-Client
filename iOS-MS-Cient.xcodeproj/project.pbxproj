@@ -22,6 +22,35 @@
 		E940236E2099944F008B7414 /* PromotionsRecource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940236C2099944F008B7414 /* PromotionsRecource.swift */; };
 		E9402370209994AA008B7414 /* PromotionsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940236F209994AA008B7414 /* PromotionsSM.swift */; };
 		E9402371209994AA008B7414 /* PromotionsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940236F209994AA008B7414 /* PromotionsSM.swift */; };
+		E955A46A21B8019F006C02C4 /* BoolFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46921B8019F006C02C4 /* BoolFilter.swift */; };
+		E955A46C21B801D7006C02C4 /* MultiMatchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46B21B801D7006C02C4 /* MultiMatchFilter.swift */; };
+		E955A47121B801FE006C02C4 /* TermsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46D21B801FE006C02C4 /* TermsFilter.swift */; };
+		E955A47221B801FE006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46E21B801FE006C02C4 /* AttributeCodeFilterCriteria.swift */; };
+		E955A47321B801FE006C02C4 /* AttributeIDFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46F21B801FE006C02C4 /* AttributeIDFilterCriteria.swift */; };
+		E955A47421B801FE006C02C4 /* TermsFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47021B801FE006C02C4 /* TermsFilterCriteria.swift */; };
+		E955A47A21B8021A006C02C4 /* ElasticSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47521B8021A006C02C4 /* ElasticSearchQuery.swift */; };
+		E955A47B21B8021A006C02C4 /* ElasticSearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47621B8021A006C02C4 /* ElasticSearchFilter.swift */; };
+		E955A47C21B8021A006C02C4 /* LeafQueryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47721B8021A006C02C4 /* LeafQueryFilter.swift */; };
+		E955A47D21B8021A006C02C4 /* ESFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47821B8021A006C02C4 /* ESFilterCriteria.swift */; };
+		E955A47E21B8021A006C02C4 /* ESSearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47921B8021A006C02C4 /* ESSearchFilter.swift */; };
+		E955A47F21B80226006C02C4 /* TermsFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47021B801FE006C02C4 /* TermsFilterCriteria.swift */; };
+		E955A48021B80226006C02C4 /* TermsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46D21B801FE006C02C4 /* TermsFilter.swift */; };
+		E955A48121B80226006C02C4 /* AttributeIDFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46F21B801FE006C02C4 /* AttributeIDFilterCriteria.swift */; };
+		E955A48221B80227006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46E21B801FE006C02C4 /* AttributeCodeFilterCriteria.swift */; };
+		E955A48321B80227006C02C4 /* MultiMatchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46B21B801D7006C02C4 /* MultiMatchFilter.swift */; };
+		E955A48421B80227006C02C4 /* BoolFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A46921B8019F006C02C4 /* BoolFilter.swift */; };
+		E955A48521B80227006C02C4 /* ElasticSearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47621B8021A006C02C4 /* ElasticSearchFilter.swift */; };
+		E955A48621B80227006C02C4 /* ElasticSearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47521B8021A006C02C4 /* ElasticSearchQuery.swift */; };
+		E955A48721B80227006C02C4 /* ESFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47821B8021A006C02C4 /* ESFilterCriteria.swift */; };
+		E955A48821B80227006C02C4 /* ESSearchFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47921B8021A006C02C4 /* ESSearchFilter.swift */; };
+		E955A48921B80227006C02C4 /* LeafQueryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A47721B8021A006C02C4 /* LeafQueryFilter.swift */; };
+		E955A48E21B8025E006C02C4 /* ElasticSearchResourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A48A21B8025D006C02C4 /* ElasticSearchResourceTest.swift */; };
+		E955A48F21B8025E006C02C4 /* BoolFilterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A48B21B8025D006C02C4 /* BoolFilterTest.swift */; };
+		E955A49021B8025E006C02C4 /* TermsFilterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A48C21B8025D006C02C4 /* TermsFilterTest.swift */; };
+		E955A49121B8025E006C02C4 /* MultiMatchFilterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A48D21B8025E006C02C4 /* MultiMatchFilterTest.swift */; };
+		E955A49321B80E30006C02C4 /* ElasticSearchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */; };
+		E955A49621B82067006C02C4 /* ElasticEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A49521B82067006C02C4 /* ElasticEntity.swift */; };
+		E955A49721B8206B006C02C4 /* ElasticEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955A49521B82067006C02C4 /* ElasticEntity.swift */; };
 		E9619DCE20284B3D00825F99 /* iOS_MS_Cient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9619DC420284B3C00825F99 /* iOS_MS_Cient.framework */; };
 		E9619DD520284B3D00825F99 /* iOS_MS_Cient.h in Headers */ = {isa = PBXBuildFile; fileRef = E9619DC720284B3C00825F99 /* iOS_MS_Cient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9619DE320284C2400825F99 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DDE20284C2300825F99 /* Resource.swift */; };
@@ -338,6 +367,22 @@
 		E94023692097143B008B7414 /* ErrorSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSM.swift; sourceTree = "<group>"; };
 		E940236C2099944F008B7414 /* PromotionsRecource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsRecource.swift; sourceTree = "<group>"; };
 		E940236F209994AA008B7414 /* PromotionsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsSM.swift; sourceTree = "<group>"; };
+		E955A46921B8019F006C02C4 /* BoolFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolFilter.swift; sourceTree = "<group>"; };
+		E955A46B21B801D7006C02C4 /* MultiMatchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMatchFilter.swift; sourceTree = "<group>"; };
+		E955A46D21B801FE006C02C4 /* TermsFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsFilter.swift; sourceTree = "<group>"; };
+		E955A46E21B801FE006C02C4 /* AttributeCodeFilterCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeCodeFilterCriteria.swift; sourceTree = "<group>"; };
+		E955A46F21B801FE006C02C4 /* AttributeIDFilterCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeIDFilterCriteria.swift; sourceTree = "<group>"; };
+		E955A47021B801FE006C02C4 /* TermsFilterCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsFilterCriteria.swift; sourceTree = "<group>"; };
+		E955A47521B8021A006C02C4 /* ElasticSearchQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticSearchQuery.swift; sourceTree = "<group>"; };
+		E955A47621B8021A006C02C4 /* ElasticSearchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticSearchFilter.swift; sourceTree = "<group>"; };
+		E955A47721B8021A006C02C4 /* LeafQueryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeafQueryFilter.swift; sourceTree = "<group>"; };
+		E955A47821B8021A006C02C4 /* ESFilterCriteria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESFilterCriteria.swift; sourceTree = "<group>"; };
+		E955A47921B8021A006C02C4 /* ESSearchFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESSearchFilter.swift; sourceTree = "<group>"; };
+		E955A48A21B8025D006C02C4 /* ElasticSearchResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticSearchResourceTest.swift; sourceTree = "<group>"; };
+		E955A48B21B8025D006C02C4 /* BoolFilterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolFilterTest.swift; sourceTree = "<group>"; };
+		E955A48C21B8025D006C02C4 /* TermsFilterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsFilterTest.swift; sourceTree = "<group>"; };
+		E955A48D21B8025E006C02C4 /* MultiMatchFilterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiMatchFilterTest.swift; sourceTree = "<group>"; };
+		E955A49521B82067006C02C4 /* ElasticEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticEntity.swift; sourceTree = "<group>"; };
 		E9619DC420284B3C00825F99 /* iOS_MS_Cient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOS_MS_Cient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9619DC720284B3C00825F99 /* iOS_MS_Cient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_MS_Cient.h; sourceTree = "<group>"; };
 		E9619DC820284B3C00825F99 /* SMInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SMInfo.plist; sourceTree = "<group>"; };
@@ -552,6 +597,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E955A46321B80131006C02C4 /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				E955A46621B8015A006C02C4 /* terms */,
+				E955A46521B80150006C02C4 /* fulltext */,
+				E955A46421B80141006C02C4 /* compound */,
+			);
+			path = filters;
+			sourceTree = "<group>";
+		};
+		E955A46421B80141006C02C4 /* compound */ = {
+			isa = PBXGroup;
+			children = (
+				E955A46921B8019F006C02C4 /* BoolFilter.swift */,
+			);
+			path = compound;
+			sourceTree = "<group>";
+		};
+		E955A46521B80150006C02C4 /* fulltext */ = {
+			isa = PBXGroup;
+			children = (
+				E955A46B21B801D7006C02C4 /* MultiMatchFilter.swift */,
+			);
+			path = fulltext;
+			sourceTree = "<group>";
+		};
+		E955A46621B8015A006C02C4 /* terms */ = {
+			isa = PBXGroup;
+			children = (
+				E955A47021B801FE006C02C4 /* TermsFilterCriteria.swift */,
+				E955A46D21B801FE006C02C4 /* TermsFilter.swift */,
+				E955A46F21B801FE006C02C4 /* AttributeIDFilterCriteria.swift */,
+				E955A46E21B801FE006C02C4 /* AttributeCodeFilterCriteria.swift */,
+			);
+			path = terms;
+			sourceTree = "<group>";
+		};
+		E955A49221B8026C006C02C4 /* elastic */ = {
+			isa = PBXGroup;
+			children = (
+				E955A48A21B8025D006C02C4 /* ElasticSearchResourceTest.swift */,
+				E955A48C21B8025D006C02C4 /* TermsFilterTest.swift */,
+				E955A48D21B8025E006C02C4 /* MultiMatchFilterTest.swift */,
+				E955A48B21B8025D006C02C4 /* BoolFilterTest.swift */,
+			);
+			path = elastic;
+			sourceTree = "<group>";
+		};
 		E9619DBA20284B3C00825F99 = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +690,7 @@
 		E9619DD120284B3D00825F99 /* iOS-MS-CientTests */ = {
 			isa = PBXGroup;
 			children = (
+				E955A49221B8026C006C02C4 /* elastic */,
 				E9619F2A20284E2500825F99 /* EntityAttributesTest.swift */,
 				E9619F1420284E2300825F99 /* FunctionalNamesTest.swift */,
 				E9619F1A20284E2400825F99 /* AttributesResourceTest.swift */,
@@ -850,6 +944,7 @@
 				E988A265218DC3F8000F1D36 /* DependencysRebuilder.swift */,
 				E988A268218DC791000F1D36 /* Relationships.swift */,
 				E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */,
+				E955A49521B82067006C02C4 /* ElasticEntity.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -886,6 +981,12 @@
 		E9F978D521635AFE00F7C4FE /* ElasticSearch */ = {
 			isa = PBXGroup;
 			children = (
+				E955A46321B80131006C02C4 /* filters */,
+				E955A47621B8021A006C02C4 /* ElasticSearchFilter.swift */,
+				E955A47521B8021A006C02C4 /* ElasticSearchQuery.swift */,
+				E955A47821B8021A006C02C4 /* ESFilterCriteria.swift */,
+				E955A47921B8021A006C02C4 /* ESSearchFilter.swift */,
+				E955A47721B8021A006C02C4 /* LeafQueryFilter.swift */,
 				E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */,
 			);
 			path = ElasticSearch;
@@ -1070,6 +1171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9619E5F20284D4600825F99 /* DeliveryPaymentsResource.swift in Sources */,
+				E955A46A21B8019F006C02C4 /* BoolFilter.swift in Sources */,
 				E9619ED020284D9B00825F99 /* ProductAttributeValuesSM.swift in Sources */,
 				E9619ECC20284D9B00825F99 /* EntityAttributesSM.swift in Sources */,
 				E9619EDA20284D9B00825F99 /* AttributeGroupsEntitiesSM.swift in Sources */,
@@ -1095,8 +1197,10 @@
 				E9619E3320284D2B00825F99 /* ProductAttributeValuesResource.swift in Sources */,
 				E9E383032121A81A00294F09 /* ProductOptionValues.swift in Sources */,
 				E9619E5920284D4600825F99 /* PaymentMethodsResource.swift in Sources */,
+				E955A46C21B801D7006C02C4 /* MultiMatchFilter.swift in Sources */,
 				E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E9619EAE20284D9B00825F99 /* EntitiesSM.swift in Sources */,
+				E955A47D21B8021A006C02C4 /* ESFilterCriteria.swift in Sources */,
 				E9619E3B20284D2B00825F99 /* EntitiesResource.swift in Sources */,
 				E9619EFD20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
 				E9619EDE20284D9B00825F99 /* AttributeGroupsSM.swift in Sources */,
@@ -1108,6 +1212,7 @@
 				E9619EA820284D9B00825F99 /* VatsSM.swift in Sources */,
 				E9619E3D20284D2B00825F99 /* EntityAttributesResource.swift in Sources */,
 				E9619E0220284CB400825F99 /* FilterSpecification.swift in Sources */,
+				E955A49621B82067006C02C4 /* ElasticEntity.swift in Sources */,
 				E9402370209994AA008B7414 /* PromotionsSM.swift in Sources */,
 				E9619DE620284C2400825F99 /* SMCountMaker.swift in Sources */,
 				E9619E7720284D6600825F99 /* WishListItemsResource.swift in Sources */,
@@ -1115,6 +1220,7 @@
 				E9619ED420284D9B00825F99 /* ProductsSM.swift in Sources */,
 				E9619E4120284D2B00825F99 /* MediaTypesResource.swift in Sources */,
 				E9E3831421240DC500294F09 /* PriceConfigurationFilter.swift in Sources */,
+				E955A47421B801FE006C02C4 /* TermsFilterCriteria.swift in Sources */,
 				E9619EFF20284DD400825F99 /* BrandFilter.swift in Sources */,
 				E9619F0B20284DD400825F99 /* EntityFilter.swift in Sources */,
 				E9E383062121AF2900294F09 /* ProductOptions.swift in Sources */,
@@ -1137,10 +1243,12 @@
 				E9619E3520284D2B00825F99 /* ProductsResource.swift in Sources */,
 				E9619EB020284D9B00825F99 /* PaymentProvidersSM.swift in Sources */,
 				E9619EF020284DBE00825F99 /* Predicate.swift in Sources */,
+				E955A47B21B8021A006C02C4 /* ElasticSearchFilter.swift in Sources */,
 				E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */,
 				E9619F0320284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9619EC620284D9B00825F99 /* UserSM.swift in Sources */,
 				E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */,
+				E955A47C21B8021A006C02C4 /* LeafQueryFilter.swift in Sources */,
 				E9619EF220284DBE00825F99 /* Filter.swift in Sources */,
 				E9619EA420284D9B00825F99 /* DeliveryPaymentSM.swift in Sources */,
 				E9619E6520284D4600825F99 /* InvoicesResource.swift in Sources */,
@@ -1161,6 +1269,7 @@
 				E988A266218DC3F8000F1D36 /* DependencysRebuilder.swift in Sources */,
 				E9619EC820284D9B00825F99 /* Entity.swift in Sources */,
 				E9619E6320284D4600825F99 /* CurrenciesRateResource.swift in Sources */,
+				E955A47221B801FE006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */,
 				E9619E3720284D2B00825F99 /* AttributeGroupsResource.swift in Sources */,
 				E9619ED820284D9B00825F99 /* InvoicesSM.swift in Sources */,
 				E9619E3120284D2B00825F99 /* AttributeGroupsEntitiesResource.swift in Sources */,
@@ -1170,13 +1279,16 @@
 				E9619EA020284D9B00825F99 /* CatalogItemsSM.swift in Sources */,
 				E9619EC420284D9B00825F99 /* BrandsSM.swift in Sources */,
 				E9619E7920284D6600825F99 /* UsersResource.swift in Sources */,
+				E955A47121B801FE006C02C4 /* TermsFilter.swift in Sources */,
 				E9619E6120284D4600825F99 /* OrdersResource.swift in Sources */,
 				E9619EB620284D9B00825F99 /* DocumentsSM.swift in Sources */,
 				E9619F0920284DD400825F99 /* FactorFilter.swift in Sources */,
 				E9619ED620284D9B00825F99 /* AddressSM.swift in Sources */,
 				E9619EA620284D9B00825F99 /* MediaSM.swift in Sources */,
 				E9619DF420284C6A00825F99 /* Keychain.swift in Sources */,
+				E955A47321B801FE006C02C4 /* AttributeIDFilterCriteria.swift in Sources */,
 				E9E3830E212409AF00294F09 /* PriceConfiguration.swift in Sources */,
+				E955A47E21B8021A006C02C4 /* ESSearchFilter.swift in Sources */,
 				E988A263218DBF44000F1D36 /* IncludItem.swift in Sources */,
 				E9E3830B2124094500294F09 /* PriceValue.swift in Sources */,
 				E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */,
@@ -1191,6 +1303,7 @@
 				E9619F0720284DD400825F99 /* GridFilterElement.swift in Sources */,
 				E91727182032DE360075995D /* AuthResource.swift in Sources */,
 				E9619E6720284D4600825F99 /* OptionsResource.swift in Sources */,
+				E955A47A21B8021A006C02C4 /* ElasticSearchQuery.swift in Sources */,
 				E9619E1320284D0900825F99 /* CorrelationsResource.swift in Sources */,
 				E9619E2920284D2B00825F99 /* AttributeValuesResource.swift in Sources */,
 				E9619EB220284D9B00825F99 /* MediaTypesSM.swift in Sources */,
@@ -1217,6 +1330,7 @@
 				E9619F3020284E2600825F99 /* UserResourceTests.swift in Sources */,
 				E9619F3720284E2600825F99 /* FunctionalNamesTest.swift in Sources */,
 				E9619EC320284D9B00825F99 /* OrdersHistorySM.swift in Sources */,
+				E955A49121B8025E006C02C4 /* MultiMatchFilterTest.swift in Sources */,
 				E9619EA520284D9B00825F99 /* DeliveryPaymentSM.swift in Sources */,
 				E9619EF120284DBE00825F99 /* Predicate.swift in Sources */,
 				E9619F4820284E2600825F99 /* MediaTests.swift in Sources */,
@@ -1226,6 +1340,7 @@
 				E9619E7C20284D6600825F99 /* CompaniesResource.swift in Sources */,
 				E9E3831E2125A18E00294F09 /* ItemsSM.swift in Sources */,
 				E9619F4C20284E2600825F99 /* CompaniesResourceTests.swift in Sources */,
+				E955A48021B80226006C02C4 /* TermsFilter.swift in Sources */,
 				E9619F4220284E2600825F99 /* DeliveryProvidersResourceTest.swift in Sources */,
 				E9619F0620284DD400825F99 /* GridFilter.swift in Sources */,
 				E9619ED320284D9B00825F99 /* WishlistObjectSM.swift in Sources */,
@@ -1236,9 +1351,11 @@
 				E9619E4020284D2B00825F99 /* AttributesResource.swift in Sources */,
 				E9619E7A20284D6600825F99 /* UsersResource.swift in Sources */,
 				E9619F4420284E2600825F99 /* AddressResourceTests.swift in Sources */,
+				E955A48221B80227006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */,
 				E9619F4A20284E2600825F99 /* AttributeGroupsEntitiesResourceTest.swift in Sources */,
 				E9619E7620284D6600825F99 /* MessagesResource.swift in Sources */,
 				E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */,
+				E955A48821B80227006C02C4 /* ESSearchFilter.swift in Sources */,
 				E9619EB320284D9B00825F99 /* MediaTypesSM.swift in Sources */,
 				E9619E5C20284D4600825F99 /* PaymentProvidersResource.swift in Sources */,
 				E9E3831621240FB800294F09 /* PriceProduct.swift in Sources */,
@@ -1246,13 +1363,16 @@
 				E9619F6020284F8700825F99 /* EntitySpecification.swift in Sources */,
 				E9619EAD20284D9B00825F99 /* CurrencyRateSM.swift in Sources */,
 				E9619F5B20284F7600825F99 /* SMDeletedObject.swift in Sources */,
+				E955A48621B80227006C02C4 /* ElasticSearchQuery.swift in Sources */,
 				E9619EED20284DBE00825F99 /* FilterOperators.swift in Sources */,
 				E9619EA720284D9B00825F99 /* MediaSM.swift in Sources */,
 				E91727192032DE430075995D /* AuthResource.swift in Sources */,
 				E9619EB520284D9B00825F99 /* AttributeValuesSM.swift in Sources */,
 				E9619F3220284E2600825F99 /* VatsResourceTest.swift in Sources */,
+				E955A48F21B8025E006C02C4 /* BoolFilterTest.swift in Sources */,
 				E9619F3120284E2600825F99 /* ProductAttributeValuesResourceTest.swift in Sources */,
 				E9619E5E20284D4600825F99 /* DeliveryProvidersResource.swift in Sources */,
+				E955A48521B80227006C02C4 /* ElasticSearchFilter.swift in Sources */,
 				E9E3830F212409B300294F09 /* PriceConfiguration.swift in Sources */,
 				E940236E2099944F008B7414 /* PromotionsRecource.swift in Sources */,
 				E9619ED720284D9B00825F99 /* AddressSM.swift in Sources */,
@@ -1260,6 +1380,7 @@
 				E9619E5A20284D4600825F99 /* PaymentMethodsResource.swift in Sources */,
 				E9619F4B20284E2600825F99 /* AttributeDisplayTypesResourceTest.swift in Sources */,
 				E9619E5820284D4600825F99 /* CurrenciesResource.swift in Sources */,
+				E955A48E21B8025E006C02C4 /* ElasticSearchResourceTest.swift in Sources */,
 				E9619EC120284D9B00825F99 /* MessagesSM.swift in Sources */,
 				E9619F3C20284E2600825F99 /* EntitiesResourceTest.swift in Sources */,
 				E9619F4520284E2600825F99 /* AttributeGroupsResourceTest.swift in Sources */,
@@ -1278,10 +1399,13 @@
 				E9619EA120284D9B00825F99 /* CatalogItemsSM.swift in Sources */,
 				E9619E3C20284D2B00825F99 /* EntitiesResource.swift in Sources */,
 				E9619F3F20284E2600825F99 /* OrderStatusesResourceTests.swift in Sources */,
+				E955A49721B8206B006C02C4 /* ElasticEntity.swift in Sources */,
 				E9619F3D20284E2600825F99 /* AttributesResourceTest.swift in Sources */,
 				E9619EE320284D9B00825F99 /* BasketSM.swift in Sources */,
 				E9619EDB20284D9B00825F99 /* AttributeGroupsEntitiesSM.swift in Sources */,
+				E955A48921B80227006C02C4 /* LeafQueryFilter.swift in Sources */,
 				E9E383042121A82E00294F09 /* ProductOptionValues.swift in Sources */,
+				E955A47F21B80226006C02C4 /* TermsFilterCriteria.swift in Sources */,
 				E9619E5420284D4600825F99 /* VatsResource.swift in Sources */,
 				E9619ED520284D9B00825F99 /* ProductsSM.swift in Sources */,
 				E9619E4220284D2B00825F99 /* MediaTypesResource.swift in Sources */,
@@ -1310,9 +1434,11 @@
 				E9619F5920284F7100825F99 /* Keychain.swift in Sources */,
 				E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E940236B209716A8008B7414 /* ErrorSM.swift in Sources */,
+				E955A49321B80E30006C02C4 /* ElasticSearchResource.swift in Sources */,
 				E9619F4620284E2600825F99 /* OrdersResourceTests.swift in Sources */,
 				E9619EC920284D9B00825F99 /* Entity.swift in Sources */,
 				E9619EA920284D9B00825F99 /* VatsSM.swift in Sources */,
+				E955A49021B8025E006C02C4 /* TermsFilterTest.swift in Sources */,
 				E9619EDF20284D9B00825F99 /* AttributeGroupsSM.swift in Sources */,
 				E9619F5020284E2600825F99 /* iOS_MS_ClientTests.swift in Sources */,
 				E9619F3520284E2600825F99 /* OptionsResourceTest.swift in Sources */,
@@ -1324,6 +1450,7 @@
 				E9619E6820284D4600825F99 /* OptionsResource.swift in Sources */,
 				E9619E5620284D4600825F99 /* OrderItemsResource.swift in Sources */,
 				E9619F0420284DD400825F99 /* AttributeFilter.swift in Sources */,
+				E955A48121B80226006C02C4 /* AttributeIDFilterCriteria.swift in Sources */,
 				E9E383012121774800294F09 /* ProductPriceConfigurations.swift in Sources */,
 				E9E3831221240B3200294F09 /* ProductPriceConfigurationsResource.swift in Sources */,
 				E988A264218DC17B000F1D36 /* IncludItem.swift in Sources */,
@@ -1332,6 +1459,7 @@
 				E9619E7820284D6600825F99 /* WishListItemsResource.swift in Sources */,
 				E9619E3420284D2B00825F99 /* ProductAttributeValuesResource.swift in Sources */,
 				E9619EEB20284DBE00825F99 /* FilterConditions.swift in Sources */,
+				E955A48421B80227006C02C4 /* BoolFilter.swift in Sources */,
 				E9619F0C20284DD400825F99 /* EntityFilter.swift in Sources */,
 				E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */,
 				E9619F4320284E2600825F99 /* CurrenciesRateResourceTest.swift in Sources */,
@@ -1349,6 +1477,7 @@
 				E9619EC520284D9B00825F99 /* BrandsSM.swift in Sources */,
 				E9619F3B20284E2600825F99 /* WishlistTests.swift in Sources */,
 				E9402371209994AA008B7414 /* PromotionsSM.swift in Sources */,
+				E955A48721B80227006C02C4 /* ESFilterCriteria.swift in Sources */,
 				E9619F6620284FBD00825F99 /* FullResource.swift in Sources */,
 				E9619EEF20284DBE00825F99 /* InPredicate.swift in Sources */,
 				E9619ED920284D9B00825F99 /* InvoicesSM.swift in Sources */,
@@ -1361,6 +1490,7 @@
 				E9619F5620284F6800825F99 /* SMRequest.swift in Sources */,
 				E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */,
 				E9619F0220284DD400825F99 /* FunctionalNameFilter.swift in Sources */,
+				E955A48321B80227006C02C4 /* MultiMatchFilter.swift in Sources */,
 				E9E383072121AF2900294F09 /* ProductOptions.swift in Sources */,
 				E9619F4020284E2600825F99 /* MediaResourceTest.swift in Sources */,
 				E9619F6320284F9000825F99 /* IsUserEmail.swift in Sources */,

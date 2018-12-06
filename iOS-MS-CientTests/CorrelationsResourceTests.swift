@@ -30,7 +30,7 @@ class CorrelationsResourceTests: XCTestCase {
         
         client.correlations
             .filters(filter: gridFilter)
-            .getById(id: 26, forClassName: "products") { (products, error) in
+            .getById(id: 599, forClassName: "documents") { (products, error) in
                 
             XCTAssertNotNil(products)
             exp.fulfill()

@@ -50,7 +50,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
         }
     }
     
-    public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: String]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, ErrorSM?) -> Swift.Void) {
+    public func request<T:Decodable>(url: String, method: HTTPMethod, parameters: [String: Any]?, headers:[String: String]? = nil, completionHandler: @escaping (T?, ErrorSM?) -> Swift.Void) {
         
         var modifiedheader: [String : String] = header
         

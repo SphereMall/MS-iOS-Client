@@ -26,23 +26,6 @@ public class DocumentsSM: Entity, Decodable {
             
             if var attributes = document.attributes {
                 document.rebuild(model: &attributes, included: included)
-//                document.attributes?.affectAttributes = attributes.affectAttributes
-//                document.attributes?.attributes = attributes.attributes
-//                document.attributes?.attributeTypes = attributes.attributeTypes
-//                document.attributes?.attributeValues = attributes.attributeValues
-//                document.attributes?.brands = attributes.brands
-//                document.attributes?.functionalNames = attributes.functionalNames
-//                document.attributes?.media = attributes.media
-//                document.attributes?.options = attributes.options
-//                document.attributes?.priceConfigurations = attributes.priceConfigurations
-//                document.attributes?.productAttributeValues = attributes.productAttributeValues
-//                document.attributes?.productOptionValues =  attributes.productOptionValues
-//                document.attributes?.productPriceConfigurations = attributes.productPriceConfigurations
-//                document.attributes?.productsToPromotions = attributes.productsToPromotions
-//                document.attributes?.promotions = attributes.promotions
-//                document.attributes?.mediaEntities = attributes.mediaEntities
-//                document.attributes?.entityAttributeValues = attributes.entityAttributeValues
-//                document.attributes?.mediaDisplayTypes = attributes.mediaDisplayTypes
                 products.append(document)
             }
         }
@@ -83,6 +66,7 @@ public struct DocumentData: Decodable, Datable, Rebuilder {
         case attributes = "attributes"
         case relationships = "relationships"
         case type = "type"
+
     }
     
     public init(from decoder: Decoder) throws {

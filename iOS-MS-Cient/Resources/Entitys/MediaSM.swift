@@ -17,12 +17,13 @@ public class MediaSM: Entity, Decodable {
 
 public struct MediaData: Decodable {
     
-    public var attributes  : MediaAttributes?
+    public var attributes : MediaAttributes?
     public var id : String?
     public var type : String?
+    public var path: String?
     public var relationships: ObjectRelationships?
     
-    init(include: IncludItem) {
+    public init(include: IncludItem) {
         guard let object = include.item as? MediaAttributes else { return }
         self.attributes = object
         self.type = include.type
@@ -30,7 +31,7 @@ public struct MediaData: Decodable {
         self.relationships = include.relationships
     }
     
-    init(attributes: MediaAttributes, id: String?, type: String?) {
+    public init(attributes: MediaAttributes, id: String?, type: String?) {
         self.attributes = attributes
         self.id = id
         self.type = type

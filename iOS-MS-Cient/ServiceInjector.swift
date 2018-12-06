@@ -176,4 +176,8 @@ public class ServiceInjector: NSObject {
     public lazy var externalUser: ExternalUserRelationResource! = {
         return ExternalUserRelationResource<ExternalUserSM>(client: client!)
     } ()
+    
+    public lazy var elastic: ElasticSearchResource! = {
+        return ElasticSearchResource<GridSM>(client: client!)
+    } ()
 }

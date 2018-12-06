@@ -39,8 +39,17 @@ class AttributesResourceTest: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let exp = self.expectation(description: "testExample")
+        
+        let filter = Filter()
+        filter.addFilter(field: "code", op: .equal, value: "reward")
+        client.attributes.filters(predicates: filter.getFilters()).all { (attributes, error) in
+            print(attributes)
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
     }
     
     func testPerformanceExample() {
