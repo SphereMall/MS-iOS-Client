@@ -14,6 +14,8 @@ public class ESSearchFilter: ElasticSearchFilter {
     private var searchQuery: ElasticSearchQuery? = nil
     private var _index:String = "sm-*";
     
+    public init() {}
+    
     public func index(indexes: String...) {
         self._index = indexes.joined(separator: ",")
     }

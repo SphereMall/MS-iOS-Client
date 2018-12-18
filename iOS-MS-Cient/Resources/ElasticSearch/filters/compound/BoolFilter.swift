@@ -19,6 +19,8 @@ public class BoolFilter: ElasticSearchQuery {
     
     private let elements: NSMutableDictionary = [:]
     
+    public init() {}
+    
     public func must(elements:ElasticSearchQuery...) {
         self.elements.setValue(elements, forKey: MUST)
     }
