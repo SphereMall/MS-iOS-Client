@@ -40,6 +40,7 @@ public struct MediaData: Decodable {
 
 public struct MediaAttributes: Decodable  {
     public var id: String?
+    public var mediaId: String?
     public var imageName : String?
     public var orderNumber : String?
     public var imageTypeId : String?
