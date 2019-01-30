@@ -14,9 +14,13 @@ class GridResourceTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        client = SMClient(gatewayUrl: DOCUMENTS_URL,
-                          clientId: "api_demo_user",
-                          secretKey: "demo_pass")
+        client = SMClient(gatewayUrl: api_url,
+                          clientId: api_clientId,
+                          secretKey: api_secretKey,
+                          username: api_username,
+                          password: api_password)
+        
+        client.setHeaders(headers: ["channel-id" : api_channelId])
     }
     
     func testAllWithPredicate() {
@@ -58,5 +62,24 @@ class GridResourceTests: XCTestCase {
         }
         
         wait(for: [exp], timeout: 10)
+    }
+    
+    func testDocuments() {
+        
+        let exp = self.expectation(description: "testFacets")
+        let filter = GridFilter()
+        filter.elements(elements: [EntityFilter(values: ["\"documents\""])])
+        
+        client.grid.limit(limit: 1, offset: 0).filters(filter: filter).all { (grid, error) in
+            
+            print(grid)
+            if let item = grid?.data?.first?.item as? DocumentData {
+                print(item)
+            }
+            
+            exp.fulfill()
+        }
+        
+         wait(for: [exp], timeout: 10)
     }
 }

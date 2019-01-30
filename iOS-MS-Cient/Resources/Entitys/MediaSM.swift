@@ -26,6 +26,7 @@ public struct MediaData: Decodable {
     public init(include: IncludItem) {
         guard let object = include.item as? MediaAttributes else { return }
         self.attributes = object
+        self.path = attributes?.path
         self.type = include.type
         self.id = include.id
         self.relationships = include.relationships

@@ -98,7 +98,24 @@ public class GridSM: Entity, Decodable {
             
             switch object.type {
             case "documents":
-                items.append(object)
+                if var document = object.item as? DocumentData {
+                    
+                    if var attributes = document.attributes {
+                        document.rebuild(model: &attributes, included: included)
+                    }
+                    
+                    let documentData = DocumentData(documentAttributes: document.attributes,
+                                                   relationships: document.relationships,
+                                                   id: document.id,
+                                                   type: document.type)
+                    
+                    let item = GridItem()
+                    item.item = documentData as AnyObject
+                    item.type = object.type
+                    items.append(item)
+                } else {
+                    items.append(object)
+                }
             case "products":
                 if var product = object.item as? ProductsData {
 
