@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AttributeIDFilterCriteria: ESFilterCriteria{
+public class AttributeIDFilterCriteria: ESFilterCriteria {
     
     private let attributeId: Int32
     private let values:[Int32]

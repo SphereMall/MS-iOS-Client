@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Predicate: NSObject {
+public class Predicate {
     
     public var field: String?
     public var value: String?

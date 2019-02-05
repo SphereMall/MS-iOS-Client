@@ -108,15 +108,4 @@ class ElasticSearchResourceTest: XCTestCase {
         
         wait(for: [exp], timeout: 10)
     }
-    
-    func testFacets() {
-        
-        let exp = self.expectation(description: "load")
-        
-        client.elastic.facets { (items, error) in
-            exp.fulfill()
-        }
-        
-        wait(for: [exp], timeout: 10)
-    }
 }

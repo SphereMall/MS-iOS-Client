@@ -83,6 +83,11 @@ public class Resource<T: Decodable> : NSObject, ResourceInterface {
         return self
     }
     
+    @discardableResult public func filter(filter: Filter) -> Self {
+        self.filter = filter
+        return self
+    }
+    
     @discardableResult public func filters(predicates:[Predicate]) -> Self {
         for predicate in predicates {
             self.filter.setFilters(filters: [predicate])

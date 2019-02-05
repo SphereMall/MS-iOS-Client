@@ -303,6 +303,20 @@
 		E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
 		E974351F212C01EE0035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
 		E9743521212C02360035E72F /* Promotions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743520212C02360035E72F /* Promotions.swift */; };
+		E97A42FE220447C000744706 /* ESFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A42FD220447C000744706 /* ESFacet.swift */; };
+		E97A430022047B9B00744706 /* ESFacet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A42FD220447C000744706 /* ESFacet.swift */; };
+		E97A430222082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430122082EBB00744706 /* ESBrandsFilterCriteria.swift */; };
+		E97A430322082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430122082EBB00744706 /* ESBrandsFilterCriteria.swift */; };
+		E97A430522083E0500744706 /* ESFunctionalNamesFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430422083E0500744706 /* ESFunctionalNamesFilterCriteria.swift */; };
+		E97A430622083E0500744706 /* ESFunctionalNamesFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430422083E0500744706 /* ESFunctionalNamesFilterCriteria.swift */; };
+		E97A43082208404B00744706 /* PriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A43072208404B00744706 /* PriceRange.swift */; };
+		E97A43092208404B00744706 /* PriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A43072208404B00744706 /* PriceRange.swift */; };
+		E97A430B2208819400744706 /* RangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430A2208819400744706 /* RangeFilter.swift */; };
+		E97A430C2208819400744706 /* RangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430A2208819400744706 /* RangeFilter.swift */; };
+		E97A430E2208877500744706 /* ESPriceRangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430D2208877500744706 /* ESPriceRangeFilter.swift */; };
+		E97A430F2208877500744706 /* ESPriceRangeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A430D2208877500744706 /* ESPriceRangeFilter.swift */; };
+		E97A4311220891D600744706 /* SortFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A4310220891D600744706 /* SortFilter.swift */; };
+		E97A4312220891D600744706 /* SortFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97A4310220891D600744706 /* SortFilter.swift */; };
 		E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCB9206B842C0046244B /* FacetsSM.swift */; };
 		E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982CCBC206B8E8E0046244B /* FacetMaker.swift */; };
@@ -317,6 +331,17 @@
 		E988A26E218DFAEB000F1D36 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
 		E988A270218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */; };
 		E988A271218DFCCA000F1D36 /* ExternalUserRelationResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */; };
+		E99E2D6A2202E28F00831C32 /* ESCatalogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D692202E28F00831C32 /* ESCatalogFilter.swift */; };
+		E99E2D6B2202E28F00831C32 /* ESCatalogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D692202E28F00831C32 /* ESCatalogFilter.swift */; };
+		E99E2D6D2202E2BB00831C32 /* ESCatalogFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D6C2202E2BB00831C32 /* ESCatalogFilterCriteria.swift */; };
+		E99E2D6E2202E2BB00831C32 /* ESCatalogFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D6C2202E2BB00831C32 /* ESCatalogFilterCriteria.swift */; };
+		E99E2D702202E36300831C32 /* ESAttributesFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D6F2202E36300831C32 /* ESAttributesFilterCriteria.swift */; };
+		E99E2D712202E36300831C32 /* ESAttributesFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D6F2202E36300831C32 /* ESAttributesFilterCriteria.swift */; };
+		E99E2D732202E3E300831C32 /* ESPriceRangeFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D722202E3E300831C32 /* ESPriceRangeFilterCriteria.swift */; };
+		E99E2D742202E3E300831C32 /* ESPriceRangeFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D722202E3E300831C32 /* ESPriceRangeFilterCriteria.swift */; };
+		E99E2D762202ED1900831C32 /* ESCatalogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D752202ED1900831C32 /* ESCatalogFilterTests.swift */; };
+		E99E2D7C220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */; };
+		E99E2D7D220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */; };
 		E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
@@ -537,6 +562,13 @@
 		E9743500212AB7470035E72F /* ProductsPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPromotionsData.swift; sourceTree = "<group>"; };
 		E974351D212BFC600035E72F /* PromotionsPriceSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsPriceSM.swift; sourceTree = "<group>"; };
 		E9743520212C02360035E72F /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
+		E97A42FD220447C000744706 /* ESFacet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESFacet.swift; sourceTree = "<group>"; };
+		E97A430122082EBB00744706 /* ESBrandsFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESBrandsFilterCriteria.swift; sourceTree = "<group>"; };
+		E97A430422083E0500744706 /* ESFunctionalNamesFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESFunctionalNamesFilterCriteria.swift; sourceTree = "<group>"; };
+		E97A43072208404B00744706 /* PriceRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRange.swift; sourceTree = "<group>"; };
+		E97A430A2208819400744706 /* RangeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeFilter.swift; sourceTree = "<group>"; };
+		E97A430D2208877500744706 /* ESPriceRangeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESPriceRangeFilter.swift; sourceTree = "<group>"; };
+		E97A4310220891D600744706 /* SortFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilter.swift; sourceTree = "<group>"; };
 		E982CCB9206B842C0046244B /* FacetsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetsSM.swift; sourceTree = "<group>"; };
 		E982CCBC206B8E8E0046244B /* FacetMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetMaker.swift; sourceTree = "<group>"; };
 		E988A262218DBF44000F1D36 /* IncludItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncludItem.swift; sourceTree = "<group>"; };
@@ -545,6 +577,12 @@
 		E988A26B218DFAB5000F1D36 /* ExternalUserRelationResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserRelationResource.swift; sourceTree = "<group>"; };
 		E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserSM.swift; sourceTree = "<group>"; };
 		E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalUserRelationResourceTests.swift; sourceTree = "<group>"; };
+		E99E2D692202E28F00831C32 /* ESCatalogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCatalogFilter.swift; sourceTree = "<group>"; };
+		E99E2D6C2202E2BB00831C32 /* ESCatalogFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCatalogFilterCriteria.swift; sourceTree = "<group>"; };
+		E99E2D6F2202E36300831C32 /* ESAttributesFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESAttributesFilterCriteria.swift; sourceTree = "<group>"; };
+		E99E2D722202E3E300831C32 /* ESPriceRangeFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESPriceRangeFilterCriteria.swift; sourceTree = "<group>"; };
+		E99E2D752202ED1900831C32 /* ESCatalogFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCatalogFilterTests.swift; sourceTree = "<group>"; };
+		E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESCatalogConfigurator.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9DB27EC2155140A007EAC22 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
@@ -638,6 +676,9 @@
 				E955A46D21B801FE006C02C4 /* TermsFilter.swift */,
 				E955A46F21B801FE006C02C4 /* AttributeIDFilterCriteria.swift */,
 				E955A46E21B801FE006C02C4 /* AttributeCodeFilterCriteria.swift */,
+				E97A43072208404B00744706 /* PriceRange.swift */,
+				E97A430A2208819400744706 /* RangeFilter.swift */,
+				E97A430D2208877500744706 /* ESPriceRangeFilter.swift */,
 			);
 			path = terms;
 			sourceTree = "<group>";
@@ -649,6 +690,7 @@
 				E955A48C21B8025D006C02C4 /* TermsFilterTest.swift */,
 				E955A48D21B8025E006C02C4 /* MultiMatchFilterTest.swift */,
 				E955A48B21B8025D006C02C4 /* BoolFilterTest.swift */,
+				E99E2D752202ED1900831C32 /* ESCatalogFilterTests.swift */,
 			);
 			path = elastic;
 			sourceTree = "<group>";
@@ -989,9 +1031,25 @@
 			path = Grid;
 			sourceTree = "<group>";
 		};
+		E99E2D682202E26E00831C32 /* facets */ = {
+			isa = PBXGroup;
+			children = (
+				E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */,
+				E99E2D692202E28F00831C32 /* ESCatalogFilter.swift */,
+				E99E2D6C2202E2BB00831C32 /* ESCatalogFilterCriteria.swift */,
+				E99E2D6F2202E36300831C32 /* ESAttributesFilterCriteria.swift */,
+				E99E2D722202E3E300831C32 /* ESPriceRangeFilterCriteria.swift */,
+				E97A430122082EBB00744706 /* ESBrandsFilterCriteria.swift */,
+				E97A430422083E0500744706 /* ESFunctionalNamesFilterCriteria.swift */,
+				E97A42FD220447C000744706 /* ESFacet.swift */,
+			);
+			path = facets;
+			sourceTree = "<group>";
+		};
 		E9F978D521635AFE00F7C4FE /* ElasticSearch */ = {
 			isa = PBXGroup;
 			children = (
+				E99E2D682202E26E00831C32 /* facets */,
 				E955A46321B80131006C02C4 /* filters */,
 				E955A47621B8021A006C02C4 /* ElasticSearchFilter.swift */,
 				E955A47521B8021A006C02C4 /* ElasticSearchQuery.swift */,
@@ -999,6 +1057,7 @@
 				E955A47921B8021A006C02C4 /* ESSearchFilter.swift */,
 				E955A47721B8021A006C02C4 /* LeafQueryFilter.swift */,
 				E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */,
+				E97A4310220891D600744706 /* SortFilter.swift */,
 			);
 			path = ElasticSearch;
 			sourceTree = "<group>";
@@ -1189,12 +1248,15 @@
 				E9619E6B20284D4600825F99 /* BasketResource.swift in Sources */,
 				E9619E4320284D2B00825F99 /* AttributeTypesResource.swift in Sources */,
 				E9619E7520284D6600825F99 /* MessagesResource.swift in Sources */,
+				E99E2D7C220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */,
+				E99E2D6A2202E28F00831C32 /* ESCatalogFilter.swift in Sources */,
 				E9619DE420284C2400825F99 /* SMClient.swift in Sources */,
 				E9619E1520284D0900825F99 /* GridResource.swift in Sources */,
 				E9E383092122C08900294F09 /* PriceProduct.swift in Sources */,
 				E91D7FFA21C8DD64001C4DF8 /* MediaDisplayTypeSM.swift in Sources */,
 				E9619E3F20284D2B00825F99 /* AttributesResource.swift in Sources */,
 				E9619E5320284D4600825F99 /* VatsResource.swift in Sources */,
+				E97A430522083E0500744706 /* ESFunctionalNamesFilterCriteria.swift in Sources */,
 				E9E3831D2125A18E00294F09 /* ItemsSM.swift in Sources */,
 				E982CCBA206B842C0046244B /* FacetsSM.swift in Sources */,
 				E9619EBA20284D9B00825F99 /* CurrenciSM.swift in Sources */,
@@ -1212,6 +1274,7 @@
 				E955A46C21B801D7006C02C4 /* MultiMatchFilter.swift in Sources */,
 				E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E9619EAE20284D9B00825F99 /* EntitiesSM.swift in Sources */,
+				E97A43082208404B00744706 /* PriceRange.swift in Sources */,
 				E955A47D21B8021A006C02C4 /* ESFilterCriteria.swift in Sources */,
 				E9619E3B20284D2B00825F99 /* EntitiesResource.swift in Sources */,
 				E9619EFD20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
@@ -1230,19 +1293,23 @@
 				E9619E7720284D6600825F99 /* WishListItemsResource.swift in Sources */,
 				E9E383002121746C00294F09 /* ProductPriceConfigurations.swift in Sources */,
 				E9619ED420284D9B00825F99 /* ProductsSM.swift in Sources */,
+				E97A4311220891D600744706 /* SortFilter.swift in Sources */,
 				E9619E4120284D2B00825F99 /* MediaTypesResource.swift in Sources */,
 				E9E3831421240DC500294F09 /* PriceConfigurationFilter.swift in Sources */,
 				E955A47421B801FE006C02C4 /* TermsFilterCriteria.swift in Sources */,
 				E9619EFF20284DD400825F99 /* BrandFilter.swift in Sources */,
 				E9619F0B20284DD400825F99 /* EntityFilter.swift in Sources */,
 				E9E383062121AF2900294F09 /* ProductOptions.swift in Sources */,
+				E97A430B2208819400744706 /* RangeFilter.swift in Sources */,
 				E9619DEA20284C4200825F99 /* InteractsWithProperties.swift in Sources */,
 				E9E0BE652043FECB003B03EF /* GridSM.swift in Sources */,
+				E99E2D702202E36300831C32 /* ESAttributesFilterCriteria.swift in Sources */,
 				E9619EE020284D9B00825F99 /* OrdersSM.swift in Sources */,
 				E9619ECA20284D9B00825F99 /* AttributeDisplayTypesSM.swift in Sources */,
 				E9619E2F20284D2B00825F99 /* MediaResource.swift in Sources */,
 				E9619EAA20284D9B00825F99 /* AttributesSM.swift in Sources */,
 				E9619EC220284D9B00825F99 /* OrdersHistorySM.swift in Sources */,
+				E99E2D732202E3E300831C32 /* ESPriceRangeFilterCriteria.swift in Sources */,
 				E9619E7B20284D6600825F99 /* CompaniesResource.swift in Sources */,
 				E9619DF220284C6A00825F99 /* SMDeletedObject.swift in Sources */,
 				E9619DE320284C2400825F99 /* Resource.swift in Sources */,
@@ -1256,7 +1323,9 @@
 				E9619EB020284D9B00825F99 /* PaymentProvidersSM.swift in Sources */,
 				E9619EF020284DBE00825F99 /* Predicate.swift in Sources */,
 				E955A47B21B8021A006C02C4 /* ElasticSearchFilter.swift in Sources */,
+				E97A42FE220447C000744706 /* ESFacet.swift in Sources */,
 				E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */,
+				E97A430E2208877500744706 /* ESPriceRangeFilter.swift in Sources */,
 				E9619F0320284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9619EC620284D9B00825F99 /* UserSM.swift in Sources */,
 				E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */,
@@ -1278,6 +1347,7 @@
 				E9619E2720284D2B00825F99 /* FunctionalNamesResource.swift in Sources */,
 				E988A26E218DFAEB000F1D36 /* ExternalUserSM.swift in Sources */,
 				E9619E0720284CBD00825F99 /* IsUserRegistered.swift in Sources */,
+				E99E2D6D2202E2BB00831C32 /* ESCatalogFilterCriteria.swift in Sources */,
 				E988A266218DC3F8000F1D36 /* DependencysRebuilder.swift in Sources */,
 				E9619EC820284D9B00825F99 /* Entity.swift in Sources */,
 				E9619E6320284D4600825F99 /* CurrenciesRateResource.swift in Sources */,
@@ -1304,6 +1374,7 @@
 				E955A47E21B8021A006C02C4 /* ESSearchFilter.swift in Sources */,
 				E988A263218DBF44000F1D36 /* IncludItem.swift in Sources */,
 				E9E3830B2124094500294F09 /* PriceValue.swift in Sources */,
+				E97A430222082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */,
 				E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */,
 				E9619EBE20284D9B00825F99 /* CompaniesSM.swift in Sources */,
 				E9619DFB20284C8000825F99 /* BasketPredicate.swift in Sources */,
@@ -1337,6 +1408,7 @@
 				E9619EAF20284D9B00825F99 /* EntitiesSM.swift in Sources */,
 				E9619F5D20284F7B00825F99 /* OrderFinalized.swift in Sources */,
 				E9118DD22032D1A600A7344D /* CorrelationsResourceTests.swift in Sources */,
+				E99E2D762202ED1900831C32 /* ESCatalogFilterTests.swift in Sources */,
 				E9619EF320284DBE00825F99 /* Filter.swift in Sources */,
 				E9619F6220284F8E00825F99 /* IsUserSubscriber.swift in Sources */,
 				E9619F5120284E2600825F99 /* CurrenciesResourceTest.swift in Sources */,
@@ -1366,7 +1438,9 @@
 				E91D7FF821C8DCD9001C4DF8 /* MediaDisplayTypesResource.swift in Sources */,
 				E9619E7A20284D6600825F99 /* UsersResource.swift in Sources */,
 				E9619F4420284E2600825F99 /* AddressResourceTests.swift in Sources */,
+				E97A430C2208819400744706 /* RangeFilter.swift in Sources */,
 				E955A48221B80227006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */,
+				E99E2D742202E3E300831C32 /* ESPriceRangeFilterCriteria.swift in Sources */,
 				E9619F4A20284E2600825F99 /* AttributeGroupsEntitiesResourceTest.swift in Sources */,
 				E9619E7620284D6600825F99 /* MessagesResource.swift in Sources */,
 				E982CCBB206B85E30046244B /* FacetsSM.swift in Sources */,
@@ -1388,6 +1462,7 @@
 				E9619F3120284E2600825F99 /* ProductAttributeValuesResourceTest.swift in Sources */,
 				E9619E5E20284D4600825F99 /* DeliveryProvidersResource.swift in Sources */,
 				E955A48521B80227006C02C4 /* ElasticSearchFilter.swift in Sources */,
+				E99E2D712202E36300831C32 /* ESAttributesFilterCriteria.swift in Sources */,
 				E9E3830F212409B300294F09 /* PriceConfiguration.swift in Sources */,
 				E940236E2099944F008B7414 /* PromotionsRecource.swift in Sources */,
 				E9619ED720284D9B00825F99 /* AddressSM.swift in Sources */,
@@ -1444,12 +1519,14 @@
 				E9619F6120284F8C00825F99 /* UserSpecification.swift in Sources */,
 				E9619F3320284E2600825F99 /* FullResourceTests.swift in Sources */,
 				E9619F5520284F6500825F99 /* ServiceInjector.swift in Sources */,
+				E97A430322082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */,
 				E9619F0820284DD400825F99 /* GridFilterElement.swift in Sources */,
 				E9E3831B2124305C00294F09 /* ProductPriceConfigurationsResourceTest.swift in Sources */,
 				E9619F5920284F7100825F99 /* Keychain.swift in Sources */,
 				E982CCBE206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E940236B209716A8008B7414 /* ErrorSM.swift in Sources */,
 				E955A49321B80E30006C02C4 /* ElasticSearchResource.swift in Sources */,
+				E97A430F2208877500744706 /* ESPriceRangeFilter.swift in Sources */,
 				E9619F4620284E2600825F99 /* OrdersResourceTests.swift in Sources */,
 				E9619EC920284D9B00825F99 /* Entity.swift in Sources */,
 				E9619EA920284D9B00825F99 /* VatsSM.swift in Sources */,
@@ -1461,6 +1538,8 @@
 				E9619F5E20284F7D00825F99 /* Basket.swift in Sources */,
 				E9619ECF20284D9B00825F99 /* OptionsResourceSM.swift in Sources */,
 				E9619EB920284D9B00825F99 /* FunctionalNameSM.swift in Sources */,
+				E99E2D6E2202E2BB00831C32 /* ESCatalogFilterCriteria.swift in Sources */,
+				E99E2D7D220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */,
 				E9619E1420284D0900825F99 /* CorrelationsResource.swift in Sources */,
 				E9619E6820284D4600825F99 /* OptionsResource.swift in Sources */,
 				E9619E5620284D4600825F99 /* OrderItemsResource.swift in Sources */,
@@ -1501,15 +1580,20 @@
 				E9619E2A20284D2B00825F99 /* AttributeValuesResource.swift in Sources */,
 				E9619E3020284D2B00825F99 /* MediaResource.swift in Sources */,
 				E9619F3920284E2600825F99 /* BasketResourceTests.swift in Sources */,
+				E99E2D6B2202E28F00831C32 /* ESCatalogFilter.swift in Sources */,
+				E97A430622083E0500744706 /* ESFunctionalNamesFilterCriteria.swift in Sources */,
+				E97A430022047B9B00744706 /* ESFacet.swift in Sources */,
 				E9619EBD20284D9B00825F99 /* AttributeTypesSM.swift in Sources */,
 				E9619F6420284F9300825F99 /* IsUserRegistered.swift in Sources */,
 				E9619F5620284F6800825F99 /* SMRequest.swift in Sources */,
 				E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */,
 				E9619F0220284DD400825F99 /* FunctionalNameFilter.swift in Sources */,
+				E97A4312220891D600744706 /* SortFilter.swift in Sources */,
 				E955A48321B80227006C02C4 /* MultiMatchFilter.swift in Sources */,
 				E9E383072121AF2900294F09 /* ProductOptions.swift in Sources */,
 				E9619F4020284E2600825F99 /* MediaResourceTest.swift in Sources */,
 				E9619F6320284F9000825F99 /* IsUserEmail.swift in Sources */,
+				E97A43092208404B00744706 /* PriceRange.swift in Sources */,
 				E9619E3620284D2B00825F99 /* ProductsResource.swift in Sources */,
 				E9619EAB20284D9B00825F99 /* AttributesSM.swift in Sources */,
 				E9619E6220284D4600825F99 /* OrdersResource.swift in Sources */,
