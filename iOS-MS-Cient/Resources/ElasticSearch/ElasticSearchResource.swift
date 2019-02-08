@@ -70,10 +70,10 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
                     let decoder = JSONDecoder()
                     
                     let item = GridItem()
-                    if let object = try? decoder.decode(ProductsSM.self, from: data) {
+                    if let object = try? decoder.decode(ProductsSM.self, from: data), object.data?.first?.type == "products" {
                         item.item = object.rebuild()
                         item.type = "products"
-                    } else if let object = try? decoder.decode(DocumentsSM.self, from: data) {
+                    } else if let object = try? decoder.decode(DocumentsSM.self, from: data), object.data?.first?.type == "documents" {
                         item.item = object.rebuild()
                         item.type = "documents"
                     }
@@ -147,22 +147,22 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
     override public func getQueryParams() -> [String : String] {
         
         var params = super.getQueryParams()
-        
-        let whereParams = params["where"]
-        var paramsJson: [String : Any] = [:]
-        
-        paramsJson["size"] = params["limit"]
-        paramsJson["from"] = params["offset"]
-        
-        if let value = params["size"] {
-            paramsJson["size"] = value
-        }
-        
-        params.removeAll()
-        
-        params["index"] = paramsJson["index"] as! String
-        paramsJson.removeValue(forKey: "index")
-        params["body"] = paramsJson.jsonString!
+//
+//        let whereParams = params["where"]
+//        var paramsJson: [String : Any] = [:]
+//
+//        paramsJson["size"] = params["limit"]
+//        paramsJson["from"] = params["offset"]
+//
+//        if let value = params["size"] {
+//            paramsJson["size"] = value
+//        }
+//
+//        params.removeAll()
+//
+//        params["index"] = paramsJson["index"] as! String
+//        paramsJson.removeValue(forKey: "index")
+//        params["body"] = paramsJson.jsonString!
         
         return params
     }

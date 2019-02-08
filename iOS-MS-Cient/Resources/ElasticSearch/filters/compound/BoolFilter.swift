@@ -25,6 +25,10 @@ public class BoolFilter: ElasticSearchQuery {
         self.elements.setValue(elements, forKey: MUST)
     }
     
+    public func must(elements: [ElasticSearchQuery]) {
+        self.elements.setValue(elements, forKey: MUST)
+    }
+    
     public func should(elements:ElasticSearchQuery...) {
         self.elements.setValue(elements, forKey: SHOULD)
     }
