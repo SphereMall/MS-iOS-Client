@@ -14,7 +14,6 @@ public class ESPriceRangeFilter: RangeFilter<Double> {
         super.init(attribute: attribute)
     }
     
-    
     public func setRange(minPrice: Double, maxPrice: Double) {
         addOption(optionName: RangeType.GT.rawValue, value: minPrice)
         addOption(optionName: RangeType.LT.rawValue, value: maxPrice)

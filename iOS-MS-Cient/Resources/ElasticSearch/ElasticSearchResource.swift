@@ -144,29 +144,6 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
         return self
     }
     
-    override public func getQueryParams() -> [String : String] {
-        
-        var params = super.getQueryParams()
-//
-//        let whereParams = params["where"]
-//        var paramsJson: [String : Any] = [:]
-//
-//        paramsJson["size"] = params["limit"]
-//        paramsJson["from"] = params["offset"]
-//
-//        if let value = params["size"] {
-//            paramsJson["size"] = value
-//        }
-//
-//        params.removeAll()
-//
-//        params["index"] = paramsJson["index"] as! String
-//        paramsJson.removeValue(forKey: "index")
-//        params["body"] = paramsJson.jsonString!
-        
-        return params
-    }
-    
     @available(*, unavailable, message: "Method count() can not be used")
     public override func count(closure: @escaping SMResponseCount) {}
     

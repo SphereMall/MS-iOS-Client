@@ -370,6 +370,8 @@
 		E9E3831E2125A18E00294F09 /* ItemsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E3831C2125A18E00294F09 /* ItemsSM.swift */; };
 		E9F3EB5C20A0964400260AFB /* GridFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */; };
 		E9F3EB5D20A18C1900260AFB /* GrapherResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90C7AE4206B784F00EFA879 /* GrapherResource.swift */; };
+		E9F51807222D57E3007A8405 /* RangeSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F51806222D57E3007A8405 /* RangeSM.swift */; };
+		E9F51808222D57E3007A8405 /* RangeSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F51806222D57E3007A8405 /* RangeSM.swift */; };
 		E9F978D721635B2000F7C4FE /* ElasticSearchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */; };
 /* End PBXBuildFile section */
 
@@ -598,6 +600,7 @@
 		E9E3831A2124305C00294F09 /* ProductPriceConfigurationsResourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPriceConfigurationsResourceTest.swift; sourceTree = "<group>"; };
 		E9E3831C2125A18E00294F09 /* ItemsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsSM.swift; sourceTree = "<group>"; };
 		E9F3EB5B20A0964400260AFB /* GridFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFilterTests.swift; sourceTree = "<group>"; };
+		E9F51806222D57E3007A8405 /* RangeSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSM.swift; sourceTree = "<group>"; };
 		E9F978D621635B2000F7C4FE /* ElasticSearchResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElasticSearchResource.swift; sourceTree = "<group>"; };
 		F1E09B021AD2A02290B1A416 /* Pods-iOS-MS-Cient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-MS-Cient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS-MS-Cient/Pods-iOS-MS-Cient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -998,6 +1001,7 @@
 				E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */,
 				E955A49521B82067006C02C4 /* ElasticEntity.swift */,
 				E91D7FF921C8DD64001C4DF8 /* MediaDisplayTypeSM.swift */,
+				E9F51806222D57E3007A8405 /* RangeSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1293,6 +1297,7 @@
 				E9619E7720284D6600825F99 /* WishListItemsResource.swift in Sources */,
 				E9E383002121746C00294F09 /* ProductPriceConfigurations.swift in Sources */,
 				E9619ED420284D9B00825F99 /* ProductsSM.swift in Sources */,
+				E9F51807222D57E3007A8405 /* RangeSM.swift in Sources */,
 				E97A4311220891D600744706 /* SortFilter.swift in Sources */,
 				E9619E4120284D2B00825F99 /* MediaTypesResource.swift in Sources */,
 				E9E3831421240DC500294F09 /* PriceConfigurationFilter.swift in Sources */,
@@ -1425,6 +1430,7 @@
 				E917271B2032E99D0075995D /* AuthResourceTests.swift in Sources */,
 				E9619E7C20284D6600825F99 /* CompaniesResource.swift in Sources */,
 				E9E3831E2125A18E00294F09 /* ItemsSM.swift in Sources */,
+				E9F51808222D57E3007A8405 /* RangeSM.swift in Sources */,
 				E9619F4C20284E2600825F99 /* CompaniesResourceTests.swift in Sources */,
 				E955A48021B80226006C02C4 /* TermsFilter.swift in Sources */,
 				E9619F4220284E2600825F99 /* DeliveryProvidersResourceTest.swift in Sources */,

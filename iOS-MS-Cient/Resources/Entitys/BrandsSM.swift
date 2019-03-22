@@ -56,4 +56,5 @@ public struct AttributeBrand: Decodable, Gridable {
     public var title : String?
     public var urlCode : String?
     public var visible : String?
+    public var count: Int?
 }

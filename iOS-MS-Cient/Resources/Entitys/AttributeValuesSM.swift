@@ -73,4 +73,5 @@ public struct AttributeValues: Decodable, Gridable {
     public var orderNumber : String?
     public var title : String?
     public var value : String?
+    public var count: Int?
 }
