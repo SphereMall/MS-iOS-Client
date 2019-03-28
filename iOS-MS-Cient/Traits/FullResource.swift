@@ -17,7 +17,7 @@ public protocol FullResource : ResourceInterface {
 
 public extension FullResource {
     
-    public func fullAll(closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
+    func fullAll(closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         full { (item, error) in
             closure(item?.rebuild(), error)
         }
@@ -47,13 +47,13 @@ public extension FullResource {
         }
     }
     
-    public func fullBy(id: Int, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
+    func fullBy(id: Int, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         self.full(id: id) { (items, error) in
             closure(items?.rebuild(), error)
         }
     }
     
-    public func fullBy(code: String, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
+    func fullBy(code: String, closure: @escaping (T?, ErrorSM?) -> Swift.Void) {
         self.full(url: code) { (item, error) in
             closure(item?.rebuild(), error)
         }

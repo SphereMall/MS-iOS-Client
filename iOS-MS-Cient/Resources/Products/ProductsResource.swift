@@ -46,25 +46,25 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
         }
     }
     
-    public override func all(closure: @escaping SMResponse<T>) {
+    public override func all(closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         super.all { (items, error) in
             closure(items?.rebuild(), error)
         }
     }
     
-    public override func first(closure: @escaping SMResponse<T>) {
+    public override func first(closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         super.first { (item, error) in
             closure(item?.rebuild(), error)
         }
     }
     
-    public override func create(data: [String: String], closure: @escaping SMResponse<T>) {
+    public override func create(data: [String: String], closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         super.create(data: data) { (item, error) in
             closure(item?.rebuild(), error)
         }
     }
     
-    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<T>) {
+    public override func update(id: String, data: [String: String], closure: @escaping (ProductsSM?, ErrorSM?) -> Void) {
         super.update(id: id, data: data) { (items, error) in
             closure(items?.rebuild(), error)
         }
@@ -82,7 +82,7 @@ public class ProductsResource<T: Decodable> : Resource <ProductsSM>, FullResourc
 }
 
 public extension String {
-    public var isInt: Bool {
+    var isInt: Bool {
         return Int(self) != nil
     }
 }

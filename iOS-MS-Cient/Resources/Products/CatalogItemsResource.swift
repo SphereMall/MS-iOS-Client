@@ -22,25 +22,25 @@ public class CatalogItemsResource<T: Decodable> : Resource <CatalogItemsSM> {
         }
     }
     
-    public override func all(closure: @escaping SMResponse<T>) {
+    public override func all(closure: @escaping (CatalogItemsSM?, ErrorSM?) -> Void) {
         super.all { (items, error) in
             closure(items?.rebuild(), error)
         }
     }
     
-    public override func first(closure: @escaping SMResponse<T>) {
+    public override func first(closure: @escaping (CatalogItemsSM?, ErrorSM?) -> Void) {
         super.first { (item, error) in
             closure(item?.rebuild(), error)
         }
     }
     
-    public override func create(data: [String: String], closure: @escaping SMResponse<T>) {
+    public override func create(data: [String: String], closure: @escaping (CatalogItemsSM?, ErrorSM?) -> Void) {
         super.create(data: data) { (item, error) in
             closure(item?.rebuild(), error)
         }
     }
     
-    public override func update(id: String, data: [String: String], closure: @escaping SMResponse<T>) {
+    public override func update(id: String, data: [String: String], closure: @escaping (CatalogItemsSM?, ErrorSM?) -> Void) {
         super.update(id: id, data: data) { (items, error) in
             closure(items?.rebuild(), error)
         }

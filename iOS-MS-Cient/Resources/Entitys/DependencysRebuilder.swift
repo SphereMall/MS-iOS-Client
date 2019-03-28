@@ -31,7 +31,7 @@ public protocol Rebuilder: Datable {
 
 public extension Rebuilder {
     
-    public mutating func rebuild<T: Relationships>(model: inout T, included: [IncludItem]) {
+    mutating func rebuild<T: Relationships>(model: inout T, included: [IncludItem]) {
         model.promotions = promotions(attributes: model, included: included)
         model.brands = brands(attributes: model, included: included)
         model.functionalNames = functionalNames(attributes: model, included: included)
@@ -50,7 +50,7 @@ public extension Rebuilder {
         model.mediaDisplayTypes = mediaDisplayTypes(attributes: model, included: included)
     }
     
-    public mutating func productAttributeValues(attributes: Relationships?, included: [IncludItem]) -> [ProductAttributeValuesAttribute]? {
+    mutating func productAttributeValues(attributes: Relationships?, included: [IncludItem]) -> [ProductAttributeValuesAttribute]? {
         
         if let data = self.relationships?.productAttributeValues?.data {
             var items: [ProductAttributeValuesAttribute] = []
@@ -73,7 +73,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func brands(attributes: Relationships?, included: [IncludItem]) -> [AttributeBrand]? {
+    mutating func brands(attributes: Relationships?, included: [IncludItem]) -> [AttributeBrand]? {
         
         if let data = self.relationships?.brands?.data {
             
@@ -97,7 +97,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func functionalNames(attributes: Relationships?, included: [IncludItem]) -> [FunctionalNameAttribute]? {
+    mutating func functionalNames(attributes: Relationships?, included: [IncludItem]) -> [FunctionalNameAttribute]? {
         
         if let data = self.relationships?.functionalNames?.data {
             var items: [FunctionalNameAttribute] = []
@@ -120,7 +120,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func promotions(attributes: Relationships?, included: [IncludItem]) -> [PromotionsAttributes]? {
+    mutating func promotions(attributes: Relationships?, included: [IncludItem]) -> [PromotionsAttributes]? {
         
         if let data = self.relationships?.promotions?.data {
             var items: [PromotionsAttributes] = []
@@ -143,7 +143,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func attributeValues(attributes: Relationships?, included: [IncludItem]) -> [AttributeValues]? {
+    mutating func attributeValues(attributes: Relationships?, included: [IncludItem]) -> [AttributeValues]? {
         
         if let data = self.relationships?.attributeValues?.data {
             var items: [AttributeValues] = []
@@ -166,7 +166,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func attributeTypes(attributes: Relationships?, included: [IncludItem]) -> [AttributeTypes]? {
+    mutating func attributeTypes(attributes: Relationships?, included: [IncludItem]) -> [AttributeTypes]? {
         
         if let data = self.relationships?.attributeTypes?.data {
             var items: [AttributeTypes] = []
@@ -189,7 +189,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func attributes(attributes: Relationships?, included: [IncludItem]) -> [AttributeResourceSM]? {
+    mutating func attributes(attributes: Relationships?, included: [IncludItem]) -> [AttributeResourceSM]? {
         
         if let data = self.relationships?.attributes?.data {
             var items: [AttributeResourceSM] = []
@@ -212,7 +212,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func productPriceConfigurations(attributes: Relationships?, included: [IncludItem]) -> [ProductPriceConfigurations]? {
+    mutating func productPriceConfigurations(attributes: Relationships?, included: [IncludItem]) -> [ProductPriceConfigurations]? {
         
         if let data = self.relationships?.productPriceConfigurations?.data {
             var items: [ProductPriceConfigurations] = []
@@ -238,7 +238,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func priceConfigurations(attributes: Relationships?, included: [IncludItem]) -> [PriceConfigurations]? {
+    mutating func priceConfigurations(attributes: Relationships?, included: [IncludItem]) -> [PriceConfigurations]? {
         
         if let data = self.relationships?.priceConfigurations?.data {
             
@@ -266,7 +266,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func prices(attrs: Relationships?, included: [IncludItem]) -> [AttributesResourceData]? {
+    mutating func prices(attrs: Relationships?, included: [IncludItem]) -> [AttributesResourceData]? {
         
         if let attributes = attrs?.priceConfigurations {
             
@@ -318,7 +318,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func productOptionValues(attributes: Relationships?, included: [IncludItem]) -> [ProductOptionValues]? {
+    mutating func productOptionValues(attributes: Relationships?, included: [IncludItem]) -> [ProductOptionValues]? {
         
         if let data = self.relationships?.productOptionValues?.data {
             
@@ -346,7 +346,7 @@ public extension Rebuilder {
         return attributes?.productOptionValues
     }
     
-    public mutating func productOptions(attributes: Relationships?, included: [IncludItem]) -> [ProductOptions]? {
+    mutating func productOptions(attributes: Relationships?, included: [IncludItem]) -> [ProductOptions]? {
         
         if let data = self.relationships?.options?.data {
             
@@ -374,7 +374,7 @@ public extension Rebuilder {
         return attributes?.options
     }
     
-    public mutating func media(attributes: Relationships?, included: [IncludItem]) -> [MediaData]? {
+    mutating func media(attributes: Relationships?, included: [IncludItem]) -> [MediaData]? {
         
         if let data = self.relationships?.media?.data {
             var items: [MediaData] = []
@@ -408,7 +408,7 @@ public extension Rebuilder {
         return items
     }
     
-    public mutating func productsToPromotions(attributes: Relationships?, included: [IncludItem]) -> [ProductsPromotionsData]? {
+    mutating func productsToPromotions(attributes: Relationships?, included: [IncludItem]) -> [ProductsPromotionsData]? {
         
         if let data = self.relationships?.productsToPromotions?.data {
             var items: [ProductsPromotionsData] = []
@@ -434,7 +434,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func mediaEntities(attributes: Relationships?, included: [IncludItem]) -> [MediaData]? {
+    mutating func mediaEntities(attributes: Relationships?, included: [IncludItem]) -> [MediaData]? {
         
         if let data = self.relationships?.mediaEntities?.data {
             var items: [MediaData] = []
@@ -460,7 +460,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func entityAttributeValues(attributes: Relationships?, included: [IncludItem]) -> [EntityData]? {
+    mutating func entityAttributeValues(attributes: Relationships?, included: [IncludItem]) -> [EntityData]? {
         
         if let data = self.relationships?.entityAttributeValues?.data {
             var items: [EntityData] = []
@@ -486,7 +486,7 @@ public extension Rebuilder {
         return nil
     }
     
-    public mutating func mediaDisplayTypes(attributes: Relationships?, included: [IncludItem]) -> [MediaTypesData]? {
+    mutating func mediaDisplayTypes(attributes: Relationships?, included: [IncludItem]) -> [MediaTypesData]? {
         
         if let data = self.relationships?.mediaDisplayTypes?.data {
             var items: [MediaTypesData] = []

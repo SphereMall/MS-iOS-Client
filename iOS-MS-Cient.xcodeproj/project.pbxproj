@@ -63,7 +63,6 @@
 		E9619DE520284C2400825F99 /* SMRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DE020284C2400825F99 /* SMRequest.swift */; };
 		E9619DE620284C2400825F99 /* SMCountMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DE120284C2400825F99 /* SMCountMaker.swift */; };
 		E9619DE720284C2400825F99 /* ServiceInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DE220284C2400825F99 /* ServiceInjector.swift */; };
-		E9619DEA20284C4200825F99 /* InteractsWithProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DE920284C4200825F99 /* InteractsWithProperties.swift */; };
 		E9619DED20284C5500825F99 /* ClassReflectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DEC20284C5500825F99 /* ClassReflectionHelper.swift */; };
 		E9619DF220284C6A00825F99 /* SMDeletedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DEF20284C6A00825F99 /* SMDeletedObject.swift */; };
 		E9619DF320284C6A00825F99 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619DF020284C6A00825F99 /* AuthToken.swift */; };
@@ -428,7 +427,6 @@
 		E9619DE020284C2400825F99 /* SMRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMRequest.swift; sourceTree = "<group>"; };
 		E9619DE120284C2400825F99 /* SMCountMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMCountMaker.swift; sourceTree = "<group>"; };
 		E9619DE220284C2400825F99 /* ServiceInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceInjector.swift; sourceTree = "<group>"; };
-		E9619DE920284C4200825F99 /* InteractsWithProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractsWithProperties.swift; sourceTree = "<group>"; };
 		E9619DEC20284C5500825F99 /* ClassReflectionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassReflectionHelper.swift; sourceTree = "<group>"; };
 		E9619DEF20284C6A00825F99 /* SMDeletedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMDeletedObject.swift; sourceTree = "<group>"; };
 		E9619DF020284C6A00825F99 /* AuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
@@ -796,7 +794,6 @@
 		E9619DE820284C2E00825F99 /* Traits */ = {
 			isa = PBXGroup;
 			children = (
-				E9619DE920284C4200825F99 /* InteractsWithProperties.swift */,
 				E9619E0E20284CE600825F99 /* FullResource.swift */,
 			);
 			path = Traits;
@@ -1306,7 +1303,6 @@
 				E9619F0B20284DD400825F99 /* EntityFilter.swift in Sources */,
 				E9E383062121AF2900294F09 /* ProductOptions.swift in Sources */,
 				E97A430B2208819400744706 /* RangeFilter.swift in Sources */,
-				E9619DEA20284C4200825F99 /* InteractsWithProperties.swift in Sources */,
 				E9E0BE652043FECB003B03EF /* GridSM.swift in Sources */,
 				E99E2D702202E36300831C32 /* ESAttributesFilterCriteria.swift in Sources */,
 				E9619EE020284D9B00825F99 /* OrdersSM.swift in Sources */,
@@ -1762,7 +1758,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SphereMall.com.iOS-MS-Cient";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1785,7 +1781,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SphereMall.com.iOS-MS-Cient";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
