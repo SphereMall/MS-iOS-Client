@@ -22,3 +22,18 @@ public class TermsFilterCriteria: ESFilterCriteria {
         return [field: values]
     }
 }
+
+public class TermFilterCriteria: ESFilterCriteria {
+    
+    private let field:String
+    private let value:String
+    
+    public init(field: String, value:String) {
+        self.field = field
+        self.value = value
+    }
+    
+    public func toJson() -> NSDictionary {
+        return [field: value]
+    }
+}

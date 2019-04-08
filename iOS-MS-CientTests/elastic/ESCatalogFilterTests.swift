@@ -193,4 +193,46 @@ class ESCatalogFilterTests: XCTestCase {
         wait(for: [exp], timeout: 10)
         
     }
+    
+    func testElasticSearchExists() {
+        
+        let exp = self.expectation(description: "testElasticSearchFilterData")
+        
+        let configuration = ESCatalogConfigurator([.attributes(values: ["reward"]),
+                                                   .brands,
+                                                   .factorValues(values: ["3", "1"]),
+                                                   .functionalNames,
+                                                   .range(builder: ESRangeBuilder(attributes: ["minpricepoints"], fields: ["price"]))])
+        
+        let filter = ESCatalogFilter.filter(config: configuration)
+        
+        filter.add(ESAttributesFilterCriteria(code: "reward", values: ["1"]))
+        
+        let isMain = TermsFilterCriteria(field: "isMain", values: ["1"])
+        let isMainFilter = TermsFilter(esFilterCriteria: isMain)
+        
+        let channel = TermsFilterCriteria(field: "channelIds", values: ["6"])
+        let channelFilter = TermsFilter(esFilterCriteria: channel)
+        
+        let reward = TermsFilterCriteria(field: "reward_attr.attributeValue", values: ["0"])
+        let rewardFilter = TermsFilter(esFilterCriteria: reward)
+        
+        let exists = TermFilterCriteria(field: "field", value: "product-category_attr")
+        let existsFilter = ExistsFilter(esFilterCriteria: exists)
+        
+        let boolFilter = filter.toBoolFilter()
+        boolFilter.must(elements: isMainFilter, rewardFilter, channelFilter, existsFilter)
+        
+        let elasticSearchFilter = ESSearchFilter()
+        elasticSearchFilter.index(indexes: "sm-products")
+        elasticSearchFilter.source(fields: ["scope"])
+        elasticSearchFilter.query(queryFilter: boolFilter)
+        
+        client.elastic.limit(limit: 20, offset: 0).search(filter: elasticSearchFilter) { (grid, error) in
+            exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 10)
+        
+    }
 }

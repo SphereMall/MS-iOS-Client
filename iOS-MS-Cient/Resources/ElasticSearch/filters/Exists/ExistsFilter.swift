@@ -1,16 +1,16 @@
 //
-//  TermsFilter.swift
+//  ExistsFilter.swift
 //  iOS-MS-Cient
 //
-//  Created by Vlad Chernetsky on 12/5/18.
-//  Copyright © 2018 SphereMall. All rights reserved.
+//  Created by Nazar Gorobets on 4/8/19.
+//  Copyright © 2019 SphereMall. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-public class TermsFilter: LeafQueryFilter {
+public class ExistsFilter: LeafQueryFilter {
     
-    public var name: String = "terms"
+    public var name: String = "exists"
     private let esFilterCriteria: ESFilterCriteria
     
     public init(esFilterCriteria: ESFilterCriteria) {

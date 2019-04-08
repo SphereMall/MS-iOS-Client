@@ -21,6 +21,8 @@
 		E91D7FFA21C8DD64001C4DF8 /* MediaDisplayTypeSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D7FF921C8DD64001C4DF8 /* MediaDisplayTypeSM.swift */; };
 		E91D7FFB21C8DD64001C4DF8 /* MediaDisplayTypeSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D7FF921C8DD64001C4DF8 /* MediaDisplayTypeSM.swift */; };
 		E91D7FFD21C8DF47001C4DF8 /* MediaDisplayTypesResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91D7FFC21C8DF47001C4DF8 /* MediaDisplayTypesResourceTests.swift */; };
+		E93E0F5C225B4D1400A9451B /* ExistsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E0F5B225B4D1400A9451B /* ExistsFilter.swift */; };
+		E93E0F5D225B4D1400A9451B /* ExistsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93E0F5B225B4D1400A9451B /* ExistsFilter.swift */; };
 		E940236A2097143B008B7414 /* ErrorSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94023692097143B008B7414 /* ErrorSM.swift */; };
 		E940236B209716A8008B7414 /* ErrorSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94023692097143B008B7414 /* ErrorSM.swift */; };
 		E940236D2099944F008B7414 /* PromotionsRecource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940236C2099944F008B7414 /* PromotionsRecource.swift */; };
@@ -398,6 +400,7 @@
 		E91D7FF621C8DCD9001C4DF8 /* MediaDisplayTypesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayTypesResource.swift; sourceTree = "<group>"; };
 		E91D7FF921C8DD64001C4DF8 /* MediaDisplayTypeSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayTypeSM.swift; sourceTree = "<group>"; };
 		E91D7FFC21C8DF47001C4DF8 /* MediaDisplayTypesResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayTypesResourceTests.swift; sourceTree = "<group>"; };
+		E93E0F5B225B4D1400A9451B /* ExistsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistsFilter.swift; sourceTree = "<group>"; };
 		E94023692097143B008B7414 /* ErrorSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSM.swift; sourceTree = "<group>"; };
 		E940236C2099944F008B7414 /* PromotionsRecource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsRecource.swift; sourceTree = "<group>"; };
 		E940236F209994AA008B7414 /* PromotionsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsSM.swift; sourceTree = "<group>"; };
@@ -644,9 +647,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E93E0F5A225B4CE000A9451B /* Exists */ = {
+			isa = PBXGroup;
+			children = (
+				E93E0F5B225B4D1400A9451B /* ExistsFilter.swift */,
+			);
+			path = Exists;
+			sourceTree = "<group>";
+		};
 		E955A46321B80131006C02C4 /* filters */ = {
 			isa = PBXGroup;
 			children = (
+				E93E0F5A225B4CE000A9451B /* Exists */,
 				E955A46621B8015A006C02C4 /* terms */,
 				E955A46521B80150006C02C4 /* fulltext */,
 				E955A46421B80141006C02C4 /* compound */,
@@ -1339,6 +1351,7 @@
 				E9619E7320284D6600825F99 /* AddressResource.swift in Sources */,
 				E9E3831121240B2F00294F09 /* ProductPriceConfigurationsResource.swift in Sources */,
 				E9619E0D20284CDB00825F99 /* DocumentsResource.swift in Sources */,
+				E93E0F5C225B4D1400A9451B /* ExistsFilter.swift in Sources */,
 				E9619E5720284D4600825F99 /* CurrenciesResource.swift in Sources */,
 				E9619EBC20284D9B00825F99 /* AttributeTypesSM.swift in Sources */,
 				E9619E0820284CBD00825F99 /* IsUserEmail.swift in Sources */,
@@ -1531,6 +1544,7 @@
 				E97A430F2208877500744706 /* ESPriceRangeFilter.swift in Sources */,
 				E9619F4620284E2600825F99 /* OrdersResourceTests.swift in Sources */,
 				E9619EC920284D9B00825F99 /* Entity.swift in Sources */,
+				E93E0F5D225B4D1400A9451B /* ExistsFilter.swift in Sources */,
 				E9619EA920284D9B00825F99 /* VatsSM.swift in Sources */,
 				E955A49021B8025E006C02C4 /* TermsFilterTest.swift in Sources */,
 				E9619EDF20284D9B00825F99 /* AttributeGroupsSM.swift in Sources */,
