@@ -59,8 +59,8 @@ public class CatalogItemsAttribute: Decodable {
         guard let settings = filterSettings else { return ids }
         
         if let dataFromString = settings.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-            let jsonFromStr = JSON(data: dataFromString)
-            if let array = jsonFromStr.first?.1["elements"].array {
+            let jsonFromStr = try? JSON(data: dataFromString)
+            if let array = jsonFromStr?.first?.1["elements"].array {
                 for filterItem in array {
                     if let id = filterItem.string {
                         ids = id + ","

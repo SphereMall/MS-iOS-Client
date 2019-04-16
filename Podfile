@@ -4,7 +4,7 @@
 
 def shared_pods
     use_frameworks!
-    pod 'SwiftyJSON' , '~> 3.1.4'
+    pod 'SwiftyJSON' , '~> 4.0.0'
     pod 'Alamofire', '~> 4.6.0'
 end
 
