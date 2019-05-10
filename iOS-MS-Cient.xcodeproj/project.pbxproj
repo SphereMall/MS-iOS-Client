@@ -343,6 +343,21 @@
 		E99E2D762202ED1900831C32 /* ESCatalogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D752202ED1900831C32 /* ESCatalogFilterTests.swift */; };
 		E99E2D7C220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */; };
 		E99E2D7D220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */; };
+		E9A528C72284733A003FD848 /* PagesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528C62284733A003FD848 /* PagesResource.swift */; };
+		E9A528C82284733A003FD848 /* PagesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528C62284733A003FD848 /* PagesResource.swift */; };
+		E9A528CA2284742C003FD848 /* PageSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528C92284742C003FD848 /* PageSM.swift */; };
+		E9A528CB2284742C003FD848 /* PageSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528C92284742C003FD848 /* PageSM.swift */; };
+		E9A528CD22859BE4003FD848 /* LayoutContainerItemsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528CC22859BE4003FD848 /* LayoutContainerItemsSM.swift */; };
+		E9A528CE22859BE4003FD848 /* LayoutContainerItemsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528CC22859BE4003FD848 /* LayoutContainerItemsSM.swift */; };
+		E9A528D022859E31003FD848 /* BannerObjectSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528CF22859E31003FD848 /* BannerObjectSM.swift */; };
+		E9A528D122859E31003FD848 /* BannerObjectSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528CF22859E31003FD848 /* BannerObjectSM.swift */; };
+		E9A528D322859F6C003FD848 /* SliderObjectSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D222859F6C003FD848 /* SliderObjectSM.swift */; };
+		E9A528D422859F6C003FD848 /* SliderObjectSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D222859F6C003FD848 /* SliderObjectSM.swift */; };
+		E9A528D62285A0AF003FD848 /* RelatedSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D52285A0AF003FD848 /* RelatedSM.swift */; };
+		E9A528D72285A0AF003FD848 /* RelatedSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D52285A0AF003FD848 /* RelatedSM.swift */; };
+		E9A528D92285A153003FD848 /* LayoutContainerSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D82285A153003FD848 /* LayoutContainerSM.swift */; };
+		E9A528DA2285A153003FD848 /* LayoutContainerSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D82285A153003FD848 /* LayoutContainerSM.swift */; };
+		E9A528DC2285A241003FD848 /* PagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528DB2285A241003FD848 /* PagesTests.swift */; };
 		E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
@@ -586,6 +601,14 @@
 		E99E2D722202E3E300831C32 /* ESPriceRangeFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESPriceRangeFilterCriteria.swift; sourceTree = "<group>"; };
 		E99E2D752202ED1900831C32 /* ESCatalogFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESCatalogFilterTests.swift; sourceTree = "<group>"; };
 		E99E2D7B220318EC00831C32 /* ESCatalogConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESCatalogConfigurator.swift; sourceTree = "<group>"; };
+		E9A528C62284733A003FD848 /* PagesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesResource.swift; sourceTree = "<group>"; };
+		E9A528C92284742C003FD848 /* PageSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSM.swift; sourceTree = "<group>"; };
+		E9A528CC22859BE4003FD848 /* LayoutContainerItemsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutContainerItemsSM.swift; sourceTree = "<group>"; };
+		E9A528CF22859E31003FD848 /* BannerObjectSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerObjectSM.swift; sourceTree = "<group>"; };
+		E9A528D222859F6C003FD848 /* SliderObjectSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderObjectSM.swift; sourceTree = "<group>"; };
+		E9A528D52285A0AF003FD848 /* RelatedSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedSM.swift; sourceTree = "<group>"; };
+		E9A528D82285A153003FD848 /* LayoutContainerSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutContainerSM.swift; sourceTree = "<group>"; };
+		E9A528DB2285A241003FD848 /* PagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTests.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9DB27EC2155140A007EAC22 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
@@ -799,6 +822,7 @@
 				E9743520212C02360035E72F /* Promotions.swift */,
 				E988A26F218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift */,
 				E91D7FFC21C8DF47001C4DF8 /* MediaDisplayTypesResourceTests.swift */,
+				E9A528DB2285A241003FD848 /* PagesTests.swift */,
 			);
 			path = "iOS-MS-CientTests";
 			sourceTree = "<group>";
@@ -871,6 +895,7 @@
 		E9619E0B20284CCB00825F99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9A528C522847304003FD848 /* Layout */,
 				E9F978D521635AFE00F7C4FE /* ElasticSearch */,
 				E9619E7D20284D6E00825F99 /* Entitys */,
 				E9619E6D20284D5200825F99 /* User */,
@@ -1011,6 +1036,12 @@
 				E955A49521B82067006C02C4 /* ElasticEntity.swift */,
 				E91D7FF921C8DD64001C4DF8 /* MediaDisplayTypeSM.swift */,
 				E9F51806222D57E3007A8405 /* RangeSM.swift */,
+				E9A528C92284742C003FD848 /* PageSM.swift */,
+				E9A528CC22859BE4003FD848 /* LayoutContainerItemsSM.swift */,
+				E9A528D82285A153003FD848 /* LayoutContainerSM.swift */,
+				E9A528CF22859E31003FD848 /* BannerObjectSM.swift */,
+				E9A528D222859F6C003FD848 /* SliderObjectSM.swift */,
+				E9A528D52285A0AF003FD848 /* RelatedSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1057,6 +1088,14 @@
 				E97A42FD220447C000744706 /* ESFacet.swift */,
 			);
 			path = facets;
+			sourceTree = "<group>";
+		};
+		E9A528C522847304003FD848 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E9A528C62284733A003FD848 /* PagesResource.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		E9F978D521635AFE00F7C4FE /* ElasticSearch */ = {
@@ -1259,8 +1298,10 @@
 				E9619E7520284D6600825F99 /* MessagesResource.swift in Sources */,
 				E99E2D7C220318ED00831C32 /* ESCatalogConfigurator.swift in Sources */,
 				E99E2D6A2202E28F00831C32 /* ESCatalogFilter.swift in Sources */,
+				E9A528C72284733A003FD848 /* PagesResource.swift in Sources */,
 				E9619DE420284C2400825F99 /* SMClient.swift in Sources */,
 				E9619E1520284D0900825F99 /* GridResource.swift in Sources */,
+				E9A528D62285A0AF003FD848 /* RelatedSM.swift in Sources */,
 				E9E383092122C08900294F09 /* PriceProduct.swift in Sources */,
 				E91D7FFA21C8DD64001C4DF8 /* MediaDisplayTypeSM.swift in Sources */,
 				E9619E3F20284D2B00825F99 /* AttributesResource.swift in Sources */,
@@ -1307,6 +1348,7 @@
 				E9619E4120284D2B00825F99 /* MediaTypesResource.swift in Sources */,
 				E9E3831421240DC500294F09 /* PriceConfigurationFilter.swift in Sources */,
 				E955A47421B801FE006C02C4 /* TermsFilterCriteria.swift in Sources */,
+				E9A528D322859F6C003FD848 /* SliderObjectSM.swift in Sources */,
 				E9619EFF20284DD400825F99 /* BrandFilter.swift in Sources */,
 				E9619F0B20284DD400825F99 /* EntityFilter.swift in Sources */,
 				E9E383062121AF2900294F09 /* ProductOptions.swift in Sources */,
@@ -1319,6 +1361,7 @@
 				E9619EAA20284D9B00825F99 /* AttributesSM.swift in Sources */,
 				E9619EC220284D9B00825F99 /* OrdersHistorySM.swift in Sources */,
 				E99E2D732202E3E300831C32 /* ESPriceRangeFilterCriteria.swift in Sources */,
+				E9A528CA2284742C003FD848 /* PageSM.swift in Sources */,
 				E9619E7B20284D6600825F99 /* CompaniesResource.swift in Sources */,
 				E9619DF220284C6A00825F99 /* SMDeletedObject.swift in Sources */,
 				E9619DE320284C2400825F99 /* Resource.swift in Sources */,
@@ -1337,6 +1380,7 @@
 				E97A430E2208877500744706 /* ESPriceRangeFilter.swift in Sources */,
 				E9619F0320284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9619EC620284D9B00825F99 /* UserSM.swift in Sources */,
+				E9A528CD22859BE4003FD848 /* LayoutContainerItemsSM.swift in Sources */,
 				E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */,
 				E955A47C21B8021A006C02C4 /* LeafQueryFilter.swift in Sources */,
 				E9619EF220284DBE00825F99 /* Filter.swift in Sources */,
@@ -1363,6 +1407,7 @@
 				E9619E6320284D4600825F99 /* CurrenciesRateResource.swift in Sources */,
 				E955A47221B801FE006C02C4 /* AttributeCodeFilterCriteria.swift in Sources */,
 				E91D7FF721C8DCD9001C4DF8 /* MediaDisplayTypesResource.swift in Sources */,
+				E9A528D022859E31003FD848 /* BannerObjectSM.swift in Sources */,
 				E9619E3720284D2B00825F99 /* AttributeGroupsResource.swift in Sources */,
 				E9619ED820284D9B00825F99 /* InvoicesSM.swift in Sources */,
 				E9619E3120284D2B00825F99 /* AttributeGroupsEntitiesResource.swift in Sources */,
@@ -1386,6 +1431,7 @@
 				E9E3830B2124094500294F09 /* PriceValue.swift in Sources */,
 				E97A430222082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */,
 				E9118DCC2031948C00A7344D /* EmptySM.swift in Sources */,
+				E9A528D92285A153003FD848 /* LayoutContainerSM.swift in Sources */,
 				E9619EBE20284D9B00825F99 /* CompaniesSM.swift in Sources */,
 				E9619DFB20284C8000825F99 /* BasketPredicate.swift in Sources */,
 				E988A26C218DFAB5000F1D36 /* ExternalUserRelationResource.swift in Sources */,
@@ -1432,6 +1478,7 @@
 				E9619F4820284E2600825F99 /* MediaTests.swift in Sources */,
 				E9619E3820284D2B00825F99 /* AttributeGroupsResource.swift in Sources */,
 				E9E0BE642043FECA003B03EF /* GridSM.swift in Sources */,
+				E9A528C82284733A003FD848 /* PagesResource.swift in Sources */,
 				E917271B2032E99D0075995D /* AuthResourceTests.swift in Sources */,
 				E9619E7C20284D6600825F99 /* CompaniesResource.swift in Sources */,
 				E9E3831E2125A18E00294F09 /* ItemsSM.swift in Sources */,
@@ -1442,6 +1489,7 @@
 				E9619F0620284DD400825F99 /* GridFilter.swift in Sources */,
 				E9619ED320284D9B00825F99 /* WishlistObjectSM.swift in Sources */,
 				E974351F212C01EE0035E72F /* PromotionsPriceSM.swift in Sources */,
+				E9A528DC2285A241003FD848 /* PagesTests.swift in Sources */,
 				E9619E2E20284D2B00825F99 /* BrandsResource.swift in Sources */,
 				E9E0BE612043F385003B03EF /* GridResourceTests.swift in Sources */,
 				E9619F4E20284E2600825F99 /* InvoicesResourceTest.swift in Sources */,
@@ -1459,6 +1507,7 @@
 				E9619EB320284D9B00825F99 /* MediaTypesSM.swift in Sources */,
 				E9619E5C20284D4600825F99 /* PaymentProvidersResource.swift in Sources */,
 				E9E3831621240FB800294F09 /* PriceProduct.swift in Sources */,
+				E9A528D72285A0AF003FD848 /* RelatedSM.swift in Sources */,
 				E9619F5220284E2600825F99 /* AttributeTypesResourceTest.swift in Sources */,
 				E9619F6020284F8700825F99 /* EntitySpecification.swift in Sources */,
 				E9619EAD20284D9B00825F99 /* CurrencyRateSM.swift in Sources */,
@@ -1466,6 +1515,7 @@
 				E955A48621B80227006C02C4 /* ElasticSearchQuery.swift in Sources */,
 				E9619EED20284DBE00825F99 /* FilterOperators.swift in Sources */,
 				E9619EA720284D9B00825F99 /* MediaSM.swift in Sources */,
+				E9A528D122859E31003FD848 /* BannerObjectSM.swift in Sources */,
 				E91727192032DE430075995D /* AuthResource.swift in Sources */,
 				E9619EB520284D9B00825F99 /* AttributeValuesSM.swift in Sources */,
 				E9619F3220284E2600825F99 /* VatsResourceTest.swift in Sources */,
@@ -1528,6 +1578,7 @@
 				E9619E6420284D4600825F99 /* CurrenciesRateResource.swift in Sources */,
 				E9619E6620284D4600825F99 /* InvoicesResource.swift in Sources */,
 				E9619F6120284F8C00825F99 /* UserSpecification.swift in Sources */,
+				E9A528CB2284742C003FD848 /* PageSM.swift in Sources */,
 				E9619F3320284E2600825F99 /* FullResourceTests.swift in Sources */,
 				E9619F5520284F6500825F99 /* ServiceInjector.swift in Sources */,
 				E97A430322082EBB00744706 /* ESBrandsFilterCriteria.swift in Sources */,
@@ -1545,6 +1596,7 @@
 				E955A49021B8025E006C02C4 /* TermsFilterTest.swift in Sources */,
 				E9619EDF20284D9B00825F99 /* AttributeGroupsSM.swift in Sources */,
 				E9619F5020284E2600825F99 /* iOS_MS_ClientTests.swift in Sources */,
+				E9A528D422859F6C003FD848 /* SliderObjectSM.swift in Sources */,
 				E9619F3520284E2600825F99 /* OptionsResourceTest.swift in Sources */,
 				E9619EDD20284D9B00825F99 /* DeliveryProviderSM.swift in Sources */,
 				E9619F5E20284F7D00825F99 /* Basket.swift in Sources */,
@@ -1559,6 +1611,7 @@
 				E955A48121B80226006C02C4 /* AttributeIDFilterCriteria.swift in Sources */,
 				E9E383012121774800294F09 /* ProductPriceConfigurations.swift in Sources */,
 				E9E3831221240B3200294F09 /* ProductPriceConfigurationsResource.swift in Sources */,
+				E9A528DA2285A153003FD848 /* LayoutContainerSM.swift in Sources */,
 				E988A264218DC17B000F1D36 /* IncludItem.swift in Sources */,
 				E9619F4120284E2600825F99 /* PaymentResourceTest.swift in Sources */,
 				E9619F5A20284F7300825F99 /* AuthToken.swift in Sources */,
@@ -1608,6 +1661,7 @@
 				E97A43092208404B00744706 /* PriceRange.swift in Sources */,
 				E9619E3620284D2B00825F99 /* ProductsResource.swift in Sources */,
 				E9619EAB20284D9B00825F99 /* AttributesSM.swift in Sources */,
+				E9A528CE22859BE4003FD848 /* LayoutContainerItemsSM.swift in Sources */,
 				E9619E6220284D4600825F99 /* OrdersResource.swift in Sources */,
 				E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */,
 				E9619ED120284D9B00825F99 /* ProductAttributeValuesSM.swift in Sources */,

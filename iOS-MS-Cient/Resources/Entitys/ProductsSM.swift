@@ -97,6 +97,11 @@ public struct ObjectRelationships: Decodable, Gridable {
     public var mediaEntities: RelationshipsValues?
     public var entityAttributeValues: RelationshipsValues?
     public var mediaDisplayTypes: RelationshipsValues?
+    public var layoutContainers: RelationshipsValues?
+    public var bannerObject: RelationshipsValues?
+    public var sliderObject: RelationshipsValues?
+    public var relatedItem: RelationshipsValues?
+    public var layoutContainerItems: RelationshipsValues?
 }
 
 public struct RelationshipsValues: Decodable, Gridable {

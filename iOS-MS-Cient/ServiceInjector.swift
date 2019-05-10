@@ -184,5 +184,9 @@ public class ServiceInjector: NSObject {
     public lazy var mediaDisplayPypes: MediaDisplayTypesResource! = {
         return MediaDisplayTypesResource<MediaDisplayTypeSM>(client: client!)
     } ()
+    
+    public lazy var pages: PagesResource! = {
+        return PagesResource<PagesSM>(client: client!)
+    } ()
 
 }

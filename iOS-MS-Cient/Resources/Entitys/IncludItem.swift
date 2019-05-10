@@ -115,6 +115,26 @@ public class IncludItem: Decodable {
             if let brand = try? container.decodeIfPresent(ProductsPromotionsAttributes.self, forKey: .attributes) {
                 self.item = brand as AnyObject
             }
+        case "layoutContainerItems" :
+            if let brand = try? container.decodeIfPresent(LayoutContainerItemsAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "bannerObject" :
+            if let brand = try? container.decodeIfPresent(BannerObjectAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "sliderObject" :
+            if let brand = try? container.decodeIfPresent(SliderObjectAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "relatedItem" :
+            if let brand = try? container.decodeIfPresent(RelatedAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
+        case "layoutContainers" :
+            if let brand = try? container.decodeIfPresent(LayoutContainerAttributes.self, forKey: .attributes) {
+                self.item = brand as AnyObject
+            }
         default:
             self.type = "notRecognized"
         }
