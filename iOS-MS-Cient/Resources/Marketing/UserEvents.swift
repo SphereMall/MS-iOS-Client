@@ -28,17 +28,13 @@ public class UserEvents<T: Decodable>: Resource<UserEventSM>  {
         }
     }
     
-    public func send(nameEvent: String, userId: String, createDate: String? = nil, eventData: String? = nil, closure: @escaping SMResponse<T>) {
+    public func send(nameEvent: String, userId: String, eventData: String? = nil, closure: @escaping SMResponse<T>) {
         
         let url = String(self.client!.getGatewayUrl() + self.getURI()) + "/byname"
         var parameters = self.getQueryParams()
         
         parameters["userId"] = userId
         parameters["eventName"] = nameEvent
-        
-        if let createDate = createDate {
-            parameters["createDate"] = createDate
-        }
         
         if let eventData = eventData {
             parameters["eventData"] = eventData

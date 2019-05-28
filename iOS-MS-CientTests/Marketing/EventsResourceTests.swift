@@ -53,7 +53,6 @@ class EventsResourceTests: XCTestCase {
         let exp = self.expectation(description: "testEvents")
         client.userEvents.send("EntranceConsumerEvent",
                                userId: "5696",
-                               createDate: "2019-05-28T08:29:42+00:00",
                                eventData: "54230952349853234") { (event, error) in
             XCTAssertNotNil(event)
             exp.fulfill()
