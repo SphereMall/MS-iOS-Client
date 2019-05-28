@@ -189,4 +189,12 @@ public class ServiceInjector: NSObject {
         return PagesResource<PagesSM>(client: client!)
     } ()
 
+    public lazy var events: EventsResource! = {
+        return EventsResource<EventsSM>(client: client!)
+    } ()
+    
+    public lazy var userEvents: UserEvents! = {
+        return UserEvents<UserEventSM>(client: client!)
+    } ()
+
 }

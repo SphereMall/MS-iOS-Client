@@ -14,6 +14,7 @@ let GRID_URL = "http://gateway-store-direct.beta.spheremall.net/v1/"
 let USER_ID = "153"
 let AUTH_URL = "http://gateway-main.alpha.spheremall.net:8082/v1/"
 let DOCUMENTS_URL = "http://gateway-platform.alpha.spheremall.net/v1/"
+let GETAWAY = "http://gateway-main.beta.spheremall.net/v1/"
 
 let api_siteurl = "http://milner.beta.spheremall.net/"
 let api_channelId = "5"

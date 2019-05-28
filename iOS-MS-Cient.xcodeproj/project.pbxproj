@@ -299,6 +299,8 @@
 		E9619F6420284F9300825F99 /* IsUserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0320284CBC00825F99 /* IsUserRegistered.swift */; };
 		E9619F6520284F9800825F99 /* DocumentsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0C20284CDB00825F99 /* DocumentsResource.swift */; };
 		E9619F6620284FBD00825F99 /* FullResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9619E0E20284CE600825F99 /* FullResource.swift */; };
+		E96EFEAA229D25FE005625F2 /* UserEventSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EFEA9229D25FE005625F2 /* UserEventSM.swift */; };
+		E96EFEAB229D25FE005625F2 /* UserEventSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96EFEA9229D25FE005625F2 /* UserEventSM.swift */; };
 		E9743501212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E9743502212AB7470035E72F /* ProductsPromotionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9743500212AB7470035E72F /* ProductsPromotionsData.swift */; };
 		E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974351D212BFC600035E72F /* PromotionsPriceSM.swift */; };
@@ -358,6 +360,13 @@
 		E9A528D92285A153003FD848 /* LayoutContainerSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D82285A153003FD848 /* LayoutContainerSM.swift */; };
 		E9A528DA2285A153003FD848 /* LayoutContainerSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528D82285A153003FD848 /* LayoutContainerSM.swift */; };
 		E9A528DC2285A241003FD848 /* PagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A528DB2285A241003FD848 /* PagesTests.swift */; };
+		E9AE02C5229BD21300F7377B /* EventsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02C4229BD21300F7377B /* EventsResource.swift */; };
+		E9AE02C6229BD21300F7377B /* EventsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02C4229BD21300F7377B /* EventsResource.swift */; };
+		E9AE02C9229BD29600F7377B /* EventsResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02C8229BD29600F7377B /* EventsResourceTests.swift */; };
+		E9AE02CB229BF89900F7377B /* EventsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02CA229BF89900F7377B /* EventsSM.swift */; };
+		E9AE02CC229BF89900F7377B /* EventsSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02CA229BF89900F7377B /* EventsSM.swift */; };
+		E9AE02CE229C01EE00F7377B /* UserEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02CD229C01EE00F7377B /* UserEvents.swift */; };
+		E9AE02CF229C01EE00F7377B /* UserEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE02CD229C01EE00F7377B /* UserEvents.swift */; };
 		E9C73BB12190380A00FBDC10 /* ExternalUserSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E988A26D218DFAEB000F1D36 /* ExternalUserSM.swift */; };
 		E9D3B75D2052C2A000AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
 		E9D3B75E2052CBF600AE8426 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3B75C2052C2A000AE8426 /* EntityType.swift */; };
@@ -577,6 +586,7 @@
 		E9619F2D20284E2500825F99 /* iOS_MS_ClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOS_MS_ClientTests.swift; sourceTree = "<group>"; };
 		E9619F2E20284E2500825F99 /* CurrenciesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesResourceTest.swift; sourceTree = "<group>"; };
 		E9619F2F20284E2500825F99 /* AttributeTypesResourceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeTypesResourceTest.swift; sourceTree = "<group>"; };
+		E96EFEA9229D25FE005625F2 /* UserEventSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEventSM.swift; sourceTree = "<group>"; };
 		E9743500212AB7470035E72F /* ProductsPromotionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPromotionsData.swift; sourceTree = "<group>"; };
 		E974351D212BFC600035E72F /* PromotionsPriceSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsPriceSM.swift; sourceTree = "<group>"; };
 		E9743520212C02360035E72F /* Promotions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotions.swift; sourceTree = "<group>"; };
@@ -609,6 +619,10 @@
 		E9A528D52285A0AF003FD848 /* RelatedSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedSM.swift; sourceTree = "<group>"; };
 		E9A528D82285A153003FD848 /* LayoutContainerSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutContainerSM.swift; sourceTree = "<group>"; };
 		E9A528DB2285A241003FD848 /* PagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesTests.swift; sourceTree = "<group>"; };
+		E9AE02C4229BD21300F7377B /* EventsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResource.swift; sourceTree = "<group>"; };
+		E9AE02C8229BD29600F7377B /* EventsResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResourceTests.swift; sourceTree = "<group>"; };
+		E9AE02CA229BF89900F7377B /* EventsSM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSM.swift; sourceTree = "<group>"; };
+		E9AE02CD229C01EE00F7377B /* UserEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvents.swift; sourceTree = "<group>"; };
 		E9D3B75C2052C2A000AE8426 /* EntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityType.swift; sourceTree = "<group>"; };
 		E9DB27EC2155140A007EAC22 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
 		E9E0BE602043F385003B03EF /* GridResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridResourceTests.swift; sourceTree = "<group>"; };
@@ -776,6 +790,7 @@
 		E9619DD120284B3D00825F99 /* iOS-MS-CientTests */ = {
 			isa = PBXGroup;
 			children = (
+				E9AE02C7229BD27800F7377B /* Marketing */,
 				E955A49221B8026C006C02C4 /* elastic */,
 				E9619F2A20284E2500825F99 /* EntityAttributesTest.swift */,
 				E9619F1420284E2300825F99 /* FunctionalNamesTest.swift */,
@@ -895,6 +910,7 @@
 		E9619E0B20284CCB00825F99 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9AE02C3229BD1ED00F7377B /* Marketing */,
 				E9A528C522847304003FD848 /* Layout */,
 				E9F978D521635AFE00F7C4FE /* ElasticSearch */,
 				E9619E7D20284D6E00825F99 /* Entitys */,
@@ -1042,6 +1058,8 @@
 				E9A528CF22859E31003FD848 /* BannerObjectSM.swift */,
 				E9A528D222859F6C003FD848 /* SliderObjectSM.swift */,
 				E9A528D52285A0AF003FD848 /* RelatedSM.swift */,
+				E9AE02CA229BF89900F7377B /* EventsSM.swift */,
+				E96EFEA9229D25FE005625F2 /* UserEventSM.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -1096,6 +1114,23 @@
 				E9A528C62284733A003FD848 /* PagesResource.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		E9AE02C3229BD1ED00F7377B /* Marketing */ = {
+			isa = PBXGroup;
+			children = (
+				E9AE02C4229BD21300F7377B /* EventsResource.swift */,
+				E9AE02CD229C01EE00F7377B /* UserEvents.swift */,
+			);
+			path = Marketing;
+			sourceTree = "<group>";
+		};
+		E9AE02C7229BD27800F7377B /* Marketing */ = {
+			isa = PBXGroup;
+			children = (
+				E9AE02C8229BD29600F7377B /* EventsResourceTests.swift */,
+			);
+			path = Marketing;
 			sourceTree = "<group>";
 		};
 		E9F978D521635AFE00F7C4FE /* ElasticSearch */ = {
@@ -1324,6 +1359,7 @@
 				E955A46C21B801D7006C02C4 /* MultiMatchFilter.swift in Sources */,
 				E982CCBD206B8E8E0046244B /* FacetMaker.swift in Sources */,
 				E9619EAE20284D9B00825F99 /* EntitiesSM.swift in Sources */,
+				E9AE02CB229BF89900F7377B /* EventsSM.swift in Sources */,
 				E97A43082208404B00744706 /* PriceRange.swift in Sources */,
 				E955A47D21B8021A006C02C4 /* ESFilterCriteria.swift in Sources */,
 				E9619E3B20284D2B00825F99 /* EntitiesResource.swift in Sources */,
@@ -1335,6 +1371,7 @@
 				E9619EB420284D9B00825F99 /* AttributeValuesSM.swift in Sources */,
 				E90C7AE5206B784F00EFA879 /* GrapherResource.swift in Sources */,
 				E9619EA820284D9B00825F99 /* VatsSM.swift in Sources */,
+				E9AE02C5229BD21300F7377B /* EventsResource.swift in Sources */,
 				E9619E3D20284D2B00825F99 /* EntityAttributesResource.swift in Sources */,
 				E9619E0220284CB400825F99 /* FilterSpecification.swift in Sources */,
 				E955A49621B82067006C02C4 /* ElasticEntity.swift in Sources */,
@@ -1378,6 +1415,7 @@
 				E97A42FE220447C000744706 /* ESFacet.swift in Sources */,
 				E974351E212BFC600035E72F /* PromotionsPriceSM.swift in Sources */,
 				E97A430E2208877500744706 /* ESPriceRangeFilter.swift in Sources */,
+				E9AE02CE229C01EE00F7377B /* UserEvents.swift in Sources */,
 				E9619F0320284DD400825F99 /* AttributeFilter.swift in Sources */,
 				E9619EC620284D9B00825F99 /* UserSM.swift in Sources */,
 				E9A528CD22859BE4003FD848 /* LayoutContainerItemsSM.swift in Sources */,
@@ -1416,6 +1454,7 @@
 				E9619DFA20284C8000825F99 /* Basket.swift in Sources */,
 				E9619EA020284D9B00825F99 /* CatalogItemsSM.swift in Sources */,
 				E9619EC420284D9B00825F99 /* BrandsSM.swift in Sources */,
+				E96EFEAA229D25FE005625F2 /* UserEventSM.swift in Sources */,
 				E9619E7920284D6600825F99 /* UsersResource.swift in Sources */,
 				E955A47121B801FE006C02C4 /* TermsFilter.swift in Sources */,
 				E9619E6120284D4600825F99 /* OrdersResource.swift in Sources */,
@@ -1464,6 +1503,7 @@
 				E9619EAF20284D9B00825F99 /* EntitiesSM.swift in Sources */,
 				E9619F5D20284F7B00825F99 /* OrderFinalized.swift in Sources */,
 				E9118DD22032D1A600A7344D /* CorrelationsResourceTests.swift in Sources */,
+				E9AE02CF229C01EE00F7377B /* UserEvents.swift in Sources */,
 				E99E2D762202ED1900831C32 /* ESCatalogFilterTests.swift in Sources */,
 				E9619EF320284DBE00825F99 /* Filter.swift in Sources */,
 				E9619F6220284F8E00825F99 /* IsUserSubscriber.swift in Sources */,
@@ -1510,6 +1550,7 @@
 				E9A528D72285A0AF003FD848 /* RelatedSM.swift in Sources */,
 				E9619F5220284E2600825F99 /* AttributeTypesResourceTest.swift in Sources */,
 				E9619F6020284F8700825F99 /* EntitySpecification.swift in Sources */,
+				E9AE02CC229BF89900F7377B /* EventsSM.swift in Sources */,
 				E9619EAD20284D9B00825F99 /* CurrencyRateSM.swift in Sources */,
 				E9619F5B20284F7600825F99 /* SMDeletedObject.swift in Sources */,
 				E955A48621B80227006C02C4 /* ElasticSearchQuery.swift in Sources */,
@@ -1567,6 +1608,7 @@
 				E9619F4D20284E2600825F99 /* EntityAttributesTest.swift in Sources */,
 				E988A26A218DC794000F1D36 /* Relationships.swift in Sources */,
 				E9619F3A20284E2600825F99 /* BrandsResourceTest.swift in Sources */,
+				E96EFEAB229D25FE005625F2 /* UserEventSM.swift in Sources */,
 				E9619EFE20284DD400825F99 /* PriceRangeFilter.swift in Sources */,
 				E9DB27ED2155140A007EAC22 /* BaseUrl.swift in Sources */,
 				E9619F4720284E2600825F99 /* DocumentsResourceTest.swift in Sources */,
@@ -1626,6 +1668,7 @@
 				E9619F5F20284F8300825F99 /* FilterSpecification.swift in Sources */,
 				E9619E6A20284D4600825F99 /* OrderStatusesResource.swift in Sources */,
 				E9619EBF20284D9B00825F99 /* CompaniesSM.swift in Sources */,
+				E9AE02C6229BD21300F7377B /* EventsResource.swift in Sources */,
 				E9619F0020284DD400825F99 /* BrandFilter.swift in Sources */,
 				E9619ECB20284D9B00825F99 /* AttributeDisplayTypesSM.swift in Sources */,
 				E91D7FFD21C8DF47001C4DF8 /* MediaDisplayTypesResourceTests.swift in Sources */,
@@ -1670,6 +1713,7 @@
 				E9619EE120284D9B00825F99 /* OrdersSM.swift in Sources */,
 				E9619E2820284D2B00825F99 /* FunctionalNamesResource.swift in Sources */,
 				E9118DCD2031948C00A7344D /* EmptySM.swift in Sources */,
+				E9AE02C9229BD29600F7377B /* EventsResourceTests.swift in Sources */,
 				E9619F5720284F6A00825F99 /* SMCountMaker.swift in Sources */,
 				E9619F5420284F6300825F99 /* Resource.swift in Sources */,
 				E988A270218DFBFB000F1D36 /* ExternalUserRelationResourceTests.swift in Sources */,

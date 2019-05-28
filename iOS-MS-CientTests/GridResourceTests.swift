@@ -20,7 +20,7 @@ class GridResourceTests: XCTestCase {
                           username: api_username,
                           password: api_password)
         
-        client.setHeaders(headers: ["channel-id" : api_channelId])
+        client.setHeaders(["channel-id" : api_channelId])
     }
     
     func testAllWithPredicate() {

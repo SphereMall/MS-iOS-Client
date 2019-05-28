@@ -42,7 +42,7 @@ class iOS_MS_ClientTests: XCTestCase {
     
     func testSetVersion(version: String) {
         XCTAssertEqual(client.getVersion(), "v1")
-        client.setVersion(version: "v2")
+        client.setVersion("v2")
         XCTAssertEqual(client.getVersion(), "v2")
     }
 

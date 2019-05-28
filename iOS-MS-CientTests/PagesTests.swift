@@ -16,7 +16,7 @@ class PagesTests: XCTestCase {
         client = SMClient(gatewayUrl: GETAWAY,
                           clientId: "api_demo_user",
                           secretKey: "demo_pass")
-        client.setHeaders(headers: ["channel-id" : "1"])
+        client.setHeaders(["channel-id" : "1"])
     }
 
     override func tearDown() {
