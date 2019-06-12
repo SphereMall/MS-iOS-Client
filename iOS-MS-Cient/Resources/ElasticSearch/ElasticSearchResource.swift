@@ -38,7 +38,11 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
         
-        Alamofire.request(request).responseJSON { (response) in
+        heandler.manager.request(request)
+            .authenticate(usingCredential: heandler.authorization())
+            .validate()
+            .responseJSON { (response) in
+                
             if let value = response.value {
                 let json = JSON(value)
                 let data = try! json.rawData()
@@ -90,7 +94,7 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
     
     public func facets(filter: ESCatalogFilter, groupBy: String? = nil, entities: [Entities]? = nil, closure: @escaping (ESFacet?, ErrorSM?) -> Void) {
 
-        let url = String(self.client!.getGatewayUrl() + self.getURI() + "/filter")
+        let url = String(self.client!.getGatewayUrl() + "elasticindexer" + "/filter")
         
         var parameters: [String: String] = [:]
         parameters["params"] = filter.params()
@@ -98,7 +102,9 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
         parameters["groupBy"] = groupBy
         parameters["entities"] = entities?.compactMap({ (entity) -> String? in return entity.rawValue }).joined(separator: ",")
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString))
+        heandler.manager.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString))
+            .authenticate(usingCredential: heandler.authorization())
+            .validate()
             .responseJSON { response in
                 
                 if let value = response.value {
@@ -121,7 +127,9 @@ public class ElasticSearchResource <T: Decodable> : Resource <ProductsSM> {
         var parameters: [String: String] = getQueryParams()
         let url = String(self.client!.getGatewayUrl() + self.getURI() + "/" + parameters["index"]! + "/_search")
         
-        Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString))
+        heandler.manager.request(url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .queryString))
+            .authenticate(usingCredential: heandler.authorization())
+            .validate()
             .responseJSON { response in
                 
                 if let value = response.value {
