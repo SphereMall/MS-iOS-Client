@@ -15,6 +15,7 @@ public class EntityAttributesSM: Entity, Decodable {
     public var attributeId : String?
     public var attributeValueId : String?
     public var lastUpdate : String?
+    public var attributes: [AttributeResourceSM]?
 }
 
 public class EntityData: Entity, Decodable {

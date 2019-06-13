@@ -18,14 +18,14 @@ public class AuthToken: NSObject {
     }
     
     public final func token() -> String? {
-        return keychain.get(client.getClientId())
+        return keychain.get("smclienttoken")
     }
     
     @discardableResult public func save(token: String) -> Bool {
-        return keychain.set(token, forKey: client.getClientId())
+        return keychain.set(token, forKey: "smclienttoken")
     }
     
     @discardableResult public func delete(token: String) -> Bool {
-        return keychain.delete(client.getClientId())
+        return keychain.delete("smclienttoken")
     }
 }

@@ -21,7 +21,7 @@ public struct AttributesResourceData: Decodable {
     public var type : String?
     public var relationships: ObjectRelationships?
     
-    public init(){}
+    public init() {}
     
     public init(include: IncludItem) {
         
@@ -85,5 +85,6 @@ public struct AttributeResourceSM: Decodable {
     public var useInFilter : String?
     public var visible : String?
     public var affectActtributes: [AttributeValuesData]?
+    public var attributeValues: [AttributeValuesData]?
 }
 

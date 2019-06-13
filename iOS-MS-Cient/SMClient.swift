@@ -12,8 +12,8 @@ import SwiftyJSON
 public class SMClient: ServiceInjector {
     
     fileprivate var gatewayUrl: URL!
-    fileprivate var clientId: String!
-    fileprivate var secretKey: String!
+    fileprivate var clientId: String?
+    fileprivate var secretKey: String?
     fileprivate var version = "v1"
     fileprivate var header = [String : String] ()
     fileprivate var username: String?
@@ -21,7 +21,7 @@ public class SMClient: ServiceInjector {
     
     public let userAgent = "SM_SDK_iOS_CLIENT"
     
-    public init(gatewayUrl: String, clientId: String, secretKey: String, username: String? = nil, password: String? = nil) {
+    public init(gatewayUrl: String, clientId: String? = nil, secretKey: String? = nil, username: String? = nil, password: String? = nil) {
         super.init()
         self.gatewayUrl = URL(string:gatewayUrl)
         self.clientId = clientId
@@ -42,11 +42,11 @@ public class SMClient: ServiceInjector {
         return self.gatewayUrl.absoluteString
     }
 
-    public func getClientId() -> String {
+    public func getClientId() -> String? {
         return self.clientId
     }
     
-    public func getSecretKey() -> String {
+    public func getSecretKey() -> String? {
         return self.secretKey
     }
 

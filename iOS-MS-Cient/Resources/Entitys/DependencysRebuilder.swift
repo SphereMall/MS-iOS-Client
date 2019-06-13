@@ -463,6 +463,7 @@ public extension Rebuilder {
     mutating func entityAttributeValues(attributes: Relationships?, included: [IncludItem]) -> [EntityData]? {
         
         if let data = self.relationships?.entityAttributeValues?.data {
+            
             var items: [EntityData] = []
             for item in data {
                 
@@ -476,6 +477,43 @@ public extension Rebuilder {
                 
                 if let inc = include {
                     let object = EntityData(include: inc)
+                    if let attributes = object.relationships?.attributes?.data {
+                        var attributesItems: [AttributesResourceData] = []
+                        for affAttrb in attributes {
+                            let include = included.first(where: { (includeItem) -> Bool in
+                                if includeItem.type == "attributes" &&
+                                    (includeItem.item as? AttributeResourceSM)?.id == affAttrb.id {
+                                    return true
+                                }
+                                return false
+                            })
+                            
+                            if let inc = include {
+                                
+                                var object = AttributesResourceData(include: inc)
+                                object.attributes?.attributeValues = []
+                                
+                                let includes = included.filter { (include) -> Bool in
+                                    if include.type == "attributeValues" && (include.item as? AttributeValues)?.attributeId == object.id {
+                                        return true
+                                    }
+                                    return false
+                                }
+                                
+                                for inc in includes {
+                                    let ar = AttributeValuesData(include: inc)
+                                    object.attributes?.attributeValues!.append(ar)
+                                }
+                                
+                                attributesItems.append(object)
+                            }
+                        }
+                        
+                        object.attributes?.attributes = attributesItems.compactMap({ (item) -> AttributeResourceSM? in
+                            return item.attributes
+                        })
+                    }
+                    
                     items.append(object)
                 }
             }

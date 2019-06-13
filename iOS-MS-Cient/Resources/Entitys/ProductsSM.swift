@@ -50,7 +50,7 @@ public struct ProductsData: Decodable, Rebuilder {
         self.relationships = include.relationships
     }
     
-    public init(id : String?, attributes : ProductsAttributes?, relationships: ObjectRelationships?, type : String?) {
+    public init(id: String?, attributes: ProductsAttributes?, relationships: ObjectRelationships?, type: String?) {
         self.id = id
         self.attributes = attributes
         self.relationships = relationships
