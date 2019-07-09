@@ -18,14 +18,12 @@ public struct UserEventData: Decodable {
     public var id: String?
     public var type: String?
     public var attributes: UserEventAttributes?
-    public var relationships: ObjectRelationships?
     
     public init(_ include: IncludItem) {
         guard let object = include.item as? UserEventAttributes else { return }
         self.attributes = object
         self.type = include.type
         self.id = include.id
-        self.relationships = include.relationships
     }
     
     public enum CodingKeys: String, CodingKey {
@@ -38,11 +36,7 @@ public struct UserEventData: Decodable {
     public init(from decoder: Decoder) throws {
         
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        
-        if let relationships = try? values.decodeIfPresent(ObjectRelationships.self, forKey: .relationships) {
-            self.relationships = relationships
-        }
-        
+
         id = try values.decodeIfPresent(String.self, forKey: .id)
         attributes = try values.decodeIfPresent(UserEventAttributes.self, forKey: .attributes)
         type = try values.decodeIfPresent(String.self, forKey: .type)
