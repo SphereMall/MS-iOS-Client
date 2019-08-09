@@ -10,6 +10,16 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
+class CustomServerTrustPoliceManager : ServerTrustPolicyManager {
+    override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
+        return .disableEvaluation
+    }
+    
+    public init() {
+        super.init(policies: [:])
+    }
+}
+
 public class SMRequest: RequestAdapter, RequestRetrier {
     
     private let lock = NSLock()
@@ -25,11 +35,20 @@ public class SMRequest: RequestAdapter, RequestRetrier {
     private typealias RefreshCompletion = (_ succeeded: Bool, _ accessToken: String?) -> Void
     
     var manager : Alamofire.SessionManager = {
+        
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "baseAPI" : .disableEvaluation
+        ]
+        
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
-        return Alamofire.SessionManager(configuration: configuration)
-    } ()
+        configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
+        
+        return Alamofire.SessionManager(configuration: configuration,
+                                        serverTrustPolicyManager: CustomServerTrustPoliceManager())
+        
+    }()
     
     public init(client: SMClient) {
         self.client = client
@@ -79,7 +98,7 @@ public class SMRequest: RequestAdapter, RequestRetrier {
                         let json = JSON(value)
                         let data = try! json.rawData()
                         let decoder = JSONDecoder()
-
+                        
                         guard let items = try? decoder.decode(T.self , from: data) else {
                             completionHandler(nil, ErrorSM(code: 0, status: "Can't parse data for entity \(T.self)"))
                             return
